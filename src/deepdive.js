@@ -77,7 +77,6 @@ const $caveat      = document.getElementById('dd-caveat');
 const $topMembers  = document.getElementById('dd-top-members');
 const $topDebates  = document.getElementById('dd-top-debates');
 const $headlines   = document.getElementById('dd-headlines');
-const $empty       = document.getElementById('dd-empty');
 const $results     = document.getElementById('dd-results');
 
 // ---------- helpers ----------------------------------------------------
@@ -428,13 +427,11 @@ async function runDive(pushUrl) {
 
   if (!state.term) {
     $status.textContent = 'Enter a term to dive into.';
-    $empty.hidden = false;
     $results.hidden = true;
     return;
   }
 
   if (pushUrl) pushUrlState();
-  $empty.hidden = true;
   $results.hidden = false;
   $caveat.hidden = true;
   $chart.innerHTML = '';
