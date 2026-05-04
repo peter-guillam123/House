@@ -61,6 +61,13 @@ const state = {
   totalContributions: 0,       // sum of all monthly totals
   monthsTotal: 0,
   monthsLoaded: 0,
+  // Click-to-filter — the leaderboards and legend double as filter
+  // surfaces. AND-combined across the three axes.
+  filters: {
+    memberIds: new Set(),      // Set<number>
+    debateIds: new Set(),      // Set<string>
+    parties:   new Set(),      // Set<string>
+  },
 };
 
 // ---------- DOM refs ---------------------------------------------------
@@ -83,6 +90,7 @@ const $topMembersMore = document.getElementById('dd-top-members-more');
 const $topDebatesMore = document.getElementById('dd-top-debates-more');
 const $headlines   = document.getElementById('dd-headlines');
 const $results     = document.getElementById('dd-results');
+const $filterBar   = document.getElementById('dd-filter-bar');
 
 function wireRankToggle(btn, list) {
   btn.addEventListener('click', () => {
@@ -133,6 +141,81 @@ function partyColor(p) {
   return PARTY_COLORS[p] || PARTY_FALLBACK;
 }
 
+// ---------- click-to-filter -------------------------------------------
+
+function hasFilters() {
+  const f = state.filters;
+  return f.memberIds.size + f.debateIds.size + f.parties.size > 0;
+}
+
+// AND across the three axes; OR within an axis (e.g. two parties picked
+// = "either party").
+function matchesFilters(h) {
+  const f = state.filters;
+  if (f.memberIds.size && !f.memberIds.has(h.memberId)) return false;
+  if (f.debateIds.size && !f.debateIds.has(h.debateExtId)) return false;
+  if (f.parties.size   && !f.parties.has(h.party || 'Unknown')) return false;
+  return true;
+}
+
+function resetFilters() {
+  state.filters.memberIds.clear();
+  state.filters.debateIds.clear();
+  state.filters.parties.clear();
+}
+
+function toggleFilter(kind, value) {
+  const set =
+    kind === 'member' ? state.filters.memberIds :
+    kind === 'debate' ? state.filters.debateIds :
+    kind === 'party'  ? state.filters.parties   : null;
+  if (!set) return;
+  // Member ids are numbers; keep as-is. Others stay strings.
+  const v = kind === 'member' ? Number(value) : value;
+  if (set.has(v)) set.delete(v); else set.add(v);
+  pushUrlState();
+  renderFilterBar();
+  renderHeadlines();
+  renderTopMembers();
+  renderTopDebates();
+  renderLegend();
+}
+
+function clearAllFilters() {
+  if (!hasFilters()) return;
+  resetFilters();
+  pushUrlState();
+  renderFilterBar();
+  renderHeadlines();
+  renderTopMembers();
+  renderTopDebates();
+  renderLegend();
+}
+
+// Event delegation — wire once at module load
+$topMembers.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-member-id]');
+  if (!btn) return;
+  toggleFilter('member', btn.dataset.memberId);
+});
+$topDebates.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-debate-id]');
+  if (!btn) return;
+  toggleFilter('debate', btn.dataset.debateId);
+});
+$legend.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-party]');
+  if (!btn) return;
+  toggleFilter('party', btn.dataset.party);
+});
+$filterBar.addEventListener('click', (e) => {
+  const clearAll = e.target.closest('[data-clear-all]');
+  if (clearAll) { clearAllFilters(); return; }
+  const chip = e.target.closest('[data-kind][data-value]');
+  if (!chip) return;
+  toggleFilter(chip.dataset.kind, chip.dataset.value);
+});
+
 // Year selects
 function populateYearSelects() {
   const now = new Date().getFullYear();
@@ -154,6 +237,7 @@ function resetState() {
   state.totalContributions = 0;
   state.monthsTotal = 0;
   state.monthsLoaded = 0;
+  resetFilters();
 }
 
 // ---------- rendering: timeline chart ---------------------------------
@@ -248,17 +332,39 @@ function renderTimeline() {
     ${xTicks}
   </svg>`;
 
-  // Legend — only parties actually seen
-  if (sortedParties.length) {
-    $legend.innerHTML = sortedParties.map((p) => `
-      <span class="dd-legend-chip">
-        <span class="dd-legend-swatch" style="background:${partyColor(p)}"></span>
-        ${escapeHtml(p)}
-      </span>
-    `).join('');
-  } else {
+  renderLegend(sortedParties);
+}
+
+// Legend doubles as a party filter — chips are buttons.
+function renderLegend(sortedPartiesArg) {
+  const allPartiesSeen = new Set();
+  for (const mp of state.monthlyByParty.values()) for (const p of mp.keys()) allPartiesSeen.add(p);
+  const sortedParties = sortedPartiesArg || sortPartiesForLegend([...allPartiesSeen]);
+  if (!sortedParties.length) {
     $legend.innerHTML = '<span class="dd-legend-chip dd-legend-loading">Party split filling in as months load…</span>';
+    return;
   }
+  $legend.innerHTML = sortedParties.map((p) => {
+    const active = state.filters.parties.has(p);
+    return `<button type="button" class="dd-legend-chip${active ? ' is-active' : ''}" data-party="${escapeHtml(p)}" aria-pressed="${active}" style="--c:${partyColor(p)}">
+      <span class="dd-legend-swatch"></span>
+      <span class="dd-legend-name">${escapeHtml(p)}</span>
+    </button>`;
+  }).join('');
+}
+
+function sortPartiesForLegend(arr) {
+  const order = ['Lab', 'Labour', 'Con', 'Conservative', 'LD', 'Lib Dem', 'SNP',
+                 'Reform', 'Reform UK', 'Green', 'DUP', 'PC', 'Plaid Cymru',
+                 'SF', 'Sinn Féin', 'Alliance', 'UUP', 'SDLP', 'Bishops',
+                 'Crossbench', 'Speaker', 'Ind', 'Independent'];
+  return [...arr].sort((a, b) => {
+    const ai = order.indexOf(a), bi = order.indexOf(b);
+    if (ai === -1 && bi === -1) return a.localeCompare(b);
+    if (ai === -1) return 1;
+    if (bi === -1) return -1;
+    return ai - bi;
+  });
 }
 
 // ---------- rendering: stats -------------------------------------------
@@ -289,7 +395,8 @@ function renderStats() {
 // ---------- rendering: top members & top debates ----------------------
 
 function renderTopMembers() {
-  const top = [...state.byMember.values()]
+  const top = [...state.byMember.entries()]
+    .map(([id, m]) => ({ id, ...m }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 12);
   if (!top.length) {
@@ -297,18 +404,22 @@ function renderTopMembers() {
     syncRankToggle($topMembersMore, 0);
     return;
   }
-  $topMembers.innerHTML = top.map((m) => `
-    <li>
-      <span class="dd-rank-count" style="--c:${partyColor(m.party)}">${m.count.toLocaleString('en-GB')}</span>
-      <span class="dd-rank-name">${escapeHtml(m.name || '—')}</span>
-      ${m.party ? `<span class="dd-party-tag" style="--c:${partyColor(m.party)}">${escapeHtml(m.party)}</span>` : ''}
-    </li>
-  `).join('');
+  $topMembers.innerHTML = top.map((m) => {
+    const active = state.filters.memberIds.has(m.id);
+    return `<li>
+      <button type="button" class="dd-rank-row${active ? ' is-active' : ''}" data-member-id="${m.id}" aria-pressed="${active}">
+        <span class="dd-rank-count" style="--c:${partyColor(m.party)}">${m.count.toLocaleString('en-GB')}</span>
+        <span class="dd-rank-name">${escapeHtml(m.name || '—')}</span>
+        ${m.party ? `<span class="dd-party-tag" style="--c:${partyColor(m.party)}">${escapeHtml(m.party)}</span>` : ''}
+      </button>
+    </li>`;
+  }).join('');
   syncRankToggle($topMembersMore, top.length);
 }
 
 function renderTopDebates() {
-  const top = [...state.byDebate.values()]
+  const top = [...state.byDebate.entries()]
+    .map(([id, d]) => ({ id, ...d }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 10);
   if (!top.length) {
@@ -316,14 +427,15 @@ function renderTopDebates() {
     syncRankToggle($topDebatesMore, 0);
     return;
   }
-  $topDebates.innerHTML = top.map((d) => `
-    <li>
-      <span class="dd-rank-count">${d.count.toLocaleString('en-GB')}</span>
-      ${d.link
-        ? `<a class="dd-rank-name" href="${escapeHtml(d.link)}" target="_blank" rel="noopener">${escapeHtml(d.title || '—')}</a>`
-        : `<span class="dd-rank-name">${escapeHtml(d.title || '—')}</span>`}
-    </li>
-  `).join('');
+  $topDebates.innerHTML = top.map((d) => {
+    const active = state.filters.debateIds.has(d.id);
+    return `<li>
+      <button type="button" class="dd-rank-row${active ? ' is-active' : ''}" data-debate-id="${escapeHtml(d.id)}" aria-pressed="${active}">
+        <span class="dd-rank-count">${d.count.toLocaleString('en-GB')}</span>
+        <span class="dd-rank-name">${escapeHtml(d.title || '—')}</span>
+      </button>
+    </li>`;
+  }).join('');
   syncRankToggle($topDebatesMore, top.length);
 }
 
@@ -334,8 +446,13 @@ function renderHeadlines() {
     $headlines.innerHTML = '<li class="dd-empty-li">Headlines will appear here as months load.</li>';
     return;
   }
+  const filtered = hasFilters() ? state.headlines.filter(matchesFilters) : state.headlines;
+  if (!filtered.length) {
+    $headlines.innerHTML = '<li class="dd-empty-li">No contributions match the current filter.</li>';
+    return;
+  }
   // Newest first
-  const sorted = [...state.headlines].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  const sorted = [...filtered].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   const visible = sorted.slice(0, 250); // render cap for the list itself
   const more = sorted.length - visible.length;
   $headlines.innerHTML = visible.map((h) => {
@@ -354,10 +471,51 @@ function renderHeadlines() {
     : '');
 }
 
+// Filter bar — shows active filters as removable chips above the
+// contributions list. Hidden when no filters are active.
+function renderFilterBar() {
+  if (!hasFilters()) {
+    $filterBar.hidden = true;
+    $filterBar.innerHTML = '';
+    return;
+  }
+  const chips = [];
+  for (const id of state.filters.memberIds) {
+    const m = state.byMember.get(id);
+    chips.push(filterChipHtml('member', id, m ? m.name : `member ${id}`, m ? partyColor(m.party) : null));
+  }
+  for (const id of state.filters.debateIds) {
+    const d = state.byDebate.get(id);
+    chips.push(filterChipHtml('debate', id, d ? d.title : 'debate', null));
+  }
+  for (const p of state.filters.parties) {
+    chips.push(filterChipHtml('party', p, p, partyColor(p)));
+  }
+  const matchCount = state.headlines.filter(matchesFilters).length;
+  const clearAll = chips.length >= 2
+    ? `<button type="button" class="dd-filter-clear" data-clear-all>Clear all</button>`
+    : '';
+  $filterBar.hidden = false;
+  $filterBar.innerHTML = `
+    <span class="dd-filter-bar-label">Filtered to</span>
+    ${chips.join('')}
+    <span class="dd-filter-bar-count">${matchCount.toLocaleString('en-GB')} contribution${matchCount === 1 ? '' : 's'}</span>
+    ${clearAll}
+  `;
+}
+
+function filterChipHtml(kind, value, label, color) {
+  const colorAttr = color ? ` style="--c:${color}"` : '';
+  return `<button type="button" class="dd-filter-chip" data-kind="${kind}" data-value="${escapeHtml(String(value))}"${colorAttr} aria-label="Remove filter: ${escapeHtml(label || '')}">
+    <span class="dd-filter-chip-label">${escapeHtml(label || '—')}</span>
+    <span class="dd-filter-chip-x" aria-hidden="true">×</span>
+  </button>`;
+}
+
 // ---------- rAF coalescing --------------------------------------------
 
 let renderRaf = 0;
-function scheduleRender(parts = ['chart', 'members', 'debates', 'headlines']) {
+function scheduleRender(parts = ['chart', 'members', 'debates', 'headlines', 'filterBar']) {
   if (renderRaf) cancelAnimationFrame(renderRaf);
   renderRaf = requestAnimationFrame(() => {
     renderRaf = 0;
@@ -365,6 +523,7 @@ function scheduleRender(parts = ['chart', 'members', 'debates', 'headlines']) {
     if (parts.includes('members')) renderTopMembers();
     if (parts.includes('debates')) renderTopDebates();
     if (parts.includes('headlines')) renderHeadlines();
+    if (parts.includes('filterBar')) renderFilterBar();
   });
 }
 
@@ -421,6 +580,7 @@ async function processMonth(month, myToken) {
       if (state.headlines.length < MAX_HEADLINES) {
         state.headlines.push({
           date: it.date, memberName: it.memberName, party: it.party,
+          memberId: it.memberId, debateExtId: it.debateExtId,
           title: it.title, link: it.link,
           snippet: it.snippet, fullText: it.fullText,
         });
@@ -449,6 +609,10 @@ function setProgress() {
 async function runDive(pushUrl) {
   const myToken = ++state.cancelToken;
   resetState();
+  // If the URL carries filter params (e.g. shareable filtered link, or
+  // navigating back via popstate), restore them now so they apply as
+  // headlines stream in.
+  if (!pushUrl) applyFiltersFromUrl();
 
   state.term = $q.value.trim();
   state.yearFrom = Number($from.value);
@@ -471,6 +635,7 @@ async function runDive(pushUrl) {
   $topDebates.innerHTML = '';
   resetRankToggle($topMembersMore, $topMembers);
   resetRankToggle($topDebatesMore, $topDebates);
+  renderFilterBar();
   $status.textContent = 'Fetching the timeline…';
 
   // Step 1: timeline-stats — instant overall shape
@@ -527,6 +692,7 @@ async function runDive(pushUrl) {
   renderTopMembers();
   renderTopDebates();
   renderHeadlines();
+  renderFilterBar();
 
   // Top-12 leaderboard members whose party is still empty are typically
   // ministers attributed by role. Look them up via the Members API in
@@ -558,6 +724,9 @@ function buildUrlFromState() {
   const now = new Date().getFullYear();
   if (state.yearFrom && state.yearFrom !== now - 2) p.set('from', String(state.yearFrom));
   if (state.yearTo && state.yearTo !== now) p.set('to', String(state.yearTo));
+  if (state.filters.memberIds.size) p.set('fm', [...state.filters.memberIds].join(','));
+  if (state.filters.debateIds.size) p.set('fd', [...state.filters.debateIds].join(','));
+  if (state.filters.parties.size)   p.set('fp', [...state.filters.parties].join(','));
   return p.toString();
 }
 
@@ -578,6 +747,17 @@ function applyParamsFromUrl() {
   $from.value = String(from);
   $to.value = String(to);
   return !!q;
+}
+
+// Pulled from URL after resetState, so filters persist through a dive.
+function applyFiltersFromUrl() {
+  const p = new URLSearchParams(location.search);
+  const fm = p.get('fm');
+  const fd = p.get('fd');
+  const fp = p.get('fp');
+  if (fm) for (const id of fm.split(',')) { const n = Number(id); if (Number.isFinite(n)) state.filters.memberIds.add(n); }
+  if (fd) for (const id of fd.split(',')) if (id) state.filters.debateIds.add(id);
+  if (fp) for (const p of fp.split(',')) if (p) state.filters.parties.add(p);
 }
 
 window.addEventListener('popstate', () => {
