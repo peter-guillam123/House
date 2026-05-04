@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Deep Dive — House</title>
+  <meta name="description" content="A monthly view of how parliament has discussed a term over time. Party-stacked timeline, top members, top debates and the contributions themselves.">
+  <meta name="theme-color" content="#f6f3ec">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="./" class="wordmark" aria-label="House — home">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square">
+            <path d="M3 5h18"/><path d="M5 5v15"/><path d="M19 5v15"/>
+            <path d="M9 8v12"/><path d="M15 8v12"/>
+            <path d="M5 11h14"/><path d="M5 16h14"/><path d="M3 20h18"/>
+          </svg>
+        </span>
+        <span class="wordmark-text">House</span>
+      </a>
+      <nav class="topnav">
+        <a href="./">Search</a>
+        <a href="deep-dive.html" aria-current="page">Deep Dive</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dd-main">
+    <section class="hero">
+      <h1 class="lede">A topic over time.</h1>
+      <p class="sub">Pick a term and a date range. Hansard's monthly volume comes back instantly; the party split, top members, top debates and contributions fill in as the months stream through.</p>
+    </section>
+
+    <form id="dd-form" class="dd-form" autocomplete="off">
+      <span class="search-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <circle cx="11" cy="11" r="6.5"/>
+          <path d="m20 20-4.2-4.2"/>
+        </svg>
+      </span>
+      <label class="search-field">
+        <span class="visually-hidden">Search term</span>
+        <input id="dd-q" type="search" name="q" placeholder="e.g. RAF Lakenheath, NHS, immigration…" autocomplete="off" autofocus>
+      </label>
+      <span class="dd-years" aria-label="Year range">
+        <label class="visually-hidden" for="dd-from">From year</label>
+        <select id="dd-from" class="dd-year-select"></select>
+        <span aria-hidden="true">→</span>
+        <label class="visually-hidden" for="dd-to">To year</label>
+        <select id="dd-to" class="dd-year-select"></select>
+      </span>
+      <button type="submit" class="primary">
+        <span class="primary-label">Dive in</span>
+        <span class="primary-kbd" aria-hidden="true">↵</span>
+      </button>
+    </form>
+
+    <p id="dd-status" class="status" aria-live="polite"></p>
+
+    <section id="dd-empty" class="dd-empty">
+      <p>Pick a term to start. <strong>NHS</strong>, <strong>Ukraine</strong>, <strong>RAF Lakenheath</strong>, the name of a hospital trust, a place. Anything you'd type into the main search.</p>
+      <p>Best for terms that come up often enough to make a shape over time. For sparse terms (a handful of mentions over years), the main search gives a tighter view.</p>
+    </section>
+
+    <section id="dd-results" class="dd-section" hidden>
+      <div class="dd-stats">
+        <div class="dd-stat-cell">
+          <p class="dd-stat-label">Total contributions</p>
+          <p class="dd-stat-big" id="dd-stat-total">—</p>
+        </div>
+        <div class="dd-stat-cell">
+          <p class="dd-stat-label">Peak month</p>
+          <p class="dd-stat-big" id="dd-stat-peak">—</p>
+        </div>
+        <div class="dd-stat-cell">
+          <p class="dd-stat-label">First mention</p>
+          <p class="dd-stat-big" id="dd-stat-first">—</p>
+        </div>
+        <div class="dd-stat-cell">
+          <p class="dd-stat-label">Most recent</p>
+          <p class="dd-stat-big" id="dd-stat-last">—</p>
+        </div>
+      </div>
+
+      <div class="dd-chart-wrap">
+        <p class="dd-eyebrow">Monthly volume · party-stacked</p>
+        <div id="dd-chart" class="dd-chart"></div>
+        <div id="dd-legend" class="dd-legend"></div>
+        <p id="dd-caveat" class="dd-caveat" hidden>
+          Bar heights are exact; party proportions are based on a sample of up
+          to 50 contributions per month, so dominant parties are reliable but
+          tiny slices may be approximate.
+        </p>
+      </div>
+
+      <div class="dd-grid">
+        <section class="dd-side">
+          <p class="dd-eyebrow">Most contributions</p>
+          <ol id="dd-top-members" class="dd-rank"></ol>
+        </section>
+        <section class="dd-side">
+          <p class="dd-eyebrow">In these debates</p>
+          <ol id="dd-top-debates" class="dd-rank"></ol>
+        </section>
+      </div>
+
+      <section class="dd-headlines-wrap">
+        <p class="dd-eyebrow">Contributions</p>
+        <ol id="dd-headlines" class="dd-headlines"></ol>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="colophon">
+        Drawn from the <a href="https://hansard.parliament.uk/">Hansard</a> API
+        under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
+        Spoken contributions only — for written questions and statements use the <a href="./">main search</a>.
+      </p>
+      <p class="colophon-meta"><a href="./">Search</a> · <a href="about.html">About</a> · <a href="https://github.com/peter-guillam123/House">Source</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/deepdive.js?v=1"></script>
+</body>
+</html>
