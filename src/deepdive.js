@@ -76,8 +76,31 @@ const $legend      = document.getElementById('dd-legend');
 const $caveat      = document.getElementById('dd-caveat');
 const $topMembers  = document.getElementById('dd-top-members');
 const $topDebates  = document.getElementById('dd-top-debates');
+const $topMembersMore = document.getElementById('dd-top-members-more');
+const $topDebatesMore = document.getElementById('dd-top-debates-more');
 const $headlines   = document.getElementById('dd-headlines');
 const $results     = document.getElementById('dd-results');
+
+function wireRankToggle(btn, list) {
+  btn.addEventListener('click', () => {
+    const expanded = list.classList.toggle('is-expanded');
+    btn.setAttribute('aria-expanded', String(expanded));
+    btn.textContent = expanded ? 'Show fewer' : 'Show all';
+  });
+}
+wireRankToggle($topMembersMore, $topMembers);
+wireRankToggle($topDebatesMore, $topDebates);
+
+function resetRankToggle(btn, list) {
+  list.classList.remove('is-expanded');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.textContent = 'Show all';
+  btn.hidden = true;
+}
+
+function syncRankToggle(btn, count) {
+  btn.hidden = count <= 5;
+}
 
 // ---------- helpers ----------------------------------------------------
 
@@ -268,6 +291,7 @@ function renderTopMembers() {
     .slice(0, 12);
   if (!top.length) {
     $topMembers.innerHTML = '<li class="dd-empty-li">Filling in as contributions load…</li>';
+    syncRankToggle($topMembersMore, 0);
     return;
   }
   $topMembers.innerHTML = top.map((m) => `
@@ -277,6 +301,7 @@ function renderTopMembers() {
       ${m.party ? `<span class="dd-rank-meta">${escapeHtml(m.party)}</span>` : ''}
     </li>
   `).join('');
+  syncRankToggle($topMembersMore, top.length);
 }
 
 function renderTopDebates() {
@@ -285,6 +310,7 @@ function renderTopDebates() {
     .slice(0, 10);
   if (!top.length) {
     $topDebates.innerHTML = '<li class="dd-empty-li">Filling in as contributions load…</li>';
+    syncRankToggle($topDebatesMore, 0);
     return;
   }
   $topDebates.innerHTML = top.map((d) => `
@@ -295,6 +321,7 @@ function renderTopDebates() {
         : `<span class="dd-rank-name">${escapeHtml(d.title || '—')}</span>`}
     </li>
   `).join('');
+  syncRankToggle($topDebatesMore, top.length);
 }
 
 // ---------- rendering: headline list ----------------------------------
@@ -439,6 +466,8 @@ async function runDive(pushUrl) {
   $headlines.innerHTML = '';
   $topMembers.innerHTML = '';
   $topDebates.innerHTML = '';
+  resetRankToggle($topMembersMore, $topMembers);
+  resetRankToggle($topDebatesMore, $topDebates);
   $status.textContent = 'Fetching the timeline…';
 
   // Step 1: timeline-stats — instant overall shape

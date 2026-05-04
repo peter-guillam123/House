@@ -1332,6 +1332,23 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
   font-size: 0.88rem;
   border: 0;
 }
+.dd-rank-more {
+  display: none;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+.dd-rank-more:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.dd-rank-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 /* --- headline list --- */
 
@@ -1456,7 +1473,10 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
   .dd-stat-cell:nth-child(2n) { border-right: 0; }
   .dd-stat-cell:nth-child(-n+2) { border-bottom: 1px solid var(--rule-soft); }
   .dd-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .dd-chart svg { max-height: 200px; }
+  .dd-chart { padding: 0.4rem; }
+  .dd-chart svg { max-height: 280px; }
+  .dd-rank:not(.is-expanded) li:nth-child(n+6) { display: none; }
+  .dd-rank-more:not([hidden]) { display: inline-flex; }
 }
 
 /* ================================================================
