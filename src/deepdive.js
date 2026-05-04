@@ -14,30 +14,33 @@ const CONCURRENCY = 4;          // parallel month fetches
 const PER_MONTH = 50;           // contributions sampled per month
 const MAX_HEADLINES = 1500;     // hard cap for the headline list
 const PARTY_COLORS = {          // canonical UK party tones
-  'Lab':           '#d50000',
-  'Labour':        '#d50000',
-  'Lab/Co-op':     '#990d44',
-  'Con':           '#0063ba',
-  'Conservative':  '#0063ba',
-  'LD':            '#faa61a',
-  'Lib Dem':       '#faa61a',
-  'SNP':           '#fdf38e',
-  'Reform':        '#12b6cf',
-  'Reform UK':     '#12b6cf',
-  'Green':         '#6ab023',
-  'DUP':           '#d46a4c',
-  'PC':            '#005a3c',   // Plaid Cymru
-  'Plaid Cymru':   '#005a3c',
-  'SF':            '#326760',
-  'Sinn Féin':     '#326760',
-  'SDLP':          '#99cc66',
-  'Alliance':      '#f6cb2f',
-  'UUP':           '#48a5b8',
-  'Ind':           '#9a9180',
-  'Independent':   '#9a9180',
-  'Crossbench':    '#b78c5e',
-  'Bishops':       '#574779',
-  'Speaker':       '#444',
+  'Lab':              '#d50000',
+  'Labour':           '#d50000',
+  'Lab/Co-op':        '#a8285e',   // rose-magenta — clearly distinct from Lab red
+  'Con':              '#0063ba',
+  'Conservative':     '#0063ba',
+  'LD':               '#faa61a',
+  'Lib Dem':          '#faa61a',
+  'SNP':              '#e6b800',   // saturated gold — readable on cream paper
+  'Reform':           '#12b6cf',
+  'Reform UK':        '#12b6cf',
+  'Green':            '#6ab023',
+  'DUP':              '#d46a4c',
+  'PC':               '#005a3c',   // Plaid Cymru
+  'Plaid Cymru':      '#005a3c',
+  'SF':               '#326760',
+  'Sinn Féin':        '#326760',
+  'SDLP':             '#99cc66',
+  'Alliance':         '#f6cb2f',
+  'UUP':              '#48a5b8',
+  'Ind':              '#7e6f5b',   // dark warm grey-brown
+  'Independent':      '#7e6f5b',
+  'Crossbench':       '#b78c5e',   // tan
+  'Non-affiliated':   '#544c42',   // cool dark grey
+  'Non-Afl':          '#544c42',
+  'Bishops':          '#574779',
+  'Speaker':          '#444',
+  'Unknown':          '#c9bfac',   // washed-out — semantically right for "not yet known"
 };
 const PARTY_FALLBACK = '#a89b80';
 
