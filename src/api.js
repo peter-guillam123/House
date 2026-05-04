@@ -182,6 +182,20 @@ export async function searchWrittenStatements(opts) {
 
 // ---------- Members ----------
 
+export async function memberById(id) {
+  if (!id && id !== 0) return null;
+  const url = `${MEMBERS}/api/Members/${id}`;
+  const data = await getJson(url);
+  const v = data.value || data;
+  if (!v || v.id == null) return null;
+  return {
+    id: v.id,
+    name: v.nameDisplayAs || '',
+    party: v.latestParty?.name || '',
+    house: v.latestHouseMembership?.house === 1 ? 'Commons' : 'Lords',
+  };
+}
+
 export async function membersByName(name) {
   if (!name || name.length < 2) return [];
   const url = `${MEMBERS}/api/Members/Search?Name=${encodeURIComponent(name)}&IsCurrentMember=true&take=10`;

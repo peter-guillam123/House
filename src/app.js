@@ -1,7 +1,8 @@
 import {
   searchSpoken, searchWrittenQuestions, searchWrittenStatements, searchCommitteeDebates,
-} from './api.js?v=3';
-import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=3';
+  memberById,
+} from './api.js?v=4';
+import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=4';
 import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS } from './format.js?v=3';
 
 // ---------- state ----------
@@ -112,23 +113,127 @@ $clearMember.addEventListener('click', () => {
   $memberInput.focus();
 });
 
-// ---------- party list ----------
+// ---------- shareable URLs ----------
 
-(async () => {
-  try {
-    const parties = await getPartyList();
-    for (const { id, name } of parties) {
-      const opt = document.createElement('option');
-      opt.value = String(id); opt.textContent = name;
-      $party.appendChild(opt);
+const ALL_SOURCES = ['spoken', 'wq', 'ws', 'committee'];
+
+function buildUrlFromState() {
+  const p = new URLSearchParams();
+  if (state.term) p.set('q', state.term);
+  if (state.preset && state.preset !== 'year') p.set('range', state.preset);
+  if (state.preset === 'custom') {
+    const from = state.customFrom || $fromDate.value;
+    const to = state.customTo || $toDate.value;
+    if (from) p.set('from', from);
+    if (to) p.set('to', to);
+  }
+  // omit sources param if all four are on (the default)
+  if (state.sources.size !== ALL_SOURCES.length || ALL_SOURCES.some(s => !state.sources.has(s))) {
+    p.set('sources', [...state.sources].join(','));
+  }
+  if (state.house && state.house !== 'Both') p.set('house', state.house);
+  if (state.party) p.set('party', String(state.party.id));
+  if (state.member) p.set('member', String(state.member.id));
+  return p.toString();
+}
+
+function pushUrlState() {
+  const qs = buildUrlFromState();
+  const url = qs ? `${location.pathname}?${qs}` : location.pathname;
+  // Don't pollute history with duplicates
+  if (url === location.pathname + location.search) return;
+  history.pushState({ houseSearch: true }, '', url);
+}
+
+// Apply ?q= ?range= … to state + DOM. Returns true if there's a term to search.
+async function applyParamsFromUrl() {
+  const p = new URLSearchParams(location.search);
+
+  // term
+  const q = p.get('q') || '';
+  state.term = q;
+  $q.value = q;
+
+  // date range
+  const range = p.get('range');
+  const validRanges = ['month', 'year', 'five', 'custom'];
+  state.preset = validRanges.includes(range) ? range : 'year';
+  for (const b of $datePresets.querySelectorAll('button')) {
+    b.setAttribute('aria-checked', b.dataset.preset === state.preset ? 'true' : 'false');
+  }
+  $customDates.hidden = state.preset !== 'custom';
+  state.customFrom = ''; state.customTo = '';
+  $fromDate.value = ''; $toDate.value = '';
+  if (state.preset === 'custom') {
+    const from = p.get('from'); if (from) { state.customFrom = from; $fromDate.value = from; }
+    const to = p.get('to'); if (to) { state.customTo = to; $toDate.value = to; }
+  }
+
+  // sources
+  const sources = p.get('sources');
+  state.sources = sources
+    ? new Set(sources.split(',').filter(s => ALL_SOURCES.includes(s)))
+    : new Set(ALL_SOURCES);
+  for (const b of $sources.querySelectorAll('button')) {
+    b.setAttribute('aria-pressed', state.sources.has(b.dataset.source) ? 'true' : 'false');
+  }
+
+  // house
+  const house = p.get('house');
+  state.house = (house === 'Commons' || house === 'Lords') ? house : 'Both';
+  for (const b of $house.querySelectorAll('button')) {
+    b.setAttribute('aria-checked', b.dataset.house === state.house ? 'true' : 'false');
+  }
+
+  // party (the dropdown is populated async; we wait for the option to exist)
+  const partyId = p.get('party');
+  state.party = null;
+  $party.value = 'Any';
+  if (partyId) {
+    const opt = Array.from($party.options).find(o => o.value === partyId);
+    if (opt) {
+      $party.value = partyId;
+      state.party = { id: Number(partyId), name: opt.textContent };
     }
-  } catch (e) { console.warn('party list failed', e); }
-})();
+  }
+
+  // member — fetch by ID so we can populate the chip
+  state.member = null;
+  $selectedMember.hidden = true;
+  $memberInput.hidden = false;
+  $memberInput.value = '';
+  const memberIdParam = p.get('member');
+  if (memberIdParam) {
+    try {
+      const m = await memberById(Number(memberIdParam));
+      if (m) selectMember(m);
+    } catch (e) {
+      console.warn('member restore failed', e);
+    }
+  }
+
+  return !!q;
+}
+
+window.addEventListener('popstate', () => {
+  applyParamsFromUrl().then((hasQuery) => {
+    if (hasQuery) {
+      freshSearch(false);
+    } else {
+      // empty URL — clear results
+      state.items = [];
+      state.offsets = { spoken: 0, wq: 0, ws: 0, committee: 0 };
+      state.totals  = { spoken: 0, wq: 0, ws: 0, committee: 0 };
+      $results.innerHTML = '';
+      setStatus('');
+      $more.hidden = true;
+    }
+  });
+});
 
 // ---------- search ----------
 
-$form.addEventListener('submit', (e) => {
-  e.preventDefault();
+function freshSearch(pushUrl) {
   state.term = $q.value.trim();
   if (!state.term) {
     setStatus('Enter a search term to start.');
@@ -140,10 +245,34 @@ $form.addEventListener('submit', (e) => {
   state.offsets = { spoken: 0, wq: 0, ws: 0, committee: 0 };
   state.totals = { spoken: 0, wq: 0, ws: 0, committee: 0 };
   $results.innerHTML = '';
+  if (pushUrl) pushUrlState();
   runSearch(true);
+}
+
+$form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  freshSearch(true);
 });
 
 $more.addEventListener('click', () => runSearch(false));
+
+// ---------- init: load parties, then apply URL state ----------
+
+(async () => {
+  try {
+    const parties = await getPartyList();
+    for (const { id, name } of parties) {
+      const opt = document.createElement('option');
+      opt.value = String(id); opt.textContent = name;
+      $party.appendChild(opt);
+    }
+  } catch (e) { console.warn('party list failed', e); }
+
+  try {
+    const hasQuery = await applyParamsFromUrl();
+    if (hasQuery) freshSearch(false);
+  } catch (e) { console.warn('URL state restore failed', e); }
+})();
 
 function dateRange() {
   if (state.preset === 'custom') return { startDate: state.customFrom || $fromDate.value, endDate: state.customTo || $toDate.value };
