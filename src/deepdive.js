@@ -298,7 +298,7 @@ function renderTopMembers() {
     <li>
       <span class="dd-rank-count" style="--c:${partyColor(m.party)}">${m.count.toLocaleString('en-GB')}</span>
       <span class="dd-rank-name">${escapeHtml(m.name || '—')}</span>
-      ${m.party ? `<span class="dd-rank-meta">${escapeHtml(m.party)}</span>` : ''}
+      ${m.party ? `<span class="dd-party-tag" style="--c:${partyColor(m.party)}">${escapeHtml(m.party)}</span>` : ''}
     </li>
   `).join('');
   syncRankToggle($topMembersMore, top.length);
@@ -336,7 +336,7 @@ function renderHeadlines() {
   const visible = sorted.slice(0, 250); // render cap for the list itself
   const more = sorted.length - visible.length;
   $headlines.innerHTML = visible.map((h) => {
-    const partyBit = h.party ? ` <span class="dd-hl-party" style="--c:${partyColor(h.party)}">${escapeHtml(h.party)}</span>` : '';
+    const partyBit = h.party ? ` <span class="dd-party-tag" style="--c:${partyColor(h.party)}">${escapeHtml(h.party)}</span>` : '';
     const memberBit = h.memberName ? `<span class="dd-hl-member">${escapeHtml(h.memberName)}</span>${partyBit}` : '';
     return `<li class="dd-hl">
       <p class="dd-hl-meta">
