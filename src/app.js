@@ -248,6 +248,16 @@ async function runSearch(isFresh) {
   } else {
     setStatus(`Showing ${state.items.length} of ${totalAvailable} results.`);
   }
+
+  // After a fresh search, slide down to the results so the user sees them
+  // (the hero + filter shell can push results below the fold on desktop).
+  // Skip on Load more — that would yank the page back up.
+  if (isFresh && state.items.length > 0) {
+    requestAnimationFrame(() => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      $status.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  }
 }
 
 // ---------- render ----------

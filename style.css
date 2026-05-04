@@ -593,6 +593,8 @@ main {
   min-height: 1.4em;
   line-height: 1.5;
   letter-spacing: 0.005em;
+  /* sit just below the sticky topbar when scrolled into view */
+  scroll-margin-top: 64px;
 }
 .status.error {
   color: var(--accent);
