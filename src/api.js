@@ -1,6 +1,8 @@
 // Cloudflare Worker that proxies the four parliament APIs and adds CORS.
 // Source: worker/src/index.js. For local dev, run `wrangler dev` in worker/
 // and switch this to 'http://localhost:8787'.
+import { unquoteTerm } from './format.js?v=4';
+
 export const PROXY = 'https://house-proxy.peter-guillam.workers.dev';
 
 const HANSARD = 'https://hansard-api.parliament.uk';
@@ -137,7 +139,11 @@ function hansardContribution(source, searchTerm, r) {
   let link = 'https://hansard.parliament.uk/';
   if (debateExt) {
     link = `https://hansard.parliament.uk/${capitalise(house)}/${date}/debates/${debateExt}/${slugify(r.DebateSection || '')}`;
-    if (searchTerm) link += `?highlight=${encodeURIComponent(searchTerm)}`;
+    // Hansard's ?highlight= splits on whitespace and doesn't understand
+    // surrounding double quotes — passing `"the Guardian"` ends up
+    // highlighting just "the". Strip the wrapping quotes so both words
+    // get highlighted on the destination page.
+    if (searchTerm) link += `?highlight=${encodeURIComponent(unquoteTerm(searchTerm))}`;
     if (contribExt) link += `#contribution-${contribExt}`;
   }
   const { display, party } = parseAttribution(r.AttributedTo || r.MemberName || '');

@@ -1,9 +1,9 @@
 import {
   searchSpoken, searchWrittenQuestions, searchWrittenStatements, searchCommitteeDebates,
   memberById,
-} from './api.js?v=6';
+} from './api.js?v=7';
 import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=6';
-import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS } from './format.js?v=3';
+import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS } from './format.js?v=4';
 
 // ---------- state ----------
 

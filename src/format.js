@@ -21,7 +21,12 @@ export function snippetHtml(text, term, maxLen = 320) {
   if (!text) return '';
   const safe = String(text);
   if (!term) return escapeHtml(safe.length > maxLen ? safe.slice(0, maxLen) + '…' : safe);
-  const re = new RegExp(escapeRegex(term), 'i');
+  // The user types `"the Guardian"` to phrase-search; the API needs those
+  // quotes for phrase matching, but the text we're highlighting against
+  // has no literal quote characters around the phrase. Unwrap before we
+  // build the match regex.
+  const needle = unquoteTerm(term);
+  const re = new RegExp(escapeRegex(needle), 'i');
   const match = safe.match(re);
   let start = 0, end = Math.min(safe.length, maxLen);
   if (match && match.index !== undefined) {
@@ -33,12 +38,20 @@ export function snippetHtml(text, term, maxLen = 320) {
   let slice = safe.slice(start, end);
   if (start > 0) slice = '…' + slice;
   if (end < safe.length) slice = slice + '…';
-  return highlight(escapeHtml(slice), term);
+  return highlight(escapeHtml(slice), needle);
 }
 
 function highlight(safeHtml, term) {
   const re = new RegExp(`(${escapeRegex(escapeHtml(term))})`, 'ig');
   return safeHtml.replace(re, '<mark>$1</mark>');
+}
+
+// Strip a single pair of wrapping double quotes from a phrase-search term.
+// Used by both the snippet highlighter and the Hansard click-through link.
+export function unquoteTerm(term) {
+  const t = String(term || '').trim();
+  if (t.length >= 2 && t.startsWith('"') && t.endsWith('"')) return t.slice(1, -1);
+  return t;
 }
 
 function escapeRegex(s) {
