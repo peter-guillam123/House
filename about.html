@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — House</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .prose { max-width: 720px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+    .prose h2 { font-family: 'Guardian Headline', Georgia, serif; font-size: 1.4rem; margin-top: 2rem; }
+    .prose p { font-size: 1rem; line-height: 1.55; }
+    .changelog { border-top: 1px solid var(--hairline); padding-top: 1rem; margin-top: 2rem; }
+    .entry { margin-bottom: 1.6rem; }
+    .entry h3 { margin: 0 0 0.2rem; font-family: 'Guardian Headline', Georgia, serif; font-size: 1.1rem; }
+    .entry .when { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.4rem; }
+    .entry.milestone h3::before { content: '★ '; color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <h1><a href="/">House</a></h1>
+    <p class="tagline">Search what's been said in parliament.</p>
+  </header>
+
+  <main class="prose">
+    <h2>What this is</h2>
+    <p>
+      A search tool for finding mentions of any term across the proceedings of the
+      House of Commons and House of Lords. It pulls from four official parliament
+      APIs at once — spoken contributions, written questions and answers,
+      written ministerial statements, and committee debates published in Hansard —
+      and shows the lot in one ranked list. Filterable by date, party,
+      individual member, House and source.
+    </p>
+    <p>
+      Built for journalists who need to triage parliamentary mentions quickly:
+      a defence correspondent looking for everything said about RAF Lakenheath
+      in the last year, a health editor scanning for mentions of a specific
+      hospital trust, a political reporter checking what one MP has been pushing on.
+    </p>
+
+    <h2>How it's made</h2>
+    <p>
+      Vanilla JavaScript and a tiny Cloudflare Worker. The frontend on GitHub
+      Pages is a single HTML page that pulls from four parliament APIs via a
+      40-line Worker proxy — needed because two of them don't return CORS
+      headers and the other two had cache quirks worth dodging. Built with
+      Claude Code over a couple of conversations.
+    </p>
+    <p>
+      Source is at
+      <a href="https://github.com/peter-guillam123/House">github.com/peter-guillam123/House</a>.
+      All the data is from parliament under the
+      <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
+    </p>
+
+    <h2>What it doesn't do</h2>
+    <p>
+      The biggest gap, worth flagging up front: <strong>select committee oral
+      evidence transcripts aren't full-text searchable via parliament's API.</strong>
+      You can find sessions by witness name, date or committee, but not by
+      anything that was actually said in the room. To get around this we lean
+      on Hansard's committee-debates feed, which covers Public Bill Committees
+      and Westminster Hall — useful but not a complete substitute. If you need
+      to search the words inside a select committee transcript, you still need
+      to download the PDF and hit Ctrl-F.
+    </p>
+    <p>
+      Multi-word terms are matched as a phrase by Hansard, so "RAF Lakenheath"
+      finds that exact phrase rather than RAF and Lakenheath separately. There's
+      no Boolean syntax (AND/OR/NOT). For more advanced queries, fall back to
+      <a href="https://hansard.parliament.uk/">hansard.parliament.uk</a> directly.
+    </p>
+
+    <div class="changelog">
+      <h2>Changelog</h2>
+
+      <div class="entry milestone">
+        <h3>First version live</h3>
+        <p class="when">May 2026</p>
+        <p>
+          Four sources, five filters, results sorted newest first. Built in a
+          single planning-and-execution pass with Claude Code. The hard part
+          turned out not to be the APIs — they're genuinely good — but the
+          fact that two of them don't return CORS headers, which would have
+          killed a pure static-site build. A 40-line Cloudflare Worker fixes
+          that for less than the cost of a coffee per year.
+        </p>
+        <p>
+          Things deliberately left out of v1: alerting (email me when X gets
+          mentioned), saved searches, CSV export. Probably the right next
+          things to add if it gets used.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="/">Back to search</a></p>
+  </footer>
+</body>
+</html>
