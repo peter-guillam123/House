@@ -2,18 +2,34 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>About — House</title>
-  <meta name="theme-color" content="#f3eadb">
+  <meta name="theme-color" content="#f6f3ec">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,ital,wght@6..72,0,300..800;6..72,1,300..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <header class="topbar">
-    <h1><a href="./">House</a></h1>
-    <p class="tagline">Search what's been said in parliament.</p>
+    <div class="topbar-inner">
+      <a href="./" class="wordmark" aria-label="House — home">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square">
+            <path d="M3 5h18"/><path d="M5 5v15"/><path d="M19 5v15"/>
+            <path d="M9 8v12"/><path d="M15 8v12"/>
+            <path d="M5 11h14"/><path d="M5 16h14"/><path d="M3 20h18"/>
+          </svg>
+        </span>
+        <span class="wordmark-text">House</span>
+      </a>
+      <nav class="topnav">
+        <a href="./">Search</a>
+      </nav>
+    </div>
   </header>
 
   <main class="prose">
@@ -34,11 +50,11 @@
       pushing on.
     </p>
 
-    <h2>How it's made</h2>
+    <h2>How it&rsquo;s made</h2>
     <p>
       Vanilla JavaScript and a tiny Cloudflare Worker. The frontend on GitHub
       Pages is a single HTML page that pulls from four parliament APIs via a
-      40-line Worker proxy — needed because two of them don't return CORS
+      40-line Worker proxy — needed because two of them don&rsquo;t return CORS
       headers and the other two had cache quirks worth dodging. Built with
       Claude Code over a couple of conversations.
     </p>
@@ -47,20 +63,20 @@
       All the data is from parliament under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
     </p>
 
-    <h2>What it doesn't do</h2>
+    <h2>What it doesn&rsquo;t do</h2>
     <p>
       The biggest gap, worth flagging up front: <strong>select committee oral
-      evidence transcripts aren't full-text searchable via parliament's API.</strong>
+      evidence transcripts aren&rsquo;t full-text searchable via parliament&rsquo;s API.</strong>
       You can find sessions by witness name, date or committee, but not by
       anything that was actually said in the room. To get around this we lean
-      on Hansard's committee-debates feed, which covers Public Bill Committees
+      on Hansard&rsquo;s committee-debates feed, which covers Public Bill Committees
       and Westminster Hall — useful but not a complete substitute. If you need
       to search the words inside a select committee transcript, you still need
       to download the PDF and hit Ctrl-F.
     </p>
     <p>
-      Multi-word terms are matched as a phrase, so "RAF Lakenheath" finds that
-      exact phrase rather than RAF and Lakenheath separately. There's no
+      Multi-word terms are matched as a phrase, so &ldquo;RAF Lakenheath&rdquo; finds that
+      exact phrase rather than RAF and Lakenheath separately. There&rsquo;s no
       Boolean syntax (AND/OR/NOT). For more advanced queries, fall back to
       <a href="https://hansard.parliament.uk/">hansard.parliament.uk</a> directly.
     </p>
@@ -74,8 +90,8 @@
         <p>
           Four sources, five filters, results sorted newest first. Built in a
           single planning-and-execution pass with Claude Code. The hard part
-          turned out not to be the APIs — they're genuinely good — but the
-          fact that two of them don't return CORS headers, which would have
+          turned out not to be the APIs — they&rsquo;re genuinely good — but the
+          fact that two of them don&rsquo;t return CORS headers, which would have
           killed a pure static-site build. A 40-line Cloudflare Worker fixes
           that for less than the cost of a coffee per year.
         </p>
@@ -88,20 +104,23 @@
 
       <div class="entry">
         <p class="when">May 2026</p>
-        <h3>Design pass</h3>
+        <h3>Premium pass</h3>
         <p>
-          Rebuilt the surface in a more editorial register — Newsreader for
-          display, IBM Plex Sans for body, IBM Plex Mono for stamps and meta.
-          Paper-warm palette with despatch-box red and binding-cloth green
-          accents. Result cards as manuscript entries with hairline rules.
-          Mobile is now a first-class citizen rather than an afterthought.
+          Reset the surface around an editorial-archive direction: ivory paper,
+          near-black ink, a single restrained oxblood accent. Source Serif 4
+          for display, Inter for body, JetBrains Mono for stamps. Sticky search
+          on mobile, collapsible filter shell, generous result rhythm. New
+          favicon and OpenGraph card. Functionality unchanged.
         </p>
       </div>
     </section>
   </main>
 
   <footer>
-    <p><a class="back" href="./">← Back to search</a></p>
+    <div class="footer-inner">
+      <p class="colophon"><a class="back" href="./">← Back to search</a></p>
+      <p class="colophon-meta"><a href="https://github.com/peter-guillam123/House">Source</a></p>
+    </div>
   </footer>
 </body>
 </html>
