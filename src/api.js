@@ -1,6 +1,7 @@
-// Configure this once you've deployed the worker. For local dev with
-// `wrangler dev`, leave PROXY as 'http://localhost:8787'.
-export const PROXY = 'http://localhost:8787';
+// Cloudflare Worker that proxies the four parliament APIs and adds CORS.
+// Source: worker/src/index.js. For local dev, run `wrangler dev` in worker/
+// and switch this to 'http://localhost:8787'.
+export const PROXY = 'https://house-proxy.peter-guillam.workers.dev';
 
 const HANSARD = 'https://hansard-api.parliament.uk';
 const QS = 'https://questions-statements-api.parliament.uk';
