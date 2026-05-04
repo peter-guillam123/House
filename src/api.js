@@ -41,7 +41,7 @@ export async function searchSpoken(opts) {
   const data = await getJson(url);
   return {
     total: data.TotalResultCount ?? 0,
-    items: (data.Results ?? []).map(hansardContribution.bind(null, 'Spoken')),
+    items: (data.Results ?? []).map((r) => hansardContribution('Spoken', opts.searchTerm, r)),
   };
 }
 
@@ -52,7 +52,7 @@ export async function searchWrittenHansard(opts) {
   const data = await getJson(url);
   return {
     total: data.TotalResultCount ?? 0,
-    items: (data.Results ?? []).map(hansardContribution.bind(null, 'Written')),
+    items: (data.Results ?? []).map((r) => hansardContribution('Written', opts.searchTerm, r)),
   };
 }
 
@@ -63,18 +63,25 @@ export async function searchCommitteeDebates(opts) {
   const data = await getJson(url);
   return {
     total: data.TotalResultCount ?? 0,
-    items: (data.Results ?? []).map(hansardContribution.bind(null, 'Committee')),
+    items: (data.Results ?? []).map((r) => hansardContribution('Committee', opts.searchTerm, r)),
   };
 }
 
-function hansardContribution(source, r) {
+function hansardContribution(source, searchTerm, r) {
   const date = r.SittingDate ? r.SittingDate.slice(0, 10) : '';
   const debateExt = r.DebateSectionExtId || '';
   const contribExt = r.ContributionExtId || '';
   const house = (r.House || '').toLowerCase();
-  const link = debateExt
-    ? `https://hansard.parliament.uk/${capitalise(house)}/${date}/debates/${debateExt}/${slugify(r.DebateSection || '')}#contribution-${contribExt}`
-    : 'https://hansard.parliament.uk/';
+  // ContributionTextFull is the whole speech and always contains the matched
+  // term; ContributionText is a fixed first-200ish-chars excerpt that often
+  // doesn't. Window around the match in the snippet renderer instead.
+  const fullText = stripHtml(r.ContributionTextFull || r.ContributionText || '');
+  let link = 'https://hansard.parliament.uk/';
+  if (debateExt) {
+    link = `https://hansard.parliament.uk/${capitalise(house)}/${date}/debates/${debateExt}/${slugify(r.DebateSection || '')}`;
+    if (searchTerm) link += `?highlight=${encodeURIComponent(searchTerm)}`;
+    if (contribExt) link += `#contribution-${contribExt}`;
+  }
   return {
     source,
     id: contribExt || `${date}-${r.ItemId}`,
@@ -84,8 +91,8 @@ function hansardContribution(source, r) {
     memberName: r.AttributedTo || r.MemberName || '',
     party: '',
     title: r.DebateSection || r.Section || '',
-    snippet: stripHtml(r.ContributionText || ''),
-    fullText: stripHtml(r.ContributionTextFull || r.ContributionText || ''),
+    snippet: fullText,
+    fullText,
     link,
   };
 }
