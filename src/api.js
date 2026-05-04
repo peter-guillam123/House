@@ -185,7 +185,14 @@ export async function searchWrittenQuestions(opts) {
   return {
     total: data.totalResults ?? 0,
     items: (data.results ?? []).map(({ value: v }) => {
+      // Display the answered date (when the answer went public), but the
+      // canonical URL on questions-statements.parliament.uk is keyed by the
+      // tabled date and a *lowercase* UIN. UINs get reused across sessions
+      // (e.g. HL15513 in 2019 and again in 2026 are different questions),
+      // so the date in the URL is load-bearing.
       const date = (v.dateAnswered || v.dateTabled || '').slice(0, 10);
+      const tabledDate = (v.dateTabled || v.dateAnswered || '').slice(0, 10);
+      const uin = (v.uin || '').toLowerCase();
       const m = v.askingMember || {};
       const q = v.questionText || '';
       const a = v.answerText || '[unanswered]';
@@ -200,7 +207,7 @@ export async function searchWrittenQuestions(opts) {
         title: v.heading || v.answeringBodyName || '',
         snippet: `Q: ${q}\nA: ${a}`,
         fullText: `Q: ${q}\nA: ${a}`,
-        link: `https://questions-statements.parliament.uk/written-questions/detail/${date}/${v.uin}`,
+        link: `https://questions-statements.parliament.uk/written-questions/detail/${tabledDate}/${uin}`,
       };
     }),
   };
@@ -223,7 +230,10 @@ export async function searchWrittenStatements(opts) {
   return {
     total: data.totalResults ?? 0,
     items: (data.results ?? []).map(({ value: v }) => {
+      // Same URL convention as written questions: lowercase UIN, dateMade
+      // is the canonical key.
       const date = (v.dateMade || '').slice(0, 10);
+      const uin = (v.uin || '').toLowerCase();
       const m = v.member || {};
       return {
         source: 'Written Stmt',
@@ -236,7 +246,7 @@ export async function searchWrittenStatements(opts) {
         title: v.title || '',
         snippet: stripHtml(v.text || ''),
         fullText: stripHtml(v.text || ''),
-        link: `https://questions-statements.parliament.uk/written-statements/detail/${date}/${v.uin}`,
+        link: `https://questions-statements.parliament.uk/written-statements/detail/${date}/${uin}`,
       };
     }),
   };
