@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>House — search parliament for any term</title>
+  <meta name="description" content="Search Hansard, written questions, ministerial statements and committee debates for any term. Built for journalists.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1><a href="/">House</a></h1>
+    <p class="tagline">Search what's been said in parliament.</p>
+  </header>
+
+  <main>
+    <form id="search-form" class="search">
+      <label class="search-field">
+        <span class="visually-hidden">Search term</span>
+        <input id="q" type="search" name="q" placeholder="e.g. RAF Lakenheath" autocomplete="off" autofocus>
+      </label>
+      <button type="submit" class="primary">Search</button>
+    </form>
+
+    <section class="filters" aria-label="Filters">
+      <fieldset class="filter">
+        <legend>Date range</legend>
+        <div class="pills" role="radiogroup" id="date-presets">
+          <button type="button" role="radio" aria-checked="false" data-preset="month">Last month</button>
+          <button type="button" role="radio" aria-checked="true" data-preset="year">Last year</button>
+          <button type="button" role="radio" aria-checked="false" data-preset="five">Last 5 years</button>
+          <button type="button" role="radio" aria-checked="false" data-preset="custom">Custom</button>
+        </div>
+        <div class="custom-dates" id="custom-dates" hidden>
+          <label>From <input type="date" id="from-date"></label>
+          <label>To <input type="date" id="to-date"></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="filter">
+        <legend>Sources</legend>
+        <div class="pills" id="sources">
+          <button type="button" data-source="spoken" aria-pressed="true">Spoken</button>
+          <button type="button" data-source="wq" aria-pressed="true">Written Q&amp;A</button>
+          <button type="button" data-source="ws" aria-pressed="true">Statements</button>
+          <button type="button" data-source="committee" aria-pressed="true">Committee</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="filter">
+        <legend>House</legend>
+        <div class="pills" role="radiogroup" id="house">
+          <button type="button" role="radio" aria-checked="true" data-house="Both">Both</button>
+          <button type="button" role="radio" aria-checked="false" data-house="Commons">Commons</button>
+          <button type="button" role="radio" aria-checked="false" data-house="Lords">Lords</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="filter">
+        <legend>Party</legend>
+        <select id="party">
+          <option value="Any">Any party</option>
+        </select>
+      </fieldset>
+
+      <fieldset class="filter">
+        <legend>Member</legend>
+        <div class="member-box">
+          <input id="member-input" type="search" placeholder="Type a name…" autocomplete="off">
+          <ul id="member-suggestions" class="suggestions" hidden></ul>
+          <div id="selected-member" class="selected-member" hidden>
+            <span id="selected-member-label"></span>
+            <button type="button" id="clear-member" aria-label="Clear member">×</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+
+    <div id="status" class="status" aria-live="polite"></div>
+    <ol id="results" class="results"></ol>
+    <div class="more">
+      <button type="button" id="load-more" hidden>Load more</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Data from the
+      <a href="https://hansard.parliament.uk/">Hansard</a>,
+      <a href="https://questions-statements.parliament.uk/">Questions &amp; Statements</a>
+      and <a href="https://members-api.parliament.uk/">Members</a> APIs,
+      under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
+      <a href="about.html">About this tool</a>.
+    </p>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
