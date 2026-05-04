@@ -1270,6 +1270,29 @@ body[data-density="airy"] .result-title { font-size: clamp(1.3rem, 2.8vw, 1.7rem
   background: var(--c, currentColor);
   border: 1px solid rgba(20,17,13,0.12);
 }
+/* Per-party total — hidden by default, slides into view on chip hover.
+   Mobile: skipped, the chips are tight enough already. */
+.dd-legend-count {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: inherit;
+  opacity: 0.7;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 220ms cubic-bezier(0.2,.7,.2,1), margin-left 220ms;
+  margin-left: 0;
+}
+@media (min-width: 561px) and (hover: hover) {
+  .dd-legend-chip:hover .dd-legend-count,
+  .dd-legend-chip:focus-visible .dd-legend-count,
+  .dd-legend-chip.is-active .dd-legend-count {
+    max-width: 6rem;
+    margin-left: 0.4rem;
+  }
+}
 .dd-legend-loading {
   color: var(--ink-faint);
   font-style: italic;

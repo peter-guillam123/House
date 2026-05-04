@@ -338,7 +338,13 @@ function renderTimeline() {
 // Legend doubles as a party filter — chips are buttons.
 function renderLegend(sortedPartiesArg) {
   const allPartiesSeen = new Set();
-  for (const mp of state.monthlyByParty.values()) for (const p of mp.keys()) allPartiesSeen.add(p);
+  const totalsByParty = new Map();
+  for (const mp of state.monthlyByParty.values()) {
+    for (const [p, c] of mp) {
+      allPartiesSeen.add(p);
+      totalsByParty.set(p, (totalsByParty.get(p) || 0) + c);
+    }
+  }
   const sortedParties = sortedPartiesArg || sortPartiesForLegend([...allPartiesSeen]);
   if (!sortedParties.length) {
     $legend.innerHTML = '<span class="dd-legend-chip dd-legend-loading">Party split filling in as months load…</span>';
@@ -346,9 +352,11 @@ function renderLegend(sortedPartiesArg) {
   }
   $legend.innerHTML = sortedParties.map((p) => {
     const active = state.filters.parties.has(p);
+    const count = totalsByParty.get(p) || 0;
     return `<button type="button" class="dd-legend-chip${active ? ' is-active' : ''}" data-party="${escapeHtml(p)}" aria-pressed="${active}" style="--c:${partyColor(p)}">
       <span class="dd-legend-swatch"></span>
       <span class="dd-legend-name">${escapeHtml(p)}</span>
+      <span class="dd-legend-count" aria-hidden="true">${count.toLocaleString('en-GB')}</span>
     </button>`;
   }).join('');
 }
