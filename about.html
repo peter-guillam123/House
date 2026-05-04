@@ -4,39 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — House</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .prose { max-width: 720px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
-    .prose h2 { font-family: 'Guardian Headline', Georgia, serif; font-size: 1.4rem; margin-top: 2rem; }
-    .prose p { font-size: 1rem; line-height: 1.55; }
-    .changelog { border-top: 1px solid var(--hairline); padding-top: 1rem; margin-top: 2rem; }
-    .entry { margin-bottom: 1.6rem; }
-    .entry h3 { margin: 0 0 0.2rem; font-family: 'Guardian Headline', Georgia, serif; font-size: 1.1rem; }
-    .entry .when { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.4rem; }
-    .entry.milestone h3::before { content: '★ '; color: var(--accent); }
-  </style>
+  <meta name="theme-color" content="#f3eadb">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,ital,wght@6..72,0,300..800;6..72,1,300..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <header class="topbar">
-    <h1><a href="/">House</a></h1>
+    <h1><a href="./">House</a></h1>
     <p class="tagline">Search what's been said in parliament.</p>
   </header>
 
   <main class="prose">
     <h2>What this is</h2>
-    <p>
-      A search tool for finding mentions of any term across the proceedings of the
-      House of Commons and House of Lords. It pulls from four official parliament
-      APIs at once — spoken contributions, written questions and answers,
-      written ministerial statements, and committee debates published in Hansard —
-      and shows the lot in one ranked list. Filterable by date, party,
-      individual member, House and source.
+    <p class="lede">
+      A search tool for finding mentions of any term across the proceedings of
+      the House of Commons and House of Lords. It pulls from four official
+      parliament APIs at once — spoken contributions, written questions and
+      answers, written ministerial statements, and committee debates published
+      in Hansard — and shows the lot in one ranked list. Filterable by date,
+      party, individual member, House and source.
     </p>
     <p>
       Built for journalists who need to triage parliamentary mentions quickly:
       a defence correspondent looking for everything said about RAF Lakenheath
       in the last year, a health editor scanning for mentions of a specific
-      hospital trust, a political reporter checking what one MP has been pushing on.
+      hospital trust, a political reporter checking what one MP has been
+      pushing on.
     </p>
 
     <h2>How it's made</h2>
@@ -48,10 +43,8 @@
       Claude Code over a couple of conversations.
     </p>
     <p>
-      Source is at
-      <a href="https://github.com/peter-guillam123/House">github.com/peter-guillam123/House</a>.
-      All the data is from parliament under the
-      <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
+      Source is at <a href="https://github.com/peter-guillam123/House">github.com/peter-guillam123/House</a>.
+      All the data is from parliament under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
     </p>
 
     <h2>What it doesn't do</h2>
@@ -66,18 +59,18 @@
       to download the PDF and hit Ctrl-F.
     </p>
     <p>
-      Multi-word terms are matched as a phrase by Hansard, so "RAF Lakenheath"
-      finds that exact phrase rather than RAF and Lakenheath separately. There's
-      no Boolean syntax (AND/OR/NOT). For more advanced queries, fall back to
+      Multi-word terms are matched as a phrase, so "RAF Lakenheath" finds that
+      exact phrase rather than RAF and Lakenheath separately. There's no
+      Boolean syntax (AND/OR/NOT). For more advanced queries, fall back to
       <a href="https://hansard.parliament.uk/">hansard.parliament.uk</a> directly.
     </p>
 
-    <div class="changelog">
+    <section class="changelog">
       <h2>Changelog</h2>
 
       <div class="entry milestone">
-        <h3>First version live</h3>
         <p class="when">May 2026</p>
+        <h3>First version live</h3>
         <p>
           Four sources, five filters, results sorted newest first. Built in a
           single planning-and-execution pass with Claude Code. The hard part
@@ -92,11 +85,23 @@
           things to add if it gets used.
         </p>
       </div>
-    </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Design pass</h3>
+        <p>
+          Rebuilt the surface in a more editorial register — Newsreader for
+          display, IBM Plex Sans for body, IBM Plex Mono for stamps and meta.
+          Paper-warm palette with despatch-box red and binding-cloth green
+          accents. Result cards as manuscript entries with hairline rules.
+          Mobile is now a first-class citizen rather than an afterthought.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p><a href="/">Back to search</a></p>
+    <p><a class="back" href="./">← Back to search</a></p>
   </footer>
 </body>
 </html>
