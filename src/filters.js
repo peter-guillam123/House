@@ -1,4 +1,4 @@
-import { membersByName, membersByPartyId, listCurrentParties } from './api.js?v=4';
+import { membersByName, membersByPartyId, listCurrentParties } from './api.js?v=5';
 
 const PARTY_KEY = 'house:party-members:v2';
 const PARTIES_KEY = 'house:parties:v2';

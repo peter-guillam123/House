@@ -34,6 +34,29 @@ async function getJson(url) {
   return r.json();
 }
 
+// ---------- Hansard: timeline-stats (per-month counts) ----------
+
+// Returns monthly counts for a search across the date range. Single call
+// regardless of how big the result is — drives the Deep Dive bar chart.
+export async function timelineStats(opts) {
+  const p = new URLSearchParams();
+  p.set('queryParameters.searchTerm', opts.searchTerm || '');
+  if (opts.startDate) p.set('queryParameters.startDate', opts.startDate);
+  if (opts.endDate)   p.set('queryParameters.endDate',   opts.endDate);
+  if (opts.house && opts.house !== 'Both') p.set('queryParameters.house', opts.house);
+  p.set('queryParameters.timelineGroupingSize', opts.grouping || 'Month');
+  const contributionType = opts.contributionType || 'Spoken';
+  const url = `${HANSARD}/timeline-stats.json?contributionType=${encodeURIComponent(contributionType)}&${p.toString()}`;
+  const data = await getJson(url);
+  return {
+    total: data.TotalResultCount ?? 0,
+    buckets: (data.Results ?? []).map((r) => ({
+      month: (r.GroupingDate || '').slice(0, 7),
+      count: r.Count ?? 0,
+    })),
+  };
+}
+
 // ---------- Hansard: spoken contributions ----------
 
 export async function searchSpoken(opts) {
@@ -67,14 +90,49 @@ export async function searchCommitteeDebates(opts) {
   };
 }
 
+// Hansard's AttributedTo comes in two flavours:
+//   "Apsana Begum (Poplar and Limehouse) (Lab)"   — backbenchers / Lords
+//   "The Minister for Secondary Care (Karin Smyth)" — ministers (role-led)
+// We only want to extract a *party* from the trailing parens — never a name.
+// A whitelist is the only safe way to tell them apart.
+const KNOWN_PARTIES = new Set([
+  'Lab', 'Labour', 'Lab/Co-op', 'Co-op', 'Lab Co-op',
+  'Con', 'Conservative', 'Conservative Independent',
+  'LD', 'Lib Dem', 'Liberal Democrat',
+  'SNP', 'Reform', 'Reform UK',
+  'Green', 'Green Party',
+  'DUP', 'UUP', 'TUV',
+  'PC', 'Plaid Cymru',
+  'SF', 'Sinn Féin', 'SF (Sinn Féin)',
+  'SDLP', 'Alliance', 'APNI',
+  'Ind', 'Independent',
+  'CB', 'Crossbench',
+  'Bishops', 'Bishop', 'Lord Bishop',
+  'Speaker',
+  'Non-Afl', 'Non-affiliated',
+  'UKIP',
+]);
+
+function parseAttribution(attribution) {
+  if (!attribution) return { display: '', party: '' };
+  const matches = [...attribution.matchAll(/\(([^()]+)\)/g)];
+  if (!matches.length) return { display: attribution, party: '' };
+  const last = matches[matches.length - 1];
+  const inside = last[1].trim();
+  if (KNOWN_PARTIES.has(inside)) {
+    return {
+      display: attribution.slice(0, last.index).trim(),
+      party: inside,
+    };
+  }
+  return { display: attribution, party: '' };
+}
+
 function hansardContribution(source, searchTerm, r) {
   const date = r.SittingDate ? r.SittingDate.slice(0, 10) : '';
   const debateExt = r.DebateSectionExtId || '';
   const contribExt = r.ContributionExtId || '';
   const house = (r.House || '').toLowerCase();
-  // ContributionTextFull is the whole speech and always contains the matched
-  // term; ContributionText is a fixed first-200ish-chars excerpt that often
-  // doesn't. Window around the match in the snippet renderer instead.
   const fullText = stripHtml(r.ContributionTextFull || r.ContributionText || '');
   let link = 'https://hansard.parliament.uk/';
   if (debateExt) {
@@ -82,15 +140,19 @@ function hansardContribution(source, searchTerm, r) {
     if (searchTerm) link += `?highlight=${encodeURIComponent(searchTerm)}`;
     if (contribExt) link += `#contribution-${contribExt}`;
   }
+  const { display, party } = parseAttribution(r.AttributedTo || r.MemberName || '');
   return {
     source,
     id: contribExt || `${date}-${r.ItemId}`,
     date,
     house: r.House || '',
     memberId: r.MemberId || null,
-    memberName: r.AttributedTo || r.MemberName || '',
-    party: '',
+    memberName: display,                       // for inline display (with constituency / role)
+    shortName: r.MemberName || display,        // bare name (for leaderboards)
+    party,
     title: r.DebateSection || r.Section || '',
+    section: r.Section || '',
+    debateExtId: debateExt,
     snippet: fullText,
     fullText,
     link,
