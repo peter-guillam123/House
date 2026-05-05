@@ -6,7 +6,7 @@
 // individual contributions feeding the leaderboards and headline list.
 
 import { timelineStats, searchSpoken, memberById } from './api.js?v=7';
-import { formatDate, snippetHtml, escapeHtml, partyColor } from './format.js?v=5';
+import { formatDate, snippetHtml, escapeHtml, partyColor, unquoteTerm } from './format.js?v=5';
 import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
 
 // ---------- config -----------------------------------------------------
@@ -442,24 +442,77 @@ function renderTopDebates() {
 // scheme. If multi-word phrases turn out editorially shaped, single
 // words can be reintroduced with a stopword list later.
 
+// Boilerplate that shows up on every topic and tells you nothing about
+// this one. Tightened from real samples (Waiting list / Armed Forces).
+// The principle: anything already represented in another panel
+// (parties, procedural roles, venues, generic government-of-the-day) is
+// duplication, not signal.
 const STOP_PHRASES = new Set([
+  // Honorifics + forms of address
   'Hon Member', 'Hon Members', 'Hon Friend', 'Hon Friends',
   'Hon Lady', 'Hon Gentleman', 'Hon Ladies', 'Hon Gentlemen',
   'Right Hon', 'Right Honourable',
   'Honourable Lady', 'Honourable Gentleman', 'Honourable Friend', 'Honourable Member',
   'Noble Lord', 'Noble Lords', 'Noble Lady', 'Noble Friend', 'Noble Baroness', 'Noble Earl', 'Noble Friends',
   'My Lords', 'My Lord', 'My Right',
-  'Mr Speaker', 'Madam Speaker', 'Deputy Speaker', 'Mr Deputy', 'Madam Deputy',
+
+  // Speaker/chair roles
+  'Mr Speaker', 'Madam Speaker',
+  'Deputy Speaker', 'Mr Deputy Speaker', 'Madam Deputy Speaker',
+  'Mr Deputy', 'Madam Deputy',
+
+  // Cabinet / minister titles (boilerplate, not topic-specific)
   'Secretary of State', 'Department of', 'Member of Parliament',
-  'Prime Minister', 'Foreign Secretary', 'Home Secretary', 'Chancellor of',
+  'Prime Minister', 'Deputy Prime Minister',
+  'Foreign Secretary', 'Home Secretary', 'Health Secretary',
+  'Chancellor of', 'Chancellor of the Exchequer',
+
+  // Houses + procedural venues
   'House of Commons', 'House of Lords',
-  'United Kingdom',
+  'Westminster Hall',
+
+  // Procedural session/agenda labels
+  'Topical Questions', 'Oral Questions', 'Written Questions',
+  'Order Paper', 'Hansard Online',
+  'Budget Resolutions', 'Budget Resolution', 'Budget Statement',
+  'King Speech', 'Queen Speech',
+  'Business Statement',
+
+  // Procedural committees (kept Defence Committee / Health Committee etc
+  // so topic-specific committees still surface)
+  'Select Committee', 'Public Accounts Committee', 'Public Bill Committee',
+  'Backbench Business Committee', 'Liaison Committee',
+  'European Scrutiny Committee', 'Statutory Instruments Committee',
+  'Procedure Committee', 'Standards Committee', 'Privileges Committee',
+
+  // Geographical / national boilerplate
+  'United Kingdom', 'Great Britain',
+
+  // Parties — already represented in the chart's party stack, surfacing
+  // them here is wasted real estate. Plurals + variants included.
+  'Labour Party', 'Conservative Party', 'Conservative Party Conference',
+  'Liberal Democrats', 'Liberal Democrat',
+  'Green Party', 'Reform UK', 'Reform Party',
+  'Scottish National Party',
+  'Plaid Cymru',
+  'Sinn Féin', 'Sinn Fein',
+
+  // [Party] Government / [Region] Government / [Term] Government — almost
+  // always throat-clearing political framing rather than signal.
+  'Labour Government', 'Conservative Government', 'Tory Government',
+  'Coalition Government', 'SNP Government',
+  'UK Government', 'Scottish Government', 'Welsh Government',
+  'US Government', 'United States Government',
+  'Previous Government', 'Current Government', 'This Government', 'Last Government',
+
+  // Pronoun + verb constructions (sentence starts that slip through)
   'I am', 'I have', 'I will', 'I would', 'I was', 'I do',
   'There is', 'There are', 'There was', 'There were',
   'It is', 'It was', 'It will',
   'We are', 'We have', 'We will', 'We need', 'We must', 'We can',
   'They are', 'They have', 'They will',
 ]);
+
 
 const PHRASE_LEAD_DROP = /^(The|A|An|This|That|These|Those|My|Our|Their|His|Her|Its)\s+/i;
 const PHRASE_RE = /\b([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){1,3})\b/g;
@@ -479,7 +532,9 @@ function extractPhrases(text, termLower) {
 
 function computeCoTerms() {
   const items = hasFilters() ? state.headlines.filter(matchesFilters) : state.headlines;
-  const termLower = (state.term || '').toLowerCase();
+  // Strip wrapping quotes so a phrase search like "Armed Forces" still
+  // matches the bare-search-term filter inside extractPhrases.
+  const termLower = unquoteTerm(state.term || '').toLowerCase();
   const counts = new Map();
   for (const h of items) {
     const text = (h.fullText || h.snippet || '') + ' ' + (h.title || '');
