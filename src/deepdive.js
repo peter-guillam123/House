@@ -32,12 +32,13 @@ const state = {
   totalContributions: 0,       // sum of all monthly totals
   monthsTotal: 0,
   monthsLoaded: 0,
-  // Click-to-filter — the leaderboards and legend double as filter
-  // surfaces. AND-combined across the three axes.
+  // Click-to-filter — the leaderboards, legend, and co-terms panel all
+  // double as filter surfaces. AND-combined across the four axes.
   filters: {
     memberIds: new Set(),      // Set<number>
     debateIds: new Set(),      // Set<string>
     parties:   new Set(),      // Set<string>
+    terms:     new Set(),      // Set<string> — phrases from the co-terms panel
   },
 };
 
@@ -57,8 +58,10 @@ const $legend      = document.getElementById('dd-legend');
 const $caveat      = document.getElementById('dd-caveat');
 const $topMembers  = document.getElementById('dd-top-members');
 const $topDebates  = document.getElementById('dd-top-debates');
+const $coTerms     = document.getElementById('dd-co-terms');
 const $topMembersMore = document.getElementById('dd-top-members-more');
 const $topDebatesMore = document.getElementById('dd-top-debates-more');
+const $coTermsMore    = document.getElementById('dd-co-terms-more');
 const $headlines   = document.getElementById('dd-headlines');
 const $results     = document.getElementById('dd-results');
 const $filterBar   = document.getElementById('dd-filter-bar');
@@ -73,6 +76,7 @@ function wireRankToggle(btn, list) {
 }
 wireRankToggle($topMembersMore, $topMembers);
 wireRankToggle($topDebatesMore, $topDebates);
+wireRankToggle($coTermsMore, $coTerms);
 
 function resetRankToggle(btn, list) {
   list.classList.remove('is-expanded');
@@ -113,16 +117,20 @@ function lastDayOfMonth(ym) {
 
 function hasFilters() {
   const f = state.filters;
-  return f.memberIds.size + f.debateIds.size + f.parties.size > 0;
+  return f.memberIds.size + f.debateIds.size + f.parties.size + f.terms.size > 0;
 }
 
-// AND across the three axes; OR within an axis (e.g. two parties picked
+// AND across the four axes; OR within an axis (e.g. two parties picked
 // = "either party").
 function matchesFilters(h) {
   const f = state.filters;
   if (f.memberIds.size && !f.memberIds.has(h.memberId)) return false;
   if (f.debateIds.size && !f.debateIds.has(h.debateExtId)) return false;
   if (f.parties.size   && !f.parties.has(h.party || 'Unknown')) return false;
+  if (f.terms.size) {
+    const hay = ((h.fullText || h.snippet || '') + ' ' + (h.title || '')).toLowerCase();
+    for (const t of f.terms) if (!hay.includes(t.toLowerCase())) return false;
+  }
   return true;
 }
 
@@ -130,13 +138,15 @@ function resetFilters() {
   state.filters.memberIds.clear();
   state.filters.debateIds.clear();
   state.filters.parties.clear();
+  state.filters.terms.clear();
 }
 
 function toggleFilter(kind, value) {
   const set =
     kind === 'member' ? state.filters.memberIds :
     kind === 'debate' ? state.filters.debateIds :
-    kind === 'party'  ? state.filters.parties   : null;
+    kind === 'party'  ? state.filters.parties   :
+    kind === 'term'   ? state.filters.terms     : null;
   if (!set) return;
   // Member ids are numbers; keep as-is. Others stay strings.
   const v = kind === 'member' ? Number(value) : value;
@@ -147,6 +157,7 @@ function toggleFilter(kind, value) {
   renderTopMembers();
   renderTopDebates();
   renderLegend();
+  renderCoTerms();
 }
 
 function clearAllFilters() {
@@ -158,6 +169,7 @@ function clearAllFilters() {
   renderTopMembers();
   renderTopDebates();
   renderLegend();
+  renderCoTerms();
 }
 
 // Event delegation — wire once at module load
@@ -170,6 +182,11 @@ $topDebates.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-debate-id]');
   if (!btn) return;
   toggleFilter('debate', btn.dataset.debateId);
+});
+$coTerms.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-term]');
+  if (!btn) return;
+  toggleFilter('term', btn.dataset.term);
 });
 $legend.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-party]');
@@ -415,6 +432,92 @@ function renderTopDebates() {
   syncRankToggle($topDebatesMore, top.length);
 }
 
+// ---------- co-occurring terms ----------------------------------------
+//
+// First-pass approach: pull capitalised multi-word phrases out of each
+// contribution (proper-noun-ish), drop boilerplate parliamentary
+// titles, count once per contribution. Single words are ignored on the
+// first pass — the noise floor on common English ("government",
+// "minister", "member") drowns out signal without a heavier weighting
+// scheme. If multi-word phrases turn out editorially shaped, single
+// words can be reintroduced with a stopword list later.
+
+const STOP_PHRASES = new Set([
+  'Hon Member', 'Hon Members', 'Hon Friend', 'Hon Friends',
+  'Hon Lady', 'Hon Gentleman', 'Hon Ladies', 'Hon Gentlemen',
+  'Right Hon', 'Right Honourable',
+  'Honourable Lady', 'Honourable Gentleman', 'Honourable Friend', 'Honourable Member',
+  'Noble Lord', 'Noble Lords', 'Noble Lady', 'Noble Friend', 'Noble Baroness', 'Noble Earl', 'Noble Friends',
+  'My Lords', 'My Lord', 'My Right',
+  'Mr Speaker', 'Madam Speaker', 'Deputy Speaker', 'Mr Deputy', 'Madam Deputy',
+  'Secretary of State', 'Department of', 'Member of Parliament',
+  'Prime Minister', 'Foreign Secretary', 'Home Secretary', 'Chancellor of',
+  'House of Commons', 'House of Lords',
+  'United Kingdom',
+  'I am', 'I have', 'I will', 'I would', 'I was', 'I do',
+  'There is', 'There are', 'There was', 'There were',
+  'It is', 'It was', 'It will',
+  'We are', 'We have', 'We will', 'We need', 'We must', 'We can',
+  'They are', 'They have', 'They will',
+]);
+
+const PHRASE_LEAD_DROP = /^(The|A|An|This|That|These|Those|My|Our|Their|His|Her|Its)\s+/i;
+const PHRASE_RE = /\b([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){1,3})\b/g;
+
+function extractPhrases(text, termLower) {
+  if (!text) return [];
+  const found = new Set();
+  for (const m of text.matchAll(PHRASE_RE)) {
+    let p = m[1].replace(PHRASE_LEAD_DROP, '');
+    if (!p || p.split(/\s+/).length < 2) continue;
+    if (STOP_PHRASES.has(p)) continue;
+    if (termLower && p.toLowerCase() === termLower) continue;
+    found.add(p);
+  }
+  return [...found];
+}
+
+function computeCoTerms() {
+  const items = hasFilters() ? state.headlines.filter(matchesFilters) : state.headlines;
+  const termLower = (state.term || '').toLowerCase();
+  const counts = new Map();
+  for (const h of items) {
+    const text = (h.fullText || h.snippet || '') + ' ' + (h.title || '');
+    for (const p of extractPhrases(text, termLower)) {
+      counts.set(p, (counts.get(p) || 0) + 1);
+    }
+  }
+  return [...counts.entries()]
+    .filter(([, c]) => c >= 2)                 // singletons are noise
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 20)
+    .map(([term, count]) => ({ term, count }));
+}
+
+function renderCoTerms() {
+  if (!state.headlines.length) {
+    $coTerms.innerHTML = '<li class="dd-empty-li">Filling in as contributions load…</li>';
+    syncRankToggle($coTermsMore, 0);
+    return;
+  }
+  const top = computeCoTerms();
+  if (!top.length) {
+    $coTerms.innerHTML = '<li class="dd-empty-li">No phrases stood out in this set.</li>';
+    syncRankToggle($coTermsMore, 0);
+    return;
+  }
+  $coTerms.innerHTML = top.map((t) => {
+    const active = state.filters.terms.has(t.term);
+    return `<li>
+      <button type="button" class="dd-rank-row${active ? ' is-active' : ''}" data-term="${escapeHtml(t.term)}" aria-pressed="${active}">
+        <span class="dd-rank-count">${t.count.toLocaleString('en-GB')}</span>
+        <span class="dd-rank-name">${escapeHtml(t.term)}</span>
+      </button>
+    </li>`;
+  }).join('');
+  syncRankToggle($coTermsMore, top.length);
+}
+
 // ---------- rendering: headline list ----------------------------------
 
 function renderHeadlines() {
@@ -472,6 +575,9 @@ function renderFilterBar() {
   for (const p of state.filters.parties) {
     chips.push(filterChipHtml('party', p, p, partyColor(p)));
   }
+  for (const t of state.filters.terms) {
+    chips.push(filterChipHtml('term', t, t, null));
+  }
   const matchCount = state.headlines.filter(matchesFilters).length;
   const clearAll = chips.length >= 2
     ? `<button type="button" class="dd-filter-clear" data-clear-all>Clear all</button>`
@@ -506,6 +612,7 @@ function describeDeepDiveFilters() {
     parts.push(`Debate: ${d ? d.title : `id ${id}`}`);
   }
   for (const p of state.filters.parties) parts.push(`Party: ${p}`);
+  for (const t of state.filters.terms)   parts.push(`Mentions: "${t}"`);
   return parts.join(' · ');
 }
 
@@ -528,7 +635,7 @@ $exportBtn.addEventListener('click', () => {
 // ---------- rAF coalescing --------------------------------------------
 
 let renderRaf = 0;
-function scheduleRender(parts = ['chart', 'members', 'debates', 'headlines', 'filterBar']) {
+function scheduleRender(parts = ['chart', 'members', 'debates', 'headlines', 'filterBar', 'coTerms']) {
   if (renderRaf) cancelAnimationFrame(renderRaf);
   renderRaf = requestAnimationFrame(() => {
     renderRaf = 0;
@@ -537,6 +644,7 @@ function scheduleRender(parts = ['chart', 'members', 'debates', 'headlines', 'fi
     if (parts.includes('debates')) renderTopDebates();
     if (parts.includes('headlines')) renderHeadlines();
     if (parts.includes('filterBar')) renderFilterBar();
+    if (parts.includes('coTerms')) renderCoTerms();
   });
 }
 
@@ -647,8 +755,10 @@ async function runDive(pushUrl) {
   $headlines.innerHTML = '';
   $topMembers.innerHTML = '';
   $topDebates.innerHTML = '';
+  $coTerms.innerHTML = '';
   resetRankToggle($topMembersMore, $topMembers);
   resetRankToggle($topDebatesMore, $topDebates);
+  resetRankToggle($coTermsMore, $coTerms);
   renderFilterBar();
   $exportBtn.hidden = true;
   $status.textContent = 'Fetching the timeline…';
@@ -708,6 +818,7 @@ async function runDive(pushUrl) {
     renderTimeline();
     renderTopMembers();
     renderTopDebates();
+    renderCoTerms();
     renderHeadlines();
     renderFilterBar();
 
@@ -749,6 +860,7 @@ function buildUrlFromState() {
   if (state.filters.memberIds.size) p.set('fm', [...state.filters.memberIds].join(','));
   if (state.filters.debateIds.size) p.set('fd', [...state.filters.debateIds].join(','));
   if (state.filters.parties.size)   p.set('fp', [...state.filters.parties].join(','));
+  if (state.filters.terms.size)     p.set('ft', [...state.filters.terms].join('|'));
   return p.toString();
 }
 
@@ -777,9 +889,12 @@ function applyFiltersFromUrl() {
   const fm = p.get('fm');
   const fd = p.get('fd');
   const fp = p.get('fp');
+  const ft = p.get('ft');
   if (fm) for (const id of fm.split(',')) { const n = Number(id); if (Number.isFinite(n)) state.filters.memberIds.add(n); }
   if (fd) for (const id of fd.split(',')) if (id) state.filters.debateIds.add(id);
   if (fp) for (const p of fp.split(',')) if (p) state.filters.parties.add(p);
+  // Terms can contain commas in arbitrary phrasing; pipe is a safer separator.
+  if (ft) for (const t of ft.split('|')) if (t) state.filters.terms.add(t);
 }
 
 window.addEventListener('popstate', () => {

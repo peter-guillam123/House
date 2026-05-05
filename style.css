@@ -1397,9 +1397,12 @@ body[data-density="airy"] .result-title { font-size: clamp(1.3rem, 2.8vw, 1.7rem
 
 .dd-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
   margin: 1.8rem 0 1.5rem;
+}
+@media (max-width: 880px) {
+  .dd-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .dd-side {
   border: 1px solid var(--rule);
