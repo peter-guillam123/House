@@ -615,67 +615,74 @@ async function runDive(pushUrl) {
   resetRankToggle($topDebatesMore, $topDebates);
   renderFilterBar();
   $status.textContent = 'Fetching the timeline…';
+  $form.classList.add('is-loading');
 
-  // Step 1: timeline-stats — instant overall shape
-  let stats;
   try {
-    stats = await timelineStats({
-      searchTerm: state.term,
-      startDate: `${state.yearFrom}-01-01`,
-      endDate: `${state.yearTo}-12-31`,
-      grouping: 'Month',
-      contributionType: 'Spoken',
-    });
-  } catch (e) {
-    $status.textContent = `Couldn't load the timeline. ${e.message || ''}`;
-    return;
+    // Step 1: timeline-stats — instant overall shape
+    let stats;
+    try {
+      stats = await timelineStats({
+        searchTerm: state.term,
+        startDate: `${state.yearFrom}-01-01`,
+        endDate: `${state.yearTo}-12-31`,
+        grouping: 'Month',
+        contributionType: 'Spoken',
+      });
+    } catch (e) {
+      $status.textContent = `Couldn't load the timeline. ${e.message || ''}`;
+      return;
+    }
+    if (myToken !== state.cancelToken) return;
+    for (const b of stats.buckets) state.monthlyTotals.set(b.month, b.count);
+
+    if (stats.total === 0) {
+      $status.textContent = `No contributions matched "${state.term}" in ${state.yearFrom}–${state.yearTo}.`;
+      return;
+    }
+    renderTimeline();
+    renderStats();
+
+    // Step 2: stream months that actually have hits
+    const monthsWithHits = monthsInRange(state.yearFrom, state.yearTo)
+      .filter((m) => (state.monthlyTotals.get(m) || 0) > 0);
+    // Newest first so the most recent contributions appear first in the
+    // list as it grows.
+    monthsWithHits.reverse();
+    state.monthsTotal = monthsWithHits.length;
+
+    setProgress();
+    if (state.totalContributions > MAX_HEADLINES) $caveat.hidden = false;
+
+    const queue = [...monthsWithHits];
+    const workers = [];
+    for (let i = 0; i < CONCURRENCY; i++) {
+      workers.push((async () => {
+        while (queue.length && myToken === state.cancelToken) {
+          const m = queue.shift();
+          await processMonth(m, myToken);
+        }
+      })());
+    }
+    await Promise.all(workers);
+    if (myToken !== state.cancelToken) return;
+
+    setProgress();
+    // Final guaranteed render in case rAF skipped the last tick
+    renderTimeline();
+    renderTopMembers();
+    renderTopDebates();
+    renderHeadlines();
+    renderFilterBar();
+
+    // Top-12 leaderboard members whose party is still empty are typically
+    // ministers attributed by role. Look them up via the Members API in
+    // parallel and upgrade the leaderboard once we know.
+    fillMissingTopMemberParties(myToken);
+  } finally {
+    // Only clear if this run is still the current one — otherwise a newer
+    // dive is in flight and owns the bar.
+    if (myToken === state.cancelToken) $form.classList.remove('is-loading');
   }
-  if (myToken !== state.cancelToken) return;
-  for (const b of stats.buckets) state.monthlyTotals.set(b.month, b.count);
-
-  if (stats.total === 0) {
-    $status.textContent = `No contributions matched "${state.term}" in ${state.yearFrom}–${state.yearTo}.`;
-    return;
-  }
-  renderTimeline();
-  renderStats();
-
-  // Step 2: stream months that actually have hits
-  const monthsWithHits = monthsInRange(state.yearFrom, state.yearTo)
-    .filter((m) => (state.monthlyTotals.get(m) || 0) > 0);
-  // Newest first so the most recent contributions appear first in the
-  // list as it grows.
-  monthsWithHits.reverse();
-  state.monthsTotal = monthsWithHits.length;
-
-  setProgress();
-  if (state.totalContributions > MAX_HEADLINES) $caveat.hidden = false;
-
-  const queue = [...monthsWithHits];
-  const workers = [];
-  for (let i = 0; i < CONCURRENCY; i++) {
-    workers.push((async () => {
-      while (queue.length && myToken === state.cancelToken) {
-        const m = queue.shift();
-        await processMonth(m, myToken);
-      }
-    })());
-  }
-  await Promise.all(workers);
-  if (myToken !== state.cancelToken) return;
-
-  setProgress();
-  // Final guaranteed render in case rAF skipped the last tick
-  renderTimeline();
-  renderTopMembers();
-  renderTopDebates();
-  renderHeadlines();
-  renderFilterBar();
-
-  // Top-12 leaderboard members whose party is still empty are typically
-  // ministers attributed by role. Look them up via the Members API in
-  // parallel and upgrade the leaderboard once we know.
-  fillMissingTopMemberParties(myToken);
 }
 
 async function fillMissingTopMemberParties(myToken) {

@@ -289,7 +289,9 @@ async function runSearch(isFresh) {
   const myToken = ++state.searchToken;
   setStatus('Searching…');
   $more.hidden = true;
+  $form.classList.add('is-loading');
 
+  try {
   const { startDate, endDate } = dateRange();
   const baseOpts = {
     searchTerm: state.term, startDate, endDate,
@@ -386,6 +388,11 @@ async function runSearch(isFresh) {
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       $status.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
     });
+  }
+  } finally {
+    // Only clear the bar if this run is still the current one — otherwise a
+    // newer search is already running and owns the bar.
+    if (myToken === state.searchToken) $form.classList.remove('is-loading');
   }
 }
 

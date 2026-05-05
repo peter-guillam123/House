@@ -231,6 +231,40 @@ main {
   box-shadow: 0 0 0 3px var(--accent-tint);
 }
 
+/* Loading affordance — a thin gradient bar slides across the bottom
+   edge of the form while a search is in flight. Shared between the
+   main Search form and the Deep Dive form. Reduced-motion users get a
+   static low-opacity stripe instead of an animation. */
+.search,
+.dd-form {
+  overflow: hidden;
+}
+.search.is-loading::after,
+.dd-form.is-loading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -30%;
+  height: 2px;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: search-loading 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none;
+}
+@keyframes search-loading {
+  0%   { left: -30%; }
+  100% { left: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .search.is-loading::after,
+  .dd-form.is-loading::after {
+    animation: none;
+    left: 0;
+    width: 100%;
+    opacity: 0.4;
+  }
+}
+
 .search-icon {
   display: inline-flex;
   align-items: center;
