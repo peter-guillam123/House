@@ -1620,21 +1620,26 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
 }
 
 @media (max-width: 560px) {
-  .dd-form { flex-direction: column; align-items: stretch; gap: 0; }
-  .dd-form .search-icon { width: 100%; min-height: 36px; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); }
-  .dd-form .search-field input { padding: 0.85rem 1rem; font-size: 1.1rem; }
+  /* Match the Search form: icon + input + button on one row, with the
+     year range on a quiet second row below. (Was stacking the magnifier
+     into its own oddly-tall full-width strip.) */
+  .dd-form { flex-wrap: wrap; align-items: stretch; gap: 0; }
+  .dd-form .search-icon { width: 44px; min-height: auto; padding: 0; border-bottom: 0; }
+  .dd-form .search-field input { padding: 0.95rem 0.4rem; font-size: 1.1rem; }
+  .dd-form .primary {
+    padding: 0 1.1rem;
+    border-radius: 0 3px 3px 0;
+    border-top: 0;
+    justify-content: center;
+  }
+  .dd-form .primary-kbd { display: none; }
   .dd-years {
+    order: 1;                                   /* drops to row 2 */
+    width: 100%;
     border-left: 0;
     border-top: 1px solid var(--rule);
     padding: 0.7rem 0.9rem;
     justify-content: space-between;
-    width: 100%;
-  }
-  .dd-form .primary {
-    border-radius: 0 0 3px 3px;
-    border-top: 1px solid var(--rule);
-    padding: 0.85rem;
-    justify-content: center;
   }
   .dd-stats { grid-template-columns: 1fr 1fr; }
   .dd-stat-cell:nth-child(2n) { border-right: 0; }
