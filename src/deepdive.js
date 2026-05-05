@@ -461,11 +461,13 @@ const STOP_PHRASES = new Set([
   'Deputy Speaker', 'Mr Deputy Speaker', 'Madam Deputy Speaker',
   'Mr Deputy', 'Madam Deputy',
 
-  // Cabinet / minister titles (boilerplate, not topic-specific)
-  'Secretary of State', 'Department of', 'Member of Parliament',
+  // Cabinet / minister titles that are boilerplate even on topic-aligned
+  // searches. PM and senior portfolios appear in nearly every debate.
+  // Topic-aligned secretaries (Defence, Health, Education, etc.) are
+  // left in — on a Defence search "Defence Secretary" is signal, not
+  // noise; same logic for Health Secretary on healthcare topics.
+  'Member of Parliament',
   'Prime Minister', 'Deputy Prime Minister',
-  'Foreign Secretary', 'Home Secretary', 'Health Secretary',
-  'Chancellor of', 'Chancellor of the Exchequer',
 
   // Houses + procedural venues
   'House of Commons', 'House of Lords',
@@ -477,6 +479,14 @@ const STOP_PHRASES = new Set([
   'Budget Resolutions', 'Budget Resolution', 'Budget Statement',
   'King Speech', 'Queen Speech',
   'Business Statement',
+
+  // Generic question/heading templates that show up as Hansard
+  // titling rather than topic-specific signal.
+  'Recent Developments', 'Recent Events', 'Recent Reports',
+  'Topical Issues',
+  'First Reading', 'Second Reading', 'Third Reading',
+  'Royal Assent',
+  'Point of Order', 'Points of Order',
 
   // Procedural committees (kept Defence Committee / Health Committee etc
   // so topic-specific committees still surface)
@@ -515,7 +525,10 @@ const STOP_PHRASES = new Set([
 
 
 const PHRASE_LEAD_DROP = /^(The|A|An|This|That|These|Those|My|Our|Their|His|Her|Its)\s+/i;
-const PHRASE_RE = /\b([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){1,3})\b/g;
+// Allow hyphenated word parts so "Mid-Wales" / "Non-payment" etc don't
+// truncate at the dash. The trailing space-separated pieces follow the
+// same pattern so multi-word phrases survive intact.
+const PHRASE_RE = /\b([A-Z][a-zA-Z]+(?:-[a-zA-Z]+)*(?:\s+[A-Z][a-zA-Z]+(?:-[a-zA-Z]+)*){1,3})\b/g;
 
 function extractPhrases(text, termLower) {
   if (!text) return [];
