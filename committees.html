@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
   <header class="topbar">
@@ -87,6 +87,48 @@
 
     <p id="cm-status" class="status" aria-live="polite"></p>
 
+    <!-- Drill-in view: shown when a specific inquiry has been picked. -->
+    <section id="cm-inquiry-view" class="cm-inquiry-view" hidden>
+      <button type="button" id="cm-back" class="cm-back-btn">← Back to results</button>
+
+      <header class="cm-inquiry-header">
+        <p class="cm-eyebrow" id="cm-inquiry-meta"></p>
+        <h2 class="cm-inquiry-title" id="cm-inquiry-title">—</h2>
+        <p class="cm-inquiry-extlink"><a id="cm-inquiry-extlink-a" target="_blank" rel="noopener">View on committees.parliament.uk ↗</a></p>
+      </header>
+
+      <section class="cm-inquiry-search">
+        <p class="dd-eyebrow">Search within this inquiry&rsquo;s transcripts</p>
+        <form id="cm-inquiry-form" class="search">
+          <span class="search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <circle cx="11" cy="11" r="6.5"/>
+              <path d="m20 20-4.2-4.2"/>
+            </svg>
+          </span>
+          <label class="search-field">
+            <span class="visually-hidden">Term</span>
+            <input id="cm-it-input" type="search" placeholder="A word or phrase…" autocomplete="off">
+          </label>
+          <button type="submit" class="primary">
+            <span class="primary-label">Search</span>
+            <span class="primary-kbd" aria-hidden="true">↵</span>
+          </button>
+        </form>
+        <p id="cm-it-status" class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="cm-inquiry-sessions">
+        <p class="dd-eyebrow" id="cm-inquiry-sessions-label">Oral evidence sessions</p>
+        <ol id="cm-inquiry-sessions-list" class="cm-list"></ol>
+      </section>
+
+      <section class="cm-inquiry-matches" id="cm-inquiry-matches" hidden>
+        <p class="dd-eyebrow">Matches</p>
+        <ol id="cm-inquiry-matches-list" class="cm-list"></ol>
+      </section>
+    </section>
+
     <section id="cm-results" class="cm-results" hidden>
       <div class="cm-grid">
         <section class="dd-side">
@@ -114,6 +156,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/committees.js?v=2"></script>
+  <script type="module" src="src/committees.js?v=3"></script>
 </body>
 </html>

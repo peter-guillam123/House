@@ -365,6 +365,7 @@ export async function searchOralEvidence(opts) {
   if (opts.searchTerm) p.set('SearchTerm', opts.searchTerm);
   if (opts.startDate)  p.set('StartDate', opts.startDate);
   if (opts.endDate)    p.set('EndDate',   opts.endDate);
+  if (opts.committeeBusinessId) p.set('CommitteeBusinessId', String(opts.committeeBusinessId));
   p.set('ShowOnWebsiteOnly', 'true');
   p.set('Take', String(opts.take ?? 30));
   p.set('Skip', String(opts.skip ?? 0));
@@ -394,6 +395,52 @@ export async function searchOralEvidence(opts) {
       };
     }),
   };
+}
+
+// Single inquiry/business by id — used when a drill-in URL is loaded
+// directly (e.g. someone shared ?inquiry=5536) and we don't have the
+// metadata cached from a list response.
+export async function inquiryById(id) {
+  const url = `${COMMITTEES}/api/CommitteeBusiness/${id}`;
+  const it = await getJson(url);
+  if (!it) return null;
+  return {
+    id: it.id,
+    title: it.title || '',
+    typeName: it.type?.name || '',
+    isInquiry: !!it.type?.isInquiry,
+    openDate: (it.openDate || '').slice(0, 10),
+    closeDate: (it.closeDate || '').slice(0, 10),
+    latestReport: it.latestReport
+      ? {
+          title: it.latestReport.description || '',
+          date: (it.latestReport.publicationStartDate || '').slice(0, 10),
+        }
+      : null,
+    link: `https://committees.parliament.uk/work/${it.id}/`,
+  };
+}
+
+// Fetch and decode an oral evidence transcript. The API wraps base64
+// HTML in JSON; we decode UTF-8 properly via TextDecoder, strip inline
+// base64 images (which inflate the payload massively without adding
+// signal) and extract plain text for searching.
+export async function oralEvidenceTranscript(id) {
+  const url = `${COMMITTEES}/api/OralEvidence/${id}/Document/Html`;
+  const data = await getJson(url);
+  if (!data || !data.data) return { text: '', html: '' };
+  const binary = atob(data.data);
+  const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
+  const html = new TextDecoder('utf-8').decode(bytes)
+    // Drop inline base64 images — they're always parliament boilerplate
+    // (the crowned-portcullis, coat-of-arms etc.) and bloat the cache.
+    .replace(/(src|href)="data:image\/[^"]+"/g, '');
+  const text = html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+  return { text, html };
 }
 
 // ---------- helpers ----------
