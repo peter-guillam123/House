@@ -422,25 +422,79 @@ export async function inquiryById(id) {
 }
 
 // Fetch and decode an oral evidence transcript. The API wraps base64
-// HTML in JSON; we decode UTF-8 properly via TextDecoder, strip inline
-// base64 images (which inflate the payload massively without adding
-// signal) and extract plain text for searching.
+// HTML in JSON; we decode UTF-8 via TextDecoder, strip inline base64
+// images (parliament boilerplate that bloats the cache for no signal),
+// then parse paragraph-by-paragraph into speaker-attributed segments
+// so search snippets can carry a "Tim Davie:" label.
 export async function oralEvidenceTranscript(id) {
   const url = `${COMMITTEES}/api/OralEvidence/${id}/Document/Html`;
   const data = await getJson(url);
-  if (!data || !data.data) return { text: '', html: '' };
+  if (!data || !data.data) return { segments: [], text: '', html: '' };
   const binary = atob(data.data);
   const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
   const html = new TextDecoder('utf-8').decode(bytes)
-    // Drop inline base64 images — they're always parliament boilerplate
-    // (the crowned-portcullis, coat-of-arms etc.) and bloat the cache.
     .replace(/(src|href)="data:image\/[^"]+"/g, '');
-  const text = html
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
-    .replace(/\s+/g, ' ')
-    .trim();
-  return { text, html };
+  const segments = parseTranscriptSegments(html);
+  const text = segments.map((s) => s.text).join('\n\n');
+  return { segments, text, html };
+}
+
+// Hansard committee transcripts mark speakers with bold spans like
+//   <span style="font-weight:bold">Kim Leadbeater: </span>
+// at the start of each paragraph. A continuation paragraph from the
+// same speaker has no bold prefix; we carry the previous speaker
+// forward so each segment knows who's speaking.
+function parseTranscriptSegments(html) {
+  const segments = [];
+  const paraRe = /<p[^>]*>([\s\S]*?)<\/p>/g;
+  // First bold span anywhere in the paragraph — committee transcripts
+  // sometimes prefix speakers with question numbers (e.g. "Q210" + tabs)
+  // before the bold name kicks in.
+  const boldRe = /<span[^>]*font-weight:\s*bold[^>]*>([^<]*?)<\/span>/i;
+  // A speaker prefix typically reads like "Sarah Owen:" / "Q123 Chair:" /
+  // "Sir Robbie Gibb:" — capitalised, ending in a colon.
+  const speakerLikeRe = /^[A-Z][\w\s().,\-'’]{0,90}:$/;
+  let currentSpeaker = '';
+  let m;
+  while ((m = paraRe.exec(html)) !== null) {
+    let inner = m[1];
+    const bold = inner.match(boldRe);
+    if (bold && bold.index < 240) {
+      const candidate = decodeEntities(stripTags(bold[1])).trim();
+      if (speakerLikeRe.test(candidate)) {
+        currentSpeaker = candidate.replace(/:$/, '').trim();
+        // Remove the bold span from the body so the speaker label
+        // doesn't duplicate inside the snippet text.
+        inner = inner.slice(0, bold.index) + inner.slice(bold.index + bold[0].length);
+      }
+    }
+    const text = decodeEntities(stripTags(inner)).replace(/\s+/g, ' ').trim();
+    if (text) segments.push({ speaker: currentSpeaker, text });
+  }
+  return segments;
+}
+
+function stripTags(s) { return String(s).replace(/<[^>]+>/g, ' '); }
+
+// Decode HTML entities — both numeric (&#xa0; / &#160;) and named
+// (&nbsp; &amp; …). The textarea trick is the standard browser way and
+// handles all of them; we keep a regex fallback in case this is ever
+// run outside a browser context.
+function decodeEntities(s) {
+  if (typeof document !== 'undefined') {
+    const t = document.createElement('textarea');
+    t.innerHTML = s;
+    return t.value;
+  }
+  return String(s)
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, h) => safeFromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, n) => safeFromCodePoint(parseInt(n, 10)))
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+}
+function safeFromCodePoint(n) {
+  try { return String.fromCodePoint(n); } catch { return ''; }
 }
 
 // ---------- helpers ----------

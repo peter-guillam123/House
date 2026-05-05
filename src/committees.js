@@ -443,13 +443,14 @@ async function searchWithinInquiry(rawTerm) {
   }));
   if (myToken !== state.inquiryToken) return;
 
-  // Search every cached transcript for the term.
+  // Search each cached transcript segment-by-segment so snippets carry
+  // the speaker who said them.
   const matches = [];
   for (const session of state.inquirySessions) {
     const cached = state.inquiryTranscripts.get(session.id);
-    if (!cached || !cached.text) continue;
-    const snippets = findAllMatches(cached.text, term);
-    if (snippets.length) matches.push({ session, snippets, total: snippets.length });
+    if (!cached || !cached.segments || !cached.segments.length) continue;
+    const { snippets, totalHits } = findAllMatchesInSegments(cached.segments, term);
+    if (snippets.length) matches.push({ session, snippets, total: totalHits });
   }
   state.inquiryMatches = matches;
   renderInquiryMatches();
@@ -464,25 +465,33 @@ async function searchWithinInquiry(rawTerm) {
   }
 }
 
-// Find all (non-overlapping) occurrences of term in text, return up to
-// MAX_SNIPPETS_PER_SESSION snippets centred on each.
-function findAllMatches(text, term, maxLen = 240) {
-  if (!text || !term) return [];
-  const re = new RegExp(escapeRegex(term), 'gi');
-  const out = [];
-  let m;
-  while ((m = re.exec(text)) !== null && out.length < MAX_SNIPPETS_PER_SESSION) {
-    const before = Math.floor(maxLen / 3);
-    const start = Math.max(0, m.index - before);
-    const end = Math.min(text.length, start + maxLen);
-    let slice = text.slice(start, end);
-    if (start > 0) slice = '…' + slice;
-    if (end < text.length) slice = slice + '…';
-    out.push({ index: m.index, snippet: slice });
-    // Skip ahead so adjacent hits don't generate near-duplicate snippets.
-    re.lastIndex = m.index + Math.max(term.length, 1) + 120;
+// Walk segments, collect up to MAX_SNIPPETS_PER_SESSION hits with the
+// speaker who said each one. Returns { snippets, totalHits } so the
+// renderer can show "+ N more in this session" honestly.
+function findAllMatchesInSegments(segments, term, maxLen = 400) {
+  if (!segments || !term) return { snippets: [], totalHits: 0 };
+  const pattern = new RegExp(escapeRegex(term), 'gi');
+  const snippets = [];
+  let totalHits = 0;
+  for (const seg of segments) {
+    pattern.lastIndex = 0;
+    let m;
+    while ((m = pattern.exec(seg.text)) !== null) {
+      totalHits++;
+      if (snippets.length < MAX_SNIPPETS_PER_SESSION) {
+        const before = Math.floor(maxLen / 3);
+        const start = Math.max(0, m.index - before);
+        const end = Math.min(seg.text.length, start + maxLen);
+        let slice = seg.text.slice(start, end);
+        if (start > 0)               slice = '…' + slice;
+        if (end < seg.text.length)   slice = slice + '…';
+        snippets.push({ speaker: seg.speaker, snippet: slice });
+      }
+      // Skip ahead so adjacent hits don't generate near-duplicate snippets.
+      pattern.lastIndex = m.index + Math.max(term.length, 1) + 200;
+    }
   }
-  return out;
+  return { snippets, totalHits };
 }
 
 function escapeRegex(s) {
@@ -503,7 +512,10 @@ function renderInquiryMatches() {
     }).join(', ');
     const more = total > snippets.length ? ` <span class="cm-witness-more">+ ${total - snippets.length} more in this session</span>` : '';
     const snippetItems = snippets.map((sn) => `
-      <li class="cm-snippet">${snippetHtml(sn.snippet, state.inquiryTerm, 240)}</li>
+      <li class="cm-snippet">
+        ${sn.speaker ? `<span class="cm-snippet-speaker">${escapeHtml(sn.speaker)}</span>` : ''}
+        <span class="cm-snippet-text">${snippetHtml(sn.snippet, state.inquiryTerm, 400)}</span>
+      </li>
     `).join('');
     return `<li class="cm-item">
       <h3 class="cm-item-title"><a href="${escapeHtml(session.transcriptLink)}" target="_blank" rel="noopener">${session.date ? escapeHtml(formatDate(session.date)) : 'Oral evidence'}</a></h3>
