@@ -6,43 +6,13 @@
 // individual contributions feeding the leaderboards and headline list.
 
 import { timelineStats, searchSpoken, memberById } from './api.js?v=7';
-import { formatDate, snippetHtml, escapeHtml } from './format.js?v=4';
+import { formatDate, snippetHtml, escapeHtml, partyColor } from './format.js?v=5';
 
 // ---------- config -----------------------------------------------------
 
 const CONCURRENCY = 4;          // parallel month fetches
 const PER_MONTH = 50;           // contributions sampled per month
 const MAX_HEADLINES = 1500;     // hard cap for the headline list
-const PARTY_COLORS = {          // canonical UK party tones
-  'Lab':              '#d50000',
-  'Labour':           '#d50000',
-  'Lab/Co-op':        '#a8285e',   // rose-magenta — clearly distinct from Lab red
-  'Con':              '#0063ba',
-  'Conservative':     '#0063ba',
-  'LD':               '#faa61a',
-  'Lib Dem':          '#faa61a',
-  'SNP':              '#e6b800',   // saturated gold — readable on cream paper
-  'Reform':           '#12b6cf',
-  'Reform UK':        '#12b6cf',
-  'Green':            '#6ab023',
-  'DUP':              '#d46a4c',
-  'PC':               '#005a3c',   // Plaid Cymru
-  'Plaid Cymru':      '#005a3c',
-  'SF':               '#326760',
-  'Sinn Féin':        '#326760',
-  'SDLP':             '#99cc66',
-  'Alliance':         '#f6cb2f',
-  'UUP':              '#48a5b8',
-  'Ind':              '#7e6f5b',   // dark warm grey-brown
-  'Independent':      '#7e6f5b',
-  'Crossbench':       '#b78c5e',   // tan
-  'Non-affiliated':   '#544c42',   // cool dark grey
-  'Non-Afl':          '#544c42',
-  'Bishops':          '#574779',
-  'Speaker':          '#444',
-  'Unknown':          '#c9bfac',   // washed-out — semantically right for "not yet known"
-};
-const PARTY_FALLBACK = '#a89b80';
 
 // ---------- state ------------------------------------------------------
 
@@ -135,10 +105,6 @@ function lastDayOfMonth(ym) {
   const [y, m] = ym.split('-').map(Number);
   const d = new Date(Date.UTC(y, m, 0));
   return d.toISOString().slice(0, 10);
-}
-
-function partyColor(p) {
-  return PARTY_COLORS[p] || PARTY_FALLBACK;
 }
 
 // ---------- click-to-filter -------------------------------------------
@@ -418,7 +384,7 @@ function renderTopMembers() {
       <button type="button" class="dd-rank-row${active ? ' is-active' : ''}" data-member-id="${m.id}" aria-pressed="${active}">
         <span class="dd-rank-count" style="--c:${partyColor(m.party)}">${m.count.toLocaleString('en-GB')}</span>
         <span class="dd-rank-name">${escapeHtml(m.name || '—')}</span>
-        ${m.party ? `<span class="dd-party-tag" style="--c:${partyColor(m.party)}">${escapeHtml(m.party)}</span>` : ''}
+        ${m.party ? `<span class="party-tag" style="--c:${partyColor(m.party)}">${escapeHtml(m.party)}</span>` : ''}
       </button>
     </li>`;
   }).join('');
@@ -464,12 +430,15 @@ function renderHeadlines() {
   const visible = sorted.slice(0, 250); // render cap for the list itself
   const more = sorted.length - visible.length;
   $headlines.innerHTML = visible.map((h) => {
-    const partyBit = h.party ? ` <span class="dd-party-tag" style="--c:${partyColor(h.party)}">${escapeHtml(h.party)}</span>` : '';
-    const memberBit = h.memberName ? `<span class="dd-hl-member">${escapeHtml(h.memberName)}</span>${partyBit}` : '';
+    const partyBit = h.party ? `<span class="party-tag" style="--c:${partyColor(h.party)}">${escapeHtml(h.party)}</span>` : '';
+    const houseBit = h.house ? `<span class="house-tag">${escapeHtml(h.house)}</span>` : '';
+    const memberBit = h.memberName ? `<span class="dd-hl-member">${escapeHtml(h.memberName)}</span>` : '';
     return `<li class="dd-hl">
       <p class="dd-hl-meta">
         <span class="dd-hl-date">${escapeHtml(formatDate(h.date))}</span>
         ${memberBit}
+        ${partyBit}
+        ${houseBit}
       </p>
       <h3 class="dd-hl-title"><a href="${escapeHtml(h.link)}" target="_blank" rel="noopener">${escapeHtml(h.title || '(untitled)')}</a></h3>
       <p class="dd-hl-snippet">${snippetHtml(h.snippet || h.fullText, state.term, 240)}</p>
@@ -588,6 +557,7 @@ async function processMonth(month, myToken) {
       if (state.headlines.length < MAX_HEADLINES) {
         state.headlines.push({
           date: it.date, memberName: it.memberName, party: it.party,
+          house: it.house,
           memberId: it.memberId, debateExtId: it.debateExtId,
           title: it.title, link: it.link,
           snippet: it.snippet, fullText: it.fullText,

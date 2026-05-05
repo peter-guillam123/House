@@ -3,7 +3,7 @@ import {
   memberById,
 } from './api.js?v=7';
 import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=6';
-import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS } from './format.js?v=4';
+import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS, partyColor } from './format.js?v=5';
 
 // ---------- state ----------
 
@@ -406,17 +406,21 @@ function renderResults() {
     const li = document.createElement('li');
     li.className = 'result';
     const cls = SOURCE_CLASS[item.source] || '';
-    const partyBit = item.party ? ` (${escapeHtml(item.party)})` : '';
-    const houseBit = item.house ? ` · ${escapeHtml(item.house)}` : '';
     const memberBit = item.memberName
-      ? `${escapeHtml(item.memberName)}${partyBit}`
-      : '<span class="muted">No attribution</span>';
+      ? `<span class="result-member">${escapeHtml(item.memberName)}</span>`
+      : '<span class="result-member muted">No attribution</span>';
+    const partyBit = item.party
+      ? `<span class="party-tag" style="--c:${partyColor(item.party)}">${escapeHtml(item.party)}</span>`
+      : '';
+    const houseBit = item.house ? `<span class="house-tag">${escapeHtml(item.house)}</span>` : '';
     li.innerHTML = `
       <h2 class="result-title"><a href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.title || '(untitled)')}</a></h2>
       <div class="result-meta">
         <span class="badge ${cls}">${escapeHtml(item.source)}</span>
-        <span>${memberBit}</span>
-        <span>${escapeHtml(formatDate(item.date))}${houseBit}</span>
+        <span class="result-date">${escapeHtml(formatDate(item.date))}</span>
+        ${memberBit}
+        ${partyBit}
+        ${houseBit}
       </div>
       <p class="result-snippet">${snippetHtml(item.snippet || item.fullText, state.term)}</p>
     `;
