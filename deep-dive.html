@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
   <header class="topbar">
@@ -41,7 +41,7 @@
       <p class="sub">Spoken contributions only, plotted month-by-month. Best for terms that come up often enough to make a shape — NHS, Ukraine, immigration. For sparse mentions, or anything in writing, the main search gives a tighter view.</p>
     </section>
 
-    <form id="dd-form" class="dd-form" autocomplete="off">
+    <form id="dd-form" class="search" autocomplete="off">
       <span class="search-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
           <circle cx="11" cy="11" r="6.5"/>
@@ -52,18 +52,46 @@
         <span class="visually-hidden">Search term</span>
         <input id="dd-q" type="search" name="q" placeholder="Search a term, place or phrase…" autocomplete="off" autofocus>
       </label>
-      <span class="dd-years" aria-label="Year range">
-        <label class="visually-hidden" for="dd-from">From year</label>
-        <select id="dd-from" class="dd-year-select"></select>
-        <span aria-hidden="true">→</span>
-        <label class="visually-hidden" for="dd-to">To year</label>
-        <select id="dd-to" class="dd-year-select"></select>
-      </span>
       <button type="submit" class="primary">
         <span class="primary-label">Dive in</span>
         <span class="primary-kbd" aria-hidden="true">↵</span>
       </button>
     </form>
+
+    <details class="filters-shell" id="dd-filters-shell" open>
+      <summary class="filters-toggle">
+        <span class="ft-label">Filters</span>
+        <span class="ft-summary" id="dd-ft-summary" aria-live="polite"></span>
+        <span class="ft-chev" aria-hidden="true">
+          <svg viewBox="0 0 12 8" width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1.5 6 6.5 11 1.5"/></svg>
+        </span>
+      </summary>
+
+      <section class="filters" aria-label="Filters">
+        <fieldset class="filter">
+          <legend>Date range</legend>
+          <div class="pills" role="radiogroup" id="dd-date-presets">
+            <button type="button" role="radio" aria-checked="false" data-preset="month">Last month</button>
+            <button type="button" role="radio" aria-checked="true"  data-preset="year">Last year</button>
+            <button type="button" role="radio" aria-checked="false" data-preset="five">Last 5 years</button>
+            <button type="button" role="radio" aria-checked="false" data-preset="custom">Custom</button>
+          </div>
+          <div class="custom-dates" id="dd-custom-dates" hidden>
+            <label>From <input type="date" id="dd-from-date"></label>
+            <label>To <input type="date" id="dd-to-date"></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="filter">
+          <legend>House</legend>
+          <div class="pills" role="radiogroup" id="dd-house">
+            <button type="button" role="radio" aria-checked="true"  data-house="Both">Both</button>
+            <button type="button" role="radio" aria-checked="false" data-house="Commons">Commons</button>
+            <button type="button" role="radio" aria-checked="false" data-house="Lords">Lords</button>
+          </div>
+        </fieldset>
+      </section>
+    </details>
 
     <p id="dd-status" class="status" aria-live="polite"></p>
 
@@ -146,6 +174,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/deepdive.js?v=17"></script>
+  <script type="module" src="src/deepdive.js?v=18"></script>
 </body>
 </html>

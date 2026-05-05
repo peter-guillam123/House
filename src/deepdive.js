@@ -19,8 +19,13 @@ const MAX_HEADLINES = 1500;     // hard cap for the headline list
 
 const state = {
   term: '',
-  yearFrom: 0,
-  yearTo: 0,
+  preset: 'year',           // 'month' | 'year' | 'five' | 'custom'
+  customFrom: '',
+  customTo: '',
+  house: 'Both',            // 'Both' | 'Commons' | 'Lords'
+  // Resolved range for the current dive — set in runDive, used by render.
+  startDate: '',
+  endDate: '',
   cancelToken: 0,
   // Filled by /timeline-stats (definitive monthly totals)
   monthlyTotals: new Map(),    // 'YYYY-MM' → total spoken count
@@ -46,11 +51,15 @@ const state = {
 
 // ---------- DOM refs ---------------------------------------------------
 
-const $form        = document.getElementById('dd-form');
-const $q           = document.getElementById('dd-q');
-const $from        = document.getElementById('dd-from');
-const $to          = document.getElementById('dd-to');
-const $status      = document.getElementById('dd-status');
+const $form          = document.getElementById('dd-form');
+const $q             = document.getElementById('dd-q');
+const $datePresets   = document.getElementById('dd-date-presets');
+const $customDates   = document.getElementById('dd-custom-dates');
+const $fromDate      = document.getElementById('dd-from-date');
+const $toDate        = document.getElementById('dd-to-date');
+const $house         = document.getElementById('dd-house');
+const $ftSummary     = document.getElementById('dd-ft-summary');
+const $status        = document.getElementById('dd-status');
 const $statTotal     = document.getElementById('dd-stat-total');
 const $statPeak      = document.getElementById('dd-stat-peak');
 const $statPeakSub   = document.getElementById('dd-stat-peak-sub');
@@ -98,18 +107,41 @@ function syncRankToggle(btn, count) {
 
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-function monthsInRange(yFrom, yTo) {
+function monthsInRange(startDate, endDate) {
+  // Cap the end at today — guard against custom ranges in the future
+  // and protect the chart from a hard right-edge gap.
   const now = new Date();
-  const currentY = now.getFullYear();
-  const currentM = now.getMonth() + 1; // 1-indexed
+  const todayIso = now.toISOString().slice(0, 10);
+  const safeEnd = endDate > todayIso ? todayIso : endDate;
   const out = [];
-  for (let y = yFrom; y <= yTo; y++) {
-    // Don't generate future months for the current year — they'd render
-    // as a gap on the right edge of the chart and add nothing.
-    const lastM = (y > currentY) ? 0 : (y === currentY) ? currentM : 12;
-    for (let m = 1; m <= lastM; m++) out.push(`${y}-${String(m).padStart(2, '0')}`);
+  let y = Number(startDate.slice(0, 4));
+  let m = Number(startDate.slice(5, 7));
+  const endY = Number(safeEnd.slice(0, 4));
+  const endM = Number(safeEnd.slice(5, 7));
+  while (y < endY || (y === endY && m <= endM)) {
+    out.push(`${y}-${String(m).padStart(2, '0')}`);
+    m++;
+    if (m > 12) { m = 1; y++; }
   }
   return out;
+}
+
+// Resolve the active preset to a concrete { startDate, endDate } pair.
+// Mirrors the equivalent in app.js so Search and Deep Dive feel the same.
+function dateRange() {
+  if (state.preset === 'custom') {
+    return {
+      startDate: state.customFrom || $fromDate.value,
+      endDate:   state.customTo   || $toDate.value,
+    };
+  }
+  const today = new Date();
+  const end = today.toISOString().slice(0, 10);
+  const start = new Date(today);
+  if (state.preset === 'month')      start.setMonth(start.getMonth() - 1);
+  else if (state.preset === 'year')  start.setFullYear(start.getFullYear() - 1);
+  else if (state.preset === 'five')  start.setFullYear(start.getFullYear() - 5);
+  return { startDate: start.toISOString().slice(0, 10), endDate: end };
 }
 
 function formatMonth(ym) {
@@ -223,15 +255,42 @@ $filterBar.addEventListener('click', (e) => {
   toggleFilter(chip.dataset.kind, chip.dataset.value);
 });
 
-// Year selects
-function populateYearSelects() {
-  const now = new Date().getFullYear();
-  for (let y = now; y >= 2010; y--) {
-    $from.append(new Option(y, y));
-    $to.append(new Option(y, y));
+// Filter wiring — preset pills, custom dates, House selector.
+$datePresets.addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-preset]');
+  if (!btn) return;
+  for (const b of $datePresets.querySelectorAll('button')) {
+    b.setAttribute('aria-checked', b === btn ? 'true' : 'false');
   }
-  $from.value = String(now - 2);
-  $to.value = String(now);
+  state.preset = btn.dataset.preset;
+  $customDates.hidden = state.preset !== 'custom';
+  updateFiltersSummary();
+});
+
+$fromDate.addEventListener('change', () => { state.customFrom = $fromDate.value; updateFiltersSummary(); });
+$toDate.addEventListener('change',   () => { state.customTo   = $toDate.value;   updateFiltersSummary(); });
+
+$house.addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-house]');
+  if (!btn) return;
+  for (const b of $house.querySelectorAll('button')) {
+    b.setAttribute('aria-checked', b === btn ? 'true' : 'false');
+  }
+  state.house = btn.dataset.house;
+  updateFiltersSummary();
+});
+
+function updateFiltersSummary() {
+  const parts = [];
+  const presetLabels = { month: 'Last month', year: 'Last year', five: 'Last 5 years' };
+  if (state.preset === 'custom') {
+    if (state.customFrom || state.customTo) parts.push(`${state.customFrom || '…'} – ${state.customTo || '…'}`);
+    else parts.push('Custom range');
+  } else if (presetLabels[state.preset]) {
+    parts.push(presetLabels[state.preset]);
+  }
+  if (state.house && state.house !== 'Both') parts.push(state.house);
+  $ftSummary.textContent = parts.length ? `· ${parts.join(' · ')}` : '';
 }
 
 // Reset accumulators between dives
@@ -255,7 +314,7 @@ function renderTimeline() {
     $legend.innerHTML = '';
     return;
   }
-  const months = monthsInRange(state.yearFrom, state.yearTo);
+  const months = monthsInRange(state.startDate, state.endDate);
   const totals = months.map((m) => state.monthlyTotals.get(m) || 0);
   const peak = Math.max(...totals, 1);
 
@@ -756,13 +815,23 @@ $exportBtn.addEventListener('click', () => {
   const md = buildMarkdownExport({
     pageTitle: 'Deep Dive export',
     term: state.term,
-    dateRange: `${state.yearFrom}–${state.yearTo}`,
+    dateRange: describeRange(),
     filtersLabel: describeDeepDiveFilters(),
     recreateUrl: location.href,
     items,
   });
   downloadMarkdown(exportFilename('house-deep-dive', state.term), md);
 });
+
+// Human-readable rendering of the active range, used in export headers
+// and the no-results message.
+function describeRange() {
+  const presetLabels = { month: 'Last month', year: 'Last year', five: 'Last 5 years' };
+  if (state.preset === 'custom') {
+    return `${formatDate(state.startDate)} – ${formatDate(state.endDate)}`;
+  }
+  return presetLabels[state.preset] || `${formatDate(state.startDate)} – ${formatDate(state.endDate)}`;
+}
 
 // ---------- rAF coalescing --------------------------------------------
 
@@ -792,6 +861,7 @@ async function processMonth(month, myToken) {
     const { items } = await searchSpoken({
       searchTerm: state.term,
       startDate, endDate,
+      house: state.house,
       take: PER_MONTH,
       orderBy: 'SittingDateDesc',
     });
@@ -870,9 +940,10 @@ async function runDive(pushUrl) {
   if (!pushUrl) applyFiltersFromUrl();
 
   state.term = $q.value.trim();
-  state.yearFrom = Number($from.value);
-  state.yearTo = Number($to.value);
-  if (state.yearFrom > state.yearTo) [state.yearFrom, state.yearTo] = [state.yearTo, state.yearFrom];
+  const { startDate, endDate } = dateRange();
+  state.startDate = startDate;
+  state.endDate = endDate;
+  if (state.startDate > state.endDate) [state.startDate, state.endDate] = [state.endDate, state.startDate];
 
   if (!state.term) {
     $status.textContent = 'Enter a term to dive into.';
@@ -903,8 +974,9 @@ async function runDive(pushUrl) {
     try {
       stats = await timelineStats({
         searchTerm: state.term,
-        startDate: `${state.yearFrom}-01-01`,
-        endDate: `${state.yearTo}-12-31`,
+        startDate: state.startDate,
+        endDate: state.endDate,
+        house: state.house,
         grouping: 'Month',
         contributionType: 'Spoken',
       });
@@ -916,14 +988,14 @@ async function runDive(pushUrl) {
     for (const b of stats.buckets) state.monthlyTotals.set(b.month, b.count);
 
     if (stats.total === 0) {
-      $status.textContent = `No contributions matched "${state.term}" in ${state.yearFrom}–${state.yearTo}.`;
+      $status.textContent = `No contributions matched "${state.term}" in ${describeRange()}.`;
       return;
     }
     renderTimeline();
     renderStats();
 
     // Step 2: stream months that actually have hits
-    const monthsWithHits = monthsInRange(state.yearFrom, state.yearTo)
+    const monthsWithHits = monthsInRange(state.startDate, state.endDate)
       .filter((m) => (state.monthlyTotals.get(m) || 0) > 0);
     // Newest first so the most recent contributions appear first in the
     // list as it grows.
@@ -987,9 +1059,12 @@ async function fillMissingTopMemberParties(myToken) {
 function buildUrlFromState() {
   const p = new URLSearchParams();
   if (state.term) p.set('q', state.term);
-  const now = new Date().getFullYear();
-  if (state.yearFrom && state.yearFrom !== now - 2) p.set('from', String(state.yearFrom));
-  if (state.yearTo && state.yearTo !== now) p.set('to', String(state.yearTo));
+  if (state.preset && state.preset !== 'year') p.set('range', state.preset);
+  if (state.preset === 'custom') {
+    if (state.customFrom) p.set('from', state.customFrom);
+    if (state.customTo)   p.set('to',   state.customTo);
+  }
+  if (state.house && state.house !== 'Both') p.set('house', state.house);
   if (state.filters.memberIds.size) p.set('fm', [...state.filters.memberIds].join(','));
   if (state.filters.debateIds.size) p.set('fd', [...state.filters.debateIds].join(','));
   if (state.filters.parties.size)   p.set('fp', [...state.filters.parties].join(','));
@@ -1009,11 +1084,47 @@ function applyParamsFromUrl() {
   const p = new URLSearchParams(location.search);
   const q = p.get('q') || '';
   $q.value = q;
-  const now = new Date().getFullYear();
-  const from = Number(p.get('from')) || (now - 2);
-  const to = Number(p.get('to')) || now;
-  $from.value = String(from);
-  $to.value = String(to);
+
+  // Backwards-compat: the previous Deep Dive URL model used year-only
+  // from/to (e.g. ?from=2024&to=2026). Detect that shape and translate
+  // into a custom date range so existing shared links still resolve.
+  const fromRaw = p.get('from') || '';
+  const toRaw = p.get('to') || '';
+  const isOldYearOnly = /^\d{4}$/.test(fromRaw) || /^\d{4}$/.test(toRaw);
+  let range = p.get('range');
+  let customFrom = '';
+  let customTo = '';
+  if (isOldYearOnly) {
+    range = 'custom';
+    if (/^\d{4}$/.test(fromRaw)) customFrom = `${fromRaw}-01-01`;
+    if (/^\d{4}$/.test(toRaw))   customTo   = `${toRaw}-12-31`;
+  } else {
+    if (fromRaw) customFrom = fromRaw;
+    if (toRaw)   customTo   = toRaw;
+  }
+  const validRanges = ['month', 'year', 'five', 'custom'];
+  state.preset = validRanges.includes(range) ? range : 'year';
+  state.customFrom = customFrom;
+  state.customTo   = customTo;
+
+  // Reflect into the form pills + custom date inputs
+  for (const b of $datePresets.querySelectorAll('button')) {
+    b.setAttribute('aria-checked', b.dataset.preset === state.preset ? 'true' : 'false');
+  }
+  $customDates.hidden = state.preset !== 'custom';
+  if (state.preset === 'custom') {
+    $fromDate.value = state.customFrom;
+    $toDate.value   = state.customTo;
+  }
+
+  // House
+  const house = p.get('house');
+  state.house = (house === 'Commons' || house === 'Lords') ? house : 'Both';
+  for (const b of $house.querySelectorAll('button')) {
+    b.setAttribute('aria-checked', b.dataset.house === state.house ? 'true' : 'false');
+  }
+
+  updateFiltersSummary();
   return !!q;
 }
 
@@ -1047,6 +1158,6 @@ $form.addEventListener('submit', (e) => {
 
 // ---------- init -------------------------------------------------------
 
-populateYearSelects();
+updateFiltersSummary();
 const hasInitialQuery = applyParamsFromUrl();
 if (hasInitialQuery) runDive(false);

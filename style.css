@@ -235,12 +235,8 @@ main {
    edge of the form while a search is in flight. Shared between the
    main Search form and the Deep Dive form. Reduced-motion users get a
    static low-opacity stripe instead of an animation. */
-.search,
-.dd-form {
-  overflow: hidden;
-}
-.search.is-loading::after,
-.dd-form.is-loading::after {
+.search { overflow: hidden; }
+.search.is-loading::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -256,8 +252,7 @@ main {
   100% { left: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .search.is-loading::after,
-  .dd-form.is-loading::after {
+  .search.is-loading::after {
     animation: none;
     left: 0;
     width: 100%;
@@ -1145,74 +1140,9 @@ body[data-density="airy"] .result-title { font-size: clamp(1.3rem, 2.8vw, 1.7rem
   flex: 1;
 }
 
-.dd-form {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: 0;
-  margin: 0 0 1rem;
-  background: var(--paper-warm);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  position: relative;
-  transition: border-color 150ms, box-shadow 150ms;
-  box-shadow: var(--shadow-sm);
-}
-.dd-form:hover { border-color: var(--ink-faint); }
-.dd-form:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-tint);
-}
-
-.dd-form .search-icon { width: 48px; flex-shrink: 0; }
-.dd-form .search-field { flex: 1; min-width: 200px; display: flex; }
-.dd-form .search-field input {
-  width: 100%;
-  border: 0;
-  background: transparent;
-  padding: 1.05rem 0.5rem;
-  font-family: var(--serif);
-  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
-  font-variation-settings: 'opsz' 24, 'wght' 400;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
-.dd-form .search-field input:focus { outline: none; }
-.dd-form .search-field input::placeholder {
-  color: var(--ink-faint);
-  font-style: italic;
-}
-
-.dd-years {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0 0.8rem;
-  border-left: 1px solid var(--rule);
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-  letter-spacing: 0.04em;
-}
-.dd-year-select {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  background: transparent;
-  border: 1px solid var(--rule);
-  color: var(--ink);
-  padding: 0.3rem 0.45rem;
-  border-radius: 3px;
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%2314110d' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M1 1.5 6 6.5 11 1.5'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 0.4rem center;
-  background-size: 9px 6px;
-  padding-right: 1.4rem;
-  min-height: 36px;
-}
-.dd-year-select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
-.dd-form .primary { border-radius: 0 3px 3px 0; }
+/* The Deep Dive form is now identical to the Search form — see the
+   shared .search rules above. The year-range/year-select blocks are
+   gone; date filtering happens in the filters-shell below the form. */
 
 .dd-empty {
   margin: 1.5rem 0 2rem;
@@ -1709,27 +1639,8 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
 }
 
 @media (max-width: 560px) {
-  /* Match the Search form: icon + input + button on one row, with the
-     year range on a quiet second row below. (Was stacking the magnifier
-     into its own oddly-tall full-width strip.) */
-  .dd-form { flex-wrap: wrap; align-items: stretch; gap: 0; }
-  .dd-form .search-icon { width: 44px; min-height: auto; padding: 0; border-bottom: 0; }
-  .dd-form .search-field input { padding: 0.95rem 0.4rem; font-size: 1.1rem; }
-  .dd-form .primary {
-    padding: 0 1.1rem;
-    border-radius: 0 3px 3px 0;
-    border-top: 0;
-    justify-content: center;
-  }
-  .dd-form .primary-kbd { display: none; }
-  .dd-years {
-    order: 1;                                   /* drops to row 2 */
-    width: 100%;
-    border-left: 0;
-    border-top: 1px solid var(--rule);
-    padding: 0.7rem 0.9rem;
-    justify-content: space-between;
-  }
+  /* Form-specific mobile rules now come from .search; only Deep Dive
+     panels need bespoke handling. */
   .dd-stats { grid-template-columns: 1fr 1fr; }
   .dd-stat-cell:nth-child(2n) { border-right: 0; }
   .dd-stat-cell:nth-child(-n+2) { border-bottom: 1px solid var(--rule-soft); }
