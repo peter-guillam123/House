@@ -32,13 +32,15 @@ const state = {
   totalContributions: 0,       // sum of all monthly totals
   monthsTotal: 0,
   monthsLoaded: 0,
-  // Click-to-filter — the leaderboards, legend, and co-terms panel all
-  // double as filter surfaces. AND-combined across the four axes.
+  // Click-to-filter — the leaderboards, legend, co-terms panel and
+  // chart bars all double as filter surfaces. AND-combined across the
+  // five axes.
   filters: {
     memberIds: new Set(),      // Set<number>
     debateIds: new Set(),      // Set<string>
     parties:   new Set(),      // Set<string>
     terms:     new Set(),      // Set<string> — phrases from the co-terms panel
+    months:    new Set(),      // Set<string> — 'YYYY-MM' from chart bar clicks
   },
 };
 
@@ -97,9 +99,15 @@ function syncRankToggle(btn, count) {
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function monthsInRange(yFrom, yTo) {
+  const now = new Date();
+  const currentY = now.getFullYear();
+  const currentM = now.getMonth() + 1; // 1-indexed
   const out = [];
   for (let y = yFrom; y <= yTo; y++) {
-    for (let m = 1; m <= 12; m++) out.push(`${y}-${String(m).padStart(2, '0')}`);
+    // Don't generate future months for the current year — they'd render
+    // as a gap on the right edge of the chart and add nothing.
+    const lastM = (y > currentY) ? 0 : (y === currentY) ? currentM : 12;
+    for (let m = 1; m <= lastM; m++) out.push(`${y}-${String(m).padStart(2, '0')}`);
   }
   return out;
 }
@@ -120,16 +128,17 @@ function lastDayOfMonth(ym) {
 
 function hasFilters() {
   const f = state.filters;
-  return f.memberIds.size + f.debateIds.size + f.parties.size + f.terms.size > 0;
+  return f.memberIds.size + f.debateIds.size + f.parties.size + f.terms.size + f.months.size > 0;
 }
 
-// AND across the four axes; OR within an axis (e.g. two parties picked
+// AND across the five axes; OR within an axis (e.g. two parties picked
 // = "either party").
 function matchesFilters(h) {
   const f = state.filters;
   if (f.memberIds.size && !f.memberIds.has(h.memberId)) return false;
   if (f.debateIds.size && !f.debateIds.has(h.debateExtId)) return false;
   if (f.parties.size   && !f.parties.has(h.party || 'Unknown')) return false;
+  if (f.months.size && !(h.date && f.months.has(h.date.slice(0, 7)))) return false;
   if (f.terms.size) {
     const hay = ((h.fullText || h.snippet || '') + ' ' + (h.title || '')).toLowerCase();
     for (const t of f.terms) if (!hay.includes(t.toLowerCase())) return false;
@@ -142,6 +151,7 @@ function resetFilters() {
   state.filters.debateIds.clear();
   state.filters.parties.clear();
   state.filters.terms.clear();
+  state.filters.months.clear();
 }
 
 function toggleFilter(kind, value) {
@@ -149,7 +159,8 @@ function toggleFilter(kind, value) {
     kind === 'member' ? state.filters.memberIds :
     kind === 'debate' ? state.filters.debateIds :
     kind === 'party'  ? state.filters.parties   :
-    kind === 'term'   ? state.filters.terms     : null;
+    kind === 'term'   ? state.filters.terms     :
+    kind === 'month'  ? state.filters.months    : null;
   if (!set) return;
   // Member ids are numbers; keep as-is. Others stay strings.
   const v = kind === 'member' ? Number(value) : value;
@@ -161,6 +172,8 @@ function toggleFilter(kind, value) {
   renderTopDebates();
   renderLegend();
   renderCoTerms();
+  // Re-render the chart so any active-month outline reflects the new state.
+  renderTimeline();
 }
 
 function clearAllFilters() {
@@ -173,6 +186,7 @@ function clearAllFilters() {
   renderTopDebates();
   renderLegend();
   renderCoTerms();
+  renderTimeline();
 }
 
 // Event delegation — wire once at module load
@@ -195,6 +209,11 @@ $legend.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-party]');
   if (!btn) return;
   toggleFilter('party', btn.dataset.party);
+});
+$chart.addEventListener('click', (e) => {
+  const g = e.target.closest('[data-month]');
+  if (!g) return;
+  toggleFilter('month', g.dataset.month);
 });
 $filterBar.addEventListener('click', (e) => {
   const clearAll = e.target.closest('[data-clear-all]');
@@ -287,10 +306,16 @@ function renderTimeline() {
     const x = PAD_L + i * barW;
     const totalH = (total / peak) * innerH;
     const yTop = PAD_T + innerH - totalH;
+    const isActive = state.filters.months.has(m);
+    // 1.5px stroke outline drawn over the bar for the active state.
+    const activeOutline = isActive
+      ? `<rect x="${x.toFixed(2)}" y="${yTop.toFixed(2)}" width="${drawW.toFixed(2)}" height="${totalH.toFixed(2)}" fill="none" stroke="var(--accent)" stroke-width="1.5" pointer-events="none"/>`
+      : '';
+    const groupClass = `dd-bar-group${isActive ? ' is-active' : ''}`;
     const byParty = state.monthlyByParty.get(m);
     if (!byParty || byParty.size === 0) {
       // Skeleton bar — we have the count but no party split yet
-      return `<rect x="${x.toFixed(2)}" y="${yTop.toFixed(2)}" width="${drawW.toFixed(2)}" height="${totalH.toFixed(2)}" fill="var(--rule)" class="dd-bar dd-bar-skeleton"><title>${formatMonth(m)} — ${total.toLocaleString('en-GB')} contributions (loading…)</title></rect>`;
+      return `<g data-month="${m}" class="${groupClass}"><rect x="${x.toFixed(2)}" y="${yTop.toFixed(2)}" width="${drawW.toFixed(2)}" height="${totalH.toFixed(2)}" fill="var(--rule)" class="dd-bar dd-bar-skeleton"><title>${formatMonth(m)} — ${total.toLocaleString('en-GB')} contributions (loading…)</title></rect>${activeOutline}</g>`;
     }
     // Sample-based: scale party slices to total contributed (timeline-stats truth),
     // but party PROPORTIONS come from what we sampled.
@@ -310,7 +335,7 @@ function renderTimeline() {
       titleParts.push(`${p}: ~${Math.round((c / sampled) * total)}`);
     }
     // One <title> tag inside an outer <g> so hover gives a unified tooltip
-    return `<g><title>${escapeHtml(titleParts.join(' · '))}</title>${svg}</g>`;
+    return `<g data-month="${m}" class="${groupClass}"><title>${escapeHtml(titleParts.join(' · '))}</title>${svg}${activeOutline}</g>`;
   }).join('');
 
   $chart.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Monthly volume of contributions, party-stacked.">
@@ -681,6 +706,9 @@ function renderFilterBar() {
   for (const t of state.filters.terms) {
     chips.push(filterChipHtml('term', t, t, null));
   }
+  for (const m of state.filters.months) {
+    chips.push(filterChipHtml('month', m, formatMonth(m), null));
+  }
   const matchCount = state.headlines.filter(matchesFilters).length;
   const clearAll = chips.length >= 2
     ? `<button type="button" class="dd-filter-clear" data-clear-all>Clear all</button>`
@@ -716,6 +744,7 @@ function describeDeepDiveFilters() {
   }
   for (const p of state.filters.parties) parts.push(`Party: ${p}`);
   for (const t of state.filters.terms)   parts.push(`Mentions: "${t}"`);
+  for (const m of state.filters.months)  parts.push(`Month: ${formatMonth(m)}`);
   return parts.join(' · ');
 }
 
@@ -965,6 +994,7 @@ function buildUrlFromState() {
   if (state.filters.debateIds.size) p.set('fd', [...state.filters.debateIds].join(','));
   if (state.filters.parties.size)   p.set('fp', [...state.filters.parties].join(','));
   if (state.filters.terms.size)     p.set('ft', [...state.filters.terms].join('|'));
+  if (state.filters.months.size)    p.set('fmo', [...state.filters.months].join(','));
   return p.toString();
 }
 
@@ -994,11 +1024,13 @@ function applyFiltersFromUrl() {
   const fd = p.get('fd');
   const fp = p.get('fp');
   const ft = p.get('ft');
+  const fmo = p.get('fmo');
   if (fm) for (const id of fm.split(',')) { const n = Number(id); if (Number.isFinite(n)) state.filters.memberIds.add(n); }
   if (fd) for (const id of fd.split(',')) if (id) state.filters.debateIds.add(id);
   if (fp) for (const p of fp.split(',')) if (p) state.filters.parties.add(p);
   // Terms can contain commas in arbitrary phrasing; pipe is a safer separator.
   if (ft) for (const t of ft.split('|')) if (t) state.filters.terms.add(t);
+  if (fmo) for (const m of fmo.split(',')) if (m) state.filters.months.add(m);
 }
 
 window.addEventListener('popstate', () => {

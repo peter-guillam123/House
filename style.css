@@ -1323,6 +1323,8 @@ body[data-density="airy"] .result-title { font-size: clamp(1.3rem, 2.8vw, 1.7rem
 }
 .dd-chart g:hover .dd-bar { opacity: 0.78; }
 .dd-chart .dd-bar-skeleton { opacity: 0.55; }
+/* Bars double as a month filter — give hover and click the right cues. */
+.dd-chart .dd-bar-group { cursor: pointer; }
 
 .dd-legend {
   display: flex;
