@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
   <header class="topbar">
@@ -112,7 +112,15 @@
       </div>
 
       <section class="dd-headlines-wrap">
-        <p class="dd-eyebrow">Contributions</p>
+        <div class="dd-headlines-toolbar">
+          <p class="dd-eyebrow">Contributions</p>
+          <button id="dd-export-md" type="button" class="export-btn" hidden>
+            <span class="export-btn-label">Export</span>
+            <svg class="export-btn-arrow" viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 2v9"/><path d="m4.5 7.5 3.5 3.5 3.5-3.5"/><path d="M3 13.5h10"/>
+            </svg>
+          </button>
+        </div>
         <div id="dd-filter-bar" class="dd-filter-bar" hidden></div>
         <ol id="dd-headlines" class="dd-headlines"></ol>
       </section>
@@ -130,6 +138,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/deepdive.js?v=11"></script>
+  <script type="module" src="src/deepdive.js?v=12"></script>
 </body>
 </html>

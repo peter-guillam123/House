@@ -7,6 +7,7 @@
 
 import { timelineStats, searchSpoken, memberById } from './api.js?v=7';
 import { formatDate, snippetHtml, escapeHtml, partyColor } from './format.js?v=5';
+import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
 
 // ---------- config -----------------------------------------------------
 
@@ -61,6 +62,7 @@ const $topDebatesMore = document.getElementById('dd-top-debates-more');
 const $headlines   = document.getElementById('dd-headlines');
 const $results     = document.getElementById('dd-results');
 const $filterBar   = document.getElementById('dd-filter-bar');
+const $exportBtn   = document.getElementById('dd-export-md');
 
 function wireRankToggle(btn, list) {
   btn.addEventListener('click', () => {
@@ -418,8 +420,10 @@ function renderTopDebates() {
 function renderHeadlines() {
   if (!state.headlines.length) {
     $headlines.innerHTML = '<li class="dd-empty-li">Headlines will appear here as months load.</li>';
+    $exportBtn.hidden = true;
     return;
   }
+  $exportBtn.hidden = false;
   const filtered = hasFilters() ? state.headlines.filter(matchesFilters) : state.headlines;
   if (!filtered.length) {
     $headlines.innerHTML = '<li class="dd-empty-li">No contributions match the current filter.</li>';
@@ -488,6 +492,38 @@ function filterChipHtml(kind, value, label, color) {
     <span class="dd-filter-chip-x" aria-hidden="true">×</span>
   </button>`;
 }
+
+// ---------- export ----------
+
+function describeDeepDiveFilters() {
+  const parts = [];
+  for (const id of state.filters.memberIds) {
+    const m = state.byMember.get(id);
+    parts.push(`Member: ${m ? m.name : `id ${id}`}`);
+  }
+  for (const id of state.filters.debateIds) {
+    const d = state.byDebate.get(id);
+    parts.push(`Debate: ${d ? d.title : `id ${id}`}`);
+  }
+  for (const p of state.filters.parties) parts.push(`Party: ${p}`);
+  return parts.join(' · ');
+}
+
+$exportBtn.addEventListener('click', () => {
+  // Honour the active filters — newest first matches the on-screen order.
+  const items = (hasFilters() ? state.headlines.filter(matchesFilters) : state.headlines)
+    .slice()
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  const md = buildMarkdownExport({
+    pageTitle: 'Deep Dive export',
+    term: state.term,
+    dateRange: `${state.yearFrom}–${state.yearTo}`,
+    filtersLabel: describeDeepDiveFilters(),
+    recreateUrl: location.href,
+    items,
+  });
+  downloadMarkdown(exportFilename('house-deep-dive', state.term), md);
+});
 
 // ---------- rAF coalescing --------------------------------------------
 
@@ -614,6 +650,7 @@ async function runDive(pushUrl) {
   resetRankToggle($topMembersMore, $topMembers);
   resetRankToggle($topDebatesMore, $topDebates);
   renderFilterBar();
+  $exportBtn.hidden = true;
   $status.textContent = 'Fetching the timeline…';
   $form.classList.add('is-loading');
 

@@ -4,6 +4,7 @@ import {
 } from './api.js?v=7';
 import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=6';
 import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS, partyColor } from './format.js?v=5';
+import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
 
 // ---------- state ----------
 
@@ -44,6 +45,7 @@ const $memberSuggestions = document.getElementById('member-suggestions');
 const $selectedMember = document.getElementById('selected-member');
 const $selectedMemberLabel = document.getElementById('selected-member-label');
 const $clearMember = document.getElementById('clear-member');
+const $exportBtn = document.getElementById('export-md');
 
 // ---------- filter wiring ----------
 
@@ -434,7 +436,44 @@ function renderResults() {
     frag.appendChild(li);
   }
   $results.replaceChildren(frag);
+  $exportBtn.hidden = state.items.length === 0;
 }
+
+// ---------- export ----------
+
+function describeDateRange() {
+  const presetLabels = { month: 'Last month', year: 'Last year', five: 'Last 5 years' };
+  if (state.preset === 'custom') {
+    const { startDate, endDate } = dateRange();
+    return `${formatDate(startDate)} – ${formatDate(endDate)}`;
+  }
+  return presetLabels[state.preset] || '';
+}
+
+function describeSearchFilters() {
+  const parts = [];
+  const allSources = ['spoken', 'wq', 'ws', 'committee'];
+  if (state.sources.size && state.sources.size !== allSources.length) {
+    const labels = { spoken: 'Spoken', wq: 'Written Q', ws: 'Written Stmt', committee: 'Committee' };
+    parts.push(`Sources: ${[...state.sources].map((s) => labels[s] || s).join(', ')}`);
+  }
+  if (state.house && state.house !== 'Both') parts.push(`House: ${state.house}`);
+  if (state.party) parts.push(`Party: ${state.party.name}`);
+  if (state.member) parts.push(`Member: ${state.member.name}`);
+  return parts.join(' · ');
+}
+
+$exportBtn.addEventListener('click', () => {
+  const md = buildMarkdownExport({
+    pageTitle: 'Search export',
+    term: state.term,
+    dateRange: describeDateRange(),
+    filtersLabel: describeSearchFilters(),
+    recreateUrl: location.href,
+    items: state.items,
+  });
+  downloadMarkdown(exportFilename('house-search', state.term), md);
+});
 
 function setStatus(msg, isError = false) {
   $status.textContent = msg;
