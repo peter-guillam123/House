@@ -49,10 +49,13 @@ const $q           = document.getElementById('dd-q');
 const $from        = document.getElementById('dd-from');
 const $to          = document.getElementById('dd-to');
 const $status      = document.getElementById('dd-status');
-const $statTotal   = document.getElementById('dd-stat-total');
-const $statPeak    = document.getElementById('dd-stat-peak');
-const $statFirst   = document.getElementById('dd-stat-first');
-const $statLast    = document.getElementById('dd-stat-last');
+const $statTotal     = document.getElementById('dd-stat-total');
+const $statPeak      = document.getElementById('dd-stat-peak');
+const $statPeakSub   = document.getElementById('dd-stat-peak-sub');
+const $statFirst     = document.getElementById('dd-stat-first');
+const $statFirstSub  = document.getElementById('dd-stat-first-sub');
+const $statLast      = document.getElementById('dd-stat-last');
+const $statLastSub   = document.getElementById('dd-stat-last-sub');
 const $chart       = document.getElementById('dd-chart');
 const $legend      = document.getElementById('dd-legend');
 const $caveat      = document.getElementById('dd-caveat');
@@ -372,6 +375,9 @@ function renderStats() {
     $statPeak.textContent = '—';
     $statFirst.textContent = '—';
     $statLast.textContent = '—';
+    $statPeakSub.textContent = '';
+    $statFirstSub.textContent = '';
+    $statLastSub.textContent = '';
     return;
   }
   let peakIdx = 0, peakVal = 0;
@@ -379,10 +385,39 @@ function renderStats() {
     if (totals[i] > peakVal) { peakVal = totals[i]; peakIdx = i; }
   }
   $statPeak.textContent = formatMonth(months[peakIdx]);
+  $statPeakSub.textContent = `${peakVal.toLocaleString('en-GB')} contribution${peakVal === 1 ? '' : 's'}`;
+
   const firstIdx = totals.findIndex((v) => v > 0);
   const lastIdx  = totals.length - 1 - [...totals].reverse().findIndex((v) => v > 0);
   $statFirst.textContent = firstIdx >= 0 ? formatMonth(months[firstIdx]) : '—';
   $statLast.textContent  = lastIdx  >= 0 ? formatMonth(months[lastIdx])  : '—';
+
+  // First / last attribution — pulled from the streamed sample. The
+  // earliest-dated headline is who-said-it-first within the year range.
+  // Note: contributions per month are sampled (newest 50), so on dense
+  // months the absolute earliest may sit just outside our sample —
+  // close enough as an editorial signal, the existing dd-caveat
+  // explains the sampling.
+  if (state.headlines.length) {
+    const sorted = [...state.headlines].sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+    $statFirstSub.textContent = describeContributor(sorted[0]);
+    $statLastSub.textContent  = describeContributor(sorted[sorted.length - 1]);
+  } else {
+    $statFirstSub.textContent = '';
+    $statLastSub.textContent  = '';
+  }
+}
+
+function describeContributor(h) {
+  if (!h) return '';
+  // Prefer the bare name from byMember (set up from shortName) over the
+  // role-led memberName so long minister attributions don't blow out the
+  // stat cell.
+  const m = h.memberId != null ? state.byMember.get(h.memberId) : null;
+  const name = (m && m.name) || h.memberName;
+  if (!name) return '';
+  const party = (m && m.party) || h.party;
+  return party ? `${name} (${party})` : name;
 }
 
 // ---------- rendering: top members & top debates ----------------------
@@ -703,11 +738,12 @@ $exportBtn.addEventListener('click', () => {
 // ---------- rAF coalescing --------------------------------------------
 
 let renderRaf = 0;
-function scheduleRender(parts = ['chart', 'members', 'debates', 'headlines', 'filterBar', 'coTerms']) {
+function scheduleRender(parts = ['chart', 'stats', 'members', 'debates', 'headlines', 'filterBar', 'coTerms']) {
   if (renderRaf) cancelAnimationFrame(renderRaf);
   renderRaf = requestAnimationFrame(() => {
     renderRaf = 0;
     if (parts.includes('chart')) renderTimeline();
+    if (parts.includes('stats')) renderStats();
     if (parts.includes('members')) renderTopMembers();
     if (parts.includes('debates')) renderTopDebates();
     if (parts.includes('headlines')) renderHeadlines();

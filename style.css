@@ -1271,6 +1271,16 @@ body[data-density="airy"] .result-title { font-size: clamp(1.3rem, 2.8vw, 1.7rem
   color: var(--ink);
   font-feature-settings: 'tnum' 1;
 }
+.dd-stat-sub {
+  margin: 0.35rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  /* keep long minister role lines from breaking the cell apart */
+  overflow-wrap: anywhere;
+}
+.dd-stat-sub:empty { display: none; }
 
 /* --- chart --- */
 
