@@ -361,6 +361,11 @@ async function runSearch(isFresh) {
 
   state.items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   scheduleRender();
+  // Hansard returns minister attributions in role-led form ("The Solicitor
+  // General (Sarah Sackman)") with no party tag, so the lozenge ends up
+  // empty. Look up the missing parties via Members API in the background;
+  // re-render when they come back.
+  fillMissingPartiesForResults(myToken);
 
   const totalAvailable = Object.values(state.totals).reduce((a, b) => a + b, 0);
   const haveMore = ['spoken', 'wq', 'ws', 'committee']
@@ -407,6 +412,31 @@ function scheduleRender() {
     renderRaf = 0;
     renderResults();
   });
+}
+
+// Fire-and-forget: collect unique memberIds for items missing a party,
+// look each one up via the Members API, patch state.items in place,
+// re-render. Same pattern as Deep Dive's fillMissingTopMemberParties.
+async function fillMissingPartiesForResults(myToken) {
+  const missing = new Set();
+  for (const item of state.items) {
+    if (item.memberId != null && !item.party) missing.add(item.memberId);
+  }
+  if (!missing.size) return;
+  const lookups = await Promise.all([...missing].map(async (id) => {
+    try { return [id, await memberById(id)]; }
+    catch { return [id, null]; }
+  }));
+  if (myToken !== state.searchToken) return;
+  const partyById = new Map();
+  for (const [id, m] of lookups) if (m && m.party) partyById.set(id, m.party);
+  if (!partyById.size) return;
+  for (const item of state.items) {
+    if (item.memberId != null && !item.party && partyById.has(item.memberId)) {
+      item.party = partyById.get(item.memberId);
+    }
+  }
+  scheduleRender();
 }
 
 function renderResults() {
