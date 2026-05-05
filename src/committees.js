@@ -498,6 +498,27 @@ function escapeRegex(s) {
   return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+// Build a text-fragment URL — modern browsers will scroll to and
+// highlight the matching text on the destination page, even though
+// the committees.parliament.uk transcripts don't expose anchors.
+// Falls back gracefully: if the fragment doesn't match (whitespace
+// drift, entity differences) the browser just loads the page normally.
+function buildTextFragmentUrl(transcriptLink, snippet, term) {
+  if (!transcriptLink || !snippet || !term) return transcriptLink;
+  // Strip the leading/trailing ellipsis we added during slicing.
+  const clean = String(snippet).replace(/^…\s*|\s*…$/g, '').replace(/\s+/g, ' ').trim();
+  if (!clean) return transcriptLink;
+  const lower = clean.toLowerCase();
+  const idx = lower.indexOf(term.toLowerCase());
+  if (idx < 0) return `${transcriptLink}#:~:text=${encodeURIComponent(term)}`;
+  // Pull up to 5 words on each side of the match for uniqueness.
+  const wordsBefore = clean.slice(0, idx).split(/\s+/).filter(Boolean).slice(-5);
+  const matchExact  = clean.slice(idx, idx + term.length);
+  const wordsAfter  = clean.slice(idx + term.length).split(/\s+/).filter(Boolean).slice(0, 5);
+  const fragment = [...wordsBefore, matchExact, ...wordsAfter].join(' ');
+  return `${transcriptLink}#:~:text=${encodeURIComponent(fragment)}`;
+}
+
 function renderInquiryMatches() {
   if (!state.inquiryMatches.length) {
     $inqMatchesWrap.hidden = true;
@@ -511,12 +532,15 @@ function renderInquiryMatches() {
       return escapeHtml(primary);
     }).join(', ');
     const more = total > snippets.length ? ` <span class="cm-witness-more">+ ${total - snippets.length} more in this session</span>` : '';
-    const snippetItems = snippets.map((sn) => `
-      <li class="cm-snippet">
-        ${sn.speaker ? `<span class="cm-snippet-speaker">${escapeHtml(sn.speaker)}</span>` : ''}
-        <span class="cm-snippet-text">${snippetHtml(sn.snippet, state.inquiryTerm, 400)}</span>
-      </li>
-    `).join('');
+    const snippetItems = snippets.map((sn) => {
+      const deepLink = buildTextFragmentUrl(session.transcriptLink, sn.snippet, state.inquiryTerm);
+      return `<li class="cm-snippet">
+        <a class="cm-snippet-link" href="${escapeHtml(deepLink)}" target="_blank" rel="noopener">
+          ${sn.speaker ? `<span class="cm-snippet-speaker">${escapeHtml(sn.speaker)}</span>` : ''}
+          <span class="cm-snippet-text">${snippetHtml(sn.snippet, state.inquiryTerm, 400)}</span>
+        </a>
+      </li>`;
+    }).join('');
     return `<li class="cm-item">
       <h3 class="cm-item-title"><a href="${escapeHtml(session.transcriptLink)}" target="_blank" rel="noopener">${session.date ? escapeHtml(formatDate(session.date)) : 'Oral evidence'}</a></h3>
       ${witnesses ? `<p class="cm-meta-line">${witnesses}</p>` : ''}
