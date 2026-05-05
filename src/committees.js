@@ -241,31 +241,44 @@ function renderSessions() {
   const sorted = [...state.sessions].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   $sessions.innerHTML = sorted.map((s) => {
     const witnessBits = s.witnesses.slice(0, 4).map((w) => {
-      // Three shapes: name + org context ("Tim Davie (BBC)"); name + role
-      // ("James Blake (BBC Television Presenter)"); organisation-only
-      // submission with no person name (just "BBC").
       const orgs = w.organisations.length ? w.organisations.join(', ') : '';
       const primary = w.name || orgs || '?';
       const ctx = w.name ? (orgs || w.context) : '';
       return `<span class="cm-witness">${escapeHtml(primary)}${ctx ? ` <span class="cm-witness-ctx">(${escapeHtml(ctx)})</span>` : ''}</span>`;
     }).join('');
     const moreBit = s.witnesses.length > 4 ? `<span class="cm-witness-more">+ ${s.witnesses.length - 4} more</span>` : '';
+    // Title: drill into the parent inquiry's view (where the within-inquiry
+    // search lives). Fall back to opening the transcript directly if the
+    // session has no parent inquiry.
+    const dateLabel = s.date ? escapeHtml(formatDate(s.date)) : 'Oral evidence';
+    const titleEl = s.inquiryId
+      ? `<button type="button" class="cm-drill-btn" data-inquiry-id="${s.inquiryId}" data-session-id="${s.id}">${dateLabel}</button>`
+      : `<a href="${escapeHtml(s.transcriptLink)}" target="_blank" rel="noopener">${dateLabel}</a>`;
     const inquiryBit = s.inquiryTitle
-      ? (s.inquiryLink
-          ? `<a class="cm-meta-inquiry" href="${escapeHtml(s.inquiryLink)}" target="_blank" rel="noopener">${escapeHtml(s.inquiryTitle)}</a>`
+      ? (s.inquiryId
+          ? `<button type="button" class="cm-meta-inquiry-btn" data-inquiry-id="${s.inquiryId}">${escapeHtml(s.inquiryTitle)}</button>`
           : `<span class="cm-meta-inquiry">${escapeHtml(s.inquiryTitle)}</span>`)
       : '';
     return `<li class="cm-item">
-      <h3 class="cm-item-title">
-        <a href="${escapeHtml(s.transcriptLink)}" target="_blank" rel="noopener">
-          ${s.date ? escapeHtml(formatDate(s.date)) : 'Oral evidence'}
-        </a>
-      </h3>
+      <h3 class="cm-item-title">${titleEl}</h3>
       ${inquiryBit ? `<p class="cm-meta-line">${inquiryBit}</p>` : ''}
       <p class="cm-witnesses">${witnessBits}${moreBit}</p>
+      <p class="cm-meta-line"><a class="cm-secondary-link" href="${escapeHtml(s.transcriptLink)}" target="_blank" rel="noopener">Read transcript ↗</a></p>
     </li>`;
   }).join('');
 }
+
+// Click delegation — title or inquiry-meta on a session row drills into
+// that session's parent inquiry (and remembers which session you came
+// from so we can scroll to it once the inquiry view's session list
+// has rendered).
+$sessions.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-inquiry-id]');
+  if (!btn) return;
+  const inquiryId = Number(btn.dataset.inquiryId);
+  const sessionId = btn.dataset.sessionId ? Number(btn.dataset.sessionId) : null;
+  enterInquiryView(inquiryId, { pushUrl: true, focusSessionId: sessionId });
+});
 
 // ---------- status ----------
 
@@ -289,9 +302,10 @@ function renderView() {
 
 // ---------- drill-in view ----------
 
-async function enterInquiryView(id, { pushUrl = false } = {}) {
+async function enterInquiryView(id, { pushUrl = false, focusSessionId = null } = {}) {
   const myToken = ++state.inquiryToken;
   state.view = 'inquiry';
+  state.focusSessionId = focusSessionId;
 
   // Look up cached metadata first; fetch if we don't have it (direct URL load).
   let inquiry = state.inquiries.find((i) => i.id === id);
@@ -388,11 +402,21 @@ function renderInquirySessions() {
       return `<span class="cm-witness">${escapeHtml(primary)}${ctx ? ` <span class="cm-witness-ctx">(${escapeHtml(ctx)})</span>` : ''}</span>`;
     }).join('');
     const more = s.witnesses.length > 5 ? `<span class="cm-witness-more">+ ${s.witnesses.length - 5} more</span>` : '';
-    return `<li class="cm-item">
+    const isFocus = state.focusSessionId === s.id;
+    return `<li class="cm-item${isFocus ? ' is-focus' : ''}" data-session-id="${s.id}">
       <h3 class="cm-item-title"><a href="${escapeHtml(s.transcriptLink)}" target="_blank" rel="noopener">${s.date ? escapeHtml(formatDate(s.date)) : 'Oral evidence'}</a></h3>
       <p class="cm-witnesses">${witnessBits}${more}</p>
     </li>`;
   }).join('');
+  // If we entered via clicking a specific session, scroll it into view.
+  if (state.focusSessionId) {
+    const el = $inqSessions.querySelector(`[data-session-id="${state.focusSessionId}"]`);
+    if (el) {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    }
+    state.focusSessionId = null;
+  }
 }
 
 // ---------- within-inquiry full-text search ----------

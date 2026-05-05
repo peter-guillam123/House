@@ -1811,6 +1811,47 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
 .cm-drill-btn:hover { background-size: 100% 1px; color: var(--accent); }
 .cm-drill-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
+/* Inquiry-meta button (the inquiry name shown on a session row) — same
+   underline-on-hover treatment as a meta link. */
+.cm-meta-inquiry-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--ink-soft);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.2em;
+}
+.cm-meta-inquiry-btn:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.cm-meta-inquiry-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* "Read transcript ↗" secondary link below a session row. */
+.cm-secondary-link {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.22em;
+}
+.cm-secondary-link:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* Focus highlight on a session row inside an inquiry's session list,
+   when the user arrived via clicking that specific session. */
+.cm-item.is-focus {
+  background: var(--accent-tint);
+  border-radius: 3px;
+  margin: 0 -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 /* --- drill-in view (one inquiry) --- */
 
 .cm-inquiry-view {
