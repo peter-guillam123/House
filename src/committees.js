@@ -197,8 +197,13 @@ function renderSessions() {
   const sorted = [...state.sessions].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   $sessions.innerHTML = sorted.map((s) => {
     const witnessBits = s.witnesses.slice(0, 4).map((w) => {
-      const ctx = w.organisations.length ? w.organisations.join(', ') : w.context;
-      return `<span class="cm-witness">${escapeHtml(w.name)}${ctx ? ` <span class="cm-witness-ctx">(${escapeHtml(ctx)})</span>` : ''}</span>`;
+      // Three shapes: name + org context ("Tim Davie (BBC)"); name + role
+      // ("James Blake (BBC Television Presenter)"); organisation-only
+      // submission with no person name (just "BBC").
+      const orgs = w.organisations.length ? w.organisations.join(', ') : '';
+      const primary = w.name || orgs || '?';
+      const ctx = w.name ? (orgs || w.context) : '';
+      return `<span class="cm-witness">${escapeHtml(primary)}${ctx ? ` <span class="cm-witness-ctx">(${escapeHtml(ctx)})</span>` : ''}</span>`;
     }).join('');
     const moreBit = s.witnesses.length > 4 ? `<span class="cm-witness-more">+ ${s.witnesses.length - 4} more</span>` : '';
     const inquiryBit = s.inquiryTitle
