@@ -127,6 +127,52 @@
           buried half a screen down.
         </p>
       </div>
+
+      <div class="entry milestone">
+        <p class="when">May 2026</p>
+        <h3>Panels as filters</h3>
+        <p>
+          The leaderboards and the legend on Deep Dive turned out to be
+          better filter surfaces than any panel of dropdowns would have been
+          &mdash; they&rsquo;re already organised by who&rsquo;s spoken most, which
+          debates are carrying the topic, and which parties are doing the
+          talking. So they now double as filters. Click a member, a debate
+          or a party chip in the legend and the contributions list narrows;
+          clicks AND-combine across the three axes; an active-filter strip
+          sits above the list with one-tap removal. Shareable in the URL.
+        </p>
+        <p>
+          The chart itself stays as the universe view &mdash; the filters
+          narrow the contributions list, not the shape of the conversation.
+          The leaderboards don&rsquo;t re-rank either, so they stay usable as
+          navigation while filters are active.
+        </p>
+        <p>
+          Along the way: extracted a shared lozenge style so party tags look
+          the same wherever they appear; nudged the palette (SNP yellow was
+          disappearing on cream paper, Lab/Co-op was bleeding into Lab); and
+          sharpened the dek to make the spoken-contributions-only point
+          properly. Legend chips on desktop now reveal each party&rsquo;s
+          running total on hover.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Quoted searches highlight properly</h3>
+        <p>
+          Searching for &ldquo;the Guardian&rdquo; in quotes was finding the
+          right contributions, but the highlights were going wrong in two
+          places. Our snippet highlighter was looking for the literal quoted
+          string in the result text &mdash; and the text doesn&rsquo;t have
+          those quote characters around the phrase, so it found nothing.
+          Hansard&rsquo;s own <code>?highlight=</code> parameter on click-through
+          couldn&rsquo;t parse the quoted form either, and was marking just
+          &ldquo;the&rdquo; on its own. Strip the wrapping quotes for
+          highlight purposes; leave the quoted form intact for the API
+          search itself, which uses it to do phrase matching.
+        </p>
+      </div>
     </section>
   </main>
 
