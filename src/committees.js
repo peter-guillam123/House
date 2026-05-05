@@ -318,7 +318,7 @@ async function enterInquiryView(id, { pushUrl = false } = {}) {
   if (pushUrl) pushUrlState();
   renderInquiryHeader(inquiry);
   renderView();
-  scrollToTop();
+  scrollToInquiryView();
 
   // Fetch the inquiry's sessions
   try {
@@ -550,9 +550,11 @@ function renderInquiryMatches() {
   }).join('');
 }
 
-function scrollToTop() {
+// Scroll the drill-in view's header into view so the user lands on the
+// new context rather than at the global search form above it.
+function scrollToInquiryView() {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  $inquiryView.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
 }
 
 // ---------- URL state ----------
