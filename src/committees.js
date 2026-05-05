@@ -490,14 +490,18 @@ async function searchWithinInquiry(rawTerm) {
 }
 
 // Walk segments, collect up to MAX_SNIPPETS_PER_SESSION hits with the
-// speaker who said each one. Returns { snippets, totalHits } so the
-// renderer can show "+ N more in this session" honestly.
-function findAllMatchesInSegments(segments, term, maxLen = 400) {
+// speaker who said each one — plus the previous speaker's turn for
+// dialogic context. A match in a witness's answer comes paired with
+// the question that prompted it; a match in a Chair's question comes
+// paired with the answer that precedes it. Either way, the editorial
+// unit is the speaker exchange around the term, not just the slice.
+function findAllMatchesInSegments(segments, term, maxLen = 400, priorMax = 300) {
   if (!segments || !term) return { snippets: [], totalHits: 0 };
   const pattern = new RegExp(escapeRegex(term), 'gi');
   const snippets = [];
   let totalHits = 0;
-  for (const seg of segments) {
+  for (let i = 0; i < segments.length; i++) {
+    const seg = segments[i];
     pattern.lastIndex = 0;
     let m;
     while ((m = pattern.exec(seg.text)) !== null) {
@@ -507,15 +511,46 @@ function findAllMatchesInSegments(segments, term, maxLen = 400) {
         const start = Math.max(0, m.index - before);
         const end = Math.min(seg.text.length, start + maxLen);
         let slice = seg.text.slice(start, end);
-        if (start > 0)               slice = '…' + slice;
-        if (end < seg.text.length)   slice = slice + '…';
-        snippets.push({ speaker: seg.speaker, snippet: slice });
+        if (start > 0)             slice = '…' + slice;
+        if (end < seg.text.length) slice = slice + '…';
+        const prior = findPriorTurn(segments, i);
+        snippets.push({
+          speaker: seg.speaker,
+          snippet: slice,
+          priorSpeaker: prior ? prior.speaker : '',
+          priorText: prior ? truncateFromStart(prior.text, priorMax) : '',
+        });
       }
-      // Skip ahead so adjacent hits don't generate near-duplicate snippets.
       pattern.lastIndex = m.index + Math.max(term.length, 1) + 200;
     }
   }
   return { snippets, totalHits };
+}
+
+// Find the previous speaker's full turn, walking back across the
+// continuation paragraphs of the matching speaker first, then collecting
+// all adjacent paragraphs by the prior speaker.
+function findPriorTurn(segments, i) {
+  if (i <= 0) return null;
+  const currentSpeaker = segments[i].speaker;
+  let priorEnd = i - 1;
+  while (priorEnd >= 0 && segments[priorEnd].speaker === currentSpeaker) priorEnd--;
+  if (priorEnd < 0) return null;
+  const priorSpeaker = segments[priorEnd].speaker;
+  if (!priorSpeaker) return null;   // skip header/boilerplate with no speaker
+  let priorStart = priorEnd;
+  while (priorStart > 0 && segments[priorStart - 1].speaker === priorSpeaker) priorStart--;
+  return {
+    speaker: priorSpeaker,
+    text: segments.slice(priorStart, priorEnd + 1).map((s) => s.text).join(' '),
+  };
+}
+
+// Keep the END of the string (which is usually the actual question, after
+// any preamble) when truncating the prior turn.
+function truncateFromStart(s, max) {
+  if (s.length <= max) return s;
+  return '…' + s.slice(s.length - max).trimStart();
 }
 
 function escapeRegex(s) {
@@ -558,10 +593,21 @@ function renderInquiryMatches() {
     const more = total > snippets.length ? ` <span class="cm-witness-more">+ ${total - snippets.length} more in this session</span>` : '';
     const snippetItems = snippets.map((sn) => {
       const deepLink = buildTextFragmentUrl(session.transcriptLink, sn.snippet, state.inquiryTerm);
+      // Prior turn (e.g. the question above the witness's answer) gets a
+      // muted treatment so the matching turn stays the visual focus.
+      const priorBlock = sn.priorSpeaker
+        ? `<div class="cm-snippet-prior">
+            <span class="cm-snippet-speaker">${escapeHtml(sn.priorSpeaker)}</span>
+            <span class="cm-snippet-text">${escapeHtml(sn.priorText)}</span>
+          </div>`
+        : '';
       return `<li class="cm-snippet">
         <a class="cm-snippet-link" href="${escapeHtml(deepLink)}" target="_blank" rel="noopener">
-          ${sn.speaker ? `<span class="cm-snippet-speaker">${escapeHtml(sn.speaker)}</span>` : ''}
-          <span class="cm-snippet-text">${snippetHtml(sn.snippet, state.inquiryTerm, 400)}</span>
+          ${priorBlock}
+          <div class="cm-snippet-current">
+            ${sn.speaker ? `<span class="cm-snippet-speaker">${escapeHtml(sn.speaker)}</span>` : ''}
+            <span class="cm-snippet-text">${snippetHtml(sn.snippet, state.inquiryTerm, 400)}</span>
+          </div>
         </a>
       </li>`;
     }).join('');
