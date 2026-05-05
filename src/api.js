@@ -8,6 +8,7 @@ export const PROXY = 'https://house-proxy.peter-guillam.workers.dev';
 const HANSARD = 'https://hansard-api.parliament.uk';
 const QS = 'https://questions-statements-api.parliament.uk';
 const MEMBERS = 'https://members-api.parliament.uk';
+const COMMITTEES = 'https://committees-api.parliament.uk';
 
 function viaProxy(upstream) {
   return `${PROXY}/?u=${encodeURIComponent(upstream)}`;
@@ -319,6 +320,80 @@ export async function listCurrentParties() {
     } catch { /* fall back to caller's default */ }
   }
   return [...map.entries()].map(([id, name]) => ({ id, name })).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+// ---------- Committees: inquiries + oral evidence ----------
+//
+// Note: these APIs treat SearchTerm as metadata-only. CommitteeBusiness
+// matches on the inquiry's name; OralEvidence matches on witness names,
+// organisations, and submission identifiers. Neither searches the words
+// inside transcripts. The page UI labels this honestly.
+
+export async function searchInquiries(opts) {
+  const p = new URLSearchParams();
+  if (opts.searchTerm) p.set('SearchTerm', opts.searchTerm);
+  if (opts.startDate)  p.set('DateFrom', opts.startDate);
+  if (opts.endDate)    p.set('DateTo',   opts.endDate);
+  p.set('ShowOnWebsiteOnly', 'true');
+  p.set('Take', String(opts.take ?? 20));
+  p.set('Skip', String(opts.skip ?? 0));
+  const url = `${COMMITTEES}/api/CommitteeBusiness?${p.toString()}`;
+  const data = await getJson(url);
+  return {
+    total: data.totalResults ?? 0,
+    items: (data.items ?? []).map((it) => ({
+      id: it.id,
+      title: it.title || '',
+      typeName: it.type?.name || '',
+      isInquiry: !!it.type?.isInquiry,
+      openDate: (it.openDate || '').slice(0, 10),
+      closeDate: (it.closeDate || '').slice(0, 10),
+      latestReport: it.latestReport
+        ? {
+            title: it.latestReport.description || '',
+            date: (it.latestReport.publicationStartDate || '').slice(0, 10),
+          }
+        : null,
+      // committees.parliament.uk's canonical inquiry/business URL.
+      link: `https://committees.parliament.uk/work/${it.id}/`,
+    })),
+  };
+}
+
+export async function searchOralEvidence(opts) {
+  const p = new URLSearchParams();
+  if (opts.searchTerm) p.set('SearchTerm', opts.searchTerm);
+  if (opts.startDate)  p.set('StartDate', opts.startDate);
+  if (opts.endDate)    p.set('EndDate',   opts.endDate);
+  p.set('ShowOnWebsiteOnly', 'true');
+  p.set('Take', String(opts.take ?? 30));
+  p.set('Skip', String(opts.skip ?? 0));
+  const url = `${COMMITTEES}/api/OralEvidence?${p.toString()}`;
+  const data = await getJson(url);
+  return {
+    total: data.totalResults ?? 0,
+    items: (data.items ?? []).map((it) => {
+      const business = (it.committeeBusinesses || [])[0] || {};
+      const witnesses = (it.witnesses || []).map((w) => ({
+        name: w.name || '',
+        context: w.additionalContext || '',
+        organisations: (w.organisations || []).map((o) => o.name).filter(Boolean),
+      }));
+      return {
+        id: it.id,
+        date: (it.meetingDate || '').slice(0, 10),
+        publishedDate: (it.publicationDate || '').slice(0, 10),
+        inquiryId: business.id || null,
+        inquiryTitle: business.title || '',
+        witnesses,
+        // The transcript can be fetched as base64-wrapped HTML via the API.
+        // For Stage 1 we link out to the published transcript on
+        // committees.parliament.uk; the in-page version comes in Stage 2.
+        transcriptLink: `https://committees.parliament.uk/oralevidence/${it.id}/html/`,
+        inquiryLink: business.id ? `https://committees.parliament.uk/work/${business.id}/` : null,
+      };
+    }),
+  };
 }
 
 // ---------- helpers ----------
