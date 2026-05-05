@@ -173,6 +173,74 @@
           search itself, which uses it to do phrase matching.
         </p>
       </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Form polish, search pulse</h3>
+        <p>
+          Two more polish items. The Deep Dive form now matches Search on
+          mobile &mdash; icon + input + button on one row, with the year
+          range on a quiet second row below. Both forms pulse a thin gradient
+          bar at the bottom edge while a search is in flight: quieter than
+          the colour change at submit, more useful on a Deep Dive that can
+          stream for thirty seconds.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>One shape for every result row</h3>
+        <p>
+          Search and Deep Dive had drifted into different visual idioms for
+          the same job. Search rendered everything in mono caps with party
+          as an inline <em>(LAB)</em> text and House as a tiny mid-line
+          label; Deep Dive used sentence case and a coloured party lozenge.
+          Pulled both onto a single shape: mono-caps date, sentence-case
+          member name, coloured party lozenge, neutral outlined House
+          lozenge. Side effect of the typography change: minister-by-role
+          attributions like &lsquo;The Parliamentary Under-Secretary of State,
+          Ministry of Housing, Communities and Local Government (Baroness
+          Taylor of Stevenage)&rsquo; became readable rather than a wall of
+          caps.
+        </p>
+      </div>
+
+      <div class="entry milestone">
+        <p class="when">May 2026</p>
+        <h3>Three lifts that aren&rsquo;t in Hansard</h3>
+        <p>
+          A small strategic pass &mdash; what can the page do that
+          Hansard&rsquo;s own search can&rsquo;t? Three things at once.
+        </p>
+        <p>
+          An Export button next to the contributions count on both Search
+          and Deep Dive downloads the current filtered set as Markdown
+          &mdash; date, member, party, House, debate, full passage text,
+          and a deep link back to Hansard. Drops straight into NotebookLM,
+          Obsidian, or a Google Docs paste. Since the click-to-filter UI
+          already lets you curate by member, debate, party or co-term, the
+          filter system <em>is</em> the research basket; no need for a
+          separate starring affordance.
+        </p>
+        <p>
+          A new &lsquo;Often mentioned alongside&rsquo; panel beside the
+          existing leaderboards on Deep Dive lists the multi-word
+          capitalised phrases that recur across the matching contributions.
+          For Windrush you get Empire Windrush, Wendy Williams, Home Office,
+          Caribbean Community surfacing &mdash; a tipsheet in a panel. The
+          first version drowned in noise (Hon Member, Madam Deputy Speaker,
+          Liberal Democrats, &lsquo;Recent Developments&rsquo; as a Hansard
+          heading template); a couple of rounds of stopword tightening on
+          real samples cleaned it up. Click a phrase to filter to
+          contributions that mention it, AND-combined with the other
+          filters.
+        </p>
+        <p>
+          And the stats row picked up small sub-lines under each cell: the
+          peak month&rsquo;s count, who first mentioned the term, who most
+          recently raised it.
+        </p>
+      </div>
     </section>
   </main>
 
