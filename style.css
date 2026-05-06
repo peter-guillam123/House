@@ -1829,21 +1829,136 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
 
 .tr-archives {
   margin: 0 0 1rem;
-  padding: 1rem 0;
+  padding: 1rem 0 1.2rem;
   border-top: 1px solid var(--rule-soft);
   border-bottom: 1px solid var(--rule-soft);
 }
-.tr-archives .dd-eyebrow { margin: 0 0 0.55rem; }
-.tr-archives .pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  /* No grid — let pills size by content so labels like "Last 90 days"
-     and "Oct–Dec 2025" sit naturally. */
+.tr-archives .dd-eyebrow { margin: 0 0 0.7rem; }
+
+/* Rolling row at the top — the always-current default, prominent. */
+.tr-archive-rolling { margin: 0 0 0.9rem; }
+.tr-archive-rolling-btn {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 120ms;
 }
-.tr-archives .pills button {
-  padding: 0.4rem 0.85rem;
-  width: auto;
+.tr-archive-rolling-btn:hover { border-color: var(--ink); background: var(--paper-warm); }
+.tr-archive-rolling-btn[aria-checked="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.tr-archive-rolling-label { font-weight: 500; }
+.tr-archive-rolling-count {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+.tr-archive-rolling-btn[aria-checked="true"] .tr-archive-rolling-count {
+  color: var(--paper);
+  opacity: 0.75;
+}
+
+/* Year × Quarter grid for sealed archives. */
+.tr-archive-grid {
+  border-collapse: separate;
+  border-spacing: 0.3rem;
+  margin: 0 -0.3rem;        /* align edge of cells with rolling button */
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+.tr-archive-grid thead th {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+  text-align: center;
+  padding: 0.25rem 0.4rem;
+}
+.tr-archive-year {
+  font-family: var(--serif);
+  font-variation-settings: 'opsz' 18, 'wght' 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+  text-align: right;
+  padding: 0 0.6rem 0 0;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.tr-archive-cell {
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.tr-archive-empty {
+  color: var(--ink-faint);
+  font-family: var(--mono);
+}
+.tr-archive-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  width: 100%;
+  min-width: 4rem;
+  padding: 0.4rem 0.6rem;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font: inherit;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 120ms;
+}
+.tr-archive-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--paper-warm);
+}
+.tr-archive-btn[aria-checked="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.tr-archive-btn-count {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'tnum' 1;
+}
+.tr-archive-btn-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+.tr-archive-btn[aria-checked="true"] .tr-archive-btn-label {
+  color: var(--paper);
+  opacity: 0.75;
+}
+
+@media (max-width: 560px) {
+  /* Tighten the grid so all 4 quarters + year fit a 360px viewport. */
+  .tr-archive-grid { font-size: 0.78rem; border-spacing: 0.2rem; }
+  .tr-archive-grid thead th { font-size: 0.6rem; padding: 0.15rem 0.2rem; }
+  .tr-archive-year { font-size: 0.85rem; padding-right: 0.4rem; }
+  .tr-archive-btn { min-width: 3rem; padding: 0.3rem 0.3rem; }
+  .tr-archive-btn-count { font-size: 0.85rem; }
+  .tr-archive-btn-label { font-size: 0.55rem; }
 }
 
 /* --- transcript text search section --- */

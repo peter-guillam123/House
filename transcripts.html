@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=33">
+  <link rel="stylesheet" href="style.css?v=34">
 </head>
 <body>
   <header class="topbar">
@@ -61,12 +61,24 @@
     </form>
 
     <!-- Archive switcher — populated from evidence-archives.json. The
-         rolling "Last 90 days" is auto-loaded. Click another label to
-         switch the active index; only one is loaded at a time so memory
-         stays bounded on phones. -->
-    <div id="tr-archives" class="tr-archives" hidden>
-      <p class="dd-eyebrow">Searching</p>
-      <div id="tr-archive-pills" class="pills" role="radiogroup" aria-label="Archive period"></div>
+         rolling "Last 90 days" sits at the top; sealed quarters in a
+         Year × Quarter grid below. Only one archive loaded at a time
+         so memory stays bounded on phones. -->
+    <div id="tr-archives" class="tr-archives" hidden role="radiogroup" aria-label="Archive period">
+      <p class="dd-eyebrow">Archive period</p>
+      <div id="tr-archive-rolling" class="tr-archive-rolling"></div>
+      <table class="tr-archive-grid">
+        <thead>
+          <tr>
+            <th class="tr-archive-year"></th>
+            <th>Jan–Mar</th>
+            <th>Apr–Jun</th>
+            <th>Jul–Sep</th>
+            <th>Oct–Dec</th>
+          </tr>
+        </thead>
+        <tbody id="tr-archive-grid-body"></tbody>
+      </table>
     </div>
 
     <p id="tr-status" class="status" aria-live="polite"></p>
@@ -85,6 +97,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/transcripts.js?v=2"></script>
+  <script type="module" src="src/transcripts.js?v=3"></script>
 </body>
 </html>

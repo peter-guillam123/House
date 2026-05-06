@@ -32,8 +32,9 @@ const $form         = document.getElementById('tr-form');
 const $q            = document.getElementById('tr-q');
 const $status       = document.getElementById('tr-status');
 const $results      = document.getElementById('tr-results');
-const $archives     = document.getElementById('tr-archives');
-const $archivePills = document.getElementById('tr-archive-pills');
+const $archives        = document.getElementById('tr-archives');
+const $archiveRolling  = document.getElementById('tr-archive-rolling');
+const $archiveGridBody = document.getElementById('tr-archive-grid-body');
 
 // ---------- manifest + index loading ----------
 
@@ -49,7 +50,7 @@ async function init() {
     const r = await fetch(MANIFEST_URL);
     if (!r.ok) throw new Error(`manifest ${r.status} ${r.statusText}`);
     state.manifest = await r.json();
-    renderArchivePills();
+    renderArchiveGrid();
   } catch (e) {
     setStatus(`Couldn't load the archive manifest: ${e.message}.`, true);
     $form.classList.remove('is-loading');
@@ -119,33 +120,63 @@ function onIndexReady() {
   if (state.term) runSearch(false);
 }
 
-function renderArchivePills() {
+function renderArchiveGrid() {
   if (!state.manifest) return;
-  const pills = [];
-  if (state.manifest.rolling) {
-    pills.push({ id: 'rolling', label: state.manifest.rolling.label });
-  }
-  for (const q of (state.manifest.quarters || [])) {
-    pills.push({ id: q.id, label: q.label });
-  }
-  if (pills.length <= 1) {
-    // Nothing to switch between
+  const totalArchives = (state.manifest.rolling ? 1 : 0) + (state.manifest.quarters || []).length;
+  if (totalArchives <= 1) {
     $archives.hidden = true;
     return;
   }
   $archives.hidden = false;
-  $archivePills.innerHTML = pills.map((p) => `
-    <button type="button" role="radio" aria-checked="false" data-archive-id="${p.id}">${p.label}</button>
-  `).join('');
+
+  // Rolling row at the top
+  if (state.manifest.rolling) {
+    const r = state.manifest.rolling;
+    $archiveRolling.innerHTML = `
+      <button type="button" role="radio" aria-checked="false" class="tr-archive-rolling-btn" data-archive-id="rolling">
+        <span class="tr-archive-rolling-label">${escapeHtml(r.label)}</span>
+        <span class="tr-archive-rolling-count">${r.sessionCount.toLocaleString('en-GB')} sessions</span>
+      </button>
+    `;
+  } else {
+    $archiveRolling.innerHTML = '';
+  }
+
+  // Group quarters by year, sort years desc.
+  const byYear = new Map();
+  for (const q of (state.manifest.quarters || [])) {
+    const m = /^(\d{4})-Q([1-4])$/.exec(q.id);
+    if (!m) continue;
+    const year = m[1];
+    const qNum = parseInt(m[2], 10);
+    if (!byYear.has(year)) byYear.set(year, [null, null, null, null]);
+    byYear.get(year)[qNum - 1] = q;
+  }
+  const years = [...byYear.keys()].sort().reverse();
+
+  $archiveGridBody.innerHTML = years.map((year) => {
+    const cells = byYear.get(year).map((q) => {
+      if (!q) return `<td class="tr-archive-cell tr-archive-empty" aria-hidden="true">—</td>`;
+      return `<td class="tr-archive-cell">
+        <button type="button" role="radio" aria-checked="false" class="tr-archive-btn" data-archive-id="${q.id}">
+          <span class="tr-archive-btn-count">${q.sessionCount.toLocaleString('en-GB')}</span>
+          <span class="tr-archive-btn-label">sessions</span>
+        </button>
+      </td>`;
+    }).join('');
+    return `<tr><th class="tr-archive-year" scope="row">${year}</th>${cells}</tr>`;
+  }).join('');
 }
 
 function highlightActivePill() {
-  for (const btn of $archivePills.querySelectorAll('button')) {
+  for (const btn of $archives.querySelectorAll('button[data-archive-id]')) {
     btn.setAttribute('aria-checked', btn.dataset.archiveId === state.activeArchiveId ? 'true' : 'false');
   }
 }
 
-$archivePills.addEventListener('click', (e) => {
+// Click delegation on the whole archive area — covers the rolling
+// button at the top and every quarter cell in the grid.
+$archives.addEventListener('click', (e) => {
   const btn = e.target.closest('button[data-archive-id]');
   if (!btn) return;
   const id = btn.dataset.archiveId;
