@@ -105,3 +105,34 @@ const PARTY_FALLBACK = '#a89b80';
 export function partyColor(p) {
   return PARTY_COLORS[p] || PARTY_FALLBACK;
 }
+
+// Hansard returns party labels inconsistently — the same MP can show
+// up as "(Liberal Democrat)" in one debate and "(LD)" in another. Map
+// every variant we know to a single short form for display only; the
+// underlying key stays as Hansard returned it so filter URL state and
+// click-to-filter matching keep working.
+const PARTY_DISPLAY = {
+  'Liberal Democrat': 'LD',
+  'Liberal Democrats': 'LD',
+  'Lib Dem': 'LD',
+  'Labour': 'Lab',
+  'Conservative': 'Con',
+  'Conservative Independent': 'Con Ind',
+  'Reform UK': 'Reform',
+  'Green Party': 'Green',
+  'Plaid Cymru': 'PC',
+  'Sinn Féin': 'SF',
+  'SF (Sinn Féin)': 'SF',
+  'Independent': 'Ind',
+  'Crossbench': 'CB',
+  'Non-affiliated': 'Non-Afl',
+  'Co-op': 'Lab/Co-op',
+  'Lab Co-op': 'Lab/Co-op',
+  'Bishop': 'Bishops',
+  'Lord Bishop': 'Bishops',
+  'APNI': 'Alliance',
+};
+export function partyShortName(p) {
+  if (!p) return '';
+  return PARTY_DISPLAY[p] || p;
+}

@@ -414,19 +414,26 @@ main {
   flex-wrap: wrap;
   gap: 0.35rem;
 }
-/* tidy reflow: date range as 2x2, house as 3-up — pills share row width */
-#date-presets {
+/* tidy reflow: date range as 2x2, house as 3-up — pills share row width.
+   Applies to all three pages so the form looks identical everywhere. */
+#date-presets,
+#dd-date-presets,
+#cm-date-presets {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.35rem;
 }
-#house {
+#house,
+#dd-house {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.35rem;
 }
 #date-presets button,
-#house button { width: 100%; text-align: center; padding-left: 0.5rem; padding-right: 0.5rem; }
+#dd-date-presets button,
+#cm-date-presets button,
+#house button,
+#dd-house button { width: 100%; text-align: center; padding-left: 0.5rem; padding-right: 0.5rem; }
 .pills button {
   font-family: var(--sans);
   font-size: 0.86rem;

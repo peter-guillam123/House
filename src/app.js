@@ -3,7 +3,7 @@ import {
   memberById,
 } from './api.js?v=7';
 import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=6';
-import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS, partyColor } from './format.js?v=5';
+import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS, partyColor, partyShortName } from './format.js?v=6';
 import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
 
 // ---------- state ----------
@@ -449,7 +449,7 @@ function renderResults() {
       ? `<span class="result-member">${escapeHtml(item.memberName)}</span>`
       : '<span class="result-member muted">No attribution</span>';
     const partyBit = item.party
-      ? `<span class="party-tag" style="--c:${partyColor(item.party)}">${escapeHtml(item.party)}</span>`
+      ? `<span class="party-tag" style="--c:${partyColor(item.party)}">${escapeHtml(partyShortName(item.party))}</span>`
       : '';
     const houseBit = item.house ? `<span class="house-tag">${escapeHtml(item.house)}</span>` : '';
     li.innerHTML = `

@@ -6,7 +6,7 @@
 // individual contributions feeding the leaderboards and headline list.
 
 import { timelineStats, searchSpoken, memberById } from './api.js?v=7';
-import { formatDate, snippetHtml, escapeHtml, partyColor, unquoteTerm } from './format.js?v=5';
+import { formatDate, snippetHtml, escapeHtml, partyColor, partyShortName, unquoteTerm } from './format.js?v=6';
 import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
 
 // ---------- config -----------------------------------------------------
@@ -427,7 +427,7 @@ function renderLegend(sortedPartiesArg) {
     const count = totalsByParty.get(p) || 0;
     return `<button type="button" class="dd-legend-chip${active ? ' is-active' : ''}" data-party="${escapeHtml(p)}" aria-pressed="${active}" style="--c:${partyColor(p)}">
       <span class="dd-legend-swatch"></span>
-      <span class="dd-legend-name">${escapeHtml(p)}</span>
+      <span class="dd-legend-name">${escapeHtml(partyShortName(p))}</span>
       <span class="dd-legend-count" aria-hidden="true">${count.toLocaleString('en-GB')}</span>
     </button>`;
   }).join('');
@@ -501,7 +501,7 @@ function describeContributor(h) {
   const name = (m && m.name) || h.memberName;
   if (!name) return '';
   const party = (m && m.party) || h.party;
-  return party ? `${name} (${party})` : name;
+  return party ? `${name} (${partyShortName(party)})` : name;
 }
 
 // ---------- rendering: top members & top debates ----------------------
@@ -522,7 +522,7 @@ function renderTopMembers() {
       <button type="button" class="dd-rank-row${active ? ' is-active' : ''}" data-member-id="${m.id}" aria-pressed="${active}">
         <span class="dd-rank-count" style="--c:${partyColor(m.party)}">${m.count.toLocaleString('en-GB')}</span>
         <span class="dd-rank-name">${escapeHtml(m.name || '—')}</span>
-        ${m.party ? `<span class="party-tag" style="--c:${partyColor(m.party)}">${escapeHtml(m.party)}</span>` : ''}
+        ${m.party ? `<span class="party-tag" style="--c:${partyColor(m.party)}">${escapeHtml(partyShortName(m.party))}</span>` : ''}
       </button>
     </li>`;
   }).join('');
@@ -724,7 +724,7 @@ function renderHeadlines() {
   const visible = sorted.slice(0, 250); // render cap for the list itself
   const more = sorted.length - visible.length;
   $headlines.innerHTML = visible.map((h) => {
-    const partyBit = h.party ? `<span class="party-tag" style="--c:${partyColor(h.party)}">${escapeHtml(h.party)}</span>` : '';
+    const partyBit = h.party ? `<span class="party-tag" style="--c:${partyColor(h.party)}">${escapeHtml(partyShortName(h.party))}</span>` : '';
     const houseBit = h.house ? `<span class="house-tag">${escapeHtml(h.house)}</span>` : '';
     const memberBit = h.memberName ? `<span class="dd-hl-member">${escapeHtml(h.memberName)}</span>` : '';
     return `<li class="dd-hl">
@@ -760,7 +760,7 @@ function renderFilterBar() {
     chips.push(filterChipHtml('debate', id, d ? d.title : 'debate', null));
   }
   for (const p of state.filters.parties) {
-    chips.push(filterChipHtml('party', p, p, partyColor(p)));
+    chips.push(filterChipHtml('party', p, partyShortName(p), partyColor(p)));
   }
   for (const t of state.filters.terms) {
     chips.push(filterChipHtml('term', t, t, null));
