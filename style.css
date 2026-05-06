@@ -2010,6 +2010,32 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
 }
 .cm-snippet-more .cm-meta-inquiry-btn { font-style: italic; }
 
+/* Overflow snippets — hidden by default, revealed when the parent
+   .cm-item has .is-snippets-expanded (the user clicked '+ N more'). */
+.cm-snippet-overflow { display: none; }
+.cm-item.is-snippets-expanded .cm-snippet-overflow { display: list-item; }
+
+/* The "+ N more" toggle button. Quiet text-button styling. */
+.cm-snippet-expand {
+  margin: 0.5rem 0 0;
+  padding: 0.3rem 0;
+  background: none;
+  border: 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+.cm-snippet-expand:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.cm-snippet-expand:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.cm-snippet-expand .cm-expand-hide { display: none; }
+.cm-item.is-snippets-expanded .cm-snippet-expand .cm-expand-show { display: none; }
+.cm-item.is-snippets-expanded .cm-snippet-expand .cm-expand-hide { display: inline; }
+
 /* Title-as-button — drills into the inquiry view. Resets browser button
    chrome so it reads as a heading link. */
 .cm-drill-btn {

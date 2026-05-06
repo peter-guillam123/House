@@ -10,7 +10,8 @@
 import { formatDate, escapeHtml, snippetHtml, buildSearchRegex } from './format.js?v=7';
 
 const MANIFEST_URL         = './evidence-archives.json';
-const SNIPPETS_PER_SESSION = 3;
+const INITIAL_SNIPPETS     = 3;     // visible by default
+const SNIPPETS_PER_SESSION = 25;    // hard cap on what we build per session
 const MAX_SESSIONS         = 60;
 const SNIPPET_LEN          = 400;
 const PRIOR_MAX            = 300;
@@ -333,7 +334,8 @@ function renderResults() {
   $results.innerHTML = state.matches.map(({ session, snippets, total }) => {
     const transcriptLink = `https://committees.parliament.uk/oralevidence/${session.id}/html/`;
     const inquiryLink    = session.iId ? `https://committees.parliament.uk/work/${session.iId}/` : '';
-    const snippetItems = snippets.map((sn) => {
+    const snippetItems = snippets.map((sn, i) => {
+      const overflowClass = i >= INITIAL_SNIPPETS ? ' cm-snippet-overflow' : '';
       const deepLink = buildTextFragmentUrl(transcriptLink, sn.snippet, state.term);
       let priorBlock = '';
       if (sn.priorSpeaker && sn.priorIsTruncated) {
@@ -349,7 +351,7 @@ function renderResults() {
           <span class="cm-snippet-text">${escapeHtml(sn.priorTextFull)}</span>
         </div>`;
       }
-      return `<li class="cm-snippet">
+      return `<li class="cm-snippet${overflowClass}">
         ${priorBlock}
         <a class="cm-snippet-link" href="${escapeHtml(deepLink)}" target="_blank" rel="noopener">
           <div class="cm-snippet-current">
@@ -359,9 +361,22 @@ function renderResults() {
         </a>
       </li>`;
     }).join('');
-    const moreBit = total > snippets.length
-      ? `<p class="cm-meta-line cm-snippet-more">+ ${total - snippets.length} more in this session</p>`
-      : '';
+    // Two possible "more" affordances:
+    //   - Expand: there are extra snippets beyond the initial 3, click reveals.
+    //   - Beyond cap: we've capped at SNIPPETS_PER_SESSION but the session
+    //     has even more matches — just a count, no expand action.
+    const overflowCount = Math.max(0, snippets.length - INITIAL_SNIPPETS);
+    const beyondCap = Math.max(0, total - snippets.length);
+    let moreBit = '';
+    if (overflowCount > 0) {
+      moreBit = `<button type="button" class="cm-snippet-expand" aria-expanded="false">
+        <span class="cm-expand-show">+ ${overflowCount} more in this session</span>
+        <span class="cm-expand-hide">Show fewer</span>
+      </button>`;
+    }
+    if (beyondCap > 0) {
+      moreBit += `<p class="cm-meta-line cm-snippet-more">+ ${beyondCap} further mention${beyondCap === 1 ? '' : 's'} in this session — refine the search to narrow it down</p>`;
+    }
     const inquiryBit = session.iT
       ? (inquiryLink
           ? `<a class="cm-meta-inquiry" href="${escapeHtml(inquiryLink)}" target="_blank" rel="noopener">${escapeHtml(session.iT)}</a>`
@@ -379,11 +394,23 @@ function renderResults() {
 
 // Click-to-expand on truncated prior turns
 $results.addEventListener('click', (e) => {
-  const btn = e.target.closest('.cm-snippet-prior.is-collapsed, .cm-snippet-prior.is-expanded');
-  if (!btn) return;
-  const expanded = btn.classList.toggle('is-expanded');
-  btn.classList.toggle('is-collapsed', !expanded);
-  btn.setAttribute('aria-expanded', String(expanded));
+  const priorBtn = e.target.closest('.cm-snippet-prior.is-collapsed, .cm-snippet-prior.is-expanded');
+  if (priorBtn) {
+    const expanded = priorBtn.classList.toggle('is-expanded');
+    priorBtn.classList.toggle('is-collapsed', !expanded);
+    priorBtn.setAttribute('aria-expanded', String(expanded));
+    return;
+  }
+  // Click "+ N more in this session" → reveal the overflow snippets in
+  // that session card; click again to collapse.
+  const expandBtn = e.target.closest('.cm-snippet-expand');
+  if (expandBtn) {
+    const item = expandBtn.closest('.cm-item');
+    if (!item) return;
+    const expanded = item.classList.toggle('is-snippets-expanded');
+    expandBtn.setAttribute('aria-expanded', String(expanded));
+    return;
+  }
 });
 
 // ---------- status + URL state ----------

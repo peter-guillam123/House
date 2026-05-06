@@ -167,6 +167,38 @@
       "sessionCount": 447,
       "buildDate": "2026-05-06",
       "size": 38758071
+    },
+    {
+      "id": "2020-Q4",
+      "label": "Oct–Dec 2020",
+      "url": "evidence-2020-Q4.json",
+      "sessionCount": 393,
+      "buildDate": "2026-05-06",
+      "size": 35514960
+    },
+    {
+      "id": "2020-Q3",
+      "label": "Jul–Sep 2020",
+      "url": "evidence-2020-Q3.json",
+      "sessionCount": 270,
+      "buildDate": "2026-05-06",
+      "size": 21335336
+    },
+    {
+      "id": "2020-Q2",
+      "label": "Apr–Jun 2020",
+      "url": "evidence-2020-Q2.json",
+      "sessionCount": 248,
+      "buildDate": "2026-05-06",
+      "size": 21990967
+    },
+    {
+      "id": "2020-Q1",
+      "label": "Jan–Mar 2020",
+      "url": "evidence-2020-Q1.json",
+      "sessionCount": 195,
+      "buildDate": "2026-05-06",
+      "size": 12419265
     }
   ]
 }
