@@ -11,7 +11,7 @@ import {
   inquiryById,
   oralEvidenceTranscript,
 } from './api.js?v=9';
-import { formatDate, escapeHtml, snippetHtml } from './format.js?v=5';
+import { formatDate, escapeHtml, snippetHtml, buildSearchRegex } from './format.js?v=7';
 
 // ---------- state ----------
 
@@ -586,7 +586,7 @@ async function searchWithinInquiry(rawTerm) {
 // unit is the speaker exchange around the term, not just the slice.
 function findAllMatchesInSegments(segments, term, maxLen = 400, priorMax = 300) {
   if (!segments || !term) return { snippets: [], totalHits: 0 };
-  const pattern = new RegExp(escapeRegex(term), 'gi');
+  const pattern = buildSearchRegex(term, 'g');
   const snippets = [];
   let totalHits = 0;
   for (let i = 0; i < segments.length; i++) {

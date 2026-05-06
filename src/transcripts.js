@@ -7,7 +7,7 @@
 // snippets with prior-turn context and deep-link text fragments back
 // to the published transcript on committees.parliament.uk.
 
-import { formatDate, escapeHtml, snippetHtml } from './format.js?v=6';
+import { formatDate, escapeHtml, snippetHtml, buildSearchRegex } from './format.js?v=7';
 
 const MANIFEST_URL         = './evidence-archives.json';
 const SNIPPETS_PER_SESSION = 3;
@@ -227,7 +227,7 @@ async function runSearch(pushUrl) {
 }
 
 function searchTranscripts(term, index) {
-  const pattern = new RegExp(escapeRegex(term), 'gi');
+  const pattern = buildSearchRegex(term, 'g');
   const out = [];
   for (const session of index.sessions) {
     const segs = session.segs || [];

@@ -6,7 +6,7 @@
 // individual contributions feeding the leaderboards and headline list.
 
 import { timelineStats, searchSpoken, memberById } from './api.js?v=7';
-import { formatDate, snippetHtml, escapeHtml, partyColor, partyShortName, unquoteTerm } from './format.js?v=6';
+import { formatDate, snippetHtml, escapeHtml, partyColor, partyShortName, unquoteTerm } from './format.js?v=7';
 import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
 
 // ---------- config -----------------------------------------------------

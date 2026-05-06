@@ -16,6 +16,27 @@ export function escapeHtml(s) {
     .replace(/'/g, '&#39;');
 }
 
+// Treat any all-caps short token as an acronym — match it case-sensitively
+// with word boundaries so 'SAS' doesn't false-match 'Sasaki' or 'passage',
+// 'RAF' doesn't false-match 'gi raf fes' (the OCR-mangled 'giraffes' on
+// committee transcripts), and 'MP' doesn't match 'ample' / 'import'.
+// Mixed-case terms keep the existing case-insensitive substring match.
+export function isAcronymTerm(term) {
+  const t = String(term || '').trim();
+  return /^[A-Z][A-Z0-9]{1,7}$/.test(t);
+}
+
+// Build a search regex with the right semantics for the term.
+//   flags should typically include 'g' for repeated matches; 'i' is added
+//   automatically for non-acronym terms.
+export function buildSearchRegex(term, flags = '') {
+  const needle = unquoteTerm(term);
+  if (isAcronymTerm(needle)) {
+    return new RegExp(`\\b${escapeRegex(needle)}\\b`, flags.replace(/i/g, ''));
+  }
+  return new RegExp(escapeRegex(needle), flags.includes('i') ? flags : flags + 'i');
+}
+
 // Truncate around the first match of `term`, return safe HTML with the term highlighted.
 export function snippetHtml(text, term, maxLen = 320) {
   if (!text) return '';
@@ -26,7 +47,7 @@ export function snippetHtml(text, term, maxLen = 320) {
   // has no literal quote characters around the phrase. Unwrap before we
   // build the match regex.
   const needle = unquoteTerm(term);
-  const re = new RegExp(escapeRegex(needle), 'i');
+  const re = buildSearchRegex(needle);
   const match = safe.match(re);
   let start = 0, end = Math.min(safe.length, maxLen);
   if (match && match.index !== undefined) {
@@ -42,6 +63,12 @@ export function snippetHtml(text, term, maxLen = 320) {
 }
 
 function highlight(safeHtml, term) {
+  // Match the same acronym-vs-mixed-case rule as the snippet locator so
+  // highlights are exactly the things we counted as matches.
+  if (isAcronymTerm(term)) {
+    const re = new RegExp(`(\\b${escapeRegex(escapeHtml(term))}\\b)`, 'g');
+    return safeHtml.replace(re, '<mark>$1</mark>');
+  }
   const re = new RegExp(`(${escapeRegex(escapeHtml(term))})`, 'ig');
   return safeHtml.replace(re, '<mark>$1</mark>');
 }
