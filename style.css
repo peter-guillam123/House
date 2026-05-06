@@ -153,14 +153,30 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
 .topnav {
   display: flex;
+  flex-wrap: nowrap;
   gap: 1.25rem;
   font-family: var(--sans);
   font-size: 0.85rem;
   letter-spacing: 0.01em;
+  /* Horizontally scrollable when there are more nav items than fit;
+     vertical locked so we never get a wobble. Scrollbar hidden — the
+     touch-action and webkit overflow scrolling give momentum on iOS. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Don't shrink relative to wordmark — let the nav take its natural
+     row width and overflow into the scroll area. */
+  min-width: 0;
 }
+.topnav::-webkit-scrollbar { display: none; }
 .topnav a {
   text-decoration: none;
   color: var(--ink-muted);
+  white-space: nowrap;        /* "Deep Dive" stays one line */
+  flex-shrink: 0;
 }
 .topnav a:hover { color: var(--accent); }
 
