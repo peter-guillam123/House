@@ -221,6 +221,15 @@ async function runSearch(pushUrl) {
       const sessionLabel = state.matches.length === 1 ? '1 session' : `${state.matches.length} sessions`;
       setStatus(`${totalHits.toLocaleString('en-GB')} mention${totalHits === 1 ? '' : 's'} across ${sessionLabel} in ${scope}.`);
     }
+    // After a user-initiated search, slide down so the results are
+    // visible — otherwise the archive grid + hero can push them below
+    // the fold, especially on phones.
+    if (pushUrl && state.matches.length > 0) {
+      requestAnimationFrame(() => {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        $status.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      });
+    }
   } finally {
     if (myToken === state.searchToken) $form.classList.remove('is-loading');
   }
