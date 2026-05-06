@@ -37,6 +37,10 @@ const state = {
   inquiryMatches: [],            // [{ session, snippets: [{ index, html }] }]
   inquiryTranscripts: new Map(), // sessionId → { text, html }
   inquiryToken: 0,
+  // Cache of inquiry scope/descriptions, keyed by inquiry id. Filled
+  // lazily after a search renders so result rows can show a one-line
+  // summary of what the inquiry is actually about.
+  inquiryDescriptions: new Map(),
 };
 
 const TRANSCRIPT_CONCURRENCY = 4;
@@ -55,8 +59,10 @@ const $status       = document.getElementById('cm-status');
 const $results      = document.getElementById('cm-results');
 const $inquiries    = document.getElementById('cm-inquiries');
 const $sessions     = document.getElementById('cm-sessions');
-const $inquiriesNote = document.getElementById('cm-inquiries-note');
-const $sessionsNote  = document.getElementById('cm-sessions-note');
+const $inquiriesLabel = document.getElementById('cm-inquiries-label');
+const $sessionsLabel  = document.getElementById('cm-sessions-label');
+const $inquiriesNote  = document.getElementById('cm-inquiries-note');
+const $sessionsNote   = document.getElementById('cm-sessions-note');
 
 // Drill-in view DOM
 const $inquiryView   = document.getElementById('cm-inquiry-view');
@@ -121,11 +127,13 @@ function dateRange() {
 async function runSearch(pushUrl) {
   const myToken = ++state.searchToken;
   state.term = $q.value.trim();
+  // Empty search → drop back to the browse view rather than scolding.
   if (!state.term) {
-    setStatus('Enter a topic, witness name or organisation to search.');
-    $results.hidden = true;
+    if (pushUrl) pushUrlState();
+    runBrowse();
     return;
   }
+  setPanelLabels('search');
   const { startDate, endDate } = dateRange();
   state.startDate = startDate;
   state.endDate   = endDate;
@@ -166,6 +174,7 @@ async function runSearch(pushUrl) {
 
     renderInquiries();
     renderSessions();
+    enrichInquiriesWithDescriptions(myToken);
 
     if (errors.length) {
       setStatus(`Some results failed to load: ${errors.join('; ')}.`, true);
@@ -178,6 +187,60 @@ async function runSearch(pushUrl) {
     }
   } finally {
     if (myToken === state.searchToken) $form.classList.remove('is-loading');
+  }
+}
+
+// ---------- browse mode (empty-state landing) ----------
+//
+// When the page loads with no search term, fill the two panels with
+// "what's been happening at committees lately" so the page is useful
+// for browse-discovery, not just for users with a specific query in
+// mind. Search submission switches us back to results mode.
+
+async function runBrowse() {
+  const myToken = ++state.searchToken;
+  state.term = '';
+  setStatus('Loading recent committee activity…');
+  $form.classList.add('is-loading');
+  if (state.view === 'list') $results.hidden = false;
+  $inquiries.innerHTML = '';
+  $sessions.innerHTML = '';
+  setPanelLabels('browse');
+  try {
+    const today = new Date();
+    const ago = (days) => new Date(today.getTime() - days * 86400000).toISOString().slice(0, 10);
+    const todayIso = today.toISOString().slice(0, 10);
+    const [inqRes, sesRes] = await Promise.allSettled([
+      // Most-recently-opened inquiries (whether or not currently taking
+      // evidence) — tells the user what the committees are working on.
+      searchInquiries({ startDate: ago(180), endDate: todayIso, take: 15 }),
+      searchOralEvidence({ startDate: ago(60), endDate: todayIso, take: 30 }),
+    ]);
+    if (myToken !== state.searchToken) return;
+    state.inquiries = inqRes.status === 'fulfilled' ? inqRes.value.items : [];
+    state.sessions  = sesRes.status === 'fulfilled' ? sesRes.value.items : [];
+    state.inquiriesTotal = inqRes.status === 'fulfilled' ? inqRes.value.total : 0;
+    state.sessionsTotal  = sesRes.status === 'fulfilled' ? sesRes.value.total : 0;
+    renderInquiries();
+    renderSessions();
+    enrichInquiriesWithDescriptions(myToken);
+    setStatus('Recent activity. Type a term to search the committee record.');
+  } finally {
+    if (myToken === state.searchToken) $form.classList.remove('is-loading');
+  }
+}
+
+function setPanelLabels(mode) {
+  if (mode === 'browse') {
+    $inquiriesLabel.textContent = 'Recent inquiries';
+    $inquiriesNote.textContent  = 'Started in the last 6 months.';
+    $sessionsLabel.textContent  = 'Recent oral evidence';
+    $sessionsNote.textContent   = 'Sessions in the last 60 days.';
+  } else {
+    $inquiriesLabel.textContent = 'Inquiries & sessions';
+    $inquiriesNote.textContent  = 'Matched on title.';
+    $sessionsLabel.textContent  = 'Oral evidence';
+    $sessionsNote.textContent   = 'Matched on witness name or organisation.';
   }
 }
 
@@ -198,9 +261,10 @@ function renderInquiries() {
     const reportBit = inq.latestReport && inq.latestReport.title
       ? `<p class="cm-meta-line">Latest report: ${escapeHtml(inq.latestReport.title)}${inq.latestReport.date ? ` (${formatDate(inq.latestReport.date)})` : ''}</p>`
       : '';
-    // Title is a button that drills into the inquiry view (internal). The
-    // external committees.parliament.uk link goes on the drill-in page
-    // header so people who want it still have it one click away.
+    const desc = state.inquiryDescriptions.get(inq.id);
+    const descBit = desc
+      ? `<p class="cm-inquiry-desc">${escapeHtml(truncateText(desc, 240))}</p>`
+      : '';
     return `<li class="cm-item">
       <h3 class="cm-item-title"><button type="button" class="cm-drill-btn" data-inquiry-id="${inq.id}">${escapeHtml(inq.title || '(untitled)')}</button></h3>
       <p class="cm-meta">
@@ -208,9 +272,34 @@ function renderInquiries() {
         ${status ? `<span class="cm-tag cm-tag-${status.cls}">${escapeHtml(status.label)}</span>` : ''}
         ${dateRange ? `<span class="cm-meta-date">${escapeHtml(dateRange)}</span>` : ''}
       </p>
+      ${descBit}
       ${reportBit}
     </li>`;
   }).join('');
+}
+
+function truncateText(s, max) {
+  const t = String(s || '').replace(/\s+/g, ' ').trim();
+  if (t.length <= max) return t;
+  return t.slice(0, max).replace(/\s+\S*$/, '') + '…';
+}
+
+// Fire-and-forget: after a search/browse renders the inquiries panel,
+// fetch the detail endpoint for any inquiry whose scope description
+// we haven't cached yet, then re-render so the descriptions appear.
+// Skips quietly if the response is missing scope.
+async function enrichInquiriesWithDescriptions(myToken) {
+  const todo = state.inquiries.filter((i) => !state.inquiryDescriptions.has(i.id));
+  if (!todo.length) return;
+  await Promise.all(todo.map(async (inq) => {
+    try {
+      const detail = await inquiryById(inq.id);
+      if (detail && detail.scope) state.inquiryDescriptions.set(inq.id, detail.scope);
+      else state.inquiryDescriptions.set(inq.id, '');
+    } catch { /* swallow — row just renders without description */ }
+  }));
+  if (myToken !== state.searchToken) return;
+  renderInquiries();
 }
 
 // Click delegation — a title click drills into the inquiry view.
@@ -747,6 +836,7 @@ async function hydrateFromUrl() {
   } else {
     state.view = 'list';
     renderView();
+    runBrowse();
   }
 }
 

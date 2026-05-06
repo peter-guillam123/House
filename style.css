@@ -1797,6 +1797,18 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
   font-size: 0.88rem;
 }
 
+/* One-line summary of an inquiry's scope, fetched lazily after the
+   search renders. Quieter than the title, sits between the meta-tags
+   and the latest-report line. */
+.cm-inquiry-desc {
+  margin: 0.15rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
 /* Title-as-button — drills into the inquiry view. Resets browser button
    chrome so it reads as a heading link. */
 .cm-drill-btn {

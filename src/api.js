@@ -397,9 +397,10 @@ export async function searchOralEvidence(opts) {
   };
 }
 
-// Single inquiry/business by id — used when a drill-in URL is loaded
-// directly (e.g. someone shared ?inquiry=5536) and we don't have the
-// metadata cached from a list response.
+// Single inquiry/business by id — used both when a drill-in URL is
+// loaded directly (e.g. someone shared ?inquiry=5536) and when we want
+// to enrich list results with a `scope` description that the list
+// endpoint doesn't include.
 export async function inquiryById(id) {
   const url = `${COMMITTEES}/api/CommitteeBusiness/${id}`;
   const it = await getJson(url);
@@ -411,6 +412,9 @@ export async function inquiryById(id) {
     isInquiry: !!it.type?.isInquiry,
     openDate: (it.openDate || '').slice(0, 10),
     closeDate: (it.closeDate || '').slice(0, 10),
+    // The detail endpoint carries a `scope` field — HTML prose
+    // describing what the inquiry is about. Strip tags for display.
+    scope: it.scope ? stripHtml(it.scope) : '',
     latestReport: it.latestReport
       ? {
           title: it.latestReport.description || '',
