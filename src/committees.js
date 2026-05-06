@@ -514,11 +514,14 @@ function findAllMatchesInSegments(segments, term, maxLen = 400, priorMax = 300) 
         if (start > 0)             slice = '…' + slice;
         if (end < seg.text.length) slice = slice + '…';
         const prior = findPriorTurn(segments, i);
+        const priorFull = prior ? prior.text : '';
         snippets.push({
           speaker: seg.speaker,
           snippet: slice,
           priorSpeaker: prior ? prior.speaker : '',
-          priorText: prior ? truncateFromStart(prior.text, priorMax) : '',
+          priorTextFull:      priorFull,
+          priorTextTruncated: priorFull.length > priorMax ? truncateFromStart(priorFull, priorMax) : priorFull,
+          priorIsTruncated:   priorFull.length > priorMax,
         });
       }
       pattern.lastIndex = m.index + Math.max(term.length, 1) + 200;
@@ -558,23 +561,33 @@ function escapeRegex(s) {
 }
 
 // Build a text-fragment URL — modern browsers will scroll to and
-// highlight the matching text on the destination page, even though
-// the committees.parliament.uk transcripts don't expose anchors.
-// Falls back gracefully: if the fragment doesn't match (whitespace
-// drift, entity differences) the browser just loads the page normally.
+// highlight the matching text on the destination page. The destination
+// is .docx-converted HTML with non-breaking spaces and curly punctuation,
+// so we keep the fragment short, strip punctuation that often drifts,
+// and use the prefix/suffix syntax (`text=PREFIX-,start,-SUFFIX`) so the
+// browser only has to match three plain words exactly. Falls back
+// gracefully: if no match, the page just loads at the top.
 function buildTextFragmentUrl(transcriptLink, snippet, term) {
   if (!transcriptLink || !snippet || !term) return transcriptLink;
-  // Strip the leading/trailing ellipsis we added during slicing.
   const clean = String(snippet).replace(/^…\s*|\s*…$/g, '').replace(/\s+/g, ' ').trim();
   if (!clean) return transcriptLink;
   const lower = clean.toLowerCase();
   const idx = lower.indexOf(term.toLowerCase());
   if (idx < 0) return `${transcriptLink}#:~:text=${encodeURIComponent(term)}`;
-  // Pull up to 5 words on each side of the match for uniqueness.
-  const wordsBefore = clean.slice(0, idx).split(/\s+/).filter(Boolean).slice(-5);
-  const matchExact  = clean.slice(idx, idx + term.length);
-  const wordsAfter  = clean.slice(idx + term.length).split(/\s+/).filter(Boolean).slice(0, 5);
-  const fragment = [...wordsBefore, matchExact, ...wordsAfter].join(' ');
+  // Two simple "anchor" words on each side of the match. Punctuation
+  // stripped so commas, em-dashes etc. can't break matching.
+  const wordify = (s) => s.replace(/[^\w\s]/g, ' ').split(/\s+/).filter((w) => w.length > 1);
+  const before = wordify(clean.slice(0, idx)).slice(-2);
+  const match  = clean.slice(idx, idx + term.length);
+  const after  = wordify(clean.slice(idx + term.length)).slice(0, 2);
+  // Use prefix-,match,-suffix form when we have anchors — far more
+  // tolerant of whitespace and entity differences than plain text=.
+  let fragment;
+  if (before.length && after.length) {
+    fragment = `${before.join(' ')}-,${match},-${after.join(' ')}`;
+  } else {
+    fragment = match;
+  }
   return `${transcriptLink}#:~:text=${encodeURIComponent(fragment)}`;
 }
 
@@ -593,17 +606,29 @@ function renderInquiryMatches() {
     const more = total > snippets.length ? ` <span class="cm-witness-more">+ ${total - snippets.length} more in this session</span>` : '';
     const snippetItems = snippets.map((sn) => {
       const deepLink = buildTextFragmentUrl(session.transcriptLink, sn.snippet, state.inquiryTerm);
-      // Prior turn (e.g. the question above the witness's answer) gets a
-      // muted treatment so the matching turn stays the visual focus.
-      const priorBlock = sn.priorSpeaker
-        ? `<div class="cm-snippet-prior">
-            <span class="cm-snippet-speaker">${escapeHtml(sn.priorSpeaker)}</span>
-            <span class="cm-snippet-text">${escapeHtml(sn.priorText)}</span>
-          </div>`
-        : '';
+      // Prior turn — three shapes:
+      //   • no prior speaker: render nothing
+      //   • prior fits in priorMax: plain static div
+      //   • prior was truncated: a button that toggles between truncated
+      //     and full text on click. Sits OUTSIDE the snippet's deep link
+      //     <a> so the click doesn't navigate.
+      let priorBlock = '';
+      if (sn.priorSpeaker && sn.priorIsTruncated) {
+        priorBlock = `<button type="button" class="cm-snippet-prior is-collapsed" aria-expanded="false">
+          <span class="cm-snippet-speaker">${escapeHtml(sn.priorSpeaker)}</span>
+          <span class="cm-snippet-prior-truncated">${escapeHtml(sn.priorTextTruncated)}</span>
+          <span class="cm-snippet-prior-full">${escapeHtml(sn.priorTextFull)}</span>
+          <span class="cm-snippet-prior-toggle"><span class="cm-toggle-show">Show full question</span><span class="cm-toggle-hide">Show less</span></span>
+        </button>`;
+      } else if (sn.priorSpeaker) {
+        priorBlock = `<div class="cm-snippet-prior is-static">
+          <span class="cm-snippet-speaker">${escapeHtml(sn.priorSpeaker)}</span>
+          <span class="cm-snippet-text">${escapeHtml(sn.priorTextFull)}</span>
+        </div>`;
+      }
       return `<li class="cm-snippet">
+        ${priorBlock}
         <a class="cm-snippet-link" href="${escapeHtml(deepLink)}" target="_blank" rel="noopener">
-          ${priorBlock}
           <div class="cm-snippet-current">
             ${sn.speaker ? `<span class="cm-snippet-speaker">${escapeHtml(sn.speaker)}</span>` : ''}
             <span class="cm-snippet-text">${snippetHtml(sn.snippet, state.inquiryTerm, 400)}</span>
@@ -691,6 +716,17 @@ $back.addEventListener('click', () => exitInquiryView());
 $inqForm.addEventListener('submit', (e) => {
   e.preventDefault();
   searchWithinInquiry($itInput.value);
+});
+
+// Click-to-expand on truncated prior turns — the prior block is a
+// sibling button, not nested inside the snippet's link, so a click
+// here doesn't navigate.
+$inqMatches.addEventListener('click', (e) => {
+  const btn = e.target.closest('.cm-snippet-prior.is-collapsed, .cm-snippet-prior.is-expanded');
+  if (!btn) return;
+  const expanded = btn.classList.toggle('is-expanded');
+  btn.classList.toggle('is-collapsed', !expanded);
+  btn.setAttribute('aria-expanded', String(expanded));
 });
 
 // ---------- init ----------

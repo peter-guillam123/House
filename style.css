@@ -1948,17 +1948,48 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
   border-left-color: var(--accent);
 }
 .cm-snippet-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-/* Prior turn (the question above an answer) — quieter, with a thin
-   separator below it so the matching turn stays the visual focus. */
+/* Prior turn (the question above an answer) — quieter, sits ABOVE the
+   matching snippet's link card with a small gap. Two flavours: a static
+   div (when the prior fits the cap), and a button that toggles between
+   truncated and full text on click (when the prior was truncated). */
 .cm-snippet-prior {
   display: grid;
   gap: 0.2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px dashed var(--rule);
+  padding: 0.5rem 0.8rem 0.55rem;
+  background: var(--paper-warm);
+  border-left: 2px dashed var(--rule);
+  border-radius: 0 3px 3px 0;
   color: var(--ink-muted);
+  font-family: var(--sans);
   font-size: 0.86rem;
   font-style: italic;
+  line-height: 1.55;
+  margin-bottom: -0.4rem;            /* nestle into the link below */
+  text-align: left;
+  width: 100%;
 }
+button.cm-snippet-prior {
+  border-top: 0; border-right: 0; border-bottom: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+button.cm-snippet-prior:hover { background: var(--paper); border-left-color: var(--accent); }
+button.cm-snippet-prior:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cm-snippet-prior-toggle {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+}
+.cm-snippet-prior.is-collapsed .cm-snippet-prior-full,
+.cm-snippet-prior.is-collapsed .cm-toggle-hide { display: none; }
+.cm-snippet-prior.is-expanded  .cm-snippet-prior-truncated,
+.cm-snippet-prior.is-expanded  .cm-toggle-show { display: none; }
+
 .cm-snippet-current {
   display: grid;
   gap: 0.2rem;
