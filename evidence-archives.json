@@ -135,6 +135,38 @@
       "sessionCount": 450,
       "buildDate": "2026-05-06",
       "size": 37288364
+    },
+    {
+      "id": "2021-Q4",
+      "label": "Oct–Dec 2021",
+      "url": "evidence-2021-Q4.json",
+      "sessionCount": 373,
+      "buildDate": "2026-05-06",
+      "size": 32527662
+    },
+    {
+      "id": "2021-Q3",
+      "label": "Jul–Sep 2021",
+      "url": "evidence-2021-Q3.json",
+      "sessionCount": 297,
+      "buildDate": "2026-05-06",
+      "size": 26563841
+    },
+    {
+      "id": "2021-Q2",
+      "label": "Apr–Jun 2021",
+      "url": "evidence-2021-Q2.json",
+      "sessionCount": 414,
+      "buildDate": "2026-05-06",
+      "size": 35380009
+    },
+    {
+      "id": "2021-Q1",
+      "label": "Jan–Mar 2021",
+      "url": "evidence-2021-Q1.json",
+      "sessionCount": 447,
+      "buildDate": "2026-05-06",
+      "size": 38758071
     }
   ]
 }
