@@ -41,13 +41,6 @@ const state = {
   // lazily after a search renders so result rows can show a one-line
   // summary of what the inquiry is actually about.
   inquiryDescriptions: new Map(),
-  // Transcript full-text search: opt-in. The index is built daily by
-  // a GitHub Actions job and shipped at /evidence-index.json. The user
-  // explicitly clicks "Load transcript index" to fetch it; subsequent
-  // searches then run against the cached copy.
-  evidenceIndex: null,
-  evidenceIndexLoading: false,
-  transcriptMatches: [],
 };
 
 const TRANSCRIPT_CONCURRENCY = 4;
@@ -70,14 +63,6 @@ const $inquiriesLabel = document.getElementById('cm-inquiries-label');
 const $sessionsLabel  = document.getElementById('cm-sessions-label');
 const $inquiriesNote  = document.getElementById('cm-inquiries-note');
 const $sessionsNote   = document.getElementById('cm-sessions-note');
-
-// Transcript-text search DOM
-const $transcriptSection = document.getElementById('cm-transcript-section');
-const $transcriptMeta    = document.getElementById('cm-transcript-meta');
-const $transcriptLoad    = document.getElementById('cm-transcript-load');
-const $loadIndexBtn      = document.getElementById('cm-load-index');
-const $transcriptStatus  = document.getElementById('cm-transcript-status');
-const $transcriptMatches = document.getElementById('cm-transcript-matches');
 
 // Drill-in view DOM
 const $inquiryView   = document.getElementById('cm-inquiry-view');
@@ -190,9 +175,6 @@ async function runSearch(pushUrl) {
     renderInquiries();
     renderSessions();
     enrichInquiriesWithDescriptions(myToken);
-    // If the user has loaded the transcript index, also run that
-    // search so they get a unified result set.
-    if (state.evidenceIndex) runTranscriptSearch();
 
     if (errors.length) {
       setStatus(`Some results failed to load: ${errors.join('; ')}.`, true);
@@ -207,157 +189,6 @@ async function runSearch(pushUrl) {
     if (myToken === state.searchToken) $form.classList.remove('is-loading');
   }
 }
-
-// ---------- transcript full-text search (loaded index) ----------
-
-const EVIDENCE_INDEX_URL = './evidence-index.json';
-const TRANSCRIPT_SNIPPETS_PER_SESSION = 3;
-const TRANSCRIPT_MAX_SESSIONS = 50;
-const TRANSCRIPT_SNIPPET_LEN = 400;
-
-async function loadEvidenceIndex() {
-  if (state.evidenceIndex) return state.evidenceIndex;
-  if (state.evidenceIndexLoading) return null;
-  state.evidenceIndexLoading = true;
-  $transcriptStatus.textContent = 'Loading transcript index…';
-  $loadIndexBtn.disabled = true;
-  try {
-    const r = await fetch(EVIDENCE_INDEX_URL);
-    if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-    state.evidenceIndex = await r.json();
-    state.evidenceIndexLoading = false;
-    $transcriptLoad.hidden = true;
-    const idx = state.evidenceIndex;
-    if ($transcriptMeta) {
-      $transcriptMeta.textContent = ` · ${idx.sessionCount.toLocaleString('en-GB')} session${idx.sessionCount === 1 ? '' : 's'} · last built ${idx.buildDate}`;
-    }
-    $transcriptStatus.textContent = state.term
-      ? `Searching ${idx.sessionCount.toLocaleString('en-GB')} transcripts…`
-      : 'Index loaded. Search a term above to find transcript mentions.';
-    return state.evidenceIndex;
-  } catch (e) {
-    state.evidenceIndexLoading = false;
-    $loadIndexBtn.disabled = false;
-    $transcriptStatus.textContent = `Couldn't load the index: ${e.message}. The build may not have run yet — try again in a few hours.`;
-    $transcriptStatus.classList.add('error');
-    return null;
-  }
-}
-
-function searchTranscriptIndex(term) {
-  if (!term || !state.evidenceIndex) return [];
-  const pattern = new RegExp(escapeRegex(term), 'gi');
-  const results = [];
-  for (const session of state.evidenceIndex.sessions) {
-    const segs = session.segs || [];
-    let totalHits = 0;
-    const snippets = [];
-    for (const seg of segs) {
-      pattern.lastIndex = 0;
-      let m;
-      while ((m = pattern.exec(seg.tx)) !== null) {
-        totalHits++;
-        if (snippets.length < TRANSCRIPT_SNIPPETS_PER_SESSION) {
-          const before = Math.floor(TRANSCRIPT_SNIPPET_LEN / 3);
-          const start = Math.max(0, m.index - before);
-          const end = Math.min(seg.tx.length, start + TRANSCRIPT_SNIPPET_LEN);
-          let slice = seg.tx.slice(start, end);
-          if (start > 0)            slice = '…' + slice;
-          if (end < seg.tx.length)  slice = slice + '…';
-          snippets.push({ speaker: seg.sp || '', snippet: slice });
-        }
-        pattern.lastIndex = m.index + Math.max(term.length, 1) + 200;
-      }
-    }
-    if (snippets.length) {
-      results.push({ session, snippets, total: totalHits });
-    }
-  }
-  // Newest sessions first, then trim
-  results.sort((a, b) => (b.session.d || '').localeCompare(a.session.d || ''));
-  return results.slice(0, TRANSCRIPT_MAX_SESSIONS);
-}
-
-function renderTranscriptMatches() {
-  if (!state.evidenceIndex) return;
-  const idx = state.evidenceIndex;
-  if (!state.term) {
-    $transcriptMatches.innerHTML = '';
-    $transcriptStatus.textContent = `Index loaded · ${idx.sessionCount.toLocaleString('en-GB')} sessions in the last ${idx.windowDays} days. Type a term above to find transcript mentions.`;
-    return;
-  }
-  if (!state.transcriptMatches.length) {
-    $transcriptMatches.innerHTML = '';
-    $transcriptStatus.textContent = `No mentions of "${state.term}" in the last ${idx.windowDays} days of transcripts.`;
-    return;
-  }
-  const totalHits = state.transcriptMatches.reduce((acc, m) => acc + m.total, 0);
-  const sessionLabel = state.transcriptMatches.length === 1 ? '1 session' : `${state.transcriptMatches.length} sessions`;
-  $transcriptStatus.textContent = `${totalHits.toLocaleString('en-GB')} mention${totalHits === 1 ? '' : 's'} across ${sessionLabel}.`;
-  $transcriptMatches.innerHTML = state.transcriptMatches.map(({ session, snippets, total }) => {
-    const transcriptLink = `https://committees.parliament.uk/oralevidence/${session.id}/html/`;
-    const snippetItems = snippets.map((sn) => {
-      const deepLink = buildTextFragmentUrl(transcriptLink, sn.snippet, state.term);
-      return `<li class="cm-snippet">
-        <a class="cm-snippet-link" href="${escapeHtml(deepLink)}" target="_blank" rel="noopener">
-          <div class="cm-snippet-current">
-            ${sn.speaker ? `<span class="cm-snippet-speaker">${escapeHtml(sn.speaker)}</span>` : ''}
-            <span class="cm-snippet-text">${snippetHtml(sn.snippet, state.term, TRANSCRIPT_SNIPPET_LEN)}</span>
-          </div>
-        </a>
-      </li>`;
-    }).join('');
-    const moreBit = total > snippets.length
-      ? `<p class="cm-meta-line cm-snippet-more">+ ${total - snippets.length} more in this session — <button type="button" class="cm-meta-inquiry-btn" data-inquiry-id="${session.iId || ''}">drill into the inquiry</button> to see them all</p>`
-      : '';
-    const titleEl = session.iId
-      ? `<button type="button" class="cm-drill-btn" data-inquiry-id="${session.iId}" data-session-id="${session.id}">${escapeHtml(formatDate(session.d) || 'Oral evidence')}</button>`
-      : `<a href="${escapeHtml(transcriptLink)}" target="_blank" rel="noopener">${escapeHtml(formatDate(session.d) || 'Oral evidence')}</a>`;
-    return `<li class="cm-item">
-      <h3 class="cm-item-title">${titleEl}</h3>
-      ${session.iT ? `<p class="cm-meta-line">${escapeHtml(session.iT)}</p>` : ''}
-      ${session.w ? `<p class="cm-meta-line cm-witnesses-inline">${escapeHtml(session.w)}</p>` : ''}
-      <ol class="cm-snippets">${snippetItems}</ol>
-      ${moreBit}
-    </li>`;
-  }).join('');
-}
-
-function runTranscriptSearch() {
-  if (!state.evidenceIndex) return;
-  $transcriptStatus.classList.remove('error');
-  state.transcriptMatches = searchTranscriptIndex(state.term);
-  renderTranscriptMatches();
-}
-
-// Click delegation on the transcript matches list — same shape as the
-// session-results delegation above. Drill into the inquiry on title or
-// inquiry-meta click; bring the search term along so the within-inquiry
-// search runs immediately and the user sees ALL matches in context.
-$transcriptMatches.addEventListener('click', (e) => {
-  const btn = e.target.closest('[data-inquiry-id]');
-  if (!btn) return;
-  const inquiryId = Number(btn.dataset.inquiryId);
-  if (!Number.isFinite(inquiryId) || inquiryId <= 0) return;
-  const sessionId = btn.dataset.sessionId ? Number(btn.dataset.sessionId) : null;
-  // Carry the search term into the within-inquiry search.
-  const term = state.term;
-  enterInquiryView(inquiryId, { pushUrl: true, focusSessionId: sessionId });
-  if (term) {
-    setTimeout(() => {
-      $itInput.value = term;
-      searchWithinInquiry(term);
-    }, 50);
-  }
-});
-
-$loadIndexBtn.addEventListener('click', async () => {
-  await loadEvidenceIndex();
-  if (state.evidenceIndex) {
-    $transcriptSection.hidden = false;
-    if (state.term) runTranscriptSearch();
-  }
-});
 
 // ---------- browse mode (empty-state landing) ----------
 //
@@ -393,9 +224,6 @@ async function runBrowse() {
     renderInquiries();
     renderSessions();
     enrichInquiriesWithDescriptions(myToken);
-    // Clear any stale transcript matches now we're in browse mode
-    state.transcriptMatches = [];
-    if (state.evidenceIndex) renderTranscriptMatches();
     setStatus('Recent activity. Type a term to search the committee record.');
   } finally {
     if (myToken === state.searchToken) $form.classList.remove('is-loading');
@@ -559,7 +387,6 @@ function renderView() {
   const isInquiry = state.view === 'inquiry';
   $inquiryView.hidden = !isInquiry;
   $results.hidden = isInquiry || state.inquiries.length === 0 && state.sessions.length === 0;
-  $transcriptSection.hidden = isInquiry;
 }
 
 // ---------- drill-in view ----------
