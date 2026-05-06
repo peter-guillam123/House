@@ -4,3 +4,5 @@ node_modules/
 .DS_Store
 *.log
 worker/package-lock.json
+__pycache__/
+*.pyc

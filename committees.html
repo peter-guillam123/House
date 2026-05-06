@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=29">
+  <link rel="stylesheet" href="style.css?v=30">
 </head>
 <body>
   <header class="topbar">
@@ -143,6 +143,25 @@
         </section>
       </div>
     </section>
+
+    <!-- Transcript text search — opt-in. Sits below the discovery
+         results so the prompt-to-load-index doesn't shout at users
+         who haven't done a search yet. -->
+    <section id="cm-transcript-section" class="cm-transcript-section">
+      <div class="cm-transcript-header">
+        <p class="dd-eyebrow">Transcript mentions<span id="cm-transcript-meta" class="cm-transcript-meta"></span></p>
+        <p class="cm-side-note">Searches the words inside oral-evidence transcripts (last 30 days).</p>
+      </div>
+      <div id="cm-transcript-load" class="cm-transcript-load">
+        <p>The regular search above only matches inquiry titles and witness metadata. Load the daily-built transcript index to also find every mention of your term inside the last 30 days of oral evidence.</p>
+        <button type="button" id="cm-load-index" class="primary">
+          <span class="primary-label">Load transcript index</span>
+        </button>
+        <p class="cm-transcript-fineprint">Roughly 5–10MB. Held in memory for the session; cached in your browser between visits.</p>
+      </div>
+      <p id="cm-transcript-status" class="status" aria-live="polite"></p>
+      <ol id="cm-transcript-matches" class="cm-list"></ol>
+    </section>
   </main>
 
   <footer>
@@ -156,6 +175,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/committees.js?v=10"></script>
+  <script type="module" src="src/committees.js?v=11"></script>
 </body>
 </html>

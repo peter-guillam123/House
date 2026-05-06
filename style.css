@@ -1809,6 +1809,55 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
   max-width: 60ch;
 }
 
+/* --- transcript text search section --- */
+
+.cm-transcript-section {
+  margin: 2rem 0 1rem;
+  padding: 1.4rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+.cm-transcript-header { margin: 0 0 1rem; }
+.cm-transcript-meta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+.cm-transcript-load {
+  margin: 0 0 1.5rem;
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: var(--paper-warm);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  max-width: 60ch;
+}
+.cm-transcript-load p {
+  margin: 0 0 0.8rem;
+  font-family: var(--serif);
+  font-variation-settings: 'opsz' 18, 'wght' 400;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.cm-transcript-fineprint {
+  margin-top: 0.8rem !important;
+  font-family: var(--sans) !important;
+  font-size: 0.8rem !important;
+  font-style: italic;
+  color: var(--ink-muted) !important;
+}
+.cm-witnesses-inline { color: var(--ink-muted); font-size: 0.82rem; }
+.cm-snippet-more {
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+.cm-snippet-more .cm-meta-inquiry-btn { font-style: italic; }
+
 /* Title-as-button — drills into the inquiry view. Resets browser button
    chrome so it reads as a heading link. */
 .cm-drill-btn {
