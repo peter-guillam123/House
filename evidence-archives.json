@@ -23,6 +23,54 @@
       "sessionCount": 257,
       "buildDate": "2026-05-06",
       "size": 20655002
+    },
+    {
+      "id": "2025-Q2",
+      "label": "Apr–Jun 2025",
+      "url": "evidence-2025-Q2.json",
+      "sessionCount": 473,
+      "buildDate": "2026-05-06",
+      "size": 39503284
+    },
+    {
+      "id": "2025-Q1",
+      "label": "Jan–Mar 2025",
+      "url": "evidence-2025-Q1.json",
+      "sessionCount": 424,
+      "buildDate": "2026-05-06",
+      "size": 35632515
+    },
+    {
+      "id": "2024-Q4",
+      "label": "Oct–Dec 2024",
+      "url": "evidence-2024-Q4.json",
+      "sessionCount": 218,
+      "buildDate": "2026-05-06",
+      "size": 17240782
+    },
+    {
+      "id": "2024-Q3",
+      "label": "Jul–Sep 2024",
+      "url": "evidence-2024-Q3.json",
+      "sessionCount": 13,
+      "buildDate": "2026-05-06",
+      "size": 819391
+    },
+    {
+      "id": "2024-Q2",
+      "label": "Apr–Jun 2024",
+      "url": "evidence-2024-Q2.json",
+      "sessionCount": 309,
+      "buildDate": "2026-05-06",
+      "size": 24202743
+    },
+    {
+      "id": "2024-Q1",
+      "label": "Jan–Mar 2024",
+      "url": "evidence-2024-Q1.json",
+      "sessionCount": 476,
+      "buildDate": "2026-05-06",
+      "size": 40536096
     }
   ]
 }
