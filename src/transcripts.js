@@ -9,7 +9,7 @@
 
 import { formatDate, escapeHtml, snippetHtml } from './format.js?v=6';
 
-const EVIDENCE_INDEX_URL  = './evidence-index.json';
+const MANIFEST_URL         = './evidence-archives.json';
 const SNIPPETS_PER_SESSION = 3;
 const MAX_SESSIONS         = 60;
 const SNIPPET_LEN          = 400;
@@ -19,41 +19,144 @@ const PRIOR_MAX            = 300;
 
 const state = {
   term: '',
-  evidenceIndex: null,
+  manifest: null,           // { rolling: {...}, quarters: [...] }
+  activeArchiveId: 'rolling', // 'rolling' or '2025-Q4' etc.
+  loadedIndexes: new Map(), // archiveId → parsed JSON (cache, never evicted)
   matches: [],
   searchToken: 0,
 };
 
 // ---------- DOM ----------
 
-const $form    = document.getElementById('tr-form');
-const $q       = document.getElementById('tr-q');
-const $status  = document.getElementById('tr-status');
-const $results = document.getElementById('tr-results');
+const $form         = document.getElementById('tr-form');
+const $q            = document.getElementById('tr-q');
+const $status       = document.getElementById('tr-status');
+const $results      = document.getElementById('tr-results');
+const $archives     = document.getElementById('tr-archives');
+const $archivePills = document.getElementById('tr-archive-pills');
 
-// ---------- index loading (auto on page entry) ----------
+// ---------- manifest + index loading ----------
 
-async function loadIndex() {
-  setStatus('Loading the transcript index…');
+// On page entry: fetch the small manifest file, render the archive
+// pills, and auto-load the rolling index. Other archives are loaded
+// on demand when the user picks them. Cached in memory so swapping
+// back to a previously-loaded one is instant.
+
+async function init() {
+  setStatus('Loading…');
   $form.classList.add('is-loading');
   try {
-    const r = await fetch(EVIDENCE_INDEX_URL);
-    if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-    state.evidenceIndex = await r.json();
-    const idx = state.evidenceIndex;
-    setStatus(`Index loaded · ${idx.sessionCount.toLocaleString('en-GB')} sessions in the last ${idx.windowDays} days · last built ${formatDate(idx.buildDate)}.`);
-    // If the page was opened with ?q=…, run the search now.
-    const urlQ = new URLSearchParams(location.search).get('q') || '';
-    if (urlQ) {
-      $q.value = urlQ;
-      runSearch(false);
-    }
+    const r = await fetch(MANIFEST_URL);
+    if (!r.ok) throw new Error(`manifest ${r.status} ${r.statusText}`);
+    state.manifest = await r.json();
+    renderArchivePills();
   } catch (e) {
-    setStatus(`Couldn't load the transcript index: ${e.message}. The build may not have run yet — try again in a few hours.`, true);
+    setStatus(`Couldn't load the archive manifest: ${e.message}.`, true);
+    $form.classList.remove('is-loading');
+    return;
+  }
+
+  // Pick initial archive: from URL ?archive= if present and known,
+  // otherwise the rolling default.
+  const urlArchive = new URLSearchParams(location.search).get('archive') || '';
+  const known = archiveExists(urlArchive);
+  state.activeArchiveId = known ? urlArchive : 'rolling';
+  highlightActivePill();
+
+  await loadActiveIndex();
+
+  // If the page was opened with ?q=…, run the search.
+  const urlQ = new URLSearchParams(location.search).get('q') || '';
+  if (urlQ) {
+    $q.value = urlQ;
+    runSearch(false);
+  }
+}
+
+function archiveExists(id) {
+  if (!state.manifest) return false;
+  if (id === 'rolling') return !!state.manifest.rolling;
+  return (state.manifest.quarters || []).some((q) => q.id === id);
+}
+
+function archiveDescriptor(id) {
+  if (id === 'rolling') return state.manifest && state.manifest.rolling;
+  return (state.manifest.quarters || []).find((q) => q.id === id) || null;
+}
+
+async function loadActiveIndex() {
+  const id = state.activeArchiveId;
+  if (state.loadedIndexes.has(id)) {
+    onIndexReady();
+    return;
+  }
+  const desc = archiveDescriptor(id);
+  if (!desc) {
+    setStatus(`Couldn't find archive: ${id}`, true);
+    return;
+  }
+  setStatus(`Loading ${desc.label}…`);
+  $form.classList.add('is-loading');
+  try {
+    const r = await fetch(`./${desc.url}`);
+    if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+    state.loadedIndexes.set(id, await r.json());
+    onIndexReady();
+  } catch (e) {
+    setStatus(`Couldn't load ${desc.label}: ${e.message}.`, true);
   } finally {
     $form.classList.remove('is-loading');
   }
 }
+
+function onIndexReady() {
+  const desc = archiveDescriptor(state.activeArchiveId);
+  const idx = state.loadedIndexes.get(state.activeArchiveId);
+  if (!desc || !idx) return;
+  setStatus(`${desc.label} · ${idx.sessionCount.toLocaleString('en-GB')} sessions · built ${formatDate(idx.buildDate)}.`);
+  // Re-run search if there's a current term (e.g. user switched archive
+  // while a term was active).
+  if (state.term) runSearch(false);
+}
+
+function renderArchivePills() {
+  if (!state.manifest) return;
+  const pills = [];
+  if (state.manifest.rolling) {
+    pills.push({ id: 'rolling', label: state.manifest.rolling.label });
+  }
+  for (const q of (state.manifest.quarters || [])) {
+    pills.push({ id: q.id, label: q.label });
+  }
+  if (pills.length <= 1) {
+    // Nothing to switch between
+    $archives.hidden = true;
+    return;
+  }
+  $archives.hidden = false;
+  $archivePills.innerHTML = pills.map((p) => `
+    <button type="button" role="radio" aria-checked="false" data-archive-id="${p.id}">${p.label}</button>
+  `).join('');
+}
+
+function highlightActivePill() {
+  for (const btn of $archivePills.querySelectorAll('button')) {
+    btn.setAttribute('aria-checked', btn.dataset.archiveId === state.activeArchiveId ? 'true' : 'false');
+  }
+}
+
+$archivePills.addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-archive-id]');
+  if (!btn) return;
+  const id = btn.dataset.archiveId;
+  if (id === state.activeArchiveId) return;
+  state.activeArchiveId = id;
+  highlightActivePill();
+  state.matches = [];
+  renderResults();
+  pushUrlState();
+  loadActiveIndex();
+});
 
 // ---------- search ----------
 
@@ -67,22 +170,25 @@ async function runSearch(pushUrl) {
     setStatus('Type a term to search the transcripts.');
     return;
   }
-  if (!state.evidenceIndex) {
+  const idx = state.loadedIndexes.get(state.activeArchiveId);
+  if (!idx) {
     setStatus('Index still loading — try again in a moment.');
     return;
   }
   setStatus('Searching…');
   $form.classList.add('is-loading');
   try {
-    state.matches = searchTranscripts(state.term, state.evidenceIndex);
+    state.matches = searchTranscripts(state.term, idx);
     if (myToken !== state.searchToken) return;
     renderResults();
+    const desc = archiveDescriptor(state.activeArchiveId);
+    const scope = desc ? desc.label : 'this archive';
     const totalHits = state.matches.reduce((acc, m) => acc + m.total, 0);
     if (!totalHits) {
-      setStatus(`No mentions of "${state.term}" in the last ${state.evidenceIndex.windowDays} days of transcripts.`);
+      setStatus(`No mentions of "${state.term}" in ${scope}.`);
     } else {
       const sessionLabel = state.matches.length === 1 ? '1 session' : `${state.matches.length} sessions`;
-      setStatus(`${totalHits.toLocaleString('en-GB')} mention${totalHits === 1 ? '' : 's'} across ${sessionLabel}.`);
+      setStatus(`${totalHits.toLocaleString('en-GB')} mention${totalHits === 1 ? '' : 's'} across ${sessionLabel} in ${scope}.`);
     }
   } finally {
     if (myToken === state.searchToken) $form.classList.remove('is-loading');
@@ -250,14 +356,24 @@ function setStatus(msg, isError = false) {
 function pushUrlState() {
   const p = new URLSearchParams();
   if (state.term) p.set('q', state.term);
+  if (state.activeArchiveId && state.activeArchiveId !== 'rolling') {
+    p.set('archive', state.activeArchiveId);
+  }
   const qs = p.toString();
   const url = qs ? `${location.pathname}?${qs}` : location.pathname;
   if (url === location.pathname + location.search) return;
   history.pushState({ transcripts: true }, '', url);
 }
 
-window.addEventListener('popstate', () => {
-  $q.value = new URLSearchParams(location.search).get('q') || '';
+window.addEventListener('popstate', async () => {
+  const params = new URLSearchParams(location.search);
+  $q.value = params.get('q') || '';
+  const archive = params.get('archive') || 'rolling';
+  if (archive !== state.activeArchiveId && archiveExists(archive)) {
+    state.activeArchiveId = archive;
+    highlightActivePill();
+    await loadActiveIndex();
+  }
   runSearch(false);
 });
 
@@ -270,4 +386,4 @@ $form.addEventListener('submit', (e) => {
 
 // ---------- init ----------
 
-loadIndex();
+init();

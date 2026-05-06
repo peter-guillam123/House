@@ -5,6 +5,11 @@ on:
     # 05:17 UTC daily — quiet hour for the parliament API.
     - cron: '17 5 * * *'
   workflow_dispatch:
+    inputs:
+      quarter:
+        description: 'Build a quarterly archive (e.g. 2025-Q4). Leave blank for the rolling 90-day index.'
+        required: false
+        default: ''
 
 jobs:
   build:
@@ -18,17 +23,26 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Build evidence-index.json
-        run: python3 tools/build-evidence-index.py
+      - name: Build the index
+        run: |
+          if [ -n "${{ inputs.quarter }}" ]; then
+            python3 tools/build-evidence-index.py --quarter "${{ inputs.quarter }}"
+          else
+            python3 tools/build-evidence-index.py
+          fi
 
       - name: Commit if changed
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add evidence-index.json
+          git add evidence-index.json evidence-*-Q*.json evidence-archives.json
           if git diff --cached --quiet; then
-            echo 'No changes to evidence-index.json'
+            echo 'No changes to commit'
           else
-            git commit -m 'Rebuild evidence-index.json'
+            if [ -n "${{ inputs.quarter }}" ]; then
+              git commit -m "Build quarterly archive ${{ inputs.quarter }}"
+            else
+              git commit -m 'Rebuild rolling evidence index'
+            fi
             git push
           fi

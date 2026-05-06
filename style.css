@@ -1825,6 +1825,27 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
   max-width: 60ch;
 }
 
+/* --- archive switcher on the Transcripts page --- */
+
+.tr-archives {
+  margin: 0 0 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.tr-archives .dd-eyebrow { margin: 0 0 0.55rem; }
+.tr-archives .pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  /* No grid — let pills size by content so labels like "Last 90 days"
+     and "Oct–Dec 2025" sit naturally. */
+}
+.tr-archives .pills button {
+  padding: 0.4rem 0.85rem;
+  width: auto;
+}
+
 /* --- transcript text search section --- */
 
 .cm-transcript-section {

@@ -1,0 +1,28 @@
+{
+  "rolling": {
+    "url": "evidence-index.json",
+    "label": "Last 90 days",
+    "windowDays": 90,
+    "sessionCount": 403,
+    "buildDate": "2026-05-06",
+    "size": 32793687
+  },
+  "quarters": [
+    {
+      "id": "2025-Q4",
+      "label": "Oct–Dec 2025",
+      "url": "evidence-2025-Q4.json",
+      "sessionCount": 418,
+      "buildDate": "2026-05-06",
+      "size": 33034805
+    },
+    {
+      "id": "2025-Q3",
+      "label": "Jul–Sep 2025",
+      "url": "evidence-2025-Q3.json",
+      "sessionCount": 257,
+      "buildDate": "2026-05-06",
+      "size": 20655002
+    }
+  ]
+}

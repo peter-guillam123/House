@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=32">
+  <link rel="stylesheet" href="style.css?v=33">
 </head>
 <body>
   <header class="topbar">
@@ -241,6 +241,45 @@
           And the stats row picked up small sub-lines under each cell: the
           peak month&rsquo;s count, who first mentioned the term, who most
           recently raised it.
+        </p>
+      </div>
+
+      <div class="entry milestone">
+        <p class="when">May 2026</p>
+        <h3>Searching the words inside transcripts</h3>
+        <p>
+          The big one for select-committee evidence. Hansard&rsquo;s API
+          doesn&rsquo;t expose transcript text for search; the committees
+          API exposes the documents as base64-wrapped HTML but not as
+          searchable content. So a daily GitHub Actions job walks the
+          last 90 days of oral evidence sessions, fetches each
+          transcript, parses it into speaker-attributed segments, and
+          writes <code>evidence-index.json</code> at the repo root.
+          Static-site search, no backend.
+        </p>
+        <p>
+          The new <a href="transcripts.html">Transcripts</a> page loads
+          the index on entry and runs queries entirely in the browser.
+          Snippets carry the speaker label, the previous turn for
+          context (so a hit in a witness&rsquo;s answer comes paired with
+          the question that prompted it), and a text-fragment deep
+          link that opens the published transcript scrolled to the
+          line. Click-to-expand on long prior turns.
+        </p>
+        <p>
+          The 90-day rolling window keeps the page genuinely current
+          without ballooning the file. To go further back, the page
+          carries a switcher of sealed quarterly archives. Each quarter
+          is built once, frozen, and lived alongside the rolling
+          index. Only one is loaded at a time — keeps memory bounded
+          on phones.
+        </p>
+        <p>
+          OCR-mangled words from the .docx-converted transcripts
+          (&ldquo;giraffes&rdquo; indexing as &ldquo;gi raf fes&rdquo;)
+          still show up. That&rsquo;s the source data &mdash; fixing it
+          without corrupting legitimate text would need OCR-grade
+          reasoning. Live with it; flag in this About; move on.
         </p>
       </div>
     </section>

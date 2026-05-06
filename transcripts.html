@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Transcripts — House</title>
-  <meta name="description" content="Search the words inside select-committee oral evidence transcripts. Last 30 days, refreshed daily.">
+  <meta name="description" content="Search the words inside select-committee oral evidence transcripts. Rolling 90-day window plus quarterly archives, refreshed daily.">
   <meta name="theme-color" content="#f6f3ec">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="favicon.ico">
@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=32">
+  <link rel="stylesheet" href="style.css?v=33">
 </head>
 <body>
   <header class="topbar">
@@ -40,7 +40,7 @@
   <main class="dd-main">
     <section class="hero">
       <h1 class="lede">Recent transcripts.</h1>
-      <p class="sub">Search the words inside select-committee oral evidence. The last 30 days, refreshed daily. Click a snippet to open the transcript scrolled to that line.</p>
+      <p class="sub">Search the words inside select-committee oral evidence. The last 90 days are loaded by default and refreshed daily; switch to a sealed quarter to go further back. Click a snippet to open the transcript scrolled to that line.</p>
     </section>
 
     <form id="tr-form" class="search" autocomplete="off">
@@ -60,6 +60,15 @@
       </button>
     </form>
 
+    <!-- Archive switcher — populated from evidence-archives.json. The
+         rolling "Last 90 days" is auto-loaded. Click another label to
+         switch the active index; only one is loaded at a time so memory
+         stays bounded on phones. -->
+    <div id="tr-archives" class="tr-archives" hidden>
+      <p class="dd-eyebrow">Searching</p>
+      <div id="tr-archive-pills" class="pills" role="radiogroup" aria-label="Archive period"></div>
+    </div>
+
     <p id="tr-status" class="status" aria-live="polite"></p>
 
     <ol id="tr-results" class="cm-list"></ol>
@@ -76,6 +85,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/transcripts.js?v=1"></script>
+  <script type="module" src="src/transcripts.js?v=2"></script>
 </body>
 </html>
