@@ -71,6 +71,38 @@
       "sessionCount": 476,
       "buildDate": "2026-05-06",
       "size": 40536096
+    },
+    {
+      "id": "2023-Q4",
+      "label": "Oct–Dec 2023",
+      "url": "evidence-2023-Q4.json",
+      "sessionCount": 327,
+      "buildDate": "2026-05-06",
+      "size": 27372522
+    },
+    {
+      "id": "2023-Q3",
+      "label": "Jul–Sep 2023",
+      "url": "evidence-2023-Q3.json",
+      "sessionCount": 234,
+      "buildDate": "2026-05-06",
+      "size": 19259379
+    },
+    {
+      "id": "2023-Q2",
+      "label": "Apr–Jun 2023",
+      "url": "evidence-2023-Q2.json",
+      "sessionCount": 408,
+      "buildDate": "2026-05-06",
+      "size": 32813743
+    },
+    {
+      "id": "2023-Q1",
+      "label": "Jan–Mar 2023",
+      "url": "evidence-2023-Q1.json",
+      "sessionCount": 429,
+      "buildDate": "2026-05-06",
+      "size": 34910743
     }
   ]
 }
