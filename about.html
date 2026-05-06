@@ -85,11 +85,13 @@
 
     <h2>What it doesn&rsquo;t do</h2>
     <p>
-      The transcript archive goes back to early 2024. Pre-2024 is a
-      different parliament (the July 2024 election was a hard reset on
-      committee membership and on what was being inquired into) and feels
-      editorially discontinuous with what&rsquo;s come since — so the
-      backfill stops there for now.
+      The transcript archive goes back to the start of 2020 — six years
+      of select-committee evidence, around 3,500 sessions across the
+      quarterly archives. Worth knowing that the July 2024 general
+      election was a hard reset on committee membership and on what was
+      being inquired into, so a search that crosses that line is mixing
+      two different parliaments&rsquo; preoccupations. Pre-2020 is
+      feasible to backfill if anyone needs it.
     </p>
     <p>
       The transcripts come out of parliament&rsquo;s .docx-to-HTML conversion
@@ -305,6 +307,38 @@
           still show up. That&rsquo;s the source data &mdash; fixing it
           without corrupting legitimate text would need OCR-grade
           reasoning. Live with it; flag in this About; move on.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Six years of archive, tabular picker, smarter acronyms</h3>
+        <p>
+          The Transcripts page now spans the start of 2020 to the
+          present rolling 90 days &mdash; about 3,500 sessions across
+          25 quarterly archives plus the rolling index. The session
+          counts tell their own political story when you look at the
+          grid: the 13-session 2024 Q3 (election dissolution + recess),
+          the small Q3s every year for summer recess, the COVID
+          scramble in 2020 Q2.
+        </p>
+        <p>
+          The pill-row layout that worked for two or three quarters
+          would have been unmanageable here, so the picker became a
+          Year &times; Quarter table with a session count in each cell
+          &mdash; readable as a story at a glance, and there&rsquo;s
+          room to add more years before it strains.
+        </p>
+        <p>
+          And acronyms: searching &lsquo;SAS&rsquo; was matching
+          &lsquo;sas&rsquo; inside &lsquo;passage&rsquo; and
+          &lsquo;Sasaki&rsquo;; &lsquo;DEFRA&rsquo; was hitting random
+          letter strings. Short all-caps terms (2&ndash;8 chars) now
+          match case-sensitively with word boundaries everywhere
+          &mdash; Search snippets, Deep Dive snippets, within-inquiry
+          search, and the global Transcripts search. Mixed-case terms
+          keep the existing case-insensitive behaviour. Centralised in
+          one helper, one rule.
         </p>
       </div>
     </section>
