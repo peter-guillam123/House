@@ -6,3 +6,4 @@ node_modules/
 worker/package-lock.json
 __pycache__/
 *.pyc
+.claude/
