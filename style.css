@@ -151,6 +151,22 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   line-height: 1;
 }
 
+/* Region tag — small mono-caps "UK" with a hairline left divider, in
+   the wordmark accent. Per the Claude Design region-mark study. */
+.region-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-left: 0.7rem;
+  margin-left: 0.55rem;
+  border-left: 1px solid var(--rule);
+  align-self: center;
+  line-height: 1;
+}
+
 .topnav {
   display: flex;
   flex-wrap: nowrap;
@@ -944,6 +960,7 @@ footer {
   .topbar-inner { padding: 0.6rem 0; }
   .wordmark .mark svg { width: 20px; height: 20px; }
   .wordmark-text { font-size: 1.15rem; }
+  .region-tag { font-size: 0.62rem; padding-left: 0.55rem; margin-left: 0.4rem; letter-spacing: 0.16em; }
 
   main { padding: 1.25rem 0 3rem; }
 
