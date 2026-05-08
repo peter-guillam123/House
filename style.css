@@ -151,6 +151,29 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   line-height: 1;
 }
 
+/* "Index updated 8 May 2026" — small mono-caps line under the hero on
+   Search, mirroring the equivalent on House AU. Leading dot is the
+   page accent (oxblood here). Hidden until JS populates it. */
+.index-updated {
+  margin: 1.1rem 0 0;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.index-updated::before {
+  content: '';
+  display: inline-block;
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-right: 0.6em;
+  position: relative;
+  top: -0.08em;
+}
+.index-updated:empty { display: none; }
+
 /* Region tag — small mono-caps "UK" with a hairline left divider, in
    the wordmark accent. Per the Claude Design region-mark study. */
 .region-tag {

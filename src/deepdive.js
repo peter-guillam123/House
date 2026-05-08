@@ -245,7 +245,19 @@ $legend.addEventListener('click', (e) => {
 $chart.addEventListener('click', (e) => {
   const g = e.target.closest('[data-month]');
   if (!g) return;
-  toggleFilter('month', g.dataset.month);
+  const month = g.dataset.month;
+  // If the user is ADDING this month as a filter (rather than toggling
+  // an active one off), scroll the contributions list into view so they
+  // see the result. Removing a filter doesn't scroll — they're probably
+  // already where they want to be.
+  const wasActive = state.filters.months.has(month);
+  toggleFilter('month', month);
+  if (!wasActive) {
+    requestAnimationFrame(() => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      $filterBar.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  }
 });
 $filterBar.addEventListener('click', (e) => {
   const clearAll = e.target.closest('[data-clear-all]');

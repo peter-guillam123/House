@@ -511,3 +511,18 @@ function setStatus(msg, isError = false) {
 }
 
 setStatus('');
+
+// Quiet "Index updated 8 May 2026" line under the hero — pulled from
+// the same evidence-archives.json the Transcripts page uses, so it
+// reflects the real freshness of the daily build pipeline.
+(async () => {
+  try {
+    const r = await fetch('./evidence-archives.json');
+    if (!r.ok) return;
+    const m = await r.json();
+    const date = m && m.rolling && m.rolling.buildDate;
+    if (!date) return;
+    const el = document.getElementById('index-updated');
+    if (el) el.textContent = `Index updated ${formatDate(date)}`;
+  } catch { /* swallow — non-essential */ }
+})();
