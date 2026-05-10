@@ -169,13 +169,25 @@ function hasFilters() {
   return f.memberIds.size + f.debateIds.size + f.parties.size + f.terms.size + f.months.size > 0;
 }
 
+// Headline.party is whatever Hansard's attribution string carried at
+// stream time — empty for ministers and a few other role-led rows.
+// Prefer the byMember entry, which is upgraded by the Members API
+// after the streams finish so the badge appears retroactively.
+function resolveHeadlineParty(h) {
+  if (h.memberId != null) {
+    const m = state.byMember.get(h.memberId);
+    if (m && m.party) return m.party;
+  }
+  return h.party || '';
+}
+
 // AND across the five axes; OR within an axis (e.g. two parties picked
 // = "either party").
 function matchesFilters(h) {
   const f = state.filters;
   if (f.memberIds.size && !f.memberIds.has(h.memberId)) return false;
   if (f.debateIds.size && !f.debateIds.has(h.debateExtId)) return false;
-  if (f.parties.size   && !f.parties.has(h.party || 'Unknown')) return false;
+  if (f.parties.size   && !f.parties.has(canonParty(resolveHeadlineParty(h)))) return false;
   if (f.months.size && !(h.date && f.months.has(h.date.slice(0, 7)))) return false;
   if (f.terms.size) {
     const hay = ((h.fullText || h.snippet || '') + ' ' + (h.title || '')).toLowerCase();
@@ -746,7 +758,8 @@ function renderHeadlines() {
   const visible = sorted.slice(0, 250); // render cap for the list itself
   const more = sorted.length - visible.length;
   $headlines.innerHTML = visible.map((h) => {
-    const partyBit = h.party ? `<span class="party-tag" style="--c:${partyColor(h.party)}">${escapeHtml(partyShortName(h.party))}</span>` : '';
+    const party = resolveHeadlineParty(h);
+    const partyBit = party ? `<span class="party-tag" style="--c:${partyColor(party)}">${escapeHtml(partyShortName(party))}</span>` : '';
     const houseBit = h.house ? `<span class="house-tag">${escapeHtml(h.house)}</span>` : '';
     const memberBit = h.memberName ? `<span class="dd-hl-member">${escapeHtml(h.memberName)}</span>` : '';
     return `<li class="dd-hl">
@@ -962,19 +975,28 @@ function rebuildMonthlyByParty(month) {
     if (memberMap) {
       for (const [id, count] of memberMap) {
         const mem = state.byMember.get(id);
-        const p = (mem && mem.party) || 'Unknown';
+        const p = canonParty((mem && mem.party) || '');
         partyMap.set(p, (partyMap.get(p) || 0) + count);
       }
     }
     const orphanMap = state.monthlyOrphans.get(m);
     if (orphanMap) {
       for (const [raw, count] of orphanMap) {
-        const p = raw || 'Unknown';
+        const p = canonParty(raw);
         partyMap.set(p, (partyMap.get(p) || 0) + count);
       }
     }
     state.monthlyByParty.set(m, partyMap);
   }
+}
+
+// Hansard's attribution and the Members API give us the same party in
+// two different forms ('Lab' vs 'Labour', 'SNP' vs 'Scottish National
+// Party'). Collapse to one canonical key so the legend doesn't show
+// twin chips and click-to-filter behaves consistently.
+function canonParty(p) {
+  if (!p) return 'Unknown';
+  return partyShortName(p) || p;
 }
 
 function setProgress() {
@@ -1124,7 +1146,7 @@ async function fillMissingTopMemberParties(myToken) {
   await Promise.all(workers);
   if (myToken !== state.cancelToken) return;
   rebuildMonthlyByParty();
-  scheduleRender(['chart', 'members']);
+  scheduleRender(['chart', 'members', 'headlines']);
 }
 
 // ---------- URL state --------------------------------------------------
