@@ -30,7 +30,13 @@ const state = {
   // Filled by /timeline-stats (definitive monthly totals)
   monthlyTotals: new Map(),    // 'YYYY-MM' → total spoken count
   // Filled progressively as each month's contributions arrive
-  monthlyByParty: new Map(),   // 'YYYY-MM' → Map<party, count>
+  monthlyByParty: new Map(),   // 'YYYY-MM' → Map<party, count>  (rebuilt from sidecars below)
+  // Sidecars used to rebuild monthlyByParty after the Members API
+  // upgrades party for ministers attributed by role. Without these the
+  // chart locks in 'Unknown' for any contribution whose party isn't in
+  // the Hansard attribution string.
+  monthlyByMember: new Map(),  // 'YYYY-MM' → Map<memberId, count>
+  monthlyOrphans: new Map(),   // 'YYYY-MM' → Map<rawParty, count>  (rows with no memberId)
   byMember: new Map(),         // memberId → { name, party, count, link }
   byDebate: new Map(),         // debateExtId → { title, link, count }
   headlines: [],               // flat-copied items, newest first
@@ -309,6 +315,8 @@ function updateFiltersSummary() {
 function resetState() {
   state.monthlyTotals = new Map();
   state.monthlyByParty = new Map();
+  state.monthlyByMember = new Map();
+  state.monthlyOrphans = new Map();
   state.byMember = new Map();
   state.byDebate = new Map();
   state.headlines = [];
@@ -360,7 +368,8 @@ function renderTimeline() {
   for (const mp of state.monthlyByParty.values()) for (const p of mp.keys()) allPartiesSeen.add(p);
   const sortedParties = [...allPartiesSeen].sort((a, b) => {
     // Roughly stable order: established parties first, alphabetic within
-    const order = ['Lab', 'Labour', 'Con', 'Conservative', 'LD', 'Lib Dem', 'SNP',
+    const order = ['Lab', 'Labour', 'Con', 'Conservative', 'LD', 'Lib Dem',
+                   'SNP', 'Scottish National Party',
                    'Reform', 'Reform UK', 'Green', 'DUP', 'PC', 'Plaid Cymru',
                    'SF', 'Sinn Féin', 'Alliance', 'UUP', 'SDLP', 'Bishops',
                    'Crossbench', 'Speaker', 'Ind', 'Independent'];
@@ -880,13 +889,19 @@ async function processMonth(month, myToken) {
     });
     if (myToken !== state.cancelToken) return;
 
-    const partyMap = state.monthlyByParty.get(month) || new Map();
+    const memberMap = state.monthlyByMember.get(month) || new Map();
+    const orphanMap = state.monthlyOrphans.get(month) || new Map();
     for (const it of items) {
-      // For the chart bucket we need a key, so unknown rolls up under
-      // 'Unknown'. For byMember we keep the raw (possibly empty) party
-      // so ministers don't get a misleading 'Unknown' badge.
-      const chartParty = it.party || 'Unknown';
-      partyMap.set(chartParty, (partyMap.get(chartParty) || 0) + 1);
+      // Per-member counts feed the chart via rebuildMonthlyByParty(), so
+      // ministers attributed by role get re-coloured once the Members API
+      // resolves their party. Rows without a memberId fall through to a
+      // raw-party tally so they're not lost.
+      if (it.memberId != null) {
+        memberMap.set(it.memberId, (memberMap.get(it.memberId) || 0) + 1);
+      } else {
+        const k = it.party || '';
+        orphanMap.set(k, (orphanMap.get(k) || 0) + 1);
+      }
 
       if (it.memberId != null) {
         const cur = state.byMember.get(it.memberId);
@@ -924,13 +939,42 @@ async function processMonth(month, myToken) {
         });
       }
     }
-    state.monthlyByParty.set(month, partyMap);
+    state.monthlyByMember.set(month, memberMap);
+    state.monthlyOrphans.set(month, orphanMap);
+    rebuildMonthlyByParty(month);
   } catch (e) {
     console.warn(`Deep Dive: ${month} fetch failed`, e);
   }
   state.monthsLoaded++;
   setProgress();
   scheduleRender();
+}
+
+// Walk the per-member sidecars and resolve each contribution's party
+// from state.byMember, so the chart re-colours when the Members API
+// later patches in a minister's party. Pass a month to rebuild just that
+// row; pass nothing to rebuild everything (after the Members API pass).
+function rebuildMonthlyByParty(month) {
+  const months = month ? [month] : [...state.monthlyByMember.keys(), ...state.monthlyOrphans.keys()];
+  for (const m of new Set(months)) {
+    const partyMap = new Map();
+    const memberMap = state.monthlyByMember.get(m);
+    if (memberMap) {
+      for (const [id, count] of memberMap) {
+        const mem = state.byMember.get(id);
+        const p = (mem && mem.party) || 'Unknown';
+        partyMap.set(p, (partyMap.get(p) || 0) + count);
+      }
+    }
+    const orphanMap = state.monthlyOrphans.get(m);
+    if (orphanMap) {
+      for (const [raw, count] of orphanMap) {
+        const p = raw || 'Unknown';
+        partyMap.set(p, (partyMap.get(p) || 0) + count);
+      }
+    }
+    state.monthlyByParty.set(m, partyMap);
+  }
 }
 
 function setProgress() {
@@ -1051,20 +1095,36 @@ async function runDive(pushUrl) {
   }
 }
 
+// Members attributed by role (ministers) come back from Hansard with no
+// party in the attribution string — they get bucketed as 'Unknown' in
+// the chart and shown without a badge in the leaderboard. Look them up
+// via the Members API in parallel (bounded concurrency, capped to keep
+// big searches sane), then rebuild the chart from the per-member
+// sidecars so the now-resolved party colours land in both surfaces.
+const MEMBER_LOOKUP_CAP = 50;
 async function fillMissingTopMemberParties(myToken) {
-  const top = [...state.byMember.entries()]
+  const candidates = [...state.byMember.entries()]
+    .filter(([, m]) => !m.party)
     .sort((a, b) => b[1].count - a[1].count)
-    .slice(0, 12)
-    .filter(([, m]) => !m.party);
-  if (!top.length) return;
-  await Promise.all(top.map(async ([id, m]) => {
-    try {
-      const fetched = await memberById(id);
-      if (fetched && fetched.party) m.party = fetched.party;
-    } catch { /* swallow */ }
-  }));
+    .slice(0, MEMBER_LOOKUP_CAP);
+  if (!candidates.length) return;
+  const queue = [...candidates];
+  const workers = [];
+  for (let i = 0; i < CONCURRENCY; i++) {
+    workers.push((async () => {
+      while (queue.length && myToken === state.cancelToken) {
+        const [id, m] = queue.shift();
+        try {
+          const fetched = await memberById(id);
+          if (fetched && fetched.party) m.party = fetched.party;
+        } catch { /* swallow */ }
+      }
+    })());
+  }
+  await Promise.all(workers);
   if (myToken !== state.cancelToken) return;
-  scheduleRender(['members']);
+  rebuildMonthlyByParty();
+  scheduleRender(['chart', 'members']);
 }
 
 // ---------- URL state --------------------------------------------------

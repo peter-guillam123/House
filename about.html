@@ -342,6 +342,34 @@
           one helper, one rule.
         </p>
       </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Party labels colouring in</h3>
+        <p>
+          The Deep Dive monthly chart was bucketing ministers as
+          &lsquo;Unknown&rsquo; &mdash; Hansard attributes them by role, so
+          &lsquo;The Chief Secretary to the Treasury (Darren Jones)&rsquo;
+          has no party in the parens to extract. The leaderboard chip got
+          to LAB in the end via a separate Members API call, but the chart
+          never got the memo: same data, two answers, sitting next to each
+          other.
+        </p>
+        <p>
+          Now the chart keeps a per-month per-member tally on the side
+          and re-derives the party split once the Members API resolves,
+          so the bars colour in. The Members lookup also widened from the
+          top twelve to any contributor missing a party badge, capped at
+          fifty per dive to keep big searches sane, and bounded to four
+          parallel requests like the per-month fetcher.
+        </p>
+        <p>
+          While there: the SNP lozenge was rendering as &lsquo;SCOTTISH
+          NATIONAL PARTY&rsquo; in tracked caps and busting the speaker
+          chip layout &mdash; the only party without a short-form
+          mapping. Fixed.
+        </p>
+      </div>
     </section>
   </main>
 
