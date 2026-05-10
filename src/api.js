@@ -31,10 +31,42 @@ function buildHansardSearch(path, opts) {
   return `${HANSARD}${path}?${p.toString()}`;
 }
 
+// Hansard's spoken endpoint throws transient 500s on common terms
+// ('benefits', 'NHS', 'tax') under load, and the Cloudflare proxy can
+// stall when an upstream is slow. One retry with backoff catches most
+// transient failures; an AbortController-driven timeout stops a slow
+// source from blocking the rest of the page indefinitely.
+const FETCH_TIMEOUT_MS = 12_000;
+const RETRY_DELAY_MS   = 600;
+
 async function getJson(url) {
-  const r = await fetch(viaProxy(url));
-  if (!r.ok) throw new Error(`${r.status} ${r.statusText} on ${url}`);
-  return r.json();
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+    try {
+      const r = await fetch(viaProxy(url), { signal: ctrl.signal });
+      if (r.ok) return r.json();
+      // 5xx: retry once. 4xx: surface immediately — won't fix itself.
+      if (r.status >= 500 && attempt === 0) {
+        await new Promise((res) => setTimeout(res, RETRY_DELAY_MS));
+        continue;
+      }
+      throw new Error(`${r.status} ${r.statusText} on ${url}`);
+    } catch (e) {
+      // Network errors and timeouts (DOMException 'AbortError') get one retry.
+      const isAbort = e && e.name === 'AbortError';
+      if (attempt === 0 && (isAbort || e instanceof TypeError)) {
+        await new Promise((res) => setTimeout(res, RETRY_DELAY_MS));
+        continue;
+      }
+      if (isAbort) throw new Error(`timed out after ${FETCH_TIMEOUT_MS / 1000}s on ${url}`);
+      throw e;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  // Defensive — the loop returns or throws on every path.
+  throw new Error(`unreachable retry exit on ${url}`);
 }
 
 // ---------- Hansard: timeline-stats (per-month counts) ----------
