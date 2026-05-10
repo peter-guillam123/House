@@ -300,38 +300,61 @@ function dateRange() {
   return { startDate: start.toISOString().slice(0, 10), endDate: end };
 }
 
-// Run a single page of fetches for the named source keys. Captures
-// failures so the caller can offer a retry. Offsets advance only on
-// fulfilled results, which means retrying a failed source re-fetches
-// the same page rather than skipping past it.
+// Run a single page of fetches for the named source keys, rendering
+// results as each source returns instead of waiting for the slowest.
+// On a 5-year search the spoken endpoint can sit for 5+ seconds while
+// the other three return in under a second — streaming makes the
+// difference visible. Offsets advance only on fulfilled results, so
+// retrying a failed source re-fetches the same page rather than
+// skipping past it.
+const FETCH = {
+  spoken:    (opts) => searchSpoken(opts),
+  wq:        (opts) => searchWrittenQuestions(opts),
+  ws:        (opts) => searchWrittenStatements(opts),
+  committee: (opts) => searchCommitteeDebates(opts),
+};
 async function runSourceFetches(myToken, keys, fetchOpts, partyIdSet) {
   const memberIds = state.member ? [state.member.id] : null;
-  const FETCH = {
-    spoken:    (opts) => searchSpoken(opts),
-    wq:        (opts) => searchWrittenQuestions(opts),
-    ws:        (opts) => searchWrittenStatements(opts),
-    committee: (opts) => searchCommitteeDebates(opts),
-  };
-  const calls = keys.map((k) => [k, FETCH[k]({ ...fetchOpts, skip: state.offsets[k], memberIds })]);
-  const results = await Promise.allSettled(calls.map(([, p]) => p));
-
+  const pending = new Set(keys);
   let scannedThisRun = 0;
   const failed = [];
-  for (let i = 0; i < results.length; i++) {
-    const [key] = calls[i];
-    const r = results[i];
-    if (r.status === 'fulfilled') {
-      state.totals[key] = r.value.total;
-      state.offsets[key] += r.value.items.length;
-      scannedThisRun += r.value.items.length;
-      const filtered = partyIdSet
-        ? r.value.items.filter((it) => it.memberId && partyIdSet.has(it.memberId))
-        : r.value.items;
-      state.items.push(...filtered);
+
+  const updateStreamingStatus = () => {
+    if (pending.size === 0) return;          // final status set by caller
+    const names = [...pending].map((k) => SOURCE_LABEL[k] || k);
+    const so_far = state.items.length;
+    if (so_far > 0) {
+      setStatus(`Showing ${so_far} so far — still loading ${names.join(', ')}…`);
     } else {
-      failed.push(key);
+      setStatus(`Loading ${names.join(', ')}…`);
     }
-  }
+  };
+  updateStreamingStatus();
+
+  await Promise.all(keys.map(async (k) => {
+    let value;
+    try {
+      value = await FETCH[k]({ ...fetchOpts, skip: state.offsets[k], memberIds });
+    } catch (e) {
+      if (myToken !== state.searchToken) return;
+      failed.push(k);
+      pending.delete(k);
+      updateStreamingStatus();
+      return;
+    }
+    if (myToken !== state.searchToken) return;
+    state.totals[k] = value.total;
+    state.offsets[k] += value.items.length;
+    scannedThisRun += value.items.length;
+    const filtered = partyIdSet
+      ? value.items.filter((it) => it.memberId && partyIdSet.has(it.memberId))
+      : value.items;
+    state.items.push(...filtered);
+    state.items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    pending.delete(k);
+    scheduleRender();
+    updateStreamingStatus();
+  }));
   return { scannedThisRun, failed };
 }
 
@@ -340,7 +363,6 @@ async function retryFailedSources() {
   if (!keys.length || !state.lastFetchOpts) return;
   const myToken = ++state.searchToken;
   $form.classList.add('is-loading');
-  setStatus(`Retrying ${keys.map((k) => SOURCE_LABEL[k]).join(', ')}…`);
   try {
     const { failed } = await runSourceFetches(myToken, keys, state.lastFetchOpts, state.lastPartyIdSet);
     if (myToken !== state.searchToken) return;
