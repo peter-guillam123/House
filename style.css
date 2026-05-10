@@ -692,6 +692,23 @@ main {
   font-weight: 500;
 }
 .status:empty { display: none; }
+.status-retry {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.18rem 0.6rem;
+  margin-left: 0.4rem;
+  cursor: pointer;
+  vertical-align: 1px;
+  transition: background-color 120ms;
+}
+.status-retry:hover { background: var(--paper-warm); }
+.status-retry:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Toolbar above the results list — status text on the left, export
    button on the right when results are present. Shared shape on Search

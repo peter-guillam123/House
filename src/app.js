@@ -8,6 +8,13 @@ import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.
 
 // ---------- state ----------
 
+const SOURCE_LABEL = {
+  spoken:    'Spoken contributions',
+  wq:        'Written questions',
+  ws:        'Written statements',
+  committee: 'Committee debates',
+};
+
 const state = {
   term: '',
   preset: 'year',
@@ -24,6 +31,12 @@ const state = {
   // accumulated results
   items: [],
   searchToken: 0,
+  // Captured after each run so the "Retry failed sources" affordance
+  // can re-fetch only what 5xx'd without re-resolving party members or
+  // re-running the successful sources.
+  lastFetchOpts: null,
+  lastPartyIdSet: null,
+  failedSources: new Set(),
 };
 
 // ---------- DOM ----------
@@ -287,6 +300,71 @@ function dateRange() {
   return { startDate: start.toISOString().slice(0, 10), endDate: end };
 }
 
+// Run a single page of fetches for the named source keys. Captures
+// failures so the caller can offer a retry. Offsets advance only on
+// fulfilled results, which means retrying a failed source re-fetches
+// the same page rather than skipping past it.
+async function runSourceFetches(myToken, keys, fetchOpts, partyIdSet) {
+  const memberIds = state.member ? [state.member.id] : null;
+  const FETCH = {
+    spoken:    (opts) => searchSpoken(opts),
+    wq:        (opts) => searchWrittenQuestions(opts),
+    ws:        (opts) => searchWrittenStatements(opts),
+    committee: (opts) => searchCommitteeDebates(opts),
+  };
+  const calls = keys.map((k) => [k, FETCH[k]({ ...fetchOpts, skip: state.offsets[k], memberIds })]);
+  const results = await Promise.allSettled(calls.map(([, p]) => p));
+
+  let scannedThisRun = 0;
+  const failed = [];
+  for (let i = 0; i < results.length; i++) {
+    const [key] = calls[i];
+    const r = results[i];
+    if (r.status === 'fulfilled') {
+      state.totals[key] = r.value.total;
+      state.offsets[key] += r.value.items.length;
+      scannedThisRun += r.value.items.length;
+      const filtered = partyIdSet
+        ? r.value.items.filter((it) => it.memberId && partyIdSet.has(it.memberId))
+        : r.value.items;
+      state.items.push(...filtered);
+    } else {
+      failed.push(key);
+    }
+  }
+  return { scannedThisRun, failed };
+}
+
+async function retryFailedSources() {
+  const keys = [...state.failedSources];
+  if (!keys.length || !state.lastFetchOpts) return;
+  const myToken = ++state.searchToken;
+  $form.classList.add('is-loading');
+  setStatus(`Retrying ${keys.map((k) => SOURCE_LABEL[k]).join(', ')}…`);
+  try {
+    const { failed } = await runSourceFetches(myToken, keys, state.lastFetchOpts, state.lastPartyIdSet);
+    if (myToken !== state.searchToken) return;
+    state.failedSources = new Set(failed);
+    state.items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    scheduleRender();
+    fillMissingPartiesForResults(myToken);
+
+    const totalAvailable = Object.values(state.totals).reduce((a, b) => a + b, 0);
+    const haveMore = ['spoken', 'wq', 'ws', 'committee']
+      .filter((k) => state.sources.has(k))
+      .some((k) => state.offsets[k] < state.totals[k]);
+    $more.hidden = !haveMore;
+
+    if (failed.length) {
+      setStatusWithRetry(failed, state.items.length);
+    } else {
+      setStatus(`Showing ${state.items.length} of ${totalAvailable} results.`);
+    }
+  } finally {
+    if (myToken === state.searchToken) $form.classList.remove('is-loading');
+  }
+}
+
 async function runSearch(isFresh) {
   const myToken = ++state.searchToken;
   setStatus('Searching…');
@@ -326,38 +404,19 @@ async function runSearch(isFresh) {
   // When filtering client-side, fetch larger pages so we keep some results.
   const take = partyIdSet ? 50 : state.pageSize;
   const fetchOpts = { ...baseOpts, take };
+  state.lastFetchOpts = fetchOpts;
+  state.lastPartyIdSet = partyIdSet;
 
-  const fetchers = [];
-  if (state.sources.has('spoken'))    fetchers.push(['spoken',    () => searchSpoken({ ...fetchOpts, skip: state.offsets.spoken, memberIds })]);
-  if (state.sources.has('wq'))        fetchers.push(['wq',        () => searchWrittenQuestions({ ...fetchOpts, skip: state.offsets.wq, memberIds })]);
-  if (state.sources.has('ws'))        fetchers.push(['ws',        () => searchWrittenStatements({ ...fetchOpts, skip: state.offsets.ws, memberIds })]);
-  if (state.sources.has('committee')) fetchers.push(['committee', () => searchCommitteeDebates({ ...fetchOpts, skip: state.offsets.committee, memberIds })]);
-
-  if (!fetchers.length) {
+  const sourceKeys = ['spoken', 'wq', 'ws', 'committee'].filter((k) => state.sources.has(k));
+  if (!sourceKeys.length) {
     setStatus('Pick at least one source.');
     return;
   }
 
-  const results = await Promise.allSettled(fetchers.map(([, fn]) => fn()));
+  const { scannedThisRun, failed } = await runSourceFetches(myToken, sourceKeys, fetchOpts, partyIdSet);
   if (myToken !== state.searchToken) return;
 
-  let scannedThisRun = 0;
-  const errors = [];
-  for (let i = 0; i < results.length; i++) {
-    const [key] = fetchers[i];
-    const r = results[i];
-    if (r.status === 'fulfilled') {
-      state.totals[key] = r.value.total;
-      state.offsets[key] += r.value.items.length;
-      scannedThisRun += r.value.items.length;
-      const filtered = partyIdSet
-        ? r.value.items.filter((it) => it.memberId && partyIdSet.has(it.memberId))
-        : r.value.items;
-      state.items.push(...filtered);
-    } else {
-      errors.push(`${key}: ${r.reason?.message || 'failed'}`);
-    }
-  }
+  state.failedSources = new Set(failed);
 
   state.items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   scheduleRender();
@@ -373,8 +432,8 @@ async function runSearch(isFresh) {
     .some((k) => state.offsets[k] < state.totals[k]);
   $more.hidden = !haveMore;
 
-  if (errors.length) {
-    setStatus(`Showing ${state.items.length} results. Some sources failed: ${errors.join('; ')}.`, true);
+  if (failed.length) {
+    setStatusWithRetry(failed, state.items.length);
   } else if (state.items.length === 0) {
     if (partyIdSet) {
       setStatus(`No matches from ${state.party.name} in the first ${scannedThisRun} hits. Try "Load more" or broaden filters.`);
@@ -509,6 +568,26 @@ function setStatus(msg, isError = false) {
   $status.textContent = msg;
   $status.classList.toggle('error', !!isError);
 }
+
+// Friendly version of the "some sources failed" message. Names the
+// sources by their human labels and offers a retry button that only
+// re-fetches what failed (so we don't waste a request on the three
+// sources that worked).
+function setStatusWithRetry(failedKeys, itemCount) {
+  const names = failedKeys.map((k) => SOURCE_LABEL[k] || k);
+  const list  = names.length === 1
+    ? names[0]
+    : `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
+  const msg = itemCount > 0
+    ? `Showing ${itemCount} results. ${list} didn't respond — Hansard's API gets flaky on common terms.`
+    : `${list} didn't respond and the other sources returned no matches.`;
+  $status.innerHTML = `<span>${escapeHtml(msg)}</span> <button type="button" class="status-retry" data-retry>Retry ${names.length === 1 ? 'it' : 'them'}</button>`;
+  $status.classList.add('error');
+}
+
+$status.addEventListener('click', (e) => {
+  if (e.target.closest('[data-retry]')) retryFailedSources();
+});
 
 setStatus('');
 
