@@ -446,7 +446,8 @@ function renderLegend(sortedPartiesArg) {
 }
 
 function sortPartiesForLegend(arr) {
-  const order = ['Lab', 'Labour', 'Con', 'Conservative', 'LD', 'Lib Dem', 'SNP',
+  const order = ['Lab', 'Labour', 'Con', 'Conservative', 'LD', 'Lib Dem',
+                 'SNP', 'Scottish National Party',
                  'Reform', 'Reform UK', 'Green', 'DUP', 'PC', 'Plaid Cymru',
                  'SF', 'Sinn Féin', 'Alliance', 'UUP', 'SDLP', 'Bishops',
                  'Crossbench', 'Speaker', 'Ind', 'Independent'];

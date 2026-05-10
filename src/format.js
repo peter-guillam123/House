@@ -105,6 +105,7 @@ export const PARTY_COLORS = {
   'Lib Dem':          '#faa61a',
   'Liberal Democrat': '#faa61a',
   'SNP':              '#e6b800',   // saturated gold — readable on cream paper
+  'Scottish National Party': '#e6b800',
   'Reform':           '#12b6cf',
   'Reform UK':        '#12b6cf',
   'Green':            '#6ab023',
@@ -145,6 +146,7 @@ const PARTY_DISPLAY = {
   'Labour': 'Lab',
   'Conservative': 'Con',
   'Conservative Independent': 'Con Ind',
+  'Scottish National Party': 'SNP',
   'Reform UK': 'Reform',
   'Green Party': 'Green',
   'Plaid Cymru': 'PC',
