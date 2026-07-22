@@ -1,0 +1,220 @@
+{
+  "rolling": {
+    "url": "evidence-index.json",
+    "label": "Last 90 days",
+    "windowDays": 90,
+    "sessionCount": 347,
+    "buildDate": "2026-09-06",
+    "size": 28251530
+  },
+  "quarters": [
+    {
+      "id": "2026-Q2",
+      "label": "Apr–Jun 2026",
+      "url": "evidence-2026-Q2.json",
+      "sessionCount": 391,
+      "buildDate": "2026-07-22",
+      "size": 31923895
+    },
+    {
+      "id": "2026-Q1",
+      "label": "Jan–Mar 2026",
+      "url": "evidence-2026-Q1.json",
+      "sessionCount": 431,
+      "buildDate": "2026-07-22",
+      "size": 35588524
+    },
+    {
+      "id": "2025-Q4",
+      "label": "Oct–Dec 2025",
+      "url": "evidence-2025-Q4.json",
+      "sessionCount": 418,
+      "buildDate": "2026-05-06",
+      "size": 33034805
+    },
+    {
+      "id": "2025-Q3",
+      "label": "Jul–Sep 2025",
+      "url": "evidence-2025-Q3.json",
+      "sessionCount": 257,
+      "buildDate": "2026-05-06",
+      "size": 20655002
+    },
+    {
+      "id": "2025-Q2",
+      "label": "Apr–Jun 2025",
+      "url": "evidence-2025-Q2.json",
+      "sessionCount": 473,
+      "buildDate": "2026-05-06",
+      "size": 39503284
+    },
+    {
+      "id": "2025-Q1",
+      "label": "Jan–Mar 2025",
+      "url": "evidence-2025-Q1.json",
+      "sessionCount": 424,
+      "buildDate": "2026-05-06",
+      "size": 35632515
+    },
+    {
+      "id": "2024-Q4",
+      "label": "Oct–Dec 2024",
+      "url": "evidence-2024-Q4.json",
+      "sessionCount": 218,
+      "buildDate": "2026-05-06",
+      "size": 17240782
+    },
+    {
+      "id": "2024-Q3",
+      "label": "Jul–Sep 2024",
+      "url": "evidence-2024-Q3.json",
+      "sessionCount": 13,
+      "buildDate": "2026-05-06",
+      "size": 819391
+    },
+    {
+      "id": "2024-Q2",
+      "label": "Apr–Jun 2024",
+      "url": "evidence-2024-Q2.json",
+      "sessionCount": 309,
+      "buildDate": "2026-05-06",
+      "size": 24202743
+    },
+    {
+      "id": "2024-Q1",
+      "label": "Jan–Mar 2024",
+      "url": "evidence-2024-Q1.json",
+      "sessionCount": 476,
+      "buildDate": "2026-05-06",
+      "size": 40536096
+    },
+    {
+      "id": "2023-Q4",
+      "label": "Oct–Dec 2023",
+      "url": "evidence-2023-Q4.json",
+      "sessionCount": 327,
+      "buildDate": "2026-05-06",
+      "size": 27372522
+    },
+    {
+      "id": "2023-Q3",
+      "label": "Jul–Sep 2023",
+      "url": "evidence-2023-Q3.json",
+      "sessionCount": 234,
+      "buildDate": "2026-05-06",
+      "size": 19259379
+    },
+    {
+      "id": "2023-Q2",
+      "label": "Apr–Jun 2023",
+      "url": "evidence-2023-Q2.json",
+      "sessionCount": 408,
+      "buildDate": "2026-05-06",
+      "size": 32813743
+    },
+    {
+      "id": "2023-Q1",
+      "label": "Jan–Mar 2023",
+      "url": "evidence-2023-Q1.json",
+      "sessionCount": 429,
+      "buildDate": "2026-05-06",
+      "size": 34910743
+    },
+    {
+      "id": "2022-Q4",
+      "label": "Oct–Dec 2022",
+      "url": "evidence-2022-Q4.json",
+      "sessionCount": 404,
+      "buildDate": "2026-05-06",
+      "size": 32512232
+    },
+    {
+      "id": "2022-Q3",
+      "label": "Jul–Sep 2022",
+      "url": "evidence-2022-Q3.json",
+      "sessionCount": 171,
+      "buildDate": "2026-05-06",
+      "size": 13302705
+    },
+    {
+      "id": "2022-Q2",
+      "label": "Apr–Jun 2022",
+      "url": "evidence-2022-Q2.json",
+      "sessionCount": 389,
+      "buildDate": "2026-05-06",
+      "size": 30028214
+    },
+    {
+      "id": "2022-Q1",
+      "label": "Jan–Mar 2022",
+      "url": "evidence-2022-Q1.json",
+      "sessionCount": 450,
+      "buildDate": "2026-05-06",
+      "size": 37288364
+    },
+    {
+      "id": "2021-Q4",
+      "label": "Oct–Dec 2021",
+      "url": "evidence-2021-Q4.json",
+      "sessionCount": 373,
+      "buildDate": "2026-05-06",
+      "size": 32527662
+    },
+    {
+      "id": "2021-Q3",
+      "label": "Jul–Sep 2021",
+      "url": "evidence-2021-Q3.json",
+      "sessionCount": 297,
+      "buildDate": "2026-05-06",
+      "size": 26563841
+    },
+    {
+      "id": "2021-Q2",
+      "label": "Apr–Jun 2021",
+      "url": "evidence-2021-Q2.json",
+      "sessionCount": 414,
+      "buildDate": "2026-05-06",
+      "size": 35380009
+    },
+    {
+      "id": "2021-Q1",
+      "label": "Jan–Mar 2021",
+      "url": "evidence-2021-Q1.json",
+      "sessionCount": 447,
+      "buildDate": "2026-05-06",
+      "size": 38758071
+    },
+    {
+      "id": "2020-Q4",
+      "label": "Oct–Dec 2020",
+      "url": "evidence-2020-Q4.json",
+      "sessionCount": 393,
+      "buildDate": "2026-05-06",
+      "size": 35514960
+    },
+    {
+      "id": "2020-Q3",
+      "label": "Jul–Sep 2020",
+      "url": "evidence-2020-Q3.json",
+      "sessionCount": 270,
+      "buildDate": "2026-05-06",
+      "size": 21335336
+    },
+    {
+      "id": "2020-Q2",
+      "label": "Apr–Jun 2020",
+      "url": "evidence-2020-Q2.json",
+      "sessionCount": 248,
+      "buildDate": "2026-05-06",
+      "size": 21990967
+    },
+    {
+      "id": "2020-Q1",
+      "label": "Jan–Mar 2020",
+      "url": "evidence-2020-Q1.json",
+      "sessionCount": 195,
+      "buildDate": "2026-05-06",
+      "size": 12419265
+    }
+  ]
+}
