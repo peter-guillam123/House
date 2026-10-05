@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About — House</title>
+  <meta name="theme-color" content="#f6f3ec">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css?v=38">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="./" class="wordmark" aria-label="House — home">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square">
+            <path d="M3 5h18"/><path d="M5 5v15"/><path d="M19 5v15"/>
+            <path d="M9 8v12"/><path d="M15 8v12"/>
+            <path d="M5 11h14"/><path d="M5 16h14"/><path d="M3 20h18"/>
+          </svg>
+        </span>
+        <span class="wordmark-text">House</span>
+      </a>
+      <span class="region-pair">
+        <span class="uk-mark current">UK</span> &middot; <a class="au-mark" href="https://peter-guillam123.github.io/house-au/" title="House AU">AU</a> &middot; <a class="us-mark" href="https://peter-guillam123.github.io/house-us/" title="House US">US</a>
+      </span>
+      <nav class="topnav">
+        <a href="./">Search</a>
+        <a href="deep-dive.html">Deep Dive</a>
+        <a href="committees.html">Committees</a>
+        <a href="transcripts.html">Transcripts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="prose">
+    <h2>What this is</h2>
+    <p class="lede">
+      A set of four search surfaces over UK parliamentary proceedings, built
+      for journalists who need to triage faster than parliament&rsquo;s own
+      tools allow. The main <a href="./">Search</a> pulls from four official
+      APIs at once — spoken contributions, written questions and answers,
+      written ministerial statements, and committee debates — and shows the
+      lot in one ranked list. <a href="deep-dive.html">Deep Dive</a> plots a
+      single term as a party-stacked monthly timeline with click-to-filter
+      panels for members, debates and co-occurring phrases.
+      <a href="committees.html">Committees</a> finds inquiries by name and
+      lets you drill into one to search its transcripts directly. And
+      <a href="transcripts.html">Transcripts</a> searches the actual words
+      inside select-committee oral evidence — the bit Hansard&rsquo;s API
+      doesn&rsquo;t expose for search, made possible here by a daily-built
+      static index.
+    </p>
+    <p>
+      Use cases that drove the shape: a defence correspondent looking for
+      every mention of RAF Lakenheath in the last year; a health editor
+      scanning what&rsquo;s been said about a specific hospital trust; a
+      political reporter tracking how often a junior minister has spoken on
+      a topic; a tech reporter looking for every committee witness from
+      Meta or Roblox; a feature writer pulling all the times Wendy Williams
+      has been raised in evidence.
+    </p>
+
+    <h2>How it&rsquo;s made</h2>
+    <p>
+      Vanilla JavaScript and a small Cloudflare Worker. The frontend on
+      GitHub Pages talks to five parliament APIs via a 50-line Worker proxy
+      — needed because most of them don&rsquo;t return CORS headers.
+      Transcripts is the exception that drove a real backend addition: a
+      daily GitHub Actions job walks the committees API, fetches each oral
+      evidence transcript, parses it into speaker-attributed segments, and
+      commits a JSON index back to the repo. The browser fetches that file
+      once and searches it entirely client-side. The rolling 90-day window
+      is rebuilt every night; the sealed quarterly archives are built once
+      per quarter and frozen.
+    </p>
+    <p>
+      Built with Claude Code over a series of conversations. Source is at
+      <a href="https://github.com/peter-guillam123/House">github.com/peter-guillam123/House</a>.
+      All the data is from parliament under the
+      <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
+    </p>
+
+    <h2>What it doesn&rsquo;t do</h2>
+    <p>
+      The transcript archive goes back to the start of 2020 — six years
+      of select-committee evidence, around 3,500 sessions across the
+      quarterly archives. Worth knowing that the July 2024 general
+      election was a hard reset on committee membership and on what was
+      being inquired into, so a search that crosses that line is mixing
+      two different parliaments&rsquo; preoccupations. Pre-2020 is
+      feasible to backfill if anyone needs it.
+    </p>
+    <p>
+      The transcripts come out of parliament&rsquo;s .docx-to-HTML conversion
+      pipeline, which sometimes sticks single-character spaces inside words
+      (&ldquo;giraffes&rdquo; ends up indexed as &ldquo;gi raf fes&rdquo;).
+      A search for &ldquo;RAF&rdquo; will occasionally false-match a
+      standalone &ldquo;raf&rdquo; sitting inside another word. That&rsquo;s
+      the source data — fixing it without corrupting legitimate text would
+      need OCR-grade reasoning.
+    </p>
+    <p>
+      Multi-word terms are matched as a phrase, so &ldquo;RAF Lakenheath&rdquo;
+      finds that exact phrase rather than RAF and Lakenheath separately.
+      There&rsquo;s no Boolean syntax (AND/OR/NOT). For more advanced
+      queries on Hansard, fall back to
+      <a href="https://hansard.parliament.uk/">hansard.parliament.uk</a>
+      directly.
+    </p>
+
+    <section class="changelog">
+      <h2>Changelog</h2>
+
+      <div class="entry milestone">
+        <p class="when">May 2026</p>
+        <h3>First version live</h3>
+        <p>
+          Four sources, five filters, results sorted newest first. Built in a
+          single planning-and-execution pass with Claude Code. The hard part
+          turned out not to be the APIs — they&rsquo;re genuinely good — but the
+          fact that two of them don&rsquo;t return CORS headers, which would have
+          killed a pure static-site build. A 40-line Cloudflare Worker fixes
+          that for less than the cost of a coffee per year.
+        </p>
+        <p>
+          Things deliberately left out of v1: alerting (email me when X gets
+          mentioned), saved searches, CSV export. Probably the right next
+          things to add if it gets used.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Premium pass</h3>
+        <p>
+          Reset the surface around an editorial-archive direction: ivory paper,
+          near-black ink, a single restrained oxblood accent. Source Serif 4
+          for display, Inter for body, JetBrains Mono for stamps. Sticky search
+          on mobile, collapsible filter shell, generous result rhythm. New
+          favicon and OpenGraph card. Functionality unchanged.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Deep Dive on mobile</h3>
+        <p>
+          Tightened the Deep Dive page on phones. The chart was sitting in a
+          padded box and capped at 200px deep, which flattened the
+          party-stacked shape; reduced the inset and let it breathe to 280px.
+          The two leaderboards now show the top five by default with a
+          &ldquo;Show all&rdquo; reveal, so the actual contributions list isn&rsquo;t
+          buried half a screen down.
+        </p>
+      </div>
+
+      <div class="entry milestone">
+        <p class="when">May 2026</p>
+        <h3>Panels as filters</h3>
+        <p>
+          The leaderboards and the legend on Deep Dive turned out to be
+          better filter surfaces than any panel of dropdowns would have been
+          &mdash; they&rsquo;re already organised by who&rsquo;s spoken most, which
+          debates are carrying the topic, and which parties are doing the
+          talking. So they now double as filters. Click a member, a debate
+          or a party chip in the legend and the contributions list narrows;
+          clicks AND-combine across the three axes; an active-filter strip
+          sits above the list with one-tap removal. Shareable in the URL.
+        </p>
+        <p>
+          The chart itself stays as the universe view &mdash; the filters
+          narrow the contributions list, not the shape of the conversation.
+          The leaderboards don&rsquo;t re-rank either, so they stay usable as
+          navigation while filters are active.
+        </p>
+        <p>
+          Along the way: extracted a shared lozenge style so party tags look
+          the same wherever they appear; nudged the palette (SNP yellow was
+          disappearing on cream paper, Lab/Co-op was bleeding into Lab); and
+          sharpened the dek to make the spoken-contributions-only point
+          properly. Legend chips on desktop now reveal each party&rsquo;s
+          running total on hover.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Quoted searches highlight properly</h3>
+        <p>
+          Searching for &ldquo;the Guardian&rdquo; in quotes was finding the
+          right contributions, but the highlights were going wrong in two
+          places. Our snippet highlighter was looking for the literal quoted
+          string in the result text &mdash; and the text doesn&rsquo;t have
+          those quote characters around the phrase, so it found nothing.
+          Hansard&rsquo;s own <code>?highlight=</code> parameter on click-through
+          couldn&rsquo;t parse the quoted form either, and was marking just
+          &ldquo;the&rdquo; on its own. Strip the wrapping quotes for
+          highlight purposes; leave the quoted form intact for the API
+          search itself, which uses it to do phrase matching.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Form polish, search pulse</h3>
+        <p>
+          Two more polish items. The Deep Dive form now matches Search on
+          mobile &mdash; icon + input + button on one row, with the year
+          range on a quiet second row below. Both forms pulse a thin gradient
+          bar at the bottom edge while a search is in flight: quieter than
+          the colour change at submit, more useful on a Deep Dive that can
+          stream for thirty seconds.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>One shape for every result row</h3>
+        <p>
+          Search and Deep Dive had drifted into different visual idioms for
+          the same job. Search rendered everything in mono caps with party
+          as an inline <em>(LAB)</em> text and House as a tiny mid-line
+          label; Deep Dive used sentence case and a coloured party lozenge.
+          Pulled both onto a single shape: mono-caps date, sentence-case
+          member name, coloured party lozenge, neutral outlined House
+          lozenge. Side effect of the typography change: minister-by-role
+          attributions like &lsquo;The Parliamentary Under-Secretary of State,
+          Ministry of Housing, Communities and Local Government (Baroness
+          Taylor of Stevenage)&rsquo; became readable rather than a wall of
+          caps.
+        </p>
+      </div>
+
+      <div class="entry milestone">
+        <p class="when">May 2026</p>
+        <h3>Three lifts that aren&rsquo;t in Hansard</h3>
+        <p>
+          A small strategic pass &mdash; what can the page do that
+          Hansard&rsquo;s own search can&rsquo;t? Three things at once.
+        </p>
+        <p>
+          An Export button next to the contributions count on both Search
+          and Deep Dive downloads the current filtered set as Markdown
+          &mdash; date, member, party, House, debate, full passage text,
+          and a deep link back to Hansard. Drops straight into NotebookLM,
+          Obsidian, or a Google Docs paste. Since the click-to-filter UI
+          already lets you curate by member, debate, party or co-term, the
+          filter system <em>is</em> the research basket; no need for a
+          separate starring affordance.
+        </p>
+        <p>
+          A new &lsquo;Often mentioned alongside&rsquo; panel beside the
+          existing leaderboards on Deep Dive lists the multi-word
+          capitalised phrases that recur across the matching contributions.
+          For Windrush you get Empire Windrush, Wendy Williams, Home Office,
+          Caribbean Community surfacing &mdash; a tipsheet in a panel. The
+          first version drowned in noise (Hon Member, Madam Deputy Speaker,
+          Liberal Democrats, &lsquo;Recent Developments&rsquo; as a Hansard
+          heading template); a couple of rounds of stopword tightening on
+          real samples cleaned it up. Click a phrase to filter to
+          contributions that mention it, AND-combined with the other
+          filters.
+        </p>
+        <p>
+          And the stats row picked up small sub-lines under each cell: the
+          peak month&rsquo;s count, who first mentioned the term, who most
+          recently raised it.
+        </p>
+      </div>
+
+      <div class="entry milestone">
+        <p class="when">May 2026</p>
+        <h3>Searching the words inside transcripts</h3>
+        <p>
+          The big one for select-committee evidence. Hansard&rsquo;s API
+          doesn&rsquo;t expose transcript text for search; the committees
+          API exposes the documents as base64-wrapped HTML but not as
+          searchable content. So a daily GitHub Actions job walks the
+          last 90 days of oral evidence sessions, fetches each
+          transcript, parses it into speaker-attributed segments, and
+          writes <code>evidence-index.json</code> at the repo root.
+          Static-site search, no backend.
+        </p>
+        <p>
+          The new <a href="transcripts.html">Transcripts</a> page loads
+          the index on entry and runs queries entirely in the browser.
+          Snippets carry the speaker label, the previous turn for
+          context (so a hit in a witness&rsquo;s answer comes paired with
+          the question that prompted it), and a text-fragment deep
+          link that opens the published transcript scrolled to the
+          line. Click-to-expand on long prior turns.
+        </p>
+        <p>
+          The 90-day rolling window keeps the page genuinely current
+          without ballooning the file. To go further back, the page
+          carries a switcher of sealed quarterly archives. Each quarter
+          is built once, frozen, and lived alongside the rolling
+          index. Only one is loaded at a time — keeps memory bounded
+          on phones.
+        </p>
+        <p>
+          OCR-mangled words from the .docx-converted transcripts
+          (&ldquo;giraffes&rdquo; indexing as &ldquo;gi raf fes&rdquo;)
+          still show up. That&rsquo;s the source data &mdash; fixing it
+          without corrupting legitimate text would need OCR-grade
+          reasoning. Live with it; flag in this About; move on.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Six years of archive, tabular picker, smarter acronyms</h3>
+        <p>
+          The Transcripts page now spans the start of 2020 to the
+          present rolling 90 days &mdash; about 3,500 sessions across
+          25 quarterly archives plus the rolling index. The session
+          counts tell their own political story when you look at the
+          grid: the 13-session 2024 Q3 (election dissolution + recess),
+          the small Q3s every year for summer recess, the COVID
+          scramble in 2020 Q2.
+        </p>
+        <p>
+          The pill-row layout that worked for two or three quarters
+          would have been unmanageable here, so the picker became a
+          Year &times; Quarter table with a session count in each cell
+          &mdash; readable as a story at a glance, and there&rsquo;s
+          room to add more years before it strains.
+        </p>
+        <p>
+          And acronyms: searching &lsquo;SAS&rsquo; was matching
+          &lsquo;sas&rsquo; inside &lsquo;passage&rsquo; and
+          &lsquo;Sasaki&rsquo;; &lsquo;DEFRA&rsquo; was hitting random
+          letter strings. Short all-caps terms (2&ndash;8 chars) now
+          match case-sensitively with word boundaries everywhere
+          &mdash; Search snippets, Deep Dive snippets, within-inquiry
+          search, and the global Transcripts search. Mixed-case terms
+          keep the existing case-insensitive behaviour. Centralised in
+          one helper, one rule.
+        </p>
+      </div>
+
+      <div class="entry">
+        <p class="when">May 2026</p>
+        <h3>Party labels colouring in</h3>
+        <p>
+          The Deep Dive monthly chart was bucketing ministers as
+          &lsquo;Unknown&rsquo; &mdash; Hansard attributes them by role, so
+          &lsquo;The Chief Secretary to the Treasury (Darren Jones)&rsquo;
+          has no party in the parens to extract. The leaderboard chip got
+          to LAB in the end via a separate Members API call, but the chart
+          never got the memo: same data, two answers, sitting next to each
+          other.
+        </p>
+        <p>
+          Now the chart keeps a per-month per-member tally on the side
+          and re-derives the party split once the Members API resolves,
+          so the bars colour in. The Members lookup also widened from the
+          top twelve to any contributor missing a party badge, capped at
+          fifty per dive to keep big searches sane, and bounded to four
+          parallel requests like the per-month fetcher.
+        </p>
+        <p>
+          While there: the SNP lozenge was rendering as &lsquo;SCOTTISH
+          NATIONAL PARTY&rsquo; in tracked caps and busting the speaker
+          chip layout &mdash; the only party without a short-form
+          mapping. Fixed.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="colophon"><a class="back" href="./">← Back to search</a></p>
+      <p class="colophon-meta"><a href="https://github.com/peter-guillam123/House">Source</a></p>
+    </div>
+  </footer>
+</body>
+</html>
