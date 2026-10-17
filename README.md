@@ -47,11 +47,15 @@ GitHub Pages from the repo root. In Settings → Pages, set source to "Deploy fr
 
 ## Calendar feeds
 
-`tools/build-calendar.py` turns the next eight weeks of public committee oral evidence into subscribable calendar files under `calendar/`: one for everything, one per select committee, and a `committees.json` manifest the Committees page reads to list them. A GitHub Actions job (`build-calendar.yml`) rebuilds them four times a day and commits only when the schedule has changed. Event IDs are stable, so a changed time updates the entry in a subscriber's calendar rather than duplicating it. Stdlib only:
+`tools/build-calendar.py` turns the next eight weeks of public committee oral evidence into subscribable calendar files under `calendar/`: one for everything, one per select committee, and a `committees.json` manifest the Committees page reads to list them. A GitHub Actions job (`build-calendar.yml`) rebuilds them hourly through the day and commits only when the schedule has changed. Event IDs are stable, so a changed time updates the entry in a subscriber's calendar rather than duplicating it. Stdlib only:
 
 ```sh
 python3 tools/build-calendar.py
 ```
+
+## The week ahead
+
+`tools/build-ahead.py` writes `days/ahead.json`: each House's next sitting day with its order of business (from Parliament's What's On feed, fetched a month at a time because it refuses longer windows), recess and non-sitting days, and the week ahead with chamber highlights and public committee sessions. The home page reads it while the search box is empty. It runs hourly through the day in `build-calendar.yml`, alongside the calendar feeds.
 
 ## Day summaries
 
