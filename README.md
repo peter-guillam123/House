@@ -67,6 +67,10 @@ python3 tools/build-day.py --date 2026-10-14
 python3 tools/build-day.py --backfill 15  # seed the archive and the spike baseline
 ```
 
+## Export
+
+Search and Deep Dive export their results as Markdown for NotebookLM, Obsidian or a Google Doc. The file opens with a plain paragraph saying what it contains, in absolute dates, so a model reading it later knows what it is looking at. Search's Export fetches all remaining pages first (up to 500 entries) so the file is the whole search, not the page on screen.
+
 ## Limits worth knowing
 
 - Select committee oral evidence transcripts aren't full-text searchable via parliament's API — you only get metadata (committee, date, witnesses). The committee source instead uses Hansard's committee-debates feed, which covers Public Bill and Westminster Hall debates.
