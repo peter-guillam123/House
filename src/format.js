@@ -18,6 +18,16 @@ export function formatDayLong(iso) {
   return `${DAYS[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]}`;
 }
 
+const MONTHS_FULL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+// "Wednesday 14 October 2026" — for a page about one day.
+export function formatDayFull(iso) {
+  if (!iso) return '';
+  const d = new Date(`${iso}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return iso;
+  return `${DAYS[d.getDay()]} ${d.getDate()} ${MONTHS_FULL[d.getMonth()]} ${d.getFullYear()}`;
+}
+
 // "09:30" → "9.30am"; "14:00" → "2pm". British, no leading zero.
 export function formatTime(hhmm) {
   if (!hhmm) return '';

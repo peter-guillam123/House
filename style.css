@@ -2518,3 +2518,130 @@ button.cm-snippet-prior:focus-visible { outline: 2px solid var(--accent); outlin
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ================================================================
+   Yesterday (day.html)
+   ================================================================ */
+
+.dy-hero .sub { max-width: 60ch; }
+.dy-daynav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin: 0.9rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+.dy-daynav-link {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.22em;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+}
+.dy-daynav-link:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.dy-controls { margin: 0.4rem 0 0.6rem; }
+.dy-controls .pills button[disabled] { opacity: 0.45; cursor: not-allowed; }
+
+.dy-stats { grid-template-columns: repeat(6, 1fr); margin-top: 1rem; }
+@media (max-width: 880px) {
+  .dy-stats { grid-template-columns: repeat(3, 1fr); }
+  .dy-stats .dd-stat-cell:nth-child(3n) { border-right: 0; }
+  .dy-stats .dd-stat-cell:nth-child(-n+3) { border-bottom: 1px solid var(--rule-soft); }
+}
+@media (max-width: 560px) {
+  .dy-stats { grid-template-columns: repeat(2, 1fr); }
+  .dy-stats .dd-stat-cell { padding: 0.8rem 0.85rem 0.9rem; }
+  .dy-stats .dd-stat-cell:nth-child(3n) { border-right: 1px solid var(--rule-soft); }
+  .dy-stats .dd-stat-cell:nth-child(2n) { border-right: 0; }
+  .dy-stats .dd-stat-cell:nth-child(-n+4) { border-bottom: 1px solid var(--rule-soft); }
+}
+
+.dy-block { margin: 1.8rem 0 0; }
+.dy-block .cm-side-note { margin-bottom: 0.7rem; }
+
+/* words that spiked: a run of chips, each a link into Search */
+.dy-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.dy-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  min-height: 40px;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper-warm);
+  font-family: var(--serif);
+  font-variation-settings: 'opsz' 20, 'wght' 500;
+  font-size: 1.02rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 120ms, color 120ms;
+}
+.dy-chip:hover { border-color: var(--accent); color: var(--accent); }
+.dy-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.dy-chip-n {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+.dy-tally { font-family: var(--sans); }
+.dy-tally strong { font-weight: 600; color: var(--ink); }
+.dy-rebels {
+  margin: 0.1rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.dy-rebels-label { color: var(--accent); font-weight: 500; margin-right: 0.3rem; }
+.dy-rebel { display: inline-block; margin-right: 0.7rem; }
+.dy-rebel-voted { color: var(--ink-muted); font-size: 0.78rem; }
+
+.dy-group { margin: 0.9rem 0 0; }
+.dy-group-label {
+  margin: 0 0 0.1rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.dy-section { padding: 0.6rem 0 0.7rem; }
+.dy-section .cm-item-title { font-size: 1rem; }
+.dy-topics { color: var(--ink-muted); font-size: 0.8rem; }
+
+.dy-rank { list-style: none; margin: 0; padding: 0; font-family: var(--sans); font-size: 0.9rem; }
+.dy-rank-row {
+  display: grid;
+  grid-template-columns: 1.4rem minmax(0, 1fr) auto;
+  gap: 0.2rem 0.6rem;
+  align-items: baseline;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.dy-rank-row:last-child { border-bottom: 0; }
+.dy-rank-n { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); }
+.dy-rank-name { color: var(--ink); }
+.dy-rank-val { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-soft); white-space: nowrap; }
+.dy-rank-sub { color: var(--ink-faint); }
+@media (max-width: 560px) {
+  .dy-rank-row { grid-template-columns: 1.4rem minmax(0, 1fr); }
+  .dy-rank-val { grid-column: 2; white-space: normal; }
+}
+
+.dy-compact .cm-item { padding: 0.6rem 0 0.65rem; gap: 0.15rem; }
+.dy-small-title { font-size: 0.95rem; }
+.dy-witnesses { color: var(--ink-muted); }
