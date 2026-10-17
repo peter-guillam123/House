@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Scotland’s whisky industry: Tariffs\, trade and growth · S
+ cottish Affairs Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28081@house.peter-guillam123.github.io
+DTSTAMP:20261021T093000Z
+DTSTART:20261021T093000
+DTEND:20261021T113000
+SUMMARY:Scotland’s whisky industry: Tariffs\, trade and growth · Scotti
+ sh Affairs Committee
+LOCATION:Room 15\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
+ : Mark Kent (Scotch Whisky Association)\; Graeme Littlejohn (Scotch Whisk
+ y Association)\; Ruth Piggin (Scotch Whisky Association)\; Emily Weaver-R
+ oads (Scotch Whisky Association).\nhttps://api.parliament.uk/committees/e
+ vents/28081
+URL:https://api.parliament.uk/committees/events/28081
+END:VEVENT
+END:VCALENDAR

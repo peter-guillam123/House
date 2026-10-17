@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Oral evidence · Public Services Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28153@house.peter-guillam123.github.io
+DTSTAMP:20261125T110000Z
+DTSTART:20261125T110000
+DTEND:20261125T123000
+SUMMARY:Oral evidence · Public Services Committee
+LOCATION:To be Confirmed
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
+ to be announced.\nhttps://api.parliament.uk/committees/events/28153
+URL:https://api.parliament.uk/committees/events/28153
+END:VEVENT
+END:VCALENDAR

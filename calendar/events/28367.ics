@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Energy resilience · Energy Security and Net Zero Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28367@house.peter-guillam123.github.io
+DTSTAMP:20261021T100000Z
+DTSTART:20261021T100000
+DTEND:20261021T120000
+SUMMARY:Energy resilience · Energy Security and Net Zero Committee
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
+ .\nWitnesses: Michael Shanks MP (Department for Energy Security and Net Z
+ ero)\; Dan Micklethwaite (Department for Energy Security and Net Zero).\n
+ https://api.parliament.uk/committees/events/28367
+URL:https://api.parliament.uk/committees/events/28367
+END:VEVENT
+END:VCALENDAR

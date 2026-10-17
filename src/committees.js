@@ -445,8 +445,36 @@ function icsFold(line) {
   return out.join('\r\n');
 }
 
+// Google Calendar takes the event in the link itself, so nothing is
+// downloaded. Apple and Outlook want an .ics file: the hourly job writes
+// one per session, which a phone opens as an event with an Add button;
+// a session announced since the last build falls back to a file built
+// here, which downloads.
+function googleEventHref(s) {
+  const stamp = (date, hhmm) => `${date.replace(/-/g, '')}T${(hhmm || '00:00').replace(':', '')}00`;
+  const endTime = s.endTime && s.endTime > s.time ? s.endTime : addMinutes(s.time, 120);
+  const who = s.witnesses.map((w) => {
+    const orgs = w.organisations.join(', ');
+    return w.name ? (orgs ? `${w.name} (${orgs})` : w.name) : orgs;
+  }).filter(Boolean);
+  const p = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: [s.inquiryTitle || 'Oral evidence', s.committee].filter(Boolean).join(' · '),
+    dates: `${stamp(s.date, s.time)}/${stamp(s.date, endTime)}`,
+    ctz: 'Europe/London',
+    details: [`Oral evidence session, ${s.committee}.`, who.length ? `Witnesses: ${who.join('; ')}.` : 'Witnesses to be announced.', s.eventLink].join('\n'),
+  });
+  if (s.location) p.set('location', s.location);
+  return `https://calendar.google.com/calendar/render?${p}`;
+}
+
 function calendarLinkHtml(s) {
-  return `<a class="cm-secondary-link" href="${escapeHtml(calendarHref(s))}" download="${escapeHtml(calendarFilename(s))}">Add to calendar</a>`;
+  const served = state.feedEvents.has(s.id);
+  const icsHref = served ? new URL(`events/${s.id}.ics`, CALENDAR_BASE).href : calendarHref(s);
+  const icsAttrs = served ? '' : ` download="${escapeHtml(calendarFilename(s))}"`;
+  return `<span class="cm-cal-links"><span class="cm-cal-label">Add to calendar</span>
+    <a class="cm-secondary-link" href="${escapeHtml(googleEventHref(s))}" target="_blank" rel="noopener">Google</a>
+    <a class="cm-secondary-link" href="${escapeHtml(icsHref)}"${icsAttrs}>Apple or Outlook</a></span>`;
 }
 
 function witnessesHtml(witnesses, max) {
@@ -488,11 +516,15 @@ $upcomingList.addEventListener('click', (e) => {
 
 const $subscribe       = document.getElementById('cm-subscribe');
 const $subscribeSelect = document.getElementById('cm-subscribe-select');
-const $subscribeLink   = document.getElementById('cm-subscribe-link');
+const $subscribeGoogle  = document.getElementById('cm-subscribe-google');
+const $subscribeApple   = document.getElementById('cm-subscribe-apple');
+const $subscribeOutlook = document.getElementById('cm-subscribe-outlook');
 const $subscribeCopy   = document.getElementById('cm-subscribe-copy');
 const $subscribeNote   = document.getElementById('cm-subscribe-note');
 const CALENDAR_BASE = new URL('calendar/', location.href);
 let subscribeNoteDefault = $subscribeNote.textContent;
+// Session ids with a served .ics file, from the manifest.
+state.feedEvents = new Set();
 
 async function loadFeedManifest() {
   if ($subscribeSelect.options.length > 1) return;
@@ -503,6 +535,12 @@ async function loadFeedManifest() {
     manifest = await r.json();
   } catch { return; }
   if (!manifest || !Array.isArray(manifest.committees)) return;
+  state.feedEvents = new Set(manifest.events || []);
+  // Rows already drawn used the fallback file; redraw them with the
+  // served one now we know which exist.
+  if (state.upcomingLoaded) renderUpcoming();
+  if (state.upcomingMatches.length) renderSessions();
+  if (state.inquiryUpcoming.length) renderInquirySessions();
   $subscribeSelect.options[0].dataset.file = manifest.all || 'committees.ics';
   // Group by House so a long list stays scannable.
   const groups = new Map();
@@ -537,20 +575,25 @@ function feedUrl() {
 
 function syncSubscribeLink() {
   const https = feedUrl();
-  // webcal:// is what Apple Calendar and Outlook listen for; it's the
-  // same address with the scheme swapped.
-  $subscribeLink.href = https.href.replace(/^https?:/, 'webcal:');
+  const name = $subscribeSelect.selectedOptions[0]?.textContent.replace(/\s\(\d+\)$/, '') || 'Committee oral evidence';
+  // Google and Outlook each have a web page that takes a feed address
+  // and asks the reader to confirm. Apple Calendar listens for webcal://,
+  // the same address with the scheme swapped.
+  $subscribeGoogle.href = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(https.href)}`;
+  $subscribeApple.href = https.href.replace(/^https?:/, 'webcal:');
+  $subscribeOutlook.href = `https://outlook.live.com/calendar/0/addfromweb?url=${encodeURIComponent(https.href)}&name=${encodeURIComponent(`House · ${name}`)}`;
   $subscribeNote.textContent = subscribeNoteDefault;
   $subscribeNote.classList.remove('is-done');
 }
 
 $subscribeSelect.addEventListener('change', syncSubscribeLink);
+loadFeedManifest();
 
 $subscribeCopy.addEventListener('click', async () => {
   const address = feedUrl().href;
   try {
     await navigator.clipboard.writeText(address);
-    $subscribeNote.textContent = `Copied. In Google Calendar, choose Other calendars, From URL, and paste it in.`;
+    $subscribeNote.textContent = `Copied. Paste it into your calendar app where it asks for a calendar address or URL.`;
   } catch {
     $subscribeNote.textContent = `Copy this address: ${address}`;
   }

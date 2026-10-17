@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:To consider the Bill · Highways (Financing) Bill
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28464@house.peter-guillam123.github.io
+DTSTAMP:20261029T113000Z
+DTSTART:20261029T113000
+DTEND:20261029T133000
+SUMMARY:To consider the Bill · Highways (Financing) Bill
+LOCATION:Room 12\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses 
+ to be announced.\nhttps://api.parliament.uk/committees/events/28464
+URL:https://api.parliament.uk/committees/events/28464
+END:VEVENT
+END:VCALENDAR

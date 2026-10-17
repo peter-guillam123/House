@@ -47,7 +47,7 @@ GitHub Pages from the repo root. In Settings → Pages, set source to "Deploy fr
 
 ## Calendar feeds
 
-`tools/build-calendar.py` turns the next eight weeks of public committee oral evidence into subscribable calendar files under `calendar/`: one for everything, one per select committee, and a `committees.json` manifest the Committees page reads to list them. A GitHub Actions job (`build-calendar.yml`) rebuilds them hourly through the day and commits only when the schedule has changed. Event IDs are stable, so a changed time updates the entry in a subscriber's calendar rather than duplicating it. Stdlib only:
+`tools/build-calendar.py` turns the next eight weeks of public committee oral evidence into calendar files under `calendar/`: one subscribable feed for everything, one per select committee, one file per session (for Apple and Outlook "add to calendar"), and a `committees.json` manifest the Committees page reads to list them. Google Calendar gets deep links instead of files. A GitHub Actions job (`build-calendar.yml`) rebuilds them hourly through the day and commits only when the schedule has changed. Event IDs are stable, so a changed time updates the entry in a subscriber's calendar rather than duplicating it. Stdlib only:
 
 ```sh
 python3 tools/build-calendar.py
