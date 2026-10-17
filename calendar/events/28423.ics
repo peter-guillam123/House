@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Clean Power by 2030: Upgrading the grid · Public Accounts Co
+ mmittee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28423@house.peter-guillam123.github.io
+DTSTAMP:20261022T100000Z
+DTSTART:20261022T100000
+DTEND:20261022T120000
+SUMMARY:Clean Power by 2030: Upgrading the grid · Public Accounts Committ
+ ee
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Jonathan Brearley (Department for Energy Security and Net Zero)\; Emily 
+ Bourne (Department for Energy Security and Net Zero)\; Tim Jarvis (Ofgem)
+ \; Akshay Kaul (Ofgem)\; Fintan Slye (NESO).\nhttps://api.parliament.uk/c
+ ommittees/events/28423
+URL:https://api.parliament.uk/committees/events/28423
+END:VEVENT
+END:VCALENDAR

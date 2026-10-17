@@ -7,6 +7,8 @@ keeps the public oral evidence sessions, and writes:
 
   calendar/committees.ics            every committee, one feed
   calendar/committees/<id>-<slug>.ics  one feed per select committee
+  calendar/events/<id>.ics           one file per session, for "add to
+                                     calendar" on Apple and Outlook
   calendar/committees.json           manifest the page reads to list them
 
 A reader subscribes once (webcal:// on Apple and Outlook, "From URL" on
@@ -40,6 +42,7 @@ UID_DOMAIN = "house.peter-guillam123.github.io"
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = REPO_ROOT / "calendar"
 PER_COMMITTEE_DIR = OUT_DIR / "committees"
+PER_EVENT_DIR = OUT_DIR / "events"
 ALL_PATH = OUT_DIR / "committees.ics"
 MANIFEST_PATH = OUT_DIR / "committees.json"
 
@@ -266,14 +269,28 @@ def main():
             stale.unlink()
             print(f"  removed stale feed {stale.name}")
 
+    # One file per session. Served as a real file with the calendar
+    # content type, a phone opens it as an event with an Add button,
+    # where a file generated in the browser only ever downloads.
+    PER_EVENT_DIR.mkdir(exist_ok=True)
+    event_ids = []
+    for s in sessions:
+        name = " · ".join(x for x in (s["inquiry"] or "Oral evidence", s["committee"]) if x)
+        (PER_EVENT_DIR / f"{s['id']}.ics").write_text(vcalendar(name, [s]), encoding="utf-8")
+        event_ids.append(s["id"])
+    for stale in PER_EVENT_DIR.glob("*.ics"):
+        if stale.stem not in {str(i) for i in event_ids}:
+            stale.unlink()
+
     MANIFEST_PATH.write_text(json.dumps({
         "built": start_iso,
         "windowDays": WINDOW_DAYS,
         "sessions": len(sessions),
         "all": "committees.ics",
         "committees": manifest,
+        "events": sorted(event_ids),
     }, ensure_ascii=False, indent=0), encoding="utf-8")
-    print(f"Wrote {ALL_PATH.relative_to(REPO_ROOT)} and {len(manifest)} committee feeds")
+    print(f"Wrote {ALL_PATH.relative_to(REPO_ROOT)}, {len(manifest)} committee feeds and {len(event_ids)} event files")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Support for Jurors · Justice and Home Affairs Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-27938@house.peter-guillam123.github.io
+DTSTAMP:20261027T103000Z
+DTSTART:20261027T103000
+DTEND:20261027T120000
+SUMMARY:Support for Jurors · Justice and Home Affairs Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
+ itnesses: Sarah Sackman KC MP (Ministry of Justice).\nhttps://api.parliam
+ ent.uk/committees/events/27938
+URL:https://api.parliament.uk/committees/events/27938
+END:VEVENT
+END:VCALENDAR

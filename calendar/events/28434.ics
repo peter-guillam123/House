@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:One-off Session on Defence Medical Services · Defence Commit
+ tee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28434@house.peter-guillam123.github.io
+DTSTAMP:20261027T103000Z
+DTSTART:20261027T103000
+DTEND:20261027T123000
+SUMMARY:One-off Session on Defence Medical Services · Defence Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
+ nounced.\nhttps://api.parliament.uk/committees/events/28434
+URL:https://api.parliament.uk/committees/events/28434
+END:VEVENT
+END:VCALENDAR

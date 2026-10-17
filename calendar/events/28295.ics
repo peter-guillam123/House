@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:National Audit Office Annual Report and Accounts 2025-26 · P
+ ublic Accounts Commission
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28295@house.peter-guillam123.github.io
+DTSTAMP:20261020T154500Z
+DTSTART:20261020T154500
+DTEND:20261020T164500
+SUMMARY:National Audit Office Annual Report and Accounts 2025-26 · Public
+  Accounts Commission
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Public Accounts Commission.\nWitnesses
+ : Gareth Davies (National Audit Office)\; Dame Fiona Reynolds DBE (Nation
+ al Audit Office)\; Rebecca Sheeran (National Audit Office).\nhttps://api.
+ parliament.uk/committees/events/28295
+URL:https://api.parliament.uk/committees/events/28295
+END:VEVENT
+END:VCALENDAR
