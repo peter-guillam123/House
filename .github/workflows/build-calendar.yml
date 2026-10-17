@@ -1,11 +1,13 @@
-name: Build committee calendars
+name: Build the week ahead
 
 on:
   schedule:
-    # Four times a day. Committees announce sessions during working
-    # hours, and calendar apps re-read a subscribed feed every few hours
-    # to a day, so finer than this buys nothing.
-    - cron: '41 5,11,17,23 * * *'
+    # Hourly through the working day (UK time runs an hour or so ahead
+    # of this). The order of business for a sitting day is published the
+    # evening before and urgent questions are added mid-morning, so the
+    # home page's "today" column needs to catch up within the hour.
+    # Committee announcements and the calendar feeds ride along.
+    - cron: '41 6-21 * * *'
   workflow_dispatch:
 
 jobs:
@@ -25,17 +27,19 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Build the feeds
-        run: python3 tools/build-calendar.py
+      - name: Build the feeds and the week ahead
+        run: |
+          python3 tools/build-calendar.py
+          python3 tools/build-ahead.py
 
       - name: Commit if changed
         run: |
-          git add -A calendar
+          git add -A calendar days/ahead.json
           if git diff --cached --quiet; then
             echo 'No changes to commit'
             exit 0
           fi
-          git commit -m 'Refresh committee calendars (auto)'
+          git commit -m 'Refresh the week ahead (auto)'
           # The evidence-index job also pushes to main; rebase onto
           # whatever it landed rather than failing on a stale tip.
           git pull --rebase origin main
