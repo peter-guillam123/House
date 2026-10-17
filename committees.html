@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=39">
+  <link rel="stylesheet" href="style.css?v=40">
 </head>
 <body>
   <header class="topbar">
@@ -142,6 +142,22 @@
       </div>
       <div id="cm-upcoming-list"></div>
       <button type="button" id="cm-upcoming-more" class="cm-upcoming-more" aria-expanded="false" hidden></button>
+      <!-- Subscribable feeds, built four times a day by GitHub Actions.
+           Hidden until the manifest loads. -->
+      <div class="cm-subscribe" id="cm-subscribe" hidden>
+        <p class="cm-subscribe-lede">Keep this in your own calendar. The feed updates itself.</p>
+        <div class="cm-subscribe-row">
+          <label class="cm-subscribe-pick">
+            <span class="visually-hidden">Which committee</span>
+            <select id="cm-subscribe-select">
+              <option value="">All committees</option>
+            </select>
+          </label>
+          <a id="cm-subscribe-link" class="cm-subscribe-btn" href="#">Subscribe</a>
+          <button type="button" id="cm-subscribe-copy" class="cm-subscribe-copy">Copy feed address</button>
+        </div>
+        <p class="cm-subscribe-note" id="cm-subscribe-note">Subscribe opens Apple or Outlook calendars. For Google Calendar, copy the address and paste it under Other calendars, From URL.</p>
+      </div>
     </section>
 
     <section id="cm-results" class="cm-results" hidden>
@@ -173,6 +189,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/committees.js?v=14"></script>
+  <script type="module" src="src/committees.js?v=15"></script>
 </body>
 </html>

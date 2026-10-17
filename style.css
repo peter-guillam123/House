@@ -1962,6 +1962,78 @@ a.dd-rank-name:hover { color: var(--accent); text-decoration-color: var(--accent
   .cm-upcoming-time { padding-top: 0; }
 }
 
+/* --- subscribe to a feed --- */
+.cm-subscribe {
+  margin: 0.9rem 0 0;
+  padding: 0.8rem 0 0.1rem;
+  border-top: 1px solid var(--rule-soft);
+}
+.cm-subscribe-lede {
+  margin: 0 0 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.cm-subscribe-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.cm-subscribe-pick { display: flex; flex: 1 1 14rem; min-width: 0; }
+.cm-subscribe-pick select {
+  width: 100%;
+  min-height: 40px;
+  padding: 0.35rem 2rem 0.35rem 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' width='12' height='8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%236a6253' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+}
+.cm-subscribe-pick select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cm-subscribe-btn,
+.cm-subscribe-copy {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.35rem 0.9rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.cm-subscribe-btn {
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+.cm-subscribe-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.cm-subscribe-copy {
+  color: var(--ink);
+  background: none;
+  border: 1px solid var(--rule);
+}
+.cm-subscribe-copy:hover { border-color: var(--ink); }
+.cm-subscribe-btn:focus-visible,
+.cm-subscribe-copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.cm-subscribe-note {
+  margin: 0.55rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+.cm-subscribe-note.is-done { color: var(--ink-soft); }
+
 .cm-witnesses {
   margin: 0;
   font-family: var(--sans);

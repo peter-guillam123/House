@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=39">
+  <link rel="stylesheet" href="style.css?v=40">
 </head>
 <body>
   <header class="topbar">
@@ -405,6 +405,36 @@
           and the witness list. Sessions are usually announced about a
           week ahead, witnesses can be added late, and times slip, so
           treat it as a plan rather than a promise.
+        </p>
+      </div>
+      <div class="entry">
+        <p class="when">October 2026</p>
+        <h3>Committee calendars you can subscribe to</h3>
+        <p>
+          Adding one session to a diary is fine; keeping up with a beat
+          isn&rsquo;t. So the Coming up strip now ends with a subscribe
+          box. Pick a committee, or all of them, and either open the feed
+          in Apple or Outlook calendars or copy its address for Google.
+          Subscribe once and it keeps itself current.
+        </p>
+        <p>
+          Behind it is a small Python script and a GitHub Actions job,
+          the same arrangement that builds the transcript index. Four
+          times a day it reads the next eight weeks of committee events
+          from Parliament&rsquo;s API, keeps the public oral evidence
+          sessions, and writes one calendar file per select committee
+          plus one for everything. It commits only when something has
+          changed. Each entry has a stable ID, so when a committee moves
+          a session or adds a witness, the entry in your calendar
+          updates rather than doubling. A cancelled session disappears.
+        </p>
+        <p>
+          Parliament publishes the same data but not in this shape: its
+          per-event files are titled &ldquo;Untitled&rdquo; and there is
+          no feed to subscribe to. Calendar apps re-read a subscribed
+          feed somewhere between every few hours and once a day, so
+          treat the diary entry as a reminder and the committee&rsquo;s
+          own page as the final word.
         </p>
       </div>
     </section>

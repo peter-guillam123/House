@@ -268,6 +268,7 @@ async function runBrowse() {
     renderSessions();
     renderUpcoming();
     syncUpcomingVisibility();
+    loadFeedManifest();
     enrichInquiriesWithDescriptions(myToken);
     setStatus('Recent activity. Type a term to search the committee record.');
   } finally {
@@ -475,6 +476,85 @@ $upcomingList.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-inquiry-id]');
   if (!btn) return;
   enterInquiryView(Number(btn.dataset.inquiryId), { pushUrl: true });
+});
+
+// ---------- subscribable feeds ----------
+//
+// tools/build-calendar.py writes calendar/committees.json and one .ics
+// per committee; GitHub Actions rebuilds them four times a day. The
+// manifest is fetched relative to the page so the same code works on
+// GitHub Pages and on localhost. If it isn't there (a fresh checkout
+// before the first build), the subscribe block simply stays hidden.
+
+const $subscribe       = document.getElementById('cm-subscribe');
+const $subscribeSelect = document.getElementById('cm-subscribe-select');
+const $subscribeLink   = document.getElementById('cm-subscribe-link');
+const $subscribeCopy   = document.getElementById('cm-subscribe-copy');
+const $subscribeNote   = document.getElementById('cm-subscribe-note');
+const CALENDAR_BASE = new URL('calendar/', location.href);
+let subscribeNoteDefault = $subscribeNote.textContent;
+
+async function loadFeedManifest() {
+  if ($subscribeSelect.options.length > 1) return;
+  let manifest;
+  try {
+    const r = await fetch(new URL('committees.json', CALENDAR_BASE), { cache: 'no-cache' });
+    if (!r.ok) return;
+    manifest = await r.json();
+  } catch { return; }
+  if (!manifest || !Array.isArray(manifest.committees)) return;
+  $subscribeSelect.options[0].dataset.file = manifest.all || 'committees.ics';
+  // Group by House so a long list stays scannable.
+  const groups = new Map();
+  for (const c of manifest.committees) {
+    const key = c.house || 'Other';
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(c);
+  }
+  for (const house of ['Commons', 'Lords', 'Joint', 'Other']) {
+    const list = groups.get(house);
+    if (!list) continue;
+    const og = document.createElement('optgroup');
+    og.label = house;
+    for (const c of list) {
+      const opt = document.createElement('option');
+      opt.value = String(c.id);
+      opt.dataset.file = c.file;
+      opt.textContent = c.upcoming ? `${c.name} (${c.upcoming})` : c.name;
+      og.appendChild(opt);
+    }
+    $subscribeSelect.appendChild(og);
+  }
+  syncSubscribeLink();
+  $subscribe.hidden = false;
+}
+
+function feedUrl() {
+  const opt = $subscribeSelect.selectedOptions[0];
+  const file = opt?.dataset.file || 'committees.ics';
+  return new URL(file, CALENDAR_BASE);
+}
+
+function syncSubscribeLink() {
+  const https = feedUrl();
+  // webcal:// is what Apple Calendar and Outlook listen for; it's the
+  // same address with the scheme swapped.
+  $subscribeLink.href = https.href.replace(/^https?:/, 'webcal:');
+  $subscribeNote.textContent = subscribeNoteDefault;
+  $subscribeNote.classList.remove('is-done');
+}
+
+$subscribeSelect.addEventListener('change', syncSubscribeLink);
+
+$subscribeCopy.addEventListener('click', async () => {
+  const address = feedUrl().href;
+  try {
+    await navigator.clipboard.writeText(address);
+    $subscribeNote.textContent = `Copied. In Google Calendar, choose Other calendars, From URL, and paste it in.`;
+  } catch {
+    $subscribeNote.textContent = `Copy this address: ${address}`;
+  }
+  $subscribeNote.classList.add('is-done');
 });
 
 function setPanelLabels(mode) {
