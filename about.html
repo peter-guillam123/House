@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=38">
+  <link rel="stylesheet" href="style.css?v=39">
 </head>
 <body>
   <header class="topbar">
@@ -49,8 +49,9 @@
       lot in one ranked list. <a href="deep-dive.html">Deep Dive</a> plots a
       single term as a party-stacked monthly timeline with click-to-filter
       panels for members, debates and co-occurring phrases.
-      <a href="committees.html">Committees</a> finds inquiries by name and
-      lets you drill into one to search its transcripts directly. And
+      <a href="committees.html">Committees</a> finds inquiries by name,
+      shows what&rsquo;s coming up in the committee rooms this week, and
+      lets you drill into one inquiry to search its transcripts directly. And
       <a href="transcripts.html">Transcripts</a> searches the actual words
       inside select-committee oral evidence — the bit Hansard&rsquo;s API
       doesn&rsquo;t expose for search, made possible here by a daily-built
@@ -370,6 +371,40 @@
           NATIONAL PARTY&rsquo; in tracked caps and busting the speaker
           chip layout &mdash; the only party without a short-form
           mapping. Fixed.
+        </p>
+      </div>
+      <div class="entry">
+        <p class="when">October 2026</p>
+        <h3>What&rsquo;s coming up in the committee rooms</h3>
+        <p>
+          The Committees page only ever looked backwards. Parliament
+          publishes the forward schedule too, with witnesses attached once
+          they&rsquo;re announced, so the page now opens with a Coming up
+          strip: next week&rsquo;s public oral evidence sessions, grouped
+          by day, with the time, the room, the inquiry and who&rsquo;s
+          giving evidence. Six rows by default and a reveal for the rest,
+          so it sits above the record without crowding it. Private
+          meetings are left out, because there&rsquo;s nothing to attend
+          or quote.
+        </p>
+        <p>
+          The more useful change is quieter. A witness or organisation
+          search now returns scheduled sessions as well as past ones,
+          tagged Upcoming at the top of the list, so &ldquo;when is Ofcom
+          next in front of a committee?&rdquo; has an answer. Opening an
+          inquiry shows its scheduled sessions above the transcripts.
+          Parliament&rsquo;s own search of this data doesn&rsquo;t match
+          witness names, so the page fetches six weeks of events once and
+          filters them itself.
+        </p>
+        <p>
+          Every upcoming session has an Add to calendar link. Parliament
+          serves a calendar file per event, but titles each one
+          &ldquo;Untitled&rdquo;, which is no use in a diary. So House
+          writes its own entry with the inquiry, the committee, the room
+          and the witness list. Sessions are usually announced about a
+          week ahead, witnesses can be added late, and times slip, so
+          treat it as a plan rather than a promise.
         </p>
       </div>
     </section>
