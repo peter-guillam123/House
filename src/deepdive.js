@@ -7,7 +7,7 @@
 
 import { timelineStats, searchSpoken, memberById } from './api.js?v=7';
 import { formatDate, snippetHtml, escapeHtml, partyColor, partyShortName, unquoteTerm } from './format.js?v=7';
-import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
+import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=2';
 
 // ---------- config -----------------------------------------------------
 
@@ -850,8 +850,12 @@ $exportBtn.addEventListener('click', () => {
   const md = buildMarkdownExport({
     pageTitle: 'Deep Dive export',
     term: state.term,
-    dateRange: describeRange(),
-    filtersLabel: describeDeepDiveFilters(),
+    startDate: state.startDate,
+    endDate: state.endDate,
+    what: 'Hansard spoken contributions',
+    house: state.house,
+    narrowedTo: describeDeepDiveFilters().split(' \u00b7 ').filter(Boolean).join('; '),
+    totalMatched: null,
     recreateUrl: location.href,
     items,
   });
