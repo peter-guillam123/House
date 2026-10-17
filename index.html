@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=41">
+  <link rel="stylesheet" href="style.css?v=43">
 </head>
 <body>
   <header class="topbar">
@@ -143,6 +143,14 @@
       </section>
     </details>
 
+    <!-- Shown while the search box is empty: the last sitting, the next
+         one, and the week ahead. Read from days/, not fetched live. -->
+    <section id="home" class="home" aria-label="Parliament now" hidden>
+      <div class="home-col home-col--last" id="home-last"></div>
+      <div class="home-col home-col--next" id="home-next"></div>
+      <div class="home-col home-col--week" id="home-week"></div>
+    </section>
+
     <div class="results-toolbar">
       <div id="status" class="status" aria-live="polite"></div>
       <button id="export-md" type="button" class="export-btn" hidden>
@@ -171,6 +179,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/app.js?v=15"></script>
+  <script type="module" src="src/app.js?v=17"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ import {
 import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=6';
 import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS, partyColor, partyShortName } from './format.js?v=7';
 import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
+import { showHome } from './home.js?v=2';
 
 // ---------- state ----------
 
@@ -235,13 +236,14 @@ window.addEventListener('popstate', () => {
     if (hasQuery) {
       freshSearch(false);
     } else {
-      // empty URL — clear results
+      // empty URL — clear results, show the home panels again
       state.items = [];
       state.offsets = { spoken: 0, wq: 0, ws: 0, committee: 0 };
       state.totals  = { spoken: 0, wq: 0, ws: 0, committee: 0 };
       $results.innerHTML = '';
       setStatus('');
       $more.hidden = true;
+      showHome(true);
     }
   });
 });
@@ -254,8 +256,10 @@ function freshSearch(pushUrl) {
     setStatus('Enter a search term to start.');
     $results.innerHTML = '';
     $more.hidden = true;
+    showHome(true);
     return;
   }
+  showHome(false);
   state.items = [];
   state.offsets = { spoken: 0, wq: 0, ws: 0, committee: 0 };
   state.totals = { spoken: 0, wq: 0, ws: 0, committee: 0 };
@@ -286,6 +290,7 @@ $more.addEventListener('click', () => runSearch(false));
   try {
     const hasQuery = await applyParamsFromUrl();
     if (hasQuery) freshSearch(false);
+    else showHome(true);
   } catch (e) { console.warn('URL state restore failed', e); }
 })();
 
