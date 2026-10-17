@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Treasury Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28371@house.peter-guillam123.github.io
+DTSTAMP:20261020T094500Z
+DTSTART:20261020T094500
+DTEND:20261020T123000
+SUMMARY:Budget 2026 · Treasury Committee
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Dr Geo
+ ff Tily (Trades Union Congress)\; Louise Hellem (Confederation of British
+  Industry)\; David Hale (Federation of Small Businesses).\nhttps://api.pa
+ rliament.uk/committees/events/28371
+URL:https://api.parliament.uk/committees/events/28371
+END:VEVENT
+END:VCALENDAR

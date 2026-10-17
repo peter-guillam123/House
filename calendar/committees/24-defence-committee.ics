@@ -1,0 +1,44 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Defence Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28432@house.peter-guillam123.github.io
+DTSTAMP:20261020T103000Z
+DTSTART:20261020T103000
+DTEND:20261020T123000
+SUMMARY:One-off session on implications of the Defence Investment Plan for
+  UK industry · Defence Committee
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses: Kevin C
+ raven (ADS)\; Julian David OBE (techUK)\; Arnab Dutt OBE (Federation of S
+ mall Businesses (FSB))\; Stephen Phipson CBE (MakeUK).\nhttps://api.parli
+ ament.uk/committees/events/28432
+URL:https://api.parliament.uk/committees/events/28432
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28434@house.peter-guillam123.github.io
+DTSTAMP:20261027T103000Z
+DTSTART:20261027T103000
+DTEND:20261027T123000
+SUMMARY:One-off Session on Defence Medical Services · Defence Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
+ nounced.\nhttps://api.parliament.uk/committees/events/28434
+URL:https://api.parliament.uk/committees/events/28434
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28436@house.peter-guillam123.github.io
+DTSTAMP:20261201T103000Z
+DTSTART:20261201T103000
+DTEND:20261201T123000
+SUMMARY:Oral evidence · Defence Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
+ nounced.\nhttps://api.parliament.uk/committees/events/28436
+URL:https://api.parliament.uk/committees/events/28436
+END:VEVENT
+END:VCALENDAR

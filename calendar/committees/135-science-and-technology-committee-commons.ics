@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Science and Technology Committee (Commons)
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28411@house.peter-guillam123.github.io
+DTSTAMP:20261021T093000Z
+DTSTART:20261021T093000
+DTEND:20261021T120000
+SUMMARY:Machinery of government changes · Science and Technology Committe
+ e (Commons)
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses: Chris McDonald MP (Department of Health and Social Care
+  and Department for Business\, Innovation\, Science and Trade)\; The Baro
+ ness Lloyd of Effra CBE (Department for Digital\, Culture\, Media and Spo
+ rt and Department for Business\, Innovation\, Science and Trade)\; Alexan
+ dra Jones (Department for Business\, Innovation\, Science and Trade)\; Rt
+  Hon Kanishka Narayan MP (Cabinet Office and Department for Business\, In
+ novation\, Science and Trade)\; Ollie Ilott (Office for the Prime Ministe
+ r and Cabinet)\; Sarah Connolly (Department for Digital\, Culture\, Media
+  and Sport).\nhttps://api.parliament.uk/committees/events/28411
+URL:https://api.parliament.uk/committees/events/28411
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28413@house.peter-guillam123.github.io
+DTSTAMP:20261028T093000Z
+DTSTART:20261028T093000
+DTEND:20261028T120000
+SUMMARY:Neuroscience and digital childhoods · Science and Technology Comm
+ ittee (Commons)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses: Rt Hon Ian Murray MP (Department for Digital\, Culture\
+ , Media and Sport (DCMS))\; Rt Hon Dame Diana Johnson MP (Department of H
+ ealth and Social Care (DHSC))\; Paul Waugh MP (Department for Education).
+ \nhttps://api.parliament.uk/committees/events/28413
+URL:https://api.parliament.uk/committees/events/28413
+END:VEVENT
+END:VCALENDAR

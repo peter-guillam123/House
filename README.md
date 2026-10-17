@@ -45,6 +45,14 @@ You'll get back a URL like `https://house-proxy.<your-account>.workers.dev`. Upd
 
 GitHub Pages from the repo root. In Settings → Pages, set source to "Deploy from a branch", branch `main`, folder `/`. That's it.
 
+## Calendar feeds
+
+`tools/build-calendar.py` turns the next eight weeks of public committee oral evidence into subscribable calendar files under `calendar/`: one for everything, one per select committee, and a `committees.json` manifest the Committees page reads to list them. A GitHub Actions job (`build-calendar.yml`) rebuilds them four times a day and commits only when the schedule has changed. Event IDs are stable, so a changed time updates the entry in a subscriber's calendar rather than duplicating it. Stdlib only:
+
+```sh
+python3 tools/build-calendar.py
+```
+
 ## Limits worth knowing
 
 - Select committee oral evidence transcripts aren't full-text searchable via parliament's API — you only get metadata (committee, date, witnesses). The committee source instead uses Hansard's committee-debates feed, which covers Public Bill and Westminster Hall debates.

@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Human Rights (Joint Committee)
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28399@house.peter-guillam123.github.io
+DTSTAMP:20261021T141500Z
+DTSTART:20261021T141500
+DTEND:20261021T161500
+SUMMARY:Legislative Scrutiny: Immigration and Asylum Bill · Human Rights 
+ (Joint Committee)
+LOCATION:Room 5\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
+ sses: Nadine Finch (Immigration and Asylum Chamber)\; Professor David Can
+ tor\, PhD (Refugee Law Initiative\, School of Advanced Study University o
+ f London)\; Imran Hussain (Refugee Council)\; Zoe Bantleman (JUSTICE)\; R
+ onan Toal (Garden Court Chambers).\nhttps://api.parliament.uk/committees/
+ events/28399
+URL:https://api.parliament.uk/committees/events/28399
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Education Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28359@house.peter-guillam123.github.io
+DTSTAMP:20261020T100000Z
+DTSTART:20261020T100000
+DTEND:20261020T123000
+SUMMARY:The use of Artificial Intelligence and EdTech in Education · Educ
+ ation Committee
+LOCATION:The Thatcher Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Profe
+ ssor Jenny Gibson (University of Cambridge)\; Neil Leitch OBE (Early Year
+ s Alliance)\; Richard Waite (Waite.EYTS)\; Dr Mhairi Aitken (Our AI Colle
+ ctive CIC)\; Professor Sandra Leaton Gray (UCL Institute of Education)\; 
+ Meg Moss (National Counselling and Psychotherapy Society (NCPS)).\nhttps:
+ //api.parliament.uk/committees/events/28359
+URL:https://api.parliament.uk/committees/events/28359
+END:VEVENT
+END:VCALENDAR

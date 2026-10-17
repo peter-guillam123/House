@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Public Accounts Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28422@house.peter-guillam123.github.io
+DTSTAMP:20261019T153000Z
+DTSTART:20261019T153000
+DTEND:20261019T173000
+SUMMARY:Digital ID · Public Accounts Committee
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Susannah Storey (Department for Digital\, Culture\, Media and Sport)\; R
+ od Latham (Department for Digital\, Culture\, Media and Sport)\; Natalie 
+ Jones (Department for Digital\, Culture\, Media and Sport)\; Christine Be
+ llamy (Department for Digital\, Culture\, Media and Sport)\; Philippa Rou
+ se (Cabinet Office).\nhttps://api.parliament.uk/committees/events/28422
+URL:https://api.parliament.uk/committees/events/28422
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28423@house.peter-guillam123.github.io
+DTSTAMP:20261022T100000Z
+DTSTART:20261022T100000
+DTEND:20261022T120000
+SUMMARY:Clean Power by 2030: Upgrading the grid · Public Accounts Committ
+ ee
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Jonathan Brearley (Department for Energy Security and Net Zero)\; Emily 
+ Bourne (Department for Energy Security and Net Zero)\; Tim Jarvis (Ofgem)
+ \; Akshay Kaul (Ofgem)\; Fintan Slye (NESO).\nhttps://api.parliament.uk/c
+ ommittees/events/28423
+URL:https://api.parliament.uk/committees/events/28423
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28486@house.peter-guillam123.github.io
+DTSTAMP:20261029T100000Z
+DTSTART:20261029T100000
+DTEND:20261029T120000
+SUMMARY:HMRC’s anti-fraud intervention on child benefit · Public Accoun
+ ts Committee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  John-Paul Marks CB (HMRC)\; Cerys McDonald (HMRC)\; Myrtle Lloyd (HMRC)\
+ ; Rob Malcomson (Public Sector Fraud Authority).\nhttps://api.parliament.
+ uk/committees/events/28486
+URL:https://api.parliament.uk/committees/events/28486
+END:VEVENT
+END:VCALENDAR

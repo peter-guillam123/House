@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Financial Services Regulation Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28308@house.peter-guillam123.github.io
+DTSTAMP:20261021T110000Z
+DTSTART:20261021T110000
+DTEND:20261021T120000
+SUMMARY:Regulatory sandboxes in financial services · Financial Services R
+ egulation Committee
+LOCATION:Room 3\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
+ e.\nWitnesses: Markos Zachariadis (University of Manchester)\; Hilary J. 
+ Allen (American University Washington College of Law).\nhttps://api.parli
+ ament.uk/committees/events/28308
+URL:https://api.parliament.uk/committees/events/28308
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28438@house.peter-guillam123.github.io
+DTSTAMP:20261028T100000Z
+DTSTART:20261028T100000
+DTEND:20261028T120000
+SUMMARY:Oral evidence · Financial Services Regulation Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
+ e.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/even
+ ts/28438
+URL:https://api.parliament.uk/committees/events/28438
+END:VEVENT
+END:VCALENDAR
