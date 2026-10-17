@@ -4,7 +4,7 @@ import {
 } from './api.js?v=7';
 import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=6';
 import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS, partyColor, partyShortName } from './format.js?v=7';
-import { buildMarkdownExport, exportFilename, downloadMarkdown } from './export.js?v=1';
+import { buildMarkdownExport, exportFilename, downloadMarkdown, EXPORT_CAP } from './export.js?v=2';
 import { showHome } from './home.js?v=2';
 
 // ---------- state ----------
@@ -561,6 +561,8 @@ function renderResults() {
 
 // ---------- export ----------
 
+// ---------- export ----------
+
 function describeDateRange() {
   const presetLabels = { month: 'Last month', year: 'Last year', five: 'Last 5 years' };
   if (state.preset === 'custom') {
@@ -583,17 +585,89 @@ function describeSearchFilters() {
   return parts.join(' · ');
 }
 
-$exportBtn.addEventListener('click', () => {
-  const md = buildMarkdownExport({
-    pageTitle: 'Search export',
-    term: state.term,
-    dateRange: describeDateRange(),
-    filtersLabel: describeSearchFilters(),
-    recreateUrl: location.href,
-    items: state.items,
-  });
-  downloadMarkdown(exportFilename('house-search', state.term), md);
-});
+// ---------- export ----------
+
+const SOURCE_PROSE = {
+  spoken:    'Hansard spoken contributions',
+  wq:        'written questions and answers',
+  ws:        'written ministerial statements',
+  committee: 'committee debates',
+};
+
+function sourcesProse() {
+  const keys = ['spoken', 'wq', 'ws', 'committee'].filter((k) => state.sources.has(k));
+  const names = keys.map((k) => SOURCE_PROSE[k]);
+  if (names.length <= 1) return names[0] || '';
+  return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
+}
+
+function totalAvailable() {
+  return ['spoken', 'wq', 'ws', 'committee']
+    .filter((k) => state.sources.has(k))
+    .reduce((sum, k) => sum + (state.totals[k] || 0), 0);
+}
+
+function haveMoreToLoad() {
+  return ['spoken', 'wq', 'ws', 'committee']
+    .filter((k) => state.sources.has(k))
+    .some((k) => state.offsets[k] < state.totals[k]);
+}
+
+// Export fetches the rest of the results first, up to the cap, so the
+// file is the whole search and not the page that happened to be on
+// screen. With a party filter the matches are sifted client-side, so
+// the loop is bounded by pages scanned rather than matches kept.
+const EXPORT_PAGE = 50;           // bigger pages than the screen uses
+const EXPORT_TIME_BUDGET_MS = 90_000;
+
+async function exportAll() {
+  $exportBtn.disabled = true;
+  const screenPageSize = state.pageSize;
+  const started = Date.now();
+  let ranOut = false;
+  try {
+    // Parliament's search endpoints can take twenty seconds a page on a
+    // busy term, so fetch in bigger pages and stop gracefully after a
+    // while rather than leaving someone staring at a spinner.
+    state.pageSize = EXPORT_PAGE;
+    let pages = 0;
+    while (haveMoreToLoad() && state.items.length < EXPORT_CAP && pages < 12) {
+      if (Date.now() - started > EXPORT_TIME_BUDGET_MS) { ranOut = true; break; }
+      setStatus(`Fetching everything for the export: ${state.items.length} of ${totalAvailable()} so far…`);
+      await runSearch(false);
+      pages += 1;
+    }
+    state.pageSize = screenPageSize;
+    const { startDate, endDate } = dateRange();
+    const narrowed = state.member ? state.member.name
+      : state.party ? `${state.party.name} members` : '';
+    const md = buildMarkdownExport({
+      pageTitle: 'Search export',
+      term: state.term,
+      startDate,
+      endDate,
+      what: sourcesProse(),
+      house: state.house,
+      narrowedTo: narrowed,
+      // With a party filter the total is raw hits, not matches, so
+      // don't claim a total we can't stand behind.
+      totalMatched: state.party ? null : totalAvailable(),
+      recreateUrl: location.href,
+      items: state.items,
+    });
+    downloadMarkdown(exportFilename('house-search', state.term), md);
+    const n = Math.min(state.items.length, EXPORT_CAP);
+    const total = totalAvailable();
+    setStatus(ranOut && n < total
+      ? `Parliament’s search was slow, so the export has the ${n} of ${total} results fetched so far. Export again for more.`
+      : state.party ? `Exported ${n} results.` : `Exported ${n} of ${total} results.`);
+  } finally {
+    state.pageSize = screenPageSize;
+    $exportBtn.disabled = false;
+  }
+}
+
+$exportBtn.addEventListener('click', () => { exportAll(); });
 
 function setStatus(msg, isError = false) {
   $status.textContent = msg;

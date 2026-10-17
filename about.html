@@ -532,6 +532,30 @@
           hour.
         </p>
       </div>
+      <div class="entry">
+        <p class="when">October 2026</p>
+        <h3>Exports that explain themselves</h3>
+        <p>
+          The Markdown export exists mostly to be dropped into NotebookLM
+          or a similar reading tool, and two things were wrong with it
+          for that. It only contained whatever was on screen, which after
+          a fresh search is the first page of each source, with nothing
+          to say the file was partial. And its header said &ldquo;Date
+          range: Last year&rdquo;, which a model reading the file in
+          March cannot turn into dates.
+        </p>
+        <p>
+          Now Export fetches the rest of the results first, up to five
+          hundred, with a running count while it works, so the file is
+          the whole search. And it opens with a plain paragraph saying
+          what it is: how many contributions, matching what, between
+          which two dates, from which sources, in which House, and how
+          many matched in all if the file is capped. Deep Dive&rsquo;s
+          export gets the same paragraph. The per-entry format is
+          unchanged: date, member and party, debate, source, a link to
+          the official record, the full text.
+        </p>
+      </div>
     </section>
   </main>
 
