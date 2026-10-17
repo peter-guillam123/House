@@ -686,8 +686,12 @@ def spikes_for(vocab, baseline):
     out, used = [], set()
     for s in cands:
         parts = set(s["key"].split())
-        # A unigram already inside a chosen bigram adds nothing.
+        # A unigram already inside a chosen bigram adds nothing, and
+        # neither does the plural of a word already chosen.
         if len(parts) == 1 and any(parts <= set(u.split()) and u != s["key"] for u in used):
+            continue
+        key = s["key"]
+        if key + "s" in used or key.endswith("s") and key[:-1] in used:
             continue
         used.add(s["key"])
         out.append({k: v for k, v in s.items() if k != "score"})

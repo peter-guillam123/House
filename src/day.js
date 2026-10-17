@@ -122,9 +122,13 @@ function renderHeader() {
       : sat && sat.from ? `the ${house} from ${formatTime(sat.from)}` : `the ${house}`);
   }
   const both = parts.length === 2;
-  $sub.textContent = parts.length
-    ? `${both ? 'Both Houses sat: ' : 'Only '}${parts.join(both ? '; ' : '')}${both ? '.' : ' sat.'}`
-    : '';
+  // "Both Houses sat: the Commons from 11.30am to 7.44pm; the Lords from
+  // 3.07pm to 8.56pm." or "Only the Commons sat, from 9.30am to 3.04pm."
+  $sub.textContent = both
+    ? `Both Houses sat: ${parts.join('; ')}.`
+    : parts.length
+      ? `Only ${parts[0].replace(/^the (Commons|Lords)( from|$)/, 'the $1 sat,$2').replace(/,$/, '')}.`
+      : '';
   // Earlier / later sitting days from the index.
   const days = state.index.days || [];
   const i = days.findIndex((x) => x.date === state.date);
@@ -261,6 +265,9 @@ function renderSections(h) {
 }
 
 function sectionRow(s) {
+  // Hansard files PMQs under the topic "Engagements", which means nothing
+  // to anyone outside the building.
+  if (s.kind === 'pmqs') s = { ...s, title: 'Prime Minister\u2019s Questions' };
   const meta = [];
   if (s.from) meta.push(`from ${formatTime(s.from)}`);
   if (s.topics) meta.push(`${s.topics} topic${s.topics === 1 ? '' : 's'}`);
