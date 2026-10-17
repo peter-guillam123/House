@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=43">
+  <link rel="stylesheet" href="style.css?v=44">
 </head>
 <body>
   <header class="topbar">
@@ -154,10 +154,14 @@
               <option value="">All committees</option>
             </select>
           </label>
-          <a id="cm-subscribe-link" class="cm-subscribe-btn" href="#">Subscribe</a>
-          <button type="button" id="cm-subscribe-copy" class="cm-subscribe-copy">Copy feed address</button>
         </div>
-        <p class="cm-subscribe-note" id="cm-subscribe-note">Subscribe opens Apple or Outlook calendars. For Google Calendar, copy the address and paste it under Other calendars, From URL.</p>
+        <div class="cm-subscribe-row cm-subscribe-apps" role="group" aria-label="Subscribe in">
+          <a id="cm-subscribe-google" class="cm-subscribe-btn" href="#" target="_blank" rel="noopener">Google</a>
+          <a id="cm-subscribe-apple" class="cm-subscribe-btn" href="#">Apple</a>
+          <a id="cm-subscribe-outlook" class="cm-subscribe-btn" href="#" target="_blank" rel="noopener">Outlook</a>
+          <button type="button" id="cm-subscribe-copy" class="cm-subscribe-copy">Copy address</button>
+        </div>
+        <p class="cm-subscribe-note" id="cm-subscribe-note">Google and Outlook open a confirmation in the web calendar, which also covers Android. Apple opens the Calendar app. Or copy the address and add it by hand.</p>
       </div>
     </section>
 
@@ -190,6 +194,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/committees.js?v=15"></script>
+  <script type="module" src="src/committees.js?v=16"></script>
 </body>
 </html>
