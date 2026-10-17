@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=40">
+  <link rel="stylesheet" href="style.css?v=41">
 </head>
 <body>
   <header class="topbar">
@@ -31,6 +31,7 @@
       </span>
       <nav class="topnav">
         <a href="./">Search</a>
+        <a href="day.html">Yesterday</a>
         <a href="deep-dive.html">Deep Dive</a>
         <a href="committees.html">Committees</a>
         <a href="transcripts.html">Transcripts</a>
@@ -49,6 +50,10 @@
       lot in one ranked list. <a href="deep-dive.html">Deep Dive</a> plots a
       single term as a party-stacked monthly timeline with click-to-filter
       panels for members, debates and co-occurring phrases.
+      <a href="day.html">Yesterday</a> is the last sitting day in one
+      page: what was debated and for how long, the closest votes and who
+      broke the whip, the words said far more than usual, and what was
+      slipped out in writing.
       <a href="committees.html">Committees</a> finds inquiries by name,
       shows what&rsquo;s coming up in the committee rooms this week, and
       lets you drill into one inquiry to search its transcripts directly. And
@@ -435,6 +440,54 @@
           feed somewhere between every few hours and once a day, so
           treat the diary entry as a reminder and the committee&rsquo;s
           own page as the final word.
+        </p>
+      </div>
+      <div class="entry milestone">
+        <p class="when">October 2026</p>
+        <h3>Yesterday in Parliament</h3>
+        <p>
+          Radio 4 used to do this better than anyone: a short account of
+          what happened in the chamber the day before, for people who
+          weren&rsquo;t there. Parliament&rsquo;s own sites can tell you
+          everything that happened, which is a different thing. So House
+          now has a Yesterday page: one sitting day, read top to bottom in
+          a couple of minutes, built each morning from five of
+          Parliament&rsquo;s APIs.
+        </p>
+        <p>
+          The bits I wanted most: the words said far more than usual that
+          day, measured against the previous fifteen sitting days, each
+          one a link straight into Search for that day&rsquo;s mentions;
+          the divisions sorted closest first, with anyone who voted
+          against two-thirds of their own party named; who spoke most, by
+          words, with the chair&rsquo;s procedural lines left out; and the
+          written statements, which is where news gets slipped out on a
+          Thursday. Below that, every debate grouped the way the day ran
+          (questions, statements, opposition day, legislation, Westminster
+          Hall, the adjournment debate) with a start time, speaker count,
+          word count and who said most. Then the committee rooms, the
+          bills that moved, and any reports published. Commons and Lords
+          each get their own version of the page.
+        </p>
+        <p>
+          None of it is fetched live. A Python script walks the APIs the
+          morning after a sitting, twice, because Hansard keeps filling in
+          for a few hours, and commits a 40KB file per day. The page reads
+          that file, so it loads instantly on a phone and the archive
+          grows by itself: step back a day at a time with the links under
+          the date. The script seeded the archive with the previous
+          fifteen sitting days so the spike comparison had something to
+          compare against from the first morning.
+        </p>
+        <p>
+          Rough edges worth knowing. Hansard&rsquo;s timestamps are
+          patchy, so a debate shows its start time but not its length.
+          The spike list is plain word counting, not understanding: it
+          finds &ldquo;inheritance tax&rdquo; on an opposition day, and
+          it will also find a surname if one member talks for an hour.
+          The rebel rule is mechanical and says nothing about free votes.
+          And the Lords version is thinner, because Hansard tags the
+          Lords record far less richly than the Commons.
         </p>
       </div>
     </section>
