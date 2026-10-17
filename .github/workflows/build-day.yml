@@ -1,0 +1,50 @@
+name: Build day summaries
+
+on:
+  schedule:
+    # The morning after a sitting, twice: Hansard for a late sitting is
+    # usually complete by 6am, but corrections keep landing for a while.
+    - cron: '31 6 * * *'
+    - cron: '31 9 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Build one specific day (YYYY-MM-DD). Leave blank for the last sitting day of each House.'
+        required: false
+        default: ''
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configure git for automated commits
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Build
+        run: |
+          if [ -n "${{ inputs.date }}" ]; then
+            python3 tools/build-day.py --date "${{ inputs.date }}"
+          else
+            python3 tools/build-day.py
+          fi
+
+      - name: Commit if changed
+        run: |
+          git add -A days
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+            exit 0
+          fi
+          git commit -m 'Build day summaries (auto)'
+          git pull --rebase origin main
+          git push

@@ -53,6 +53,16 @@ GitHub Pages from the repo root. In Settings → Pages, set source to "Deploy fr
 python3 tools/build-calendar.py
 ```
 
+## Day summaries
+
+`tools/build-day.py` writes one JSON file per sitting day under `days/`: every debate with who spoke and for how long, divisions with each member's vote and anyone who voted against their party, written statements and answers, committee sessions and reports, and bill stages. "Words that spiked" compares the day's vocabulary with the previous sitting days' files, kept under `days/vocab/`. `day.html` renders the latest day and lets you step back through the archive. A GitHub Actions job (`build-day.yml`) runs twice each morning for the last sitting day of each House.
+
+```sh
+python3 tools/build-day.py                # last sitting day of each House
+python3 tools/build-day.py --date 2026-10-14
+python3 tools/build-day.py --backfill 15  # seed the archive and the spike baseline
+```
+
 ## Limits worth knowing
 
 - Select committee oral evidence transcripts aren't full-text searchable via parliament's API — you only get metadata (committee, date, witnesses). The committee source instead uses Hansard's committee-debates feed, which covers Public Bill and Westminster Hall debates.
