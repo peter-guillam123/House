@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Welsh Affairs Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28377@house.peter-guillam123.github.io
+DTSTAMP:20261021T143000Z
+DTSTART:20261021T143000
+DTEND:20261021T170000
+SUMMARY:Working towards ending child poverty in Wales · Welsh Affairs Com
+ mittee
+LOCATION:Room 15\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Welsh Affairs Committee.\nWitnesses: L
+ aurie Ryall (Action for Children)\; Mabli Jones (Bevan Foundation)\; Tom 
+ Wernham (The Institute for Fiscal Studies (IFS))\; Sarah Crawley (Barnard
+ o’s).\nhttps://api.parliament.uk/committees/events/28377
+URL:https://api.parliament.uk/committees/events/28377
+END:VEVENT
+END:VCALENDAR

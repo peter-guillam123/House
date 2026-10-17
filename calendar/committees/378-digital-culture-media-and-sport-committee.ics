@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:House · Digital\, Culture\, Media and Sport Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-27996@house.peter-guillam123.github.io
+DTSTAMP:20261020T100000Z
+DTSTART:20261020T100000
+DTEND:20261020T120000
+SUMMARY:The work of Ofcom · Digital\, Culture\, Media and Sport Committee
+LOCATION:Room 16\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
+ mmittee.\nWitnesses: Dame Melanie Dawes DCB (Ofcom)\; Sir Ian Cheshire (O
+ fcom).\nhttps://api.parliament.uk/committees/events/27996
+URL:https://api.parliament.uk/committees/events/27996
+END:VEVENT
+END:VCALENDAR

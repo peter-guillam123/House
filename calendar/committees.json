@@ -1,0 +1,841 @@
+{
+"built": "2026-10-17",
+"windowDays": 56,
+"sessions": 51,
+"all": "committees.ics",
+"committees": [
+{
+"id": 2,
+"name": "Administration Committee",
+"house": "Commons",
+"file": "committees/2-administration-committee.ics",
+"upcoming": 1
+},
+{
+"id": 169,
+"name": "Audit and Risk Assurance Committee (Lords)",
+"house": "Lords",
+"file": "committees/169-audit-and-risk-assurance-committee-lords.ics",
+"upcoming": 0
+},
+{
+"id": 202,
+"name": "Backbench Business Committee",
+"house": "Commons",
+"file": "committees/202-backbench-business-committee.ics",
+"upcoming": 1
+},
+{
+"id": 682,
+"name": "Bishop's Stortford Cemetery Bill",
+"house": "Commons",
+"file": "committees/682-bishop-s-stortford-cemetery-bill.ics",
+"upcoming": 0
+},
+{
+"id": 518,
+"name": "Built Environment Committee",
+"house": "Lords",
+"file": "committees/518-built-environment-committee.ics",
+"upcoming": 0
+},
+{
+"id": 365,
+"name": "Business, Innovation, Science and Trade Committee",
+"house": "Commons",
+"file": "committees/365-business-innovation-science-and-trade-committee.ics",
+"upcoming": 1
+},
+{
+"id": 783,
+"name": "Business, Innovation, Science and Trade Sub-Committee on Economic Security, Arms and Export Controls",
+"house": "Commons",
+"file": "committees/783-business-innovation-science-and-trade-sub-committee-on-econo.ics",
+"upcoming": 0
+},
+{
+"id": 825,
+"name": "Cheltenham Borough Council (Markets) Bill",
+"house": "Commons",
+"file": "committees/825-cheltenham-borough-council-markets-bill.ics",
+"upcoming": 0
+},
+{
+"id": 853,
+"name": "Child-like Sexual Abuse Dolls (Offences) Bill",
+"house": "Commons",
+"file": "committees/853-child-like-sexual-abuse-dolls-offences-bill.ics",
+"upcoming": 0
+},
+{
+"id": 830,
+"name": "Childhood Vaccinations Committee",
+"house": "Lords",
+"file": "committees/830-childhood-vaccinations-committee.ics",
+"upcoming": 0
+},
+{
+"id": 760,
+"name": "City of London (Markets) Bill",
+"house": "Commons",
+"file": "committees/760-city-of-london-markets-bill.ics",
+"upcoming": 0
+},
+{
+"id": 847,
+"name": "Civil Aviation (Consumer Protection and Regulatory Reform) Bill",
+"house": "Commons",
+"file": "committees/847-civil-aviation-consumer-protection-and-regulatory-reform-bil.ics",
+"upcoming": 0
+},
+{
+"id": 848,
+"name": "Civil Aviation (Consumer Protection and Regulatory Reform) Bill: Programming Sub Committee",
+"house": "Commons",
+"file": "committees/848-civil-aviation-consumer-protection-and-regulatory-reform-bil.ics",
+"upcoming": 0
+},
+{
+"id": 289,
+"name": "Committee of Privileges",
+"house": "Commons",
+"file": "committees/289-committee-of-privileges.ics",
+"upcoming": 0
+},
+{
+"id": 381,
+"name": "Committee of Selection",
+"house": "Commons",
+"file": "committees/381-committee-of-selection.ics",
+"upcoming": 0
+},
+{
+"id": 197,
+"name": "Committee of Selection (Lords)",
+"house": "Lords",
+"file": "committees/197-committee-of-selection-lords.ics",
+"upcoming": 0
+},
+{
+"id": 290,
+"name": "Committee on Standards",
+"house": "Commons",
+"file": "committees/290-committee-on-standards.ics",
+"upcoming": 0
+},
+{
+"id": 15,
+"name": "Committees on Arms Export Controls",
+"house": "Commons",
+"file": "committees/15-committees-on-arms-export-controls.ics",
+"upcoming": 0
+},
+{
+"id": 170,
+"name": "Communications and Digital Committee",
+"house": "Lords",
+"file": "committees/170-communications-and-digital-committee.ics",
+"upcoming": 2
+},
+{
+"id": 402,
+"name": "Conduct Committee",
+"house": "Lords",
+"file": "committees/402-conduct-committee.ics",
+"upcoming": 0
+},
+{
+"id": 171,
+"name": "Consolidation, &c., Bills (Joint Committee)",
+"house": "Joint",
+"file": "committees/171-consolidation-c-bills-joint-committee.ics",
+"upcoming": 0
+},
+{
+"id": 172,
+"name": "Constitution Committee",
+"house": "Lords",
+"file": "committees/172-constitution-committee.ics",
+"upcoming": 0
+},
+{
+"id": 438,
+"name": "Culture, Media and Sport Sub-committee on Online Harms and Disinformation",
+"house": "Commons",
+"file": "committees/438-culture-media-and-sport-sub-committee-on-online-harms-and-di.ics",
+"upcoming": 0
+},
+{
+"id": 24,
+"name": "Defence Committee",
+"house": "Commons",
+"file": "committees/24-defence-committee.ics",
+"upcoming": 3
+},
+{
+"id": 343,
+"name": "Defence Sub-Committee",
+"house": "Commons",
+"file": "committees/343-defence-sub-committee.ics",
+"upcoming": 0
+},
+{
+"id": 173,
+"name": "Delegated Powers and Regulatory Reform Committee",
+"house": "Lords",
+"file": "committees/173-delegated-powers-and-regulatory-reform-committee.ics",
+"upcoming": 0
+},
+{
+"id": 378,
+"name": "Digital, Culture, Media and Sport Committee",
+"house": "Commons",
+"file": "committees/378-digital-culture-media-and-sport-committee.ics",
+"upcoming": 1
+},
+{
+"id": 831,
+"name": "Domestic Abuse Act 2021 Committee",
+"house": "Lords",
+"file": "committees/831-domestic-abuse-act-2021-committee.ics",
+"upcoming": 0
+},
+{
+"id": 851,
+"name": "Draft Conversion Practices Bill (Joint Committee)",
+"house": "Joint",
+"file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
+"upcoming": 0
+},
+{
+"id": 175,
+"name": "Economic Affairs Committee",
+"house": "Lords",
+"file": "committees/175-economic-affairs-committee.ics",
+"upcoming": 1
+},
+{
+"id": 203,
+"name": "Education Committee",
+"house": "Commons",
+"file": "committees/203-education-committee.ics",
+"upcoming": 1
+},
+{
+"id": 664,
+"name": "Energy Security and Net Zero Committee",
+"house": "Commons",
+"file": "committees/664-energy-security-and-net-zero-committee.ics",
+"upcoming": 1
+},
+{
+"id": 515,
+"name": "Environment and Climate Change Committee",
+"house": "Lords",
+"file": "committees/515-environment-and-climate-change-committee.ics",
+"upcoming": 1
+},
+{
+"id": 52,
+"name": "Environment, Food and Rural Affairs Committee",
+"house": "Commons",
+"file": "committees/52-environment-food-and-rural-affairs-committee.ics",
+"upcoming": 1
+},
+{
+"id": 62,
+"name": "Environmental Audit Committee",
+"house": "Commons",
+"file": "committees/62-environmental-audit-committee.ics",
+"upcoming": 0
+},
+{
+"id": 516,
+"name": "European Affairs Committee",
+"house": "Lords",
+"file": "committees/516-european-affairs-committee.ics",
+"upcoming": 0
+},
+{
+"id": 423,
+"name": "Fifth Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/423-fifth-delegated-legislation-committee.ics",
+"upcoming": 0
+},
+{
+"id": 230,
+"name": "Finance Bill Sub-Committee",
+"house": "Lords",
+"file": "committees/230-finance-bill-sub-committee.ics",
+"upcoming": 0
+},
+{
+"id": 325,
+"name": "Finance Committee (Commons)",
+"house": "Commons",
+"file": "committees/325-finance-committee-commons.ics",
+"upcoming": 0
+},
+{
+"id": 364,
+"name": "Finance Committee (Lords)",
+"house": "Lords",
+"file": "committees/364-finance-committee-lords.ics",
+"upcoming": 0
+},
+{
+"id": 697,
+"name": "Financial Services Regulation Committee",
+"house": "Lords",
+"file": "committees/697-financial-services-regulation-committee.ics",
+"upcoming": 2
+},
+{
+"id": 410,
+"name": "First Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/410-first-delegated-legislation-committee.ics",
+"upcoming": 0
+},
+{
+"id": 78,
+"name": "Foreign Affairs Committee",
+"house": "Commons",
+"file": "committees/78-foreign-affairs-committee.ics",
+"upcoming": 2
+},
+{
+"id": 422,
+"name": "Fourth Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/422-fourth-delegated-legislation-committee.ics",
+"upcoming": 0
+},
+{
+"id": 811,
+"name": "General Cemetery Bill [HL]",
+"house": "Commons",
+"file": "committees/811-general-cemetery-bill-hl.ics",
+"upcoming": 0
+},
+{
+"id": 763,
+"name": "General Cemetery Bill [HL] Committee (Jan 2025)",
+"house": "Lords",
+"file": "committees/763-general-cemetery-bill-hl-committee-jan-2025.ics",
+"upcoming": 0
+},
+{
+"id": 81,
+"name": "Health and Social Care Committee",
+"house": "Commons",
+"file": "committees/81-health-and-social-care-committee.ics",
+"upcoming": 0
+},
+{
+"id": 597,
+"name": "High Speed Rail (Crewe - Manchester) Bill Select Committee (Commons)",
+"house": "Commons",
+"file": "committees/597-high-speed-rail-crewe-manchester-bill-select-committee-commo.ics",
+"upcoming": 0
+},
+{
+"id": 521,
+"name": "Highgate Cemetery Bill Committee",
+"house": "Commons",
+"file": "committees/521-highgate-cemetery-bill-committee.ics",
+"upcoming": 0
+},
+{
+"id": 854,
+"name": "Highways (Financing) Bill",
+"house": "Commons",
+"file": "committees/854-highways-financing-bill.ics",
+"upcoming": 2
+},
+{
+"id": 855,
+"name": "Highways (Financing) Bill: Programming Sub Committee",
+"house": "Commons",
+"file": "committees/855-highways-financing-bill-programming-sub-committee.ics",
+"upcoming": 0
+},
+{
+"id": 679,
+"name": "Holocaust Memorial Bill Select Committee",
+"house": "Commons",
+"file": "committees/679-holocaust-memorial-bill-select-committee.ics",
+"upcoming": 0
+},
+{
+"id": 735,
+"name": "Holocaust Memorial Bill Select Committee (Lords)",
+"house": "Lords",
+"file": "committees/735-holocaust-memorial-bill-select-committee-lords.ics",
+"upcoming": 0
+},
+{
+"id": 83,
+"name": "Home Affairs Committee",
+"house": "Commons",
+"file": "committees/83-home-affairs-committee.ics",
+"upcoming": 1
+},
+{
+"id": 362,
+"name": "House of Lords Commission",
+"house": "Lords",
+"file": "committees/362-house-of-lords-commission.ics",
+"upcoming": 0
+},
+{
+"id": 17,
+"name": "Housing, Communities and Local Government Committee",
+"house": "Commons",
+"file": "committees/17-housing-communities-and-local-government-committee.ics",
+"upcoming": 1
+},
+{
+"id": 93,
+"name": "Human Rights (Joint Committee)",
+"house": "Joint",
+"file": "committees/93-human-rights-joint-committee.ics",
+"upcoming": 1
+},
+{
+"id": 186,
+"name": "Hybrid Instruments Committee (Lords)",
+"house": "Lords",
+"file": "committees/186-hybrid-instruments-committee-lords.ics",
+"upcoming": 0
+},
+{
+"id": 843,
+"name": "Immigration and Asylum Bill",
+"house": "Commons",
+"file": "committees/843-immigration-and-asylum-bill.ics",
+"upcoming": 0
+},
+{
+"id": 517,
+"name": "Industry and Regulators Committee",
+"house": "Lords",
+"file": "committees/517-industry-and-regulators-committee.ics",
+"upcoming": 0
+},
+{
+"id": 448,
+"name": "International Agreements Committee",
+"house": "Lords",
+"file": "committees/448-international-agreements-committee.ics",
+"upcoming": 1
+},
+{
+"id": 98,
+"name": "International Development Committee",
+"house": "Commons",
+"file": "committees/98-international-development-committee.ics",
+"upcoming": 1
+},
+{
+"id": 347,
+"name": "International Development Sub-Committee on the Work of the Independent Commission for Aid Impact",
+"house": "Commons",
+"file": "committees/347-international-development-sub-committee-on-the-work-of-the-i.ics",
+"upcoming": 0
+},
+{
+"id": 360,
+"name": "International Relations and Defence Committee",
+"house": "Lords",
+"file": "committees/360-international-relations-and-defence-committee.ics",
+"upcoming": 2
+},
+{
+"id": 519,
+"name": "Justice and Home Affairs Committee",
+"house": "Lords",
+"file": "committees/519-justice-and-home-affairs-committee.ics",
+"upcoming": 2
+},
+{
+"id": 102,
+"name": "Justice Committee",
+"house": "Commons",
+"file": "committees/102-justice-committee.ics",
+"upcoming": 1
+},
+{
+"id": 103,
+"name": "Liaison Committee (Commons)",
+"house": "Commons",
+"file": "committees/103-liaison-committee-commons.ics",
+"upcoming": 0
+},
+{
+"id": 187,
+"name": "Liaison Committee (Lords)",
+"house": "Lords",
+"file": "committees/187-liaison-committee-lords.ics",
+"upcoming": 0
+},
+{
+"id": 841,
+"name": "Liaison Sub-Committee on Core Tasks of Select Committees",
+"house": "Commons",
+"file": "committees/841-liaison-sub-committee-on-core-tasks-of-select-committees.ics",
+"upcoming": 2
+},
+{
+"id": 596,
+"name": "Liaison Sub-Committee on National Policy Statements",
+"house": "Commons",
+"file": "committees/596-liaison-sub-committee-on-national-policy-statements.ics",
+"upcoming": 0
+},
+{
+"id": 371,
+"name": "Lord Speaker's Advisory Panel on Works of Art",
+"house": "Lords",
+"file": "committees/371-lord-speaker-s-advisory-panel-on-works-of-art.ics",
+"upcoming": 0
+},
+{
+"id": 761,
+"name": "Malvern Hills Bill [HL] Committee",
+"house": "Lords",
+"file": "committees/761-malvern-hills-bill-hl-committee.ics",
+"upcoming": 0
+},
+{
+"id": 107,
+"name": "Members Estimate Committee",
+"house": "Commons",
+"file": "committees/107-members-estimate-committee.ics",
+"upcoming": 0
+},
+{
+"id": 736,
+"name": "Modernisation Committee",
+"house": "Commons",
+"file": "committees/736-modernisation-committee.ics",
+"upcoming": 0
+},
+{
+"id": 832,
+"name": "National Resilience Committee",
+"house": "Lords",
+"file": "committees/832-national-resilience-committee.ics",
+"upcoming": 0
+},
+{
+"id": 111,
+"name": "National Security Strategy (Joint Committee)",
+"house": "Joint",
+"file": "committees/111-national-security-strategy-joint-committee.ics",
+"upcoming": 1
+},
+{
+"id": 120,
+"name": "Northern Ireland Affairs Committee",
+"house": "Commons",
+"file": "committees/120-northern-ireland-affairs-committee.ics",
+"upcoming": 0
+},
+{
+"id": 769,
+"name": "Northern Ireland Scrutiny Committee",
+"house": "Lords",
+"file": "committees/769-northern-ireland-scrutiny-committee.ics",
+"upcoming": 0
+},
+{
+"id": 793,
+"name": "Norwich Livestock Market Bill [HL]",
+"house": "Commons",
+"file": "committees/793-norwich-livestock-market-bill-hl.ics",
+"upcoming": 0
+},
+{
+"id": 762,
+"name": "Norwich Livestock Market Bill [HL] Committee (Jan 2025)",
+"house": "Lords",
+"file": "committees/762-norwich-livestock-market-bill-hl-committee-jan-2025.ics",
+"upcoming": 0
+},
+{
+"id": 833,
+"name": "Numeracy for Life Committee",
+"house": "Lords",
+"file": "committees/833-numeracy-for-life-committee.ics",
+"upcoming": 0
+},
+{
+"id": 341,
+"name": "Palace of Westminster (Joint Committee)",
+"house": "Joint",
+"file": "committees/341-palace-of-westminster-joint-committee.ics",
+"upcoming": 0
+},
+{
+"id": 11,
+"name": "Panel of Chairs",
+"house": "Commons",
+"file": "committees/11-panel-of-chairs.ics",
+"upcoming": 0
+},
+{
+"id": 326,
+"name": "Petitions Committee",
+"house": "Commons",
+"file": "committees/326-petitions-committee.ics",
+"upcoming": 0
+},
+{
+"id": 191,
+"name": "Procedure and Privileges Committee",
+"house": "Lords",
+"file": "committees/191-procedure-and-privileges-committee.ics",
+"upcoming": 0
+},
+{
+"id": 126,
+"name": "Procedure Committee",
+"house": "Commons",
+"file": "committees/126-procedure-committee.ics",
+"upcoming": 0
+},
+{
+"id": 207,
+"name": "Public Accounts Commission",
+"house": "Commons",
+"file": "committees/207-public-accounts-commission.ics",
+"upcoming": 1
+},
+{
+"id": 127,
+"name": "Public Accounts Committee",
+"house": "Commons",
+"file": "committees/127-public-accounts-committee.ics",
+"upcoming": 3
+},
+{
+"id": 327,
+"name": "Public Administration and Constitutional Affairs Committee",
+"house": "Commons",
+"file": "committees/327-public-administration-and-constitutional-affairs-committee.ics",
+"upcoming": 1
+},
+{
+"id": 430,
+"name": "Public Services Committee",
+"house": "Lords",
+"file": "committees/430-public-services-committee.ics",
+"upcoming": 6
+},
+{
+"id": 652,
+"name": "Restoration and Renewal Programme Board",
+"house": "Joint",
+"file": "committees/652-restoration-and-renewal-programme-board.ics",
+"upcoming": 0
+},
+{
+"id": 821,
+"name": "Retirement and Participation Committee",
+"house": "Lords",
+"file": "committees/821-retirement-and-participation-committee.ics",
+"upcoming": 0
+},
+{
+"id": 764,
+"name": "Royal Albert Hall Bill [HL]",
+"house": "Commons",
+"file": "committees/764-royal-albert-hall-bill-hl.ics",
+"upcoming": 0
+},
+{
+"id": 193,
+"name": "Science and Technology Committee",
+"house": "Lords",
+"file": "committees/193-science-and-technology-committee.ics",
+"upcoming": 0
+},
+{
+"id": 135,
+"name": "Science and Technology Committee (Commons)",
+"house": "Commons",
+"file": "committees/135-science-and-technology-committee-commons.ics",
+"upcoming": 2
+},
+{
+"id": 136,
+"name": "Scottish Affairs Committee",
+"house": "Commons",
+"file": "committees/136-scottish-affairs-committee.ics",
+"upcoming": 1
+},
+{
+"id": 411,
+"name": "Second Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/411-second-delegated-legislation-committee.ics",
+"upcoming": 0
+},
+{
+"id": 255,
+"name": "Secondary Legislation Scrutiny Committee",
+"house": "Lords",
+"file": "committees/255-secondary-legislation-scrutiny-committee.ics",
+"upcoming": 0
+},
+{
+"id": 826,
+"name": "Select Committee on the Armed Forces Bill",
+"house": "Commons",
+"file": "committees/826-select-committee-on-the-armed-forces-bill.ics",
+"upcoming": 0
+},
+{
+"id": 363,
+"name": "Services Committee",
+"house": "Lords",
+"file": "committees/363-services-committee.ics",
+"upcoming": 0
+},
+{
+"id": 424,
+"name": "Sixth Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/424-sixth-delegated-legislation-committee.ics",
+"upcoming": 0
+},
+{
+"id": 849,
+"name": "Social Housing Bill",
+"house": "Commons",
+"file": "committees/849-social-housing-bill.ics",
+"upcoming": 0
+},
+{
+"id": 850,
+"name": "Social Housing Bill: Programming Sub-Committee",
+"house": "Commons",
+"file": "committees/850-social-housing-bill-programming-sub-committee.ics",
+"upcoming": 0
+},
+{
+"id": 143,
+"name": "Speaker's Committee for the Independent Parliamentary Standards Authority",
+"house": "Commons",
+"file": "committees/143-speaker-s-committee-for-the-independent-parliamentary-standa.ics",
+"upcoming": 0
+},
+{
+"id": 741,
+"name": "Speaker's Conference (2024)",
+"house": "Commons",
+"file": "committees/741-speaker-s-conference-2024.ics",
+"upcoming": 0
+},
+{
+"id": 845,
+"name": "Sporting Events Bill",
+"house": "Commons",
+"file": "committees/845-sporting-events-bill.ics",
+"upcoming": 0
+},
+{
+"id": 846,
+"name": "Sporting Events Bill: Programming Sub Committee",
+"house": "Commons",
+"file": "committees/846-sporting-events-bill-programming-sub-committee.ics",
+"upcoming": 0
+},
+{
+"id": 198,
+"name": "Standing Orders (Private Bills) Committee (Lords)",
+"house": "Lords",
+"file": "committees/198-standing-orders-private-bills-committee-lords.ics",
+"upcoming": 0
+},
+{
+"id": 475,
+"name": "Standing Orders Committee (Commons)",
+"house": "Commons",
+"file": "committees/475-standing-orders-committee-commons.ics",
+"upcoming": 0
+},
+{
+"id": 148,
+"name": "Statutory Instruments (Joint Committee)",
+"house": "Joint",
+"file": "committees/148-statutory-instruments-joint-committee.ics",
+"upcoming": 0
+},
+{
+"id": 149,
+"name": "Statutory Instruments (Select Committee)",
+"house": "Commons",
+"file": "committees/149-statutory-instruments-select-committee.ics",
+"upcoming": 0
+},
+{
+"id": 262,
+"name": "Sub-Committee on Leave of Absence",
+"house": "Lords",
+"file": "committees/262-sub-committee-on-leave-of-absence.ics",
+"upcoming": 0
+},
+{
+"id": 421,
+"name": "Third Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/421-third-delegated-legislation-committee.ics",
+"upcoming": 0
+},
+{
+"id": 153,
+"name": "Transport Committee",
+"house": "Commons",
+"file": "committees/153-transport-committee.ics",
+"upcoming": 1
+},
+{
+"id": 158,
+"name": "Treasury Committee",
+"house": "Commons",
+"file": "committees/158-treasury-committee.ics",
+"upcoming": 1
+},
+{
+"id": 600,
+"name": "Treasury Sub-Committee on Financial Services Regulations",
+"house": "Commons",
+"file": "committees/600-treasury-sub-committee-on-financial-services-regulations.ics",
+"upcoming": 0
+},
+{
+"id": 162,
+"name": "Welsh Affairs Committee",
+"house": "Commons",
+"file": "committees/162-welsh-affairs-committee.ics",
+"upcoming": 1
+},
+{
+"id": 328,
+"name": "Women and Equalities Committee",
+"house": "Commons",
+"file": "committees/328-women-and-equalities-committee.ics",
+"upcoming": 1
+},
+{
+"id": 164,
+"name": "Work and Pensions Committee",
+"house": "Commons",
+"file": "committees/164-work-and-pensions-committee.ics",
+"upcoming": 0
+}
+]
+}

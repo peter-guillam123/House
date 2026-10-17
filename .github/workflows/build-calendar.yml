@@ -1,0 +1,42 @@
+name: Build committee calendars
+
+on:
+  schedule:
+    # Four times a day. Committees announce sessions during working
+    # hours, and calendar apps re-read a subscribed feed every few hours
+    # to a day, so finer than this buys nothing.
+    - cron: '41 5,11,17,23 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configure git for automated commits
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Build the feeds
+        run: python3 tools/build-calendar.py
+
+      - name: Commit if changed
+        run: |
+          git add -A calendar
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+            exit 0
+          fi
+          git commit -m 'Refresh committee calendars (auto)'
+          # The evidence-index job also pushes to main; rebase onto
+          # whatever it landed rather than failing on a stale tip.
+          git pull --rebase origin main
+          git push
