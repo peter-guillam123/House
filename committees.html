@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=38">
+  <link rel="stylesheet" href="style.css?v=39">
 </head>
 <body>
   <header class="topbar">
@@ -43,7 +43,7 @@
   <main class="dd-main">
     <section class="hero">
       <h1 class="lede">The committee record.</h1>
-      <p class="sub">Find inquiries by name and oral evidence sessions by witness or organisation. Then search within a specific transcript.</p>
+      <p class="sub">Find inquiries by name and oral evidence sessions by witness or organisation, past and upcoming. Then search within a specific transcript.</p>
     </section>
 
     <form id="cm-form" class="search" autocomplete="off">
@@ -133,6 +133,17 @@
       </section>
     </section>
 
+    <!-- Coming up: public oral evidence sessions in the next week. Browse
+         mode only; a search folds upcoming matches into the sessions panel. -->
+    <section id="cm-upcoming" class="cm-upcoming" aria-labelledby="cm-upcoming-label" hidden>
+      <div class="cm-upcoming-head">
+        <p class="dd-eyebrow" id="cm-upcoming-label">Coming up</p>
+        <p class="cm-side-note" id="cm-upcoming-note">Public oral evidence sessions in the next seven days.</p>
+      </div>
+      <div id="cm-upcoming-list"></div>
+      <button type="button" id="cm-upcoming-more" class="cm-upcoming-more" aria-expanded="false" hidden></button>
+    </section>
+
     <section id="cm-results" class="cm-results" hidden>
       <div class="cm-grid">
         <section class="dd-side">
@@ -156,11 +167,12 @@
         Drawn from the <a href="https://committees-api.parliament.uk/">Committees</a> API
         under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
         Inquiry titles and witness metadata only — transcript text isn&rsquo;t exposed for search.
+        Upcoming sessions are as announced by the committees; witnesses and times can change.
       </p>
       <p class="colophon-meta"><a href="./">Search</a> · <a href="deep-dive.html">Deep Dive</a> · <a href="about.html">About</a> · <a href="https://github.com/peter-guillam123/House">Source</a></p>
     </div>
   </footer>
 
-  <script type="module" src="src/committees.js?v=13"></script>
+  <script type="module" src="src/committees.js?v=14"></script>
 </body>
 </html>

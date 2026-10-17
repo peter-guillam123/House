@@ -434,6 +434,82 @@ export async function searchOralEvidence(opts) {
   };
 }
 
+// ---------- Committees: upcoming oral evidence sessions ----------
+//
+// The Events endpoint is the forward-looking half of the committee
+// record: everything scheduled, public and private, with witnesses
+// attached once announced. We keep only the public oral evidence
+// activities. SearchTerm on this endpoint does not match witnesses, so
+// callers filter client-side; the volume is small (a sitting week is
+// ~75 events across both Houses).
+export async function upcomingSessions(opts) {
+  const p = new URLSearchParams();
+  if (opts.startDate) p.set('StartDateFrom', opts.startDate);
+  if (opts.endDate)   p.set('StartDateTo',   opts.endDate);
+  if (opts.committeeBusinessId) p.set('CommitteeBusinessId', String(opts.committeeBusinessId));
+  p.set('IncludeEventAttendees', 'true');
+  p.set('ShowOnWebsiteOnly', 'true');
+  p.set('ExcludeCancelledEvents', 'true');
+  p.set('SortAscending', 'true');
+  p.set('Take', String(opts.take ?? 100));
+  p.set('Skip', String(opts.skip ?? 0));
+  const url = `${COMMITTEES}/api/Events?${p.toString()}`;
+  const data = await getJson(url);
+  const items = [];
+  for (const ev of data.items ?? []) {
+    // An event can hold several activities: a private discussion, then
+    // one or more public panels. Merge the public panels into one card
+    // per event, witnesses in running order.
+    const panels = (ev.activities || []).filter((a) => a.activityType === 'Oral evidence' && !a.isPrivate);
+    if (!panels.length) continue;
+    const business = panels.map((a) => (a.committeeBusinesses || [])[0]).find(Boolean) || {};
+    const witnesses = [];
+    for (const a of panels) {
+      const attendees = [...(a.attendees || [])].sort((x, y) => (x.displayOrder ?? 0) - (y.displayOrder ?? 0));
+      for (const w of attendees) {
+        witnesses.push({
+          name: w.name || '',
+          context: w.additionalContext || '',
+          organisations: (w.organisations || []).map((o) => o.name).filter(Boolean),
+        });
+      }
+    }
+    const start = panels[0].startDate || ev.startDate || '';
+    const end = panels[panels.length - 1].endDate || ev.endDate || '';
+    items.push({
+      id: ev.id,
+      date: start.slice(0, 10),
+      time: start.slice(11, 16),
+      endTime: end.slice(11, 16),
+      committee: (ev.committees || []).map((c) => c.name).filter(Boolean).join(', '),
+      house: (ev.committees || [])[0]?.house || '',
+      location: ev.location || '',
+      inquiryId: business.id || null,
+      inquiryTitle: business.title || '',
+      witnesses,
+      inquiryLink: business.id ? `https://committees.parliament.uk/work/${business.id}/` : null,
+      // Parliament's own page for the event. Its .ics twin titles every
+      // event "Untitled", so the page builds its own calendar entry.
+      eventLink: `https://api.parliament.uk/committees/events/${ev.id}`,
+    });
+  }
+  return { total: data.totalResults ?? 0, items };
+}
+
+// Walk every page of upcoming sessions in a window. Capped so a bad
+// date range can't turn into an unbounded crawl.
+export async function allUpcomingSessions(opts) {
+  const take = 100;
+  const first = await upcomingSessions({ ...opts, take, skip: 0 });
+  const items = [...first.items];
+  const pages = Math.min(Math.ceil(first.total / take), 4);
+  for (let i = 1; i < pages; i++) {
+    const next = await upcomingSessions({ ...opts, take, skip: i * take });
+    items.push(...next.items);
+  }
+  return items;
+}
+
 // Single inquiry/business by id — used both when a drill-in URL is
 // loaded directly (e.g. someone shared ?inquiry=5536) and when we want
 // to enrich list results with a `scope` description that the list

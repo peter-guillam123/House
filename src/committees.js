@@ -10,8 +10,10 @@ import {
   searchOralEvidence,
   inquiryById,
   oralEvidenceTranscript,
-} from './api.js?v=9';
-import { formatDate, escapeHtml, snippetHtml, buildSearchRegex } from './format.js?v=7';
+  upcomingSessions,
+  allUpcomingSessions,
+} from './api.js?v=10';
+import { formatDate, formatDayLong, formatTime, escapeHtml, snippetHtml, buildSearchRegex } from './format.js?v=8';
 
 // ---------- state ----------
 
@@ -41,10 +43,25 @@ const state = {
   // lazily after a search renders so result rows can show a one-line
   // summary of what the inquiry is actually about.
   inquiryDescriptions: new Map(),
+  // Upcoming oral evidence. `upcoming` is the next seven days, shown as
+  // the Coming up strip in browse mode. `upcomingPool` is a wider window
+  // fetched once per visit and filtered client-side when a search runs,
+  // because the Events endpoint can't search witness names itself.
+  upcoming: [],
+  upcomingLoaded: false,
+  upcomingExpanded: false,
+  upcomingPool: null,
+  upcomingPoolAt: 0,
+  upcomingMatches: [],
+  inquiryUpcoming: [],
 };
 
 const TRANSCRIPT_CONCURRENCY = 4;
 const MAX_SNIPPETS_PER_SESSION = 8;
+const UPCOMING_WEEK_DAYS = 7;
+const UPCOMING_POOL_DAYS = 42;
+const UPCOMING_COLLAPSED = 6;
+const UPCOMING_POOL_TTL_MS = 5 * 60_000;
 
 // ---------- DOM ----------
 
@@ -63,6 +80,9 @@ const $inquiriesLabel = document.getElementById('cm-inquiries-label');
 const $sessionsLabel  = document.getElementById('cm-sessions-label');
 const $inquiriesNote  = document.getElementById('cm-inquiries-note');
 const $sessionsNote   = document.getElementById('cm-sessions-note');
+const $upcoming       = document.getElementById('cm-upcoming');
+const $upcomingList   = document.getElementById('cm-upcoming-list');
+const $upcomingMore   = document.getElementById('cm-upcoming-more');
 
 // Drill-in view DOM
 const $inquiryView   = document.getElementById('cm-inquiry-view');
@@ -122,6 +142,13 @@ function dateRange() {
   return { startDate: start.toISOString().slice(0, 10), endDate: end };
 }
 
+function todayIso() {
+  return new Date().toISOString().slice(0, 10);
+}
+function plusDays(n) {
+  return new Date(Date.now() + n * 86400000).toISOString().slice(0, 10);
+}
+
 // ---------- search ----------
 
 async function runSearch(pushUrl) {
@@ -141,6 +168,7 @@ async function runSearch(pushUrl) {
   if (pushUrl) pushUrlState();
   setStatus('Searching…');
   $form.classList.add('is-loading');
+  syncUpcomingVisibility();
   // Only paint the discovery view if we're actually in it — drill-in
   // view stays on top.
   if (state.view === 'list') $results.hidden = false;
@@ -148,11 +176,18 @@ async function runSearch(pushUrl) {
   $sessions.innerHTML = '';
 
   try {
-    const [inqRes, sesRes] = await Promise.allSettled([
+    const [inqRes, sesRes, upRes] = await Promise.allSettled([
       searchInquiries({ searchTerm: state.term, startDate, endDate, take: 20 }),
       searchOralEvidence({ searchTerm: state.term, startDate, endDate, take: 30 }),
+      upcomingPool(),
     ]);
     if (myToken !== state.searchToken) return;
+
+    // Upcoming matches ride along in the sessions panel. The pool is a
+    // bonus, so a failure here is silent: the past record still renders.
+    state.upcomingMatches = upRes.status === 'fulfilled'
+      ? upRes.value.filter((s) => upcomingMatches(s, state.term))
+      : [];
 
     const errors = [];
     if (inqRes.status === 'fulfilled') {
@@ -176,14 +211,16 @@ async function runSearch(pushUrl) {
     renderSessions();
     enrichInquiriesWithDescriptions(myToken);
 
+    const upN = state.upcomingMatches.length;
+    const upLabel = upN ? `, plus ${upN} upcoming` : '';
     if (errors.length) {
       setStatus(`Some results failed to load: ${errors.join('; ')}.`, true);
-    } else if (state.inquiries.length === 0 && state.sessions.length === 0) {
+    } else if (state.inquiries.length === 0 && state.sessions.length === 0 && upN === 0) {
       setStatus(`No inquiries or sessions matched “${state.term}”. Try a different name, organisation, or date range.`);
     } else {
       const inqLabel = state.inquiriesTotal === 1 ? '1 inquiry' : `${state.inquiriesTotal.toLocaleString('en-GB')} inquiries`;
       const sesLabel = state.sessionsTotal === 1 ? '1 session' : `${state.sessionsTotal.toLocaleString('en-GB')} sessions`;
-      setStatus(`Showing the most recent ${state.inquiries.length} of ${inqLabel} and ${state.sessions.length} of ${sesLabel}.`);
+      setStatus(`Showing the most recent ${state.inquiries.length} of ${inqLabel} and ${state.sessions.length} of ${sesLabel}${upLabel}.`);
     }
   } finally {
     if (myToken === state.searchToken) $form.classList.remove('is-loading');
@@ -205,30 +242,240 @@ async function runBrowse() {
   if (state.view === 'list') $results.hidden = false;
   $inquiries.innerHTML = '';
   $sessions.innerHTML = '';
+  state.upcomingMatches = [];
   setPanelLabels('browse');
   try {
-    const today = new Date();
-    const ago = (days) => new Date(today.getTime() - days * 86400000).toISOString().slice(0, 10);
-    const todayIso = today.toISOString().slice(0, 10);
-    const [inqRes, sesRes] = await Promise.allSettled([
+    const today = todayIso();
+    const ago = (days) => plusDays(-days);
+    const [inqRes, sesRes, upRes] = await Promise.allSettled([
       // Most-recently-opened inquiries (whether or not currently taking
       // evidence) — tells the user what the committees are working on.
-      searchInquiries({ startDate: ago(180), endDate: todayIso, take: 15 }),
-      searchOralEvidence({ startDate: ago(60), endDate: todayIso, take: 30 }),
+      searchInquiries({ startDate: ago(180), endDate: today, take: 15 }),
+      searchOralEvidence({ startDate: ago(60), endDate: today, take: 30 }),
+      // And what's on the calendar for the coming week.
+      upcomingSessions({ startDate: today, endDate: plusDays(UPCOMING_WEEK_DAYS), take: 100 }),
     ]);
     if (myToken !== state.searchToken) return;
     state.inquiries = inqRes.status === 'fulfilled' ? inqRes.value.items : [];
     state.sessions  = sesRes.status === 'fulfilled' ? sesRes.value.items : [];
     state.inquiriesTotal = inqRes.status === 'fulfilled' ? inqRes.value.total : 0;
     state.sessionsTotal  = sesRes.status === 'fulfilled' ? sesRes.value.total : 0;
+    // A failed upcoming fetch hides the strip rather than showing an
+    // error; the record below is the main event.
+    state.upcoming = upRes.status === 'fulfilled' ? upRes.value.items : [];
+    state.upcomingLoaded = upRes.status === 'fulfilled';
     renderInquiries();
     renderSessions();
+    renderUpcoming();
+    syncUpcomingVisibility();
     enrichInquiriesWithDescriptions(myToken);
     setStatus('Recent activity. Type a term to search the committee record.');
   } finally {
     if (myToken === state.searchToken) $form.classList.remove('is-loading');
   }
 }
+
+// ---------- upcoming (Coming up strip + search matches) ----------
+
+// The strip shows only in browse mode, in the list view, once loaded.
+function syncUpcomingVisibility() {
+  $upcoming.hidden = state.view !== 'list' || !!state.term || !state.upcomingLoaded;
+}
+
+// Six weeks of upcoming sessions, fetched once and reused for the life
+// of the page (or five minutes, whichever is shorter).
+async function upcomingPool() {
+  const fresh = state.upcomingPool && (Date.now() - state.upcomingPoolAt) < UPCOMING_POOL_TTL_MS;
+  if (fresh) return state.upcomingPool;
+  const items = await allUpcomingSessions({ startDate: todayIso(), endDate: plusDays(UPCOMING_POOL_DAYS) });
+  state.upcomingPool = items;
+  state.upcomingPoolAt = Date.now();
+  return items;
+}
+
+// Same matching rule as the transcript search: acronyms match whole
+// words case-sensitively, anything else is a case-insensitive substring.
+// Checked against witness names, their organisations, the committee and
+// the inquiry title — the same fields the past-sessions search covers.
+function upcomingMatches(s, term) {
+  const re = buildSearchRegex(term);
+  const fields = [s.committee, s.inquiryTitle];
+  for (const w of s.witnesses) fields.push(w.name, w.context, ...w.organisations);
+  return fields.some((f) => f && re.test(f));
+}
+
+function renderUpcoming() {
+  if (!state.upcoming.length) {
+    $upcomingList.innerHTML = '<p class="cm-empty-li">No public oral evidence sessions are scheduled for the next seven days.</p>';
+    $upcomingMore.hidden = true;
+    return;
+  }
+  const items = state.upcoming;
+  const shown = state.upcomingExpanded ? items : items.slice(0, UPCOMING_COLLAPSED);
+  const today = todayIso();
+  const tomorrow = plusDays(1);
+  const byDay = new Map();
+  for (const s of shown) {
+    if (!byDay.has(s.date)) byDay.set(s.date, []);
+    byDay.get(s.date).push(s);
+  }
+  $upcomingList.innerHTML = [...byDay.entries()].map(([date, list]) => {
+    const when = date === today ? '<span class="cm-tag cm-tag-upcoming">Today</span>'
+      : date === tomorrow ? '<span class="cm-tag">Tomorrow</span>' : '';
+    return `<section class="cm-upcoming-day">
+      <h3 class="cm-upcoming-day-label">${escapeHtml(formatDayLong(date))} ${when}</h3>
+      <ol class="cm-list">${list.map(upcomingRowHtml).join('')}</ol>
+    </section>`;
+  }).join('');
+  $upcomingMore.hidden = items.length <= UPCOMING_COLLAPSED;
+  $upcomingMore.textContent = state.upcomingExpanded
+    ? 'Show fewer'
+    : `Show all ${items.length} sessions this week`;
+  $upcomingMore.setAttribute('aria-expanded', String(state.upcomingExpanded));
+}
+
+function upcomingRowHtml(s) {
+  const title = s.inquiryTitle || s.committee || 'Oral evidence';
+  const titleEl = s.inquiryId
+    ? `<button type="button" class="cm-drill-btn" data-inquiry-id="${s.inquiryId}">${escapeHtml(title)}</button>`
+    : escapeHtml(title);
+  const where = [s.committee, s.location].filter(Boolean).map(escapeHtml).join(' · ');
+  return `<li class="cm-upcoming-item">
+    <p class="cm-upcoming-time">${escapeHtml(formatTime(s.time))}</p>
+    <div class="cm-upcoming-body">
+      <p class="cm-upcoming-committee">${where}</p>
+      <p class="cm-upcoming-title">${titleEl}</p>
+      ${witnessesHtml(s.witnesses, 4)}
+      <p class="cm-meta-line">${calendarLinkHtml(s)}</p>
+    </div>
+  </li>`;
+}
+
+// An upcoming session in the same shape as a past one, for the sessions
+// panel and the inquiry view. Tagged, and with a calendar link where a
+// past session has its transcript link.
+function upcomingSessionItemHtml(s, { showInquiry = true } = {}) {
+  const dateLabel = `${escapeHtml(formatDate(s.date))}${s.time ? `, ${escapeHtml(formatTime(s.time))}` : ''}`;
+  const titleEl = s.inquiryId
+    ? `<button type="button" class="cm-drill-btn" data-inquiry-id="${s.inquiryId}">${dateLabel}</button>`
+    : dateLabel;
+  const inquiryBit = showInquiry && s.inquiryTitle
+    ? `<p class="cm-meta-line">${s.inquiryId
+        ? `<button type="button" class="cm-meta-inquiry-btn" data-inquiry-id="${s.inquiryId}">${escapeHtml(s.inquiryTitle)}</button>`
+        : `<span class="cm-meta-inquiry">${escapeHtml(s.inquiryTitle)}</span>`}</p>`
+    : '';
+  const witnesses = s.witnesses.length
+    ? witnessesHtml(s.witnesses, 4)
+    : '<p class="cm-witnesses"><span class="cm-witness-more">Witnesses to be announced</span></p>';
+  return `<li class="cm-item">
+    <h3 class="cm-item-title">${titleEl}</h3>
+    <p class="cm-meta"><span class="cm-tag cm-tag-upcoming">Upcoming</span><span class="cm-meta-committee">${escapeHtml(s.committee)}</span></p>
+    ${inquiryBit}
+    ${witnesses}
+    <p class="cm-meta-line">${calendarLinkHtml(s)}</p>
+  </li>`;
+}
+
+// A calendar entry for one upcoming session, as a data: link the
+// browser saves as an .ics file. Parliament publishes its own file per
+// event but titles every one "Untitled", so this one carries the
+// inquiry, the committee, the room and the witnesses. Times are written
+// as London wall-clock time with no zone, the same convention as
+// Parliament's file: the sessions happen in Westminster and that's the
+// time a reader wants to see.
+function calendarHref(s) {
+  const stamp = (date, hhmm) => `${date.replace(/-/g, '')}T${(hhmm || '00:00').replace(':', '')}00`;
+  const endTime = s.endTime && s.endTime > s.time ? s.endTime : addMinutes(s.time, 120);
+  const who = s.witnesses.map((w) => {
+    const orgs = w.organisations.join(', ');
+    return w.name ? (orgs ? `${w.name} (${orgs})` : w.name) : orgs;
+  }).filter(Boolean);
+  const summary = [s.inquiryTitle || 'Oral evidence', s.committee].filter(Boolean).join(' · ');
+  const description = [
+    `Oral evidence session, ${s.committee}.`,
+    who.length ? `Witnesses: ${who.join('; ')}.` : 'Witnesses to be announced.',
+    s.eventLink,
+  ].join('\n');
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//House//Committees//EN',
+    'BEGIN:VEVENT',
+    `UID:house-committee-event-${s.id}@peter-guillam123.github.io`,
+    `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').slice(0, 15)}Z`,
+    `DTSTART:${stamp(s.date, s.time)}`,
+    `DTEND:${stamp(s.date, endTime)}`,
+    `SUMMARY:${icsText(summary)}`,
+    s.location ? `LOCATION:${icsText(s.location)}` : '',
+    `DESCRIPTION:${icsText(description)}`,
+    `URL:${s.eventLink}`,
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].filter(Boolean).map(icsFold);
+  return `data:text/calendar;charset=utf-8,${encodeURIComponent(lines.join('\r\n') + '\r\n')}`;
+}
+
+function calendarFilename(s) {
+  const slug = String(s.inquiryTitle || s.committee || 'oral-evidence')
+    .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+  return `${s.date}-${slug}.ics`;
+}
+
+function addMinutes(hhmm, mins) {
+  const [h, m] = (hhmm || '00:00').split(':').map((n) => parseInt(n, 10) || 0);
+  const total = Math.min(h * 60 + m + mins, 23 * 60 + 59);
+  return `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`;
+}
+
+// iCalendar escaping: backslash, newline, comma and semicolon.
+function icsText(t) {
+  return String(t || '').replace(/\\/g, '\\\\').replace(/\r?\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
+}
+
+// Lines longer than 75 octets are folded with a CRLF + space.
+function icsFold(line) {
+  const out = [];
+  let rest = line;
+  while (rest.length > 74) {
+    out.push(rest.slice(0, 74));
+    rest = ' ' + rest.slice(74);
+  }
+  out.push(rest);
+  return out.join('\r\n');
+}
+
+function calendarLinkHtml(s) {
+  return `<a class="cm-secondary-link" href="${escapeHtml(calendarHref(s))}" download="${escapeHtml(calendarFilename(s))}">Add to calendar</a>`;
+}
+
+function witnessesHtml(witnesses, max) {
+  if (!witnesses.length) return '';
+  const bits = witnesses.slice(0, max).map((w) => {
+    const orgs = w.organisations.length ? w.organisations.join(', ') : '';
+    const primary = w.name || orgs || '?';
+    const ctx = w.name ? (orgs || w.context) : '';
+    return `<span class="cm-witness">${escapeHtml(primary)}${ctx ? ` <span class="cm-witness-ctx">(${escapeHtml(ctx)})</span>` : ''}</span>`;
+  }).join('');
+  const more = witnesses.length > max ? `<span class="cm-witness-more">+ ${witnesses.length - max} more</span>` : '';
+  return `<p class="cm-witnesses">${bits}${more}</p>`;
+}
+
+$upcomingMore.addEventListener('click', () => {
+  state.upcomingExpanded = !state.upcomingExpanded;
+  renderUpcoming();
+  // Collapsing can leave the button far below the strip; bring the
+  // strip's top back into view so the reader isn't stranded.
+  if (!state.upcomingExpanded) {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    $upcoming.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+});
+
+$upcomingList.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-inquiry-id]');
+  if (!btn) return;
+  enterInquiryView(Number(btn.dataset.inquiryId), { pushUrl: true });
+});
 
 function setPanelLabels(mode) {
   if (mode === 'browse') {
@@ -322,13 +569,18 @@ function inquiryStatus(inq) {
 }
 
 function renderSessions() {
-  if (!state.sessions.length) {
+  const upcoming = state.upcomingMatches || [];
+  if (!state.sessions.length && !upcoming.length) {
     $sessions.innerHTML = '<li class="cm-empty-li">No sessions matched the term in witness or organisation metadata.</li>';
     return;
   }
-  // Newest first
+  // Upcoming first (soonest at the top), then the record newest first.
+  const upcomingHtml = [...upcoming]
+    .sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.time || '').localeCompare(b.time || ''))
+    .map((s) => upcomingSessionItemHtml(s))
+    .join('');
   const sorted = [...state.sessions].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-  $sessions.innerHTML = sorted.map((s) => {
+  $sessions.innerHTML = upcomingHtml + sorted.map((s) => {
     const witnessBits = s.witnesses.slice(0, 4).map((w) => {
       const orgs = w.organisations.length ? w.organisations.join(', ') : '';
       const primary = w.name || orgs || '?';
@@ -386,7 +638,8 @@ function setItStatus(msg, isError = false) {
 function renderView() {
   const isInquiry = state.view === 'inquiry';
   $inquiryView.hidden = !isInquiry;
-  $results.hidden = isInquiry || state.inquiries.length === 0 && state.sessions.length === 0;
+  $results.hidden = isInquiry || state.inquiries.length === 0 && state.sessions.length === 0 && state.upcomingMatches.length === 0;
+  syncUpcomingVisibility();
 }
 
 // ---------- drill-in view ----------
@@ -399,7 +652,13 @@ async function enterInquiryView(id, { pushUrl = false, focusSessionId = null } =
   // Look up cached metadata first; fetch if we don't have it (direct URL load).
   let inquiry = state.inquiries.find((i) => i.id === id);
   if (!inquiry) {
+    // Show the drill-in view straight away with a loading header, so a
+    // click from the Coming up strip (whose inquiries aren't in the
+    // results list) gets a response before the detail fetch lands.
     renderInquiryHeader({ title: 'Loading inquiry…' });
+    $inqSessions.innerHTML = '';
+    renderView();
+    scrollToInquiryView();
     try {
       inquiry = await inquiryById(id);
     } catch (e) {
@@ -410,6 +669,7 @@ async function enterInquiryView(id, { pushUrl = false, focusSessionId = null } =
   }
   state.currentInquiry = inquiry;
   state.inquirySessions = [];
+  state.inquiryUpcoming = [];
   state.inquiryTerm = '';
   state.inquiryMatches = [];
   // Don't clear inquiryTranscripts — they're keyed by session id and
@@ -423,13 +683,18 @@ async function enterInquiryView(id, { pushUrl = false, focusSessionId = null } =
   renderView();
   scrollToInquiryView();
 
-  // Fetch the inquiry's sessions
+  // Fetch the inquiry's sessions, past and scheduled.
   try {
     $inqSessions.innerHTML = '<li class="cm-empty-li">Loading sessions…</li>';
-    const result = await searchOralEvidence({ committeeBusinessId: id, take: 100 });
+    const [result, upRes] = await Promise.allSettled([
+      searchOralEvidence({ committeeBusinessId: id, take: 100 }),
+      upcomingSessions({ committeeBusinessId: id, startDate: todayIso(), endDate: plusDays(180), take: 50 }),
+    ]);
     if (myToken !== state.inquiryToken) return;
+    if (result.status !== 'fulfilled') throw result.reason;
     // Newest first
-    state.inquirySessions = result.items.slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    state.inquirySessions = result.value.items.slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    state.inquiryUpcoming = upRes.status === 'fulfilled' ? upRes.value.items : [];
     renderInquirySessions();
     // If URL carried a within-inquiry term, run it now.
     const urlTerm = new URLSearchParams(location.search).get('it') || '';
@@ -452,6 +717,9 @@ function exitInquiryView({ pushUrl = true } = {}) {
   if (pushUrl) pushUrlState();
   renderView();
   if (state.inquiries.length || state.sessions.length) $results.hidden = false;
+  // Arrived by a shared inquiry link, so there's nothing behind us yet:
+  // fill the browse view rather than leaving an empty page.
+  else if (!state.term) runBrowse();
 }
 
 function renderInquiryHeader(inq) {
@@ -477,13 +745,21 @@ function renderInquiryHeader(inq) {
 }
 
 function renderInquirySessions() {
-  if (!state.inquirySessions.length) {
+  const upcoming = state.inquiryUpcoming || [];
+  if (!state.inquirySessions.length && !upcoming.length) {
     $inqSessions.innerHTML = '<li class="cm-empty-li">No oral evidence sessions in this inquiry.</li>';
     $inqSessionsLabel.textContent = 'Oral evidence sessions';
     return;
   }
-  $inqSessionsLabel.textContent = `Oral evidence sessions · ${state.inquirySessions.length}`;
-  $inqSessions.innerHTML = state.inquirySessions.map((s) => {
+  const past = state.inquirySessions.length;
+  $inqSessionsLabel.textContent = upcoming.length
+    ? `Oral evidence sessions · ${past} past · ${upcoming.length} upcoming`
+    : `Oral evidence sessions · ${past}`;
+  const upcomingHtml = [...upcoming]
+    .sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.time || '').localeCompare(b.time || ''))
+    .map((s) => upcomingSessionItemHtml(s, { showInquiry: false }))
+    .join('');
+  $inqSessions.innerHTML = upcomingHtml + state.inquirySessions.map((s) => {
     const witnessBits = s.witnesses.slice(0, 5).map((w) => {
       const orgs = w.organisations.length ? w.organisations.join(', ') : '';
       const primary = w.name || orgs || '?';

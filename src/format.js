@@ -7,6 +7,27 @@ export function formatDate(iso) {
   return `${parseInt(d, 10)} ${MONTHS[parseInt(m, 10) - 1]} ${y}`;
 }
 
+const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+// "Tuesday 21 October" — for day headings in forward-looking lists,
+// where the weekday carries more meaning than the year.
+export function formatDayLong(iso) {
+  if (!iso) return '';
+  const d = new Date(`${iso}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return iso;
+  return `${DAYS[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]}`;
+}
+
+// "09:30" → "9.30am"; "14:00" → "2pm". British, no leading zero.
+export function formatTime(hhmm) {
+  if (!hhmm) return '';
+  const [h, m] = hhmm.split(':').map((n) => parseInt(n, 10));
+  if (Number.isNaN(h)) return hhmm;
+  const suffix = h >= 12 ? 'pm' : 'am';
+  const hour12 = h % 12 === 0 ? 12 : h % 12;
+  return m ? `${hour12}.${String(m).padStart(2, '0')}${suffix}` : `${hour12}${suffix}`;
+}
+
 export function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
