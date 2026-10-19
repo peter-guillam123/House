@@ -3,14 +3,14 @@
 // morning. Nothing is fetched live: the page loads days/index.json to
 // find the day, then days/<date>.json, and renders from that.
 
-import { formatDate, formatDayLong, formatDayFull, formatTime, escapeHtml, partyColor, partyShortName } from './format.js?v=9';
+import { formatDate, formatDayLong, formatDayFull, formatTime, escapeHtml, partyColor, partyShortName } from './format.js?v=10';
 
 const state = { index: null, day: null, date: '', house: 'Commons' };
 
 const $ = (id) => document.getElementById(id);
 const $kicker = $('dy-kicker'), $title = $('dy-title'), $sub = $('dy-sub');
 const $prev = $('dy-prev'), $next = $('dy-next');
-const $house = $('dy-house'), $status = $('dy-status'), $body = $('dy-body');
+const $house = $('dy-house'), $status = $('dy-status'), $body = $('dy-body'), $skeleton = $('dy-skeleton');
 const $numbers = $('dy-numbers');
 const $spikesNote = $('dy-spikes-note'), $spikesList = $('dy-spikes-list');
 const $divisions = $('dy-divisions'), $divisionsList = $('dy-divisions-list');
@@ -40,11 +40,34 @@ async function loadJson(name) {
   return r.json();
 }
 
+function showSkeleton(on) {
+  $skeleton.hidden = !on;
+  // The heading's full stop makes no sense under a placeholder bar.
+  $title.classList.toggle('is-loading', on);
+  if (on) {
+    $body.hidden = true;
+    $title.innerHTML = '<span class="skel skel--title" aria-hidden="true"><span class="skel-bar" style="width:55%"></span></span><span class="visually-hidden">Loading the day</span>';
+    $sub.innerHTML = '<span class="skel" aria-hidden="true"><span class="skel-bar" style="width:80%"></span></span>';
+  }
+  document.querySelector('main').setAttribute('aria-busy', on ? 'true' : 'false');
+}
+
+function failed(what, retry) {
+  showSkeleton(false);
+  $title.textContent = 'Nothing to show';
+  $sub.textContent = '';
+  $status.innerHTML = `Couldn’t load ${what}. <button type="button" class="load-retry" id="dy-retry">Try again</button>`;
+  $status.classList.add('error');
+  document.getElementById('dy-retry').addEventListener('click', retry);
+}
+
 async function init() {
+  showSkeleton(true);
+  setStatus('Loading the last sitting…');
   try {
     state.index = await loadJson('index.json');
   } catch (e) {
-    setStatus('No day summaries have been built yet. The nightly job writes the first one the morning after a sitting.', true);
+    failed('the list of sitting days', init);
     return;
   }
   const p = new URLSearchParams(location.search);
@@ -53,7 +76,10 @@ async function init() {
   const date = days.find((d) => d.date === wanted)?.date
     || state.index.latest?.Commons || state.index.latest?.Lords || days[0]?.date;
   if (!date) {
-    setStatus('No sitting days on file yet.', true);
+    showSkeleton(false);
+    $title.textContent = 'No sitting days yet';
+    $sub.textContent = 'The first summary is built the morning after a sitting.';
+    setStatus('');
     return;
   }
   state.house = p.get('house') === 'Lords' ? 'Lords' : 'Commons';
@@ -61,13 +87,15 @@ async function init() {
 }
 
 async function showDay(date, { push = true } = {}) {
-  setStatus('Loading…');
+  showSkeleton(true);
+  setStatus(`Loading ${formatDate(date)}…`);
   try {
     state.day = await loadJson(`${date}.json`);
   } catch (e) {
-    setStatus(`Couldn’t load ${formatDate(date)}. ${e.message || ''}`, true);
+    failed(formatDate(date), () => showDay(date, { push: false }));
     return;
   }
+  showSkeleton(false);
   state.date = date;
   const houses = Object.keys(state.day.houses || {});
   if (!houses.includes(state.house)) state.house = houses[0] || 'Commons';

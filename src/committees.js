@@ -13,7 +13,7 @@ import {
   upcomingSessions,
   allUpcomingSessions,
 } from './api.js?v=10';
-import { formatDate, formatDayLong, formatTime, escapeHtml, snippetHtml, buildSearchRegex } from './format.js?v=8';
+import { formatDate, formatDayLong, formatTime, escapeHtml, snippetHtml, buildSearchRegex, skeletonHtml } from './format.js?v=10';
 
 // ---------- state ----------
 
@@ -49,6 +49,8 @@ const state = {
   // because the Events endpoint can't search witness names itself.
   upcoming: [],
   upcomingLoaded: false,
+  upcomingLoading: false,
+  upcomingFailed: false,
   upcomingExpanded: false,
   upcomingPool: null,
   upcomingPoolAt: 0,
@@ -247,27 +249,21 @@ async function runBrowse() {
   try {
     const today = todayIso();
     const ago = (days) => plusDays(-days);
-    const [inqRes, sesRes, upRes] = await Promise.allSettled([
+    // The strip shows its frame straight away; the sessions fill it in.
+    loadUpcomingWeek(myToken);
+    const [inqRes, sesRes] = await Promise.allSettled([
       // Most-recently-opened inquiries (whether or not currently taking
       // evidence) — tells the user what the committees are working on.
       searchInquiries({ startDate: ago(180), endDate: today, take: 15 }),
       searchOralEvidence({ startDate: ago(60), endDate: today, take: 30 }),
-      // And what's on the calendar for the coming week.
-      upcomingSessions({ startDate: today, endDate: plusDays(UPCOMING_WEEK_DAYS), take: 100 }),
     ]);
     if (myToken !== state.searchToken) return;
     state.inquiries = inqRes.status === 'fulfilled' ? inqRes.value.items : [];
     state.sessions  = sesRes.status === 'fulfilled' ? sesRes.value.items : [];
     state.inquiriesTotal = inqRes.status === 'fulfilled' ? inqRes.value.total : 0;
     state.sessionsTotal  = sesRes.status === 'fulfilled' ? sesRes.value.total : 0;
-    // A failed upcoming fetch hides the strip rather than showing an
-    // error; the record below is the main event.
-    state.upcoming = upRes.status === 'fulfilled' ? upRes.value.items : [];
-    state.upcomingLoaded = upRes.status === 'fulfilled';
     renderInquiries();
     renderSessions();
-    renderUpcoming();
-    syncUpcomingVisibility();
     loadFeedManifest();
     enrichInquiriesWithDescriptions(myToken);
     setStatus('Recent activity. Type a term to search the committee record.');
@@ -278,10 +274,46 @@ async function runBrowse() {
 
 // ---------- upcoming (Coming up strip + search matches) ----------
 
-// The strip shows only in browse mode, in the list view, once loaded.
+// The strip shows only in browse mode, in the list view, from the
+// moment it starts loading.
 function syncUpcomingVisibility() {
-  $upcoming.hidden = state.view !== 'list' || !!state.term || !state.upcomingLoaded;
+  $upcoming.hidden = state.view !== 'list' || !!state.term || !(state.upcomingLoaded || state.upcomingLoading || state.upcomingFailed);
 }
+
+// Next week's public sessions for the Coming up strip. Placeholder bars
+// while it fetches; a plain line with a retry if it fails.
+async function loadUpcomingWeek(myToken) {
+  state.upcomingLoading = true;
+  state.upcomingFailed = false;
+  $upcoming.setAttribute('aria-busy', 'true');
+  $upcomingList.innerHTML = `<p class="loading-note">Loading next week\u2019s sessions\u2026</p>${skeletonHtml([30, 75, 55, 30, 70, 60])}`;
+  $upcomingMore.hidden = true;
+  syncUpcomingVisibility();
+  try {
+    const res = await upcomingSessions({ startDate: todayIso(), endDate: plusDays(UPCOMING_WEEK_DAYS), take: 100 });
+    if (myToken !== state.searchToken) return;
+    state.upcoming = res.items;
+    state.upcomingLoaded = true;
+  } catch {
+    if (myToken !== state.searchToken) return;
+    state.upcomingFailed = true;
+  } finally {
+    if (myToken === state.searchToken) {
+      state.upcomingLoading = false;
+      $upcoming.setAttribute('aria-busy', 'false');
+    }
+  }
+  if (state.upcomingFailed) {
+    $upcomingList.innerHTML = `<p class="load-failed">Couldn\u2019t load what\u2019s coming up.<button type="button" class="load-retry" data-retry-upcoming>Try again</button></p>`;
+  } else {
+    renderUpcoming();
+  }
+  syncUpcomingVisibility();
+}
+
+$upcomingList.addEventListener('click', (e) => {
+  if (e.target.closest('[data-retry-upcoming]')) loadUpcomingWeek(state.searchToken);
+});
 
 // Six weeks of upcoming sessions, fetched once and reused for the life
 // of the page (or five minutes, whichever is shorter).

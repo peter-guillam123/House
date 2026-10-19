@@ -38,6 +38,15 @@ export function formatTime(hhmm) {
   return m ? `${hour12}.${String(m).padStart(2, '0')}${suffix}` : `${hour12}${suffix}`;
 }
 
+// Placeholder bars shown while a panel loads, shaped roughly like the
+// content that's coming so the page doesn't jump when it arrives.
+// Widths are percentages. The pulse is switched off for reduced motion
+// in the stylesheet.
+export function skeletonHtml(widths = [85, 60, 72], { title = false } = {}) {
+  const bars = widths.map((w) => `<span class="skel-bar" style="width:${w}%"></span>`).join('');
+  return `<span class="skel${title ? ' skel--title' : ''}" aria-hidden="true">${bars}</span>`;
+}
+
 export function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
