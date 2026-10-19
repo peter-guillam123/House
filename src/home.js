@@ -4,7 +4,7 @@
 // the week ahead. All read from files the nightly and hourly jobs write
 // under days/, so nothing here calls Parliament live.
 
-import { formatDayLong, formatDayFull, formatTime, escapeHtml } from './format.js?v=9';
+import { formatDayLong, formatDayFull, formatTime, escapeHtml, skeletonHtml } from './format.js?v=10';
 
 const $home = document.getElementById('home');
 const $last = document.getElementById('home-last');
@@ -25,6 +25,24 @@ export function showHome(on) {
   }
 }
 
+// The frame first: labels and placeholder bars, so the page has its
+// shape before the files arrive and nothing jumps when they do.
+function renderSkeletons() {
+  const block = (label, note, widths) =>
+    `<p class="dd-eyebrow">${label}</p><p class="loading-note">${note}</p>${skeletonHtml(widths, { title: true })}`;
+  $last.innerHTML = block('Last sitting', 'Loading\u2026', [70, 90, 55, 80, 45]);
+  $next.innerHTML = block('Next sitting', 'Loading\u2026', [65, 85, 75, 85, 70, 80]);
+  $week.innerHTML = block('This week', 'Loading\u2026', [50, 85, 70, 50, 85, 70]);
+}
+
+function failedHtml(label, what) {
+  return `<p class="dd-eyebrow">${label}</p><p class="load-failed">Couldn\u2019t load ${what}.<button type="button" class="load-retry" data-retry>Try again</button></p>`;
+}
+
+$home?.addEventListener('click', (e) => {
+  if (e.target.closest('[data-retry]')) load();
+});
+
 async function fetchJson(name) {
   const r = await fetch(new URL(name, DAYS_BASE), { cache: 'no-cache' });
   if (!r.ok) throw new Error(`${r.status} on ${name}`);
@@ -32,19 +50,30 @@ async function fetchJson(name) {
 }
 
 async function load() {
+  renderSkeletons();
+  $home.setAttribute('aria-busy', 'true');
   const [idxRes, aheadRes] = await Promise.allSettled([fetchJson('index.json'), fetchJson('ahead.json')]);
   const idx = idxRes.status === 'fulfilled' ? idxRes.value : null;
   const ahead = aheadRes.status === 'fulfilled' ? aheadRes.value : null;
   let day = null;
+  let dayFailed = false;
   const latest = idx?.latest?.Commons || idx?.latest?.Lords || idx?.days?.[0]?.date;
   if (latest) {
-    try { day = await fetchJson(`${latest}.json`); } catch { /* column shows a fallback */ }
+    try { day = await fetchJson(`${latest}.json`); } catch { dayFailed = true; }
   }
-  renderLast(day);
-  renderNext(ahead);
-  renderWeek(ahead);
+  if (day) renderLast(day);
+  else if (dayFailed || idxRes.status === 'rejected') $last.innerHTML = failedHtml('Last sitting', 'the last sitting');
+  else renderLast(null);
+  if (ahead) {
+    renderNext(ahead);
+    renderWeek(ahead);
+  } else {
+    $next.innerHTML = failedHtml('Next sitting', 'the order of business');
+    $week.innerHTML = failedHtml('This week', 'the week ahead');
+  }
   const sittingToday = ahead && Object.values(ahead.houses || {}).some((h) => h.isToday);
   $home.classList.toggle('is-sitting-today', !!sittingToday);
+  $home.setAttribute('aria-busy', 'false');
 }
 
 // ---------- last sitting ----------

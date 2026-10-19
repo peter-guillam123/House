@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300..700&family=Source+Serif+4:ital,opsz,wght@1,8..60,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="style.css?v=44">
+  <link rel="stylesheet" href="style.css?v=45">
 </head>
 <body>
   <header class="topbar">
@@ -44,8 +44,8 @@
   <main class="dd-main">
     <section class="hero dy-hero">
       <p class="dd-eyebrow" id="dy-kicker">The last sitting</p>
-      <h1 class="lede" id="dy-title">Loading the day</h1>
-      <p class="sub" id="dy-sub"></p>
+      <h1 class="lede is-loading" id="dy-title"><span class="skel skel--title" aria-hidden="true"><span class="skel-bar" style="width:55%"></span></span><span class="visually-hidden">Loading the day</span></h1>
+      <p class="sub" id="dy-sub"><span class="skel" aria-hidden="true"><span class="skel-bar" style="width:80%"></span></span></p>
       <nav class="dy-daynav" aria-label="Other sitting days">
         <a id="dy-prev" class="dy-daynav-link" href="#" hidden>&larr; <span></span></a>
         <a id="dy-next" class="dy-daynav-link" href="#" hidden><span></span> &rarr;</a>
@@ -60,6 +60,26 @@
     </div>
 
     <p id="dy-status" class="status" aria-live="polite"></p>
+
+    <!-- The frame of the page while the day file loads. -->
+    <div id="dy-skeleton" class="dy-skeleton" aria-hidden="true">
+      <div class="dd-stats dy-stats">
+        <div class="dd-stat-cell"><p class="dd-stat-label">Debates</p><span class="skel"><span class="skel-bar" style="width:40%;height:1.3rem"></span></span></div>
+        <div class="dd-stat-cell"><p class="dd-stat-label">Speakers</p><span class="skel"><span class="skel-bar" style="width:40%;height:1.3rem"></span></span></div>
+        <div class="dd-stat-cell"><p class="dd-stat-label">Words</p><span class="skel"><span class="skel-bar" style="width:60%;height:1.3rem"></span></span></div>
+        <div class="dd-stat-cell"><p class="dd-stat-label">Divisions</p><span class="skel"><span class="skel-bar" style="width:30%;height:1.3rem"></span></span></div>
+        <div class="dd-stat-cell"><p class="dd-stat-label">Written statements</p><span class="skel"><span class="skel-bar" style="width:30%;height:1.3rem"></span></span></div>
+        <div class="dd-stat-cell"><p class="dd-stat-label">Written answers</p><span class="skel"><span class="skel-bar" style="width:40%;height:1.3rem"></span></span></div>
+      </div>
+      <section class="dy-block">
+        <p class="dd-eyebrow">Words that spiked</p>
+        <span class="skel"><span class="skel-bar" style="width:70%"></span><span class="skel-bar" style="width:50%"></span></span>
+      </section>
+      <section class="dy-block">
+        <p class="dd-eyebrow">Divisions, closest first</p>
+        <span class="skel"><span class="skel-bar" style="width:85%"></span><span class="skel-bar" style="width:60%"></span><span class="skel-bar" style="width:75%"></span></span>
+      </section>
+    </div>
 
     <div id="dy-body" hidden>
       <section class="dd-stats dy-stats" id="dy-numbers" aria-label="The day in numbers"></section>
@@ -122,6 +142,6 @@
     </div>
   </footer>
 
-  <script type="module" src="src/day.js?v=2"></script>
+  <script type="module" src="src/day.js?v=3"></script>
 </body>
 </html>

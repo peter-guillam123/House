@@ -5,7 +5,7 @@ import {
 import { resolvePartyToMemberIds, getPartyList, memberAutocomplete } from './filters.js?v=6';
 import { formatDate, snippetHtml, escapeHtml, SOURCE_CLASS, partyColor, partyShortName } from './format.js?v=7';
 import { buildMarkdownExport, exportFilename, downloadMarkdown, EXPORT_CAP } from './export.js?v=2';
-import { showHome } from './home.js?v=2';
+import { showHome } from './home.js?v=3';
 
 // ---------- state ----------
 
@@ -278,6 +278,10 @@ $more.addEventListener('click', () => runSearch(false));
 // ---------- init: load parties, then apply URL state ----------
 
 (async () => {
+  // Show the home frame before anything is fetched: the party list for
+  // the filters can take a second or two on a slow connection, and
+  // nothing about the panels depends on it.
+  if (!new URLSearchParams(location.search).get('q')) showHome(true);
   try {
     const parties = await getPartyList();
     for (const { id, name } of parties) {
