@@ -14,10 +14,21 @@ SUMMARY:The UK and the Sahel · International Development Committee
 LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, International Development Committee.\n
  Witnesses: Abdouraouf Gnon-Konde (UNHCR)\; Marc Regnault de la Mothe (UN 
- World Food Programme)\; Patrice Ahouansou\; Kaboré Wendyam Micheline (Pa
- nanetugri Initiative for the Well-being of Women)\; Vanessa Willems (FONG
- A)\; Yann Faivre (Danish Refugee Council).\nhttps://api.parliament.uk/com
- mittees/events/28407
+ World Food Programme)\; Patrice Ahouansou\; Vanessa Willems (FONGA)\; Yan
+ n Faivre (Danish Refugee Council).\nhttps://api.parliament.uk/committees/
+ events/28407
 URL:https://api.parliament.uk/committees/events/28407
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28510@house.peter-guillam123.github.io
+DTSTAMP:20261027T140000Z
+DTSTART:20261027T140000
+DTEND:20261027T163000
+SUMMARY:Global Health · International Development Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, International Development Committee.\n
+ Witnesses to be announced.\nhttps://api.parliament.uk/committees/events/2
+ 8510
+URL:https://api.parliament.uk/committees/events/28510
 END:VEVENT
 END:VCALENDAR

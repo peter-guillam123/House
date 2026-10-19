@@ -21,4 +21,16 @@ DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
  events/28399
 URL:https://api.parliament.uk/committees/events/28399
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28512@house.peter-guillam123.github.io
+DTSTAMP:20261028T141500Z
+DTSTART:20261028T141500
+DTEND:20261028T161500
+SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
+ ights (Joint Committee)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
+ sses to be announced.\nhttps://api.parliament.uk/committees/events/28512
+URL:https://api.parliament.uk/committees/events/28512
+END:VEVENT
 END:VCALENDAR

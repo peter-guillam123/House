@@ -1,7 +1,7 @@
 {
-"built": "2026-10-18",
+"built": "2026-10-19",
 "windowDays": 56,
-"sessions": 51,
+"sessions": 55,
 "all": "committees.ics",
 "committees": [
 {
@@ -233,7 +233,7 @@
 "name": "Environment and Climate Change Committee",
 "house": "Lords",
 "file": "committees/515-environment-and-climate-change-committee.ics",
-"upcoming": 1
+"upcoming": 3
 },
 {
 "id": 52,
@@ -401,7 +401,7 @@
 "name": "Human Rights (Joint Committee)",
 "house": "Joint",
 "file": "committees/93-human-rights-joint-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 186,
@@ -436,7 +436,7 @@
 "name": "International Development Committee",
 "house": "Commons",
 "file": "committees/98-international-development-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 347,
@@ -889,6 +889,10 @@
 28465,
 28484,
 28486,
-28491
+28491,
+28503,
+28505,
+28510,
+28512
 ]
 }

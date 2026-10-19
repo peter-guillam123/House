@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Global Health · International Development Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28510@house.peter-guillam123.github.io
+DTSTAMP:20261027T140000Z
+DTSTART:20261027T140000
+DTEND:20261027T163000
+SUMMARY:Global Health · International Development Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, International Development Committee.\n
+ Witnesses to be announced.\nhttps://api.parliament.uk/committees/events/2
+ 8510
+URL:https://api.parliament.uk/committees/events/28510
+END:VEVENT
+END:VCALENDAR
