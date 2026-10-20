@@ -452,6 +452,19 @@ DESCRIPTION:Oral evidence session\, Education Committee\, Health and Socia
 URL:https://api.parliament.uk/committees/events/28360
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28527@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T123000
+SUMMARY:The future of farming · Environment\, Food and Rural Affairs Comm
+ ittee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
+ ommittee.\nWitnesses: Stephen Morgan MP (Department for Environment\, Foo
+ d and Rural Affairs).\nhttps://api.parliament.uk/committees/events/28527
+URL:https://api.parliament.uk/committees/events/28527
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-27938@house.peter-guillam123.github.io
 DTSTAMP:20261027T103000Z
 DTSTART:20261027T103000
@@ -465,13 +478,16 @@ URL:https://api.parliament.uk/committees/events/27938
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28434@house.peter-guillam123.github.io
-DTSTAMP:20261027T103000Z
-DTSTART:20261027T103000
-DTEND:20261027T123000
+DTSTAMP:20261027T113000Z
+DTSTART:20261027T113000
+DTEND:20261027T113000
 SUMMARY:One-off Session on Defence Medical Services · Defence Committee
 LOCATION:TBC
-DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
- nounced.\nhttps://api.parliament.uk/committees/events/28434
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses: Dr Darr
+ en Mann (King's College London)\; Ed Button (International SoS)\; Dr Kati
+ e Geary (International SoS)\; Lt Gen (Rtd) Martin Bricknell CB\; Major Ge
+ neral (Rtd) Timothy Hodgetts CB CBE.\nhttps://api.parliament.uk/committee
+ s/events/28434
 URL:https://api.parliament.uk/committees/events/28434
 END:VEVENT
 BEGIN:VEVENT
@@ -491,11 +507,13 @@ UID:house-committee-event-28491@house.peter-guillam123.github.io
 DTSTAMP:20261027T143000Z
 DTSTART:20261027T143000
 DTEND:20261027T160000
-SUMMARY:Oral evidence · Communications and Digital Committee
+SUMMARY:The Online Safety Act: implementation and impact · Communications
+  and Digital Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
- nWitnesses to be announced.\nhttps://api.parliament.uk/committees/events/
- 28491
+ nWitnesses: Rocio Concha (Which?)\; Dr Rys Farthing (Reset.Tech Australia
+ )\; Adam Hadley CBE (Tech Against Terrorism)\; Hannah Swirsky (Internet W
+ atch Foundation).\nhttps://api.parliament.uk/committees/events/28491
 URL:https://api.parliament.uk/committees/events/28491
 END:VEVENT
 BEGIN:VEVENT
@@ -583,8 +601,9 @@ DTSTART:20261028T110000
 DTEND:20261028T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28063
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Rachael Wardell OBE (Association of Directors of Children’s Services (
+ ADCS)).\nhttps://api.parliament.uk/committees/events/28063
 URL:https://api.parliament.uk/committees/events/28063
 END:VEVENT
 BEGIN:VEVENT
@@ -649,6 +668,17 @@ DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
 URL:https://api.parliament.uk/committees/events/28505
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28526@house.peter-guillam123.github.io
+DTSTAMP:20261103T104500Z
+DTSTART:20261103T104500
+DTEND:20261103T124500
+SUMMARY:Oral evidence · Built Environment Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28526
+URL:https://api.parliament.uk/committees/events/28526
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28310@house.peter-guillam123.github.io
 DTSTAMP:20261111T103000Z
 DTSTART:20261111T103000
@@ -666,7 +696,7 @@ UID:house-committee-event-28151@house.peter-guillam123.github.io
 DTSTAMP:20261111T110000Z
 DTSTART:20261111T110000
 DTEND:20261111T123000
-SUMMARY:Oral evidence · Public Services Committee
+SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28151

@@ -21,13 +21,16 @@ URL:https://api.parliament.uk/committees/events/28432
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28434@house.peter-guillam123.github.io
-DTSTAMP:20261027T103000Z
-DTSTART:20261027T103000
-DTEND:20261027T123000
+DTSTAMP:20261027T113000Z
+DTSTART:20261027T113000
+DTEND:20261027T113000
 SUMMARY:One-off Session on Defence Medical Services · Defence Committee
 LOCATION:TBC
-DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
- nounced.\nhttps://api.parliament.uk/committees/events/28434
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses: Dr Darr
+ en Mann (King's College London)\; Ed Button (International SoS)\; Dr Kati
+ e Geary (International SoS)\; Lt Gen (Rtd) Martin Bricknell CB\; Major Ge
+ neral (Rtd) Timothy Hodgetts CB CBE.\nhttps://api.parliament.uk/committee
+ s/events/28434
 URL:https://api.parliament.uk/committees/events/28434
 END:VEVENT
 BEGIN:VEVENT

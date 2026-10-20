@@ -25,4 +25,17 @@ DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
  ps://api.parliament.uk/committees/events/28297
 URL:https://api.parliament.uk/committees/events/28297
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28527@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T123000
+SUMMARY:The future of farming · Environment\, Food and Rural Affairs Comm
+ ittee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
+ ommittee.\nWitnesses: Stephen Morgan MP (Department for Environment\, Foo
+ d and Rural Affairs).\nhttps://api.parliament.uk/committees/events/28527
+URL:https://api.parliament.uk/committees/events/28527
+END:VEVENT
 END:VCALENDAR

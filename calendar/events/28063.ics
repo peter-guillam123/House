@@ -12,8 +12,9 @@ DTSTART:20261028T110000
 DTEND:20261028T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28063
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Rachael Wardell OBE (Association of Directors of Children’s Services (
+ ADCS)).\nhttps://api.parliament.uk/committees/events/28063
 URL:https://api.parliament.uk/committees/events/28063
 END:VEVENT
 END:VCALENDAR

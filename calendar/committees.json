@@ -1,7 +1,7 @@
 {
 "built": "2026-10-20",
 "windowDays": 56,
-"sessions": 55,
+"sessions": 57,
 "all": "committees.ics",
 "committees": [
 {
@@ -37,7 +37,7 @@
 "name": "Built Environment Committee",
 "house": "Lords",
 "file": "committees/518-built-environment-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 365,
@@ -233,7 +233,7 @@
 "name": "Environment, Food and Rural Affairs Committee",
 "house": "Commons",
 "file": "committees/52-environment-food-and-rural-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 62,
@@ -879,6 +879,8 @@
 28505,
 28510,
 28512,
-28516
+28516,
+28526,
+28527
 ]
 }

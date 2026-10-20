@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Oral evidence · Built Environment Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28526@house.peter-guillam123.github.io
+DTSTAMP:20261103T104500Z
+DTSTART:20261103T104500
+DTEND:20261103T124500
+SUMMARY:Oral evidence · Built Environment Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28526
+URL:https://api.parliament.uk/committees/events/28526
+END:VEVENT
+END:VCALENDAR
