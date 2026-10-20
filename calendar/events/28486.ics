@@ -13,11 +13,11 @@ DTSTART:20261029T100000
 DTEND:20261029T120000
 SUMMARY:HMRC’s anti-fraud intervention on child benefit · Public Accoun
  ts Committee
-LOCATION:Physical
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   John-Paul Marks CB (HMRC)\; Cerys McDonald (HMRC)\; Myrtle Lloyd (HMRC)\
- ; Rob Malcomson (Public Sector Fraud Authority).\nhttps://api.parliament.
- uk/committees/events/28486
+ ; Rob Malcomson (Public Sector Fraud Authority)\; Jonathan Athow (HMRC).\
+ nhttps://api.parliament.uk/committees/events/28486
 URL:https://api.parliament.uk/committees/events/28486
 END:VEVENT
 END:VCALENDAR

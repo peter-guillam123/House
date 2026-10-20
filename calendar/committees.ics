@@ -6,49 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Committee oral evidence
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28390@house.peter-guillam123.github.io
-DTSTAMP:20261019T133000Z
-DTSTART:20261019T133000
-DTEND:20261019T160000
-SUMMARY:Cuba · Foreign Affairs Committee
-LOCATION:The Wilson Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
-  Dr Christopher Sabatini (Chatham House)\; Dr Katrin Hansing (Baruch Coll
- ege\, City University of New York)\; Ruaridh Nicoll\; Lena Savelli (UN Wo
- rld Food Programme).\nhttps://api.parliament.uk/committees/events/28390
-URL:https://api.parliament.uk/committees/events/28390
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28422@house.peter-guillam123.github.io
-DTSTAMP:20261019T153000Z
-DTSTART:20261019T153000
-DTEND:20261019T173000
-SUMMARY:Digital ID · Public Accounts Committee
-LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
-  Susannah Storey (Department for Digital\, Culture\, Media and Sport)\; R
- od Latham (Department for Digital\, Culture\, Media and Sport)\; Natalie 
- Jones (Department for Digital\, Culture\, Media and Sport)\; Christine Be
- llamy (Department for Digital\, Culture\, Media and Sport)\; Philippa Rou
- se (Cabinet Office).\nhttps://api.parliament.uk/committees/events/28422
-URL:https://api.parliament.uk/committees/events/28422
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28213@house.peter-guillam123.github.io
-DTSTAMP:20261019T163000Z
-DTSTART:20261019T163000
-DTEND:20261019T180000
-SUMMARY:Space resilience · National Security Strategy (Joint Committee)
-LOCATION:Room 4A\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, National Security Strategy (Joint Comm
- ittee).\nWitnesses: Dr Julia Balm (Freeman Air and Space Institute (Schoo
- l of Security Studies\, King’s College London))\; Jessie Hamill-Stewart
-  (National Composites Centre)\; Will Marshall (Planet)\; Robert Atchison 
- (ClearSpace UK)\; Stephanie Ayres (UKspace)\; Elizabeth Seward (Supershar
- p).\nhttps://api.parliament.uk/committees/events/28213
-URL:https://api.parliament.uk/committees/events/28213
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28297@house.peter-guillam123.github.io
 DTSTAMP:20261020T093000Z
 DTSTART:20261020T093000
@@ -220,9 +177,8 @@ SUMMARY:Trade in a turbulent world: how should the UK deploy its trade ins
 LOCATION:Room 1\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Agreements Committee.\nW
  itnesses: Rosa Crawford (The Trades Union Congress)\; Tom Wills (Trade Ju
- stice Movement)\; Amrita Saha (Institute of Development Studies)\; Fionnu
- ala Horrocks-Burns (DHL)\; Maxwell Green (Make UK).\nhttps://api.parliame
- nt.uk/committees/events/28439
+ stice Movement)\; Amrita Saha (Institute of Development Studies)\; Maxwel
+ l Green (Make UK).\nhttps://api.parliament.uk/committees/events/28439
 URL:https://api.parliament.uk/committees/events/28439
 END:VEVENT
 BEGIN:VEVENT
@@ -481,6 +437,21 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28423
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28360@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T123000
+SUMMARY:Children and Young People's Mental Health · Education Committee\,
+  Health and Social Care Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Education Committee\, Health and Socia
+ l Care Committee.\nWitnesses: Arjan Bains (Compass UK)\; Michelle Hill (T
+ alk Listen Change)\; Jordan Letts (Northampton Saints Foundation)\; John 
+ Poyton OBE (The Well Centre Charity).\nhttps://api.parliament.uk/committe
+ es/events/28360
+URL:https://api.parliament.uk/committees/events/28360
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-27938@house.peter-guillam123.github.io
 DTSTAMP:20261027T103000Z
 DTSTART:20261027T103000
@@ -528,6 +499,19 @@ DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
 URL:https://api.parliament.uk/committees/events/28491
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28370@house.peter-guillam123.github.io
+DTSTAMP:20261028T091500Z
+DTSTART:20261028T091500
+DTEND:20261028T111500
+SUMMARY:Oral evidence · Energy Security and Net Zero Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
+ .\nWitnesses: Fintan Slye (National Energy System Operator (NESO))\; Dr P
+ aul Golby (National Energy System Operator (NESO)).\nhttps://api.parliame
+ nt.uk/committees/events/28370
+URL:https://api.parliament.uk/committees/events/28370
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28413@house.peter-guillam123.github.io
 DTSTAMP:20261028T093000Z
 DTSTART:20261028T093000
@@ -546,12 +530,12 @@ BEGIN:VEVENT
 UID:house-committee-event-28438@house.peter-guillam123.github.io
 DTSTAMP:20261028T100000Z
 DTSTART:20261028T100000
-DTEND:20261028T120000
+DTEND:20261028T110000
 SUMMARY:Oral evidence · Financial Services Regulation Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
- e.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/even
- ts/28438
+ e.\nWitnesses: Anna Wallace (Centre for Finance\, Innovation and Technolo
+ gy (CFIT)).\nhttps://api.parliament.uk/committees/events/28438
 URL:https://api.parliament.uk/committees/events/28438
 END:VEVENT
 BEGIN:VEVENT
@@ -578,6 +562,19 @@ DESCRIPTION:Oral evidence session\, International Relations and Defence Co
  mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
  s/events/28484
 URL:https://api.parliament.uk/committees/events/28484
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28516@house.peter-guillam123.github.io
+DTSTAMP:20261028T103000Z
+DTSTART:20261028T103000
+DTEND:20261028T123000
+SUMMARY:The UK’s constitutional safeguards · Constitution Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Pr
+ ofessor Anne Twomey (University of Sydney Law School)\; Professor Vanessa
+  MacDonnell (University of Ottawa)\; Danny Kruger MP (Reform UK).\nhttps:
+ //api.parliament.uk/committees/events/28516
+URL:https://api.parliament.uk/committees/events/28516
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28063@house.peter-guillam123.github.io
@@ -609,11 +606,11 @@ DTSTART:20261029T100000
 DTEND:20261029T120000
 SUMMARY:HMRC’s anti-fraud intervention on child benefit · Public Accoun
  ts Committee
-LOCATION:Physical
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   John-Paul Marks CB (HMRC)\; Cerys McDonald (HMRC)\; Myrtle Lloyd (HMRC)\
- ; Rob Malcomson (Public Sector Fraud Authority).\nhttps://api.parliament.
- uk/committees/events/28486
+ ; Rob Malcomson (Public Sector Fraud Authority)\; Jonathan Athow (HMRC).\
+ nhttps://api.parliament.uk/committees/events/28486
 URL:https://api.parliament.uk/committees/events/28486
 END:VEVENT
 BEGIN:VEVENT
@@ -622,7 +619,7 @@ DTSTAMP:20261029T113000Z
 DTSTART:20261029T113000
 DTEND:20261029T133000
 SUMMARY:To consider the Bill · Highways (Financing) Bill
-LOCATION:Room 12\, Palace of Westminster
+LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28464
 URL:https://api.parliament.uk/committees/events/28464
@@ -633,7 +630,7 @@ DTSTAMP:20261029T140000Z
 DTSTART:20261029T140000
 DTEND:20261029T170000
 SUMMARY:Further to consider the Bill · Highways (Financing) Bill
-LOCATION:Room 12\, Palace of Westminster
+LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28465
 URL:https://api.parliament.uk/committees/events/28465

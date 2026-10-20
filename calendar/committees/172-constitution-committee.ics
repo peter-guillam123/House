@@ -5,4 +5,17 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Constitution Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28516@house.peter-guillam123.github.io
+DTSTAMP:20261028T103000Z
+DTSTART:20261028T103000
+DTEND:20261028T123000
+SUMMARY:The UK’s constitutional safeguards · Constitution Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Pr
+ ofessor Anne Twomey (University of Sydney Law School)\; Professor Vanessa
+  MacDonnell (University of Ottawa)\; Danny Kruger MP (Reform UK).\nhttps:
+ //api.parliament.uk/committees/events/28516
+URL:https://api.parliament.uk/committees/events/28516
+END:VEVENT
 END:VCALENDAR

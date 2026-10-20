@@ -5,4 +5,19 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Health and Social Care Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28360@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T123000
+SUMMARY:Children and Young People's Mental Health · Education Committee\,
+  Health and Social Care Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Education Committee\, Health and Socia
+ l Care Committee.\nWitnesses: Arjan Bains (Compass UK)\; Michelle Hill (T
+ alk Listen Change)\; Jordan Letts (Northampton Saints Foundation)\; John 
+ Poyton OBE (The Well Centre Charity).\nhttps://api.parliament.uk/committe
+ es/events/28360
+URL:https://api.parliament.uk/committees/events/28360
+END:VEVENT
 END:VCALENDAR

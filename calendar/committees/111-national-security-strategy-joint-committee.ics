@@ -5,19 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · National Security Strategy (Joint Committee)
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28213@house.peter-guillam123.github.io
-DTSTAMP:20261019T163000Z
-DTSTART:20261019T163000
-DTEND:20261019T180000
-SUMMARY:Space resilience · National Security Strategy (Joint Committee)
-LOCATION:Room 4A\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, National Security Strategy (Joint Comm
- ittee).\nWitnesses: Dr Julia Balm (Freeman Air and Space Institute (Schoo
- l of Security Studies\, King’s College London))\; Jessie Hamill-Stewart
-  (National Composites Centre)\; Will Marshall (Planet)\; Robert Atchison 
- (ClearSpace UK)\; Stephanie Ayres (UKspace)\; Elizabeth Seward (Supershar
- p).\nhttps://api.parliament.uk/committees/events/28213
-URL:https://api.parliament.uk/committees/events/28213
-END:VEVENT
 END:VCALENDAR

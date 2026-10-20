@@ -1,5 +1,5 @@
 {
-"built": "2026-10-19",
+"built": "2026-10-20",
 "windowDays": 56,
 "sessions": 55,
 "all": "committees.ics",
@@ -89,13 +89,6 @@
 "upcoming": 0
 },
 {
-"id": 848,
-"name": "Civil Aviation (Consumer Protection and Regulatory Reform) Bill: Programming Sub Committee",
-"house": "Commons",
-"file": "committees/848-civil-aviation-consumer-protection-and-regulatory-reform-bil.ics",
-"upcoming": 0
-},
-{
 "id": 289,
 "name": "Committee of Privileges",
 "house": "Commons",
@@ -156,7 +149,7 @@
 "name": "Constitution Committee",
 "house": "Lords",
 "file": "committees/172-constitution-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 438,
@@ -219,14 +212,14 @@
 "name": "Education Committee",
 "house": "Commons",
 "file": "committees/203-education-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 664,
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 515,
@@ -303,7 +296,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 422,
@@ -331,7 +324,7 @@
 "name": "Health and Social Care Committee",
 "house": "Commons",
 "file": "committees/81-health-and-social-care-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 597,
@@ -534,7 +527,7 @@
 "name": "National Security Strategy (Joint Committee)",
 "house": "Joint",
 "file": "committees/111-national-security-strategy-joint-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 120,
@@ -618,7 +611,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 327,
@@ -726,10 +719,10 @@
 "upcoming": 0
 },
 {
-"id": 143,
-"name": "Speaker's Committee for the Independent Parliamentary Standards Authority",
+"id": 144,
+"name": "Speaker's Committee on the Electoral Commission",
 "house": "Commons",
-"file": "committees/143-speaker-s-committee-for-the-independent-parliamentary-standa.ics",
+"file": "committees/144-speaker-s-committee-on-the-electoral-commission.ics",
 "upcoming": 0
 },
 {
@@ -744,13 +737,6 @@
 "name": "Sporting Events Bill",
 "house": "Commons",
 "file": "committees/845-sporting-events-bill.ics",
-"upcoming": 0
-},
-{
-"id": 846,
-"name": "Sporting Events Bill: Programming Sub Committee",
-"house": "Commons",
-"file": "committees/846-sporting-events-bill-programming-sub-committee.ics",
 "upcoming": 0
 },
 {
@@ -851,7 +837,6 @@
 28153,
 28154,
 28162,
-28213,
 28252,
 28253,
 28259,
@@ -863,14 +848,15 @@
 28308,
 28310,
 28359,
+28360,
 28364,
 28367,
+28370,
 28371,
 28375,
 28376,
 28377,
 28378,
-28390,
 28399,
 28400,
 28404,
@@ -878,7 +864,6 @@
 28410,
 28411,
 28413,
-28422,
 28423,
 28432,
 28434,
@@ -893,6 +878,7 @@
 28503,
 28505,
 28510,
-28512
+28512,
+28516
 ]
 }
