@@ -3,9 +3,9 @@
     "url": "evidence-index.json",
     "label": "Last 90 days",
     "windowDays": 90,
-    "sessionCount": 141,
-    "buildDate": "2026-10-19",
-    "size": 11331301
+    "sessionCount": 145,
+    "buildDate": "2026-10-20",
+    "size": 11703609
   },
   "quarters": [
     {
