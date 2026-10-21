@@ -11,10 +11,12 @@ DTSTAMP:20261028T110000Z
 DTSTART:20261028T110000
 DTEND:20261028T123000
 SUMMARY:Children’s social care · Public Services Committee
-LOCATION:To be Confirmed
+LOCATION:Room 2A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
   Rachael Wardell OBE (Association of Directors of Children’s Services (
- ADCS)).\nhttps://api.parliament.uk/committees/events/28063
+ ADCS))\; Lucy Butler (Home and Future (South East Regional Care Cooperati
+ ve))\; Cllr Gerald Vernon-Jackson CBE (Local Government Association (LGA)
+ ).\nhttps://api.parliament.uk/committees/events/28063
 URL:https://api.parliament.uk/committees/events/28063
 END:VEVENT
 END:VCALENDAR

@@ -27,10 +27,11 @@ DTSTART:20261028T093000
 DTEND:20261028T113000
 SUMMARY:Connectivity in Scotland: Digital connectivity · Scottish Affairs
   Committee
-LOCATION:TBC
+LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
  : Garret Kavanagh (Openreach)\; Robert Thorburn (Openreach)\; Fiona Cayle
- y (GoFibre).\nhttps://api.parliament.uk/committees/events/28082
+ y (GoFibre)\; Ian Bolas (HebNet CIC).\nhttps://api.parliament.uk/committe
+ es/events/28082
 URL:https://api.parliament.uk/committees/events/28082
 END:VEVENT
 END:VCALENDAR

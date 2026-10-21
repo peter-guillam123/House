@@ -160,8 +160,8 @@ SUMMARY:Equality at work: flexible working and disability · Women and Equ
 LOCATION:Room 6\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
  sses: Angela Matthews (Business Disability Forum)\; Daisy Goodall (Trades
-  Union Congress (TUC))\; Kerry Hickman (Entegra UK and Ireland).\nhttps:/
- /api.parliament.uk/committees/events/28162
+  Union Congress (TUC)).\nhttps://api.parliament.uk/committees/events/2816
+ 2
 URL:https://api.parliament.uk/committees/events/28162
 END:VEVENT
 BEGIN:VEVENT
@@ -200,7 +200,7 @@ DTSTART:20261026T133000
 DTEND:20261026T153000
 SUMMARY:UK Envoy for Complex Consular Detentions · Foreign Affairs Commit
  tee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
   The Rt Hon Alistair Burt (Foreign Commonwealth and Development Office).\
  nhttps://api.parliament.uk/committees/events/28507
@@ -208,15 +208,18 @@ URL:https://api.parliament.uk/committees/events/28507
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28525@house.peter-guillam123.github.io
-DTSTAMP:20261026T164500Z
-DTSTART:20261026T164500
+DTSTAMP:20261026T144500Z
+DTSTART:20261026T144500
 DTEND:20261026T173000
 SUMMARY:Prospects for UNFCCC COP31 · Environmental Audit Committee
-LOCATION:TBC
+LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
- ses: Rachel Kyte CMG (Foreign\, Commonwealth & Development Office\, Depar
- tment for Energy Security and Net Zero).\nhttps://api.parliament.uk/commi
- ttees/events/28525
+ ses: Osman Koray Ertas (Turkish Embassy)\; Jay Weatherill (Australian Hig
+ h Commission)\; Tania Kumar (Confederation of British Industry (CBI))\; K
+ im O'Dowd (Environmental Investigation Agency)\; Pelin Zorlu (Chatham Hou
+ se)\; Rachel Kyte CMG (Foreign\, Commonwealth & Development Office\, Depa
+ rtment for Energy Security and Net Zero).\nhttps://api.parliament.uk/comm
+ ittees/events/28525
 URL:https://api.parliament.uk/committees/events/28525
 END:VEVENT
 BEGIN:VEVENT
@@ -225,7 +228,7 @@ DTSTAMP:20261027T100000Z
 DTSTART:20261027T100000
 DTEND:20261027T120000
 SUMMARY:Tourism · Digital\, Culture\, Media and Sport Committee
-LOCATION:TBC
+LOCATION:Room 16\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
  mmittee.\nWitnesses: Anthony Breach (Centre for Cities)\; Bernard Donoghu
  e OBE (Association of Leading Visitor Attractions)\; Alistair Handyside M
@@ -242,7 +245,7 @@ DTSTART:20261027T100000
 DTEND:20261027T120000
 SUMMARY:Mission Government · Public Administration and Constitutional Aff
  airs Committee
-LOCATION:TBC
+LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Public Administration and Constitution
  al Affairs Committee.\nWitnesses: Hannah Keenan (Institute for Government
  ).\nhttps://api.parliament.uk/committees/events/28256
@@ -255,7 +258,7 @@ DTSTART:20261027T100000
 DTEND:20261027T123000
 SUMMARY:Children and Young People's Mental Health · Education Committee\,
   Health and Social Care Committee
-LOCATION:TBC
+LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Education Committee\, Health and Socia
  l Care Committee.\nWitnesses: Arjan Bains (Compass UK)\; Michelle Hill (T
  alk Listen Change)\; Jordan Letts (Northampton Saints Foundation)\; John 
@@ -270,10 +273,12 @@ DTSTART:20261027T100000
 DTEND:20261027T123000
 SUMMARY:The future of farming · Environment\, Food and Rural Affairs Comm
  ittee
-LOCATION:TBC
+LOCATION:Room 6\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
  ommittee.\nWitnesses: Stephen Morgan MP (Department for Environment\, Foo
- d and Rural Affairs).\nhttps://api.parliament.uk/committees/events/28527
+ d and Rural Affairs)\; Mike Rowe (Department for Environment Food and Rur
+ al Affairs)\; Gareth Baynham-Hughes (Department for Environment Food and 
+ Rural Affairs).\nhttps://api.parliament.uk/committees/events/28527
 URL:https://api.parliament.uk/committees/events/28527
 END:VEVENT
 BEGIN:VEVENT
@@ -282,7 +287,7 @@ DTSTAMP:20261027T101500Z
 DTSTART:20261027T101500
 DTEND:20261027T123000
 SUMMARY:Climate diplomacy · Foreign Affairs Committee
-LOCATION:TBC
+LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
   Dr Beatrice Mosello (Chatham House)\; Dr Timothy Clack (University of Ox
  ford)\; Laurie Laybourn (Strategic Climate Risks Initiative)\; Janani Viv
@@ -308,7 +313,7 @@ DTSTAMP:20261027T113000Z
 DTSTART:20261027T113000
 DTEND:20261027T113000
 SUMMARY:One-off Session on Defence Medical Services · Defence Committee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses: Dr Darr
  en Mann (King's College London)\; Ed Button (International SoS)\; Dr Kati
  e Geary (International SoS)\; Lt Gen (Rtd) Martin Bricknell CB\; Major Ge
@@ -322,7 +327,7 @@ DTSTAMP:20261027T140000Z
 DTSTART:20261027T140000
 DTEND:20261027T163000
 SUMMARY:Global Health · International Development Committee
-LOCATION:TBC
+LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, International Development Committee.\n
  Witnesses: Jerop Limo (Ambassador for Youth and Adolescent Reproductive H
  ealth Program (AYARHEP)\, Kenya)\; Dr Natasha Kaoma (Copper Rose\, Zambia
@@ -340,10 +345,16 @@ DTSTART:20261027T143000
 DTEND:20261027T163000
 SUMMARY:Entrepreneurship and business · Business\, Innovation\, Science a
  nd Trade Committee
-LOCATION:TBC
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
- ade Committee.\nWitnesses to be announced.\nhttps://api.parliament.uk/com
- mittees/events/28441
+ ade Committee.\nWitnesses: Philip Salter (The Entrepreneurs Network)\; Pr
+ ofessor Mark Hart (Global Entrepreneurship Monitor UK)\; Professor Monder
+  Ram (Centre for Research in Ethnic Minority Entrepreneurship\, Aston Uni
+ versity)\; Jordan Dargue (Lifted Ventures)\; Matt Adey (British Business 
+ Bank)\; Rt Hon Michael Moore (UK Private Capital)\; Chris Lewis (Venture 
+ Capital Trust Association)\; Edward Woodall (Association of Convenience S
+ tores)\; Joe Harrison (National Market Traders Federation)\; Lee Wilcox (
+ On The Tools).\nhttps://api.parliament.uk/committees/events/28441
 URL:https://api.parliament.uk/committees/events/28441
 END:VEVENT
 BEGIN:VEVENT
@@ -366,7 +377,7 @@ DTSTAMP:20261027T161500Z
 DTSTART:20261027T161500
 DTEND:20261027T161500
 SUMMARY:Proposals for backbench debates · Backbench Business Committee
-LOCATION:TBC
+LOCATION:Room 16\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Backbench Business Committee.\nWitness
  es: Members of Parliament (House of Commons).\nhttps://api.parliament.uk/
  committees/events/28511
@@ -378,11 +389,10 @@ DTSTAMP:20261028T091500Z
 DTSTART:20261028T091500
 DTEND:20261028T111500
 SUMMARY:Work of NESO · Energy Security and Net Zero Committee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
- .\nWitnesses: Fintan Slye (National Energy System Operator (NESO))\; Dr P
- aul Golby (National Energy System Operator (NESO)).\nhttps://api.parliame
- nt.uk/committees/events/28370
+ .\nWitnesses: Fintan Slye (National Energy System Operator (NESO))\; Kayt
+ e O’Neill (NESO).\nhttps://api.parliament.uk/committees/events/28370
 URL:https://api.parliament.uk/committees/events/28370
 END:VEVENT
 BEGIN:VEVENT
@@ -392,10 +402,11 @@ DTSTART:20261028T093000
 DTEND:20261028T113000
 SUMMARY:Connectivity in Scotland: Digital connectivity · Scottish Affairs
   Committee
-LOCATION:TBC
+LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
  : Garret Kavanagh (Openreach)\; Robert Thorburn (Openreach)\; Fiona Cayle
- y (GoFibre).\nhttps://api.parliament.uk/committees/events/28082
+ y (GoFibre)\; Ian Bolas (HebNet CIC).\nhttps://api.parliament.uk/committe
+ es/events/28082
 URL:https://api.parliament.uk/committees/events/28082
 END:VEVENT
 BEGIN:VEVENT
@@ -404,7 +415,7 @@ DTSTAMP:20261028T093000Z
 DTSTART:20261028T093000
 DTEND:20261028T113000
 SUMMARY:Child Maintenance Service · Work and Pensions Committee
-LOCATION:TBC
+LOCATION:Room 6\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
  s: Paula Sussex CBE\; Baroness Sherlock OBE (Department for Work and Pens
  ions)\; Simon Hunter (Child Maintenance Service)\; Duncan Gilchrist (Chil
@@ -419,7 +430,7 @@ DTSTART:20261028T093000
 DTEND:20261028T120000
 SUMMARY:Pensions Credit uptake  in Northern Ireland · Northern Ireland Af
  fairs Committee
-LOCATION:TBC
+LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Northern Ireland Affairs Committee.\nW
  itnesses: Siobhan Casey (Older People for Northern Ireland)\; Kevin Higgi
  ns (Advice NI).\nhttps://api.parliament.uk/committees/events/28515
@@ -460,10 +471,10 @@ DTSTART:20261028T100000
 DTEND:20261028T113000
 SUMMARY:Dunkelflaute and the risks of electricity intermittency · Environ
  ment and Climate Change Committee
-LOCATION:Room 4A\, Palace of Westminster
+LOCATION:Room 4\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
- ee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/eve
- nts/28503
+ ee.\nWitnesses: Julian Leslie (NESO)\; Peter Bingham (Ofgem).\nhttps://ap
+ i.parliament.uk/committees/events/28503
 URL:https://api.parliament.uk/committees/events/28503
 END:VEVENT
 BEGIN:VEVENT
@@ -472,7 +483,7 @@ DTSTAMP:20261028T103000Z
 DTSTART:20261028T103000
 DTEND:20261028T123000
 SUMMARY:Multilateralism · International Relations and Defence Committee
-LOCATION:Room 4\, Palace of Westminster
+LOCATION:Room 4A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
  mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
  s/events/28484
@@ -497,10 +508,12 @@ DTSTAMP:20261028T110000Z
 DTSTART:20261028T110000
 DTEND:20261028T123000
 SUMMARY:Children’s social care · Public Services Committee
-LOCATION:To be Confirmed
+LOCATION:Room 2A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
   Rachael Wardell OBE (Association of Directors of Children’s Services (
- ADCS)).\nhttps://api.parliament.uk/committees/events/28063
+ ADCS))\; Lucy Butler (Home and Future (South East Regional Care Cooperati
+ ve))\; Cllr Gerald Vernon-Jackson CBE (Local Government Association (LGA)
+ ).\nhttps://api.parliament.uk/committees/events/28063
 URL:https://api.parliament.uk/committees/events/28063
 END:VEVENT
 BEGIN:VEVENT
@@ -510,7 +523,7 @@ DTSTART:20261028T141500
 DTEND:20261028T161500
 SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
  ights (Joint Committee)
-LOCATION:TBC
+LOCATION:Room 5\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
  sses: Liz Webster (Save British Farming)\; Rahil Gupta (Southall Black Si
  sters)\; Peter Leary (Palestine Solidarity Campaign).\nhttps://api.parlia
@@ -535,7 +548,7 @@ DTSTART:20261029T100000
 DTEND:20261029T120000
 SUMMARY:HMRC’s anti-fraud intervention on child benefit · Public Accoun
  ts Committee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   John-Paul Marks CB (HMRC)\; Cerys McDonald (HMRC)\; Myrtle Lloyd (HMRC)\
  ; Rob Malcomson (Public Sector Fraud Authority)\; Jonathan Athow (HMRC).\

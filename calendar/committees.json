@@ -656,6 +656,13 @@
 "upcoming": 2
 },
 {
+"id": 411,
+"name": "Second Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/411-second-delegated-legislation-committee.ics",
+"upcoming": 0
+},
+{
 "id": 255,
 "name": "Secondary Legislation Scrutiny Committee",
 "house": "Lords",
@@ -674,13 +681,6 @@
 "name": "Services Committee",
 "house": "Lords",
 "file": "committees/363-services-committee.ics",
-"upcoming": 0
-},
-{
-"id": 424,
-"name": "Sixth Delegated Legislation Committee",
-"house": "Commons",
-"file": "committees/424-sixth-delegated-legislation-committee.ics",
 "upcoming": 0
 },
 {
