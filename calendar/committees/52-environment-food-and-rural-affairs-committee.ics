@@ -6,26 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Environment\, Food and Rural Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28297@house.peter-guillam123.github.io
-DTSTAMP:20261020T093000Z
-DTSTART:20261020T093000
-DTEND:20261020T121500
-SUMMARY:Reforming the water sector · Environment\, Food and Rural Affairs
-  Committee
-LOCATION:The Wilson Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
- ommittee.\nWitnesses: Dr David Lloyd Owen (Envisager)\; John Abraham (Veo
- lia)\; Hugh Goldsmith\, College of Europe & former head\, Water Division\
- , European Investment Bank\; Dr Marine Colon\, researcher at AgroParisTec
- h and the UMR G-EAU research unit in France\; Klaas Schwartz\, Professor 
- Water Services Governance at IHE Delft\, Netherlands\; David Henderson (W
- ater UK)\; David Hall\, Visiting Professor\, University of Greenwich\, Pu
- blic Services International Research Unit\; Professor Ewan McGaughey (Kin
- gs College London)\; Professor David Saal (Loughborough University).\nhtt
- ps://api.parliament.uk/committees/events/28297
-URL:https://api.parliament.uk/committees/events/28297
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28527@house.peter-guillam123.github.io
 DTSTAMP:20261027T100000Z
 DTSTART:20261027T100000

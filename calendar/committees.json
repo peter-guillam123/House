@@ -1,7 +1,7 @@
 {
-"built": "2026-10-20",
+"built": "2026-10-21",
 "windowDays": 56,
-"sessions": 57,
+"sessions": 40,
 "all": "committees.ics",
 "committees": [
 {
@@ -9,7 +9,7 @@
 "name": "Administration Committee",
 "house": "Commons",
 "file": "committees/2-administration-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 169,
@@ -23,7 +23,7 @@
 "name": "Backbench Business Committee",
 "house": "Commons",
 "file": "committees/202-backbench-business-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 682,
@@ -44,7 +44,7 @@
 "name": "Business, Innovation, Science and Trade Committee",
 "house": "Commons",
 "file": "committees/365-business-innovation-science-and-trade-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 783,
@@ -79,13 +79,6 @@
 "name": "City of London (Markets) Bill",
 "house": "Commons",
 "file": "committees/760-city-of-london-markets-bill.ics",
-"upcoming": 0
-},
-{
-"id": 847,
-"name": "Civil Aviation (Consumer Protection and Regulatory Reform) Bill",
-"house": "Commons",
-"file": "committees/847-civil-aviation-consumer-protection-and-regulatory-reform-bil.ics",
 "upcoming": 0
 },
 {
@@ -128,7 +121,7 @@
 "name": "Communications and Digital Committee",
 "house": "Lords",
 "file": "committees/170-communications-and-digital-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 402,
@@ -163,7 +156,7 @@
 "name": "Defence Committee",
 "house": "Commons",
 "file": "committees/24-defence-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 343,
@@ -184,7 +177,7 @@
 "name": "Digital, Culture, Media and Sport Committee",
 "house": "Commons",
 "file": "committees/378-digital-culture-media-and-sport-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 831,
@@ -205,14 +198,14 @@
 "name": "Economic Affairs Committee",
 "house": "Lords",
 "file": "committees/175-economic-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 203,
 "name": "Education Committee",
 "house": "Commons",
 "file": "committees/203-education-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 664,
@@ -233,7 +226,7 @@
 "name": "Environment, Food and Rural Affairs Committee",
 "house": "Commons",
 "file": "committees/52-environment-food-and-rural-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 62,
@@ -296,7 +289,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 422,
@@ -387,7 +380,7 @@
 "name": "Housing, Communities and Local Government Committee",
 "house": "Commons",
 "file": "committees/17-housing-communities-and-local-government-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 93,
@@ -422,14 +415,14 @@
 "name": "International Agreements Committee",
 "house": "Lords",
 "file": "committees/448-international-agreements-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 98,
 "name": "International Development Committee",
 "house": "Commons",
 "file": "committees/98-international-development-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 347,
@@ -457,7 +450,7 @@
 "name": "Justice Committee",
 "house": "Commons",
 "file": "committees/102-justice-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 103,
@@ -600,13 +593,6 @@
 "upcoming": 0
 },
 {
-"id": 207,
-"name": "Public Accounts Commission",
-"house": "Commons",
-"file": "committees/207-public-accounts-commission.ics",
-"upcoming": 1
-},
-{
 "id": 127,
 "name": "Public Accounts Committee",
 "house": "Commons",
@@ -618,7 +604,7 @@
 "name": "Public Administration and Constitutional Affairs Committee",
 "house": "Commons",
 "file": "committees/327-public-administration-and-constitutional-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 430,
@@ -726,13 +712,6 @@
 "upcoming": 0
 },
 {
-"id": 845,
-"name": "Sporting Events Bill",
-"house": "Commons",
-"file": "committees/845-sporting-events-bill.ics",
-"upcoming": 0
-},
-{
 "id": 198,
 "name": "Standing Orders (Private Bills) Committee (Lords)",
 "house": "Lords",
@@ -786,7 +765,7 @@
 "name": "Treasury Committee",
 "house": "Commons",
 "file": "committees/158-treasury-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 600,
@@ -820,49 +799,32 @@
 "events": [
 27652,
 27938,
-27996,
 28062,
 28063,
 28081,
-28134,
 28151,
 28152,
 28153,
 28154,
 28162,
-28252,
 28253,
 28259,
-28286,
-28295,
-28297,
 28301,
 28302,
 28308,
 28310,
-28359,
 28360,
-28364,
 28367,
 28370,
-28371,
-28375,
 28376,
 28377,
-28378,
 28399,
-28400,
-28404,
-28407,
-28410,
 28411,
 28413,
 28423,
-28432,
 28434,
 28436,
 28438,
-28439,
 28464,
 28465,
 28484,

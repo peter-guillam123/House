@@ -5,18 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Administration Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28286@house.peter-guillam123.github.io
-DTSTAMP:20261020T101000Z
-DTSTART:20261020T101000
-DTEND:20261020T110000
-SUMMARY:General Election Planning · Administration Committee
-LOCATION:Room 6\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Administration Committee.\nWitnesses: 
- Karen Walker (Independent Parliamentary Standards Authority (IPSA))\; Kar
- en Lacey (Independent Parliamentary Standards Authority (IPSA))\; Kim McG
- rath (House of Commons Administration).\nhttps://api.parliament.uk/commit
- tees/events/28286
-URL:https://api.parliament.uk/committees/events/28286
-END:VEVENT
 END:VCALENDAR

@@ -5,19 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Housing\, Communities and Local Government Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28400@house.peter-guillam123.github.io
-DTSTAMP:20261020T100000Z
-DTSTART:20261020T100000
-DTEND:20261020T113000
-SUMMARY:Modernising Elections · Housing\, Communities and Local Governmen
- t Committee
-LOCATION:The Macmillan Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Housing\, Communities and Local Govern
- ment Committee.\nWitnesses: Florence Eshalomi MP (Ministry of Housing\, C
- ommunities and Local Government)\; Stuart Ison (Ministry of Housing\, Com
- munities and Local Government).\nhttps://api.parliament.uk/committees/eve
- nts/28400
-URL:https://api.parliament.uk/committees/events/28400
-END:VEVENT
 END:VCALENDAR

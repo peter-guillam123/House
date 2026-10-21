@@ -5,17 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Justice Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28134@house.peter-guillam123.github.io
-DTSTAMP:20261020T143000Z
-DTSTART:20261020T143000
-DTEND:20261020T170000
-SUMMARY:Work of His Majesty's Chief Inspector of Prisons · Justice Commit
- tee
-LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Charlie
-  Taylor (HM Inspectorate of Prisons).\nhttps://api.parliament.uk/committe
- es/events/28134
-URL:https://api.parliament.uk/committees/events/28134
-END:VEVENT
 END:VCALENDAR

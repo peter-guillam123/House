@@ -6,17 +6,4 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Public Administration and Constitutional Affairs Com
  mittee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28378@house.peter-guillam123.github.io
-DTSTAMP:20261020T100000Z
-DTSTART:20261020T100000
-DTEND:20261020T120000
-SUMMARY:Mission Government · Public Administration and Constitutional Aff
- airs Committee
-LOCATION:Room 15\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Public Administration and Constitution
- al Affairs Committee.\nWitnesses: Rt Hon Darren Jones MP.\nhttps://api.pa
- rliament.uk/committees/events/28378
-URL:https://api.parliament.uk/committees/events/28378
-END:VEVENT
 END:VCALENDAR
