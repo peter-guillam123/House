@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28493@house.peter-guillam123.github.io
+DTSTAMP:20261029T094500Z
+DTSTART:20261029T094500
+DTEND:20261029T114500
+SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
+LOCATION:Room 1\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28493
+URL:https://api.parliament.uk/committees/events/28493
+END:VEVENT
+END:VCALENDAR

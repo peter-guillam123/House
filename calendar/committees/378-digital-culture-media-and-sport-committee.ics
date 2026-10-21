@@ -5,4 +5,20 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Digital\, Culture\, Media and Sport Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28146@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T120000
+SUMMARY:Tourism · Digital\, Culture\, Media and Sport Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
+ mmittee.\nWitnesses: Anthony Breach (Centre for Cities)\; Bernard Donoghu
+ e OBE (Association of Leading Visitor Attractions)\; Alistair Handyside M
+ BE (Professional Association of Self-Caterers UK)\; Laura Citron OBE (Lon
+ don & Partners)\; Joss Croft OBE (Tourism Alliance)\; Merryn Kidd (Somers
+ et and Exmoor Local Visitor Economy Partnership).\nhttps://api.parliament
+ .uk/committees/events/28146
+URL:https://api.parliament.uk/committees/events/28146
+END:VEVENT
 END:VCALENDAR

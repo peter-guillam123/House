@@ -194,6 +194,61 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28423
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28507@house.peter-guillam123.github.io
+DTSTAMP:20261026T133000Z
+DTSTART:20261026T133000
+DTEND:20261026T153000
+SUMMARY:UK Envoy for Complex Consular Detentions · Foreign Affairs Commit
+ tee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
+  The Rt Hon Alistair Burt (Foreign Commonwealth and Development Office).\
+ nhttps://api.parliament.uk/committees/events/28507
+URL:https://api.parliament.uk/committees/events/28507
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28525@house.peter-guillam123.github.io
+DTSTAMP:20261026T164500Z
+DTSTART:20261026T164500
+DTEND:20261026T173000
+SUMMARY:Prospects for UNFCCC COP31 · Environmental Audit Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
+ ses: Rachel Kyte CMG (Foreign\, Commonwealth & Development Office\, Depar
+ tment for Energy Security and Net Zero).\nhttps://api.parliament.uk/commi
+ ttees/events/28525
+URL:https://api.parliament.uk/committees/events/28525
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28146@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T120000
+SUMMARY:Tourism · Digital\, Culture\, Media and Sport Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
+ mmittee.\nWitnesses: Anthony Breach (Centre for Cities)\; Bernard Donoghu
+ e OBE (Association of Leading Visitor Attractions)\; Alistair Handyside M
+ BE (Professional Association of Self-Caterers UK)\; Laura Citron OBE (Lon
+ don & Partners)\; Joss Croft OBE (Tourism Alliance)\; Merryn Kidd (Somers
+ et and Exmoor Local Visitor Economy Partnership).\nhttps://api.parliament
+ .uk/committees/events/28146
+URL:https://api.parliament.uk/committees/events/28146
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28256@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T120000
+SUMMARY:Mission Government · Public Administration and Constitutional Aff
+ airs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Public Administration and Constitution
+ al Affairs Committee.\nWitnesses: Hannah Keenan (Institute for Government
+ ).\nhttps://api.parliament.uk/committees/events/28256
+URL:https://api.parliament.uk/committees/events/28256
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28360@house.peter-guillam123.github.io
 DTSTAMP:20261027T100000Z
 DTSTART:20261027T100000
@@ -222,12 +277,26 @@ DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
 URL:https://api.parliament.uk/committees/events/28527
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28508@house.peter-guillam123.github.io
+DTSTAMP:20261027T101500Z
+DTSTART:20261027T101500
+DTEND:20261027T123000
+SUMMARY:Climate diplomacy · Foreign Affairs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
+  Dr Beatrice Mosello (Chatham House)\; Dr Timothy Clack (University of Ox
+ ford)\; Laurie Laybourn (Strategic Climate Risks Initiative)\; Janani Viv
+ ekananda (Adelphi Global).\nhttps://api.parliament.uk/committees/events/2
+ 8508
+URL:https://api.parliament.uk/committees/events/28508
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-27938@house.peter-guillam123.github.io
 DTSTAMP:20261027T103000Z
 DTSTART:20261027T103000
 DTEND:20261027T120000
 SUMMARY:Support for Jurors · Justice and Home Affairs Committee
-LOCATION:To be confirmed
+LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
  itnesses: Sarah Sackman KC MP (Ministry of Justice).\nhttps://api.parliam
  ent.uk/committees/events/27938
@@ -255,9 +324,27 @@ DTEND:20261027T163000
 SUMMARY:Global Health · International Development Committee
 LOCATION:TBC
 DESCRIPTION:Oral evidence session\, International Development Committee.\n
- Witnesses to be announced.\nhttps://api.parliament.uk/committees/events/2
- 8510
+ Witnesses: Jerop Limo (Ambassador for Youth and Adolescent Reproductive H
+ ealth Program (AYARHEP)\, Kenya)\; Dr Natasha Kaoma (Copper Rose\, Zambia
+ )\; Itai Rusike (Community Working Group on Health\, Zimbabwe)\; Monica F
+ erro (UNFPA London representative office)\; Dr Kirrily de Polnay (Médeci
+ ns Sans Frontières)\; `Dr Jeanne Salje (University of Cambridge)\; Dr Ke
+ nnedy Uadiale (Liverpool School of Tropical Medicine\, Malawi).\nhttps://
+ api.parliament.uk/committees/events/28510
 URL:https://api.parliament.uk/committees/events/28510
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28441@house.peter-guillam123.github.io
+DTSTAMP:20261027T143000Z
+DTSTART:20261027T143000
+DTEND:20261027T163000
+SUMMARY:Entrepreneurship and business · Business\, Innovation\, Science a
+ nd Trade Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
+ ade Committee.\nWitnesses to be announced.\nhttps://api.parliament.uk/com
+ mittees/events/28441
+URL:https://api.parliament.uk/committees/events/28441
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28491@house.peter-guillam123.github.io
@@ -266,7 +353,7 @@ DTSTART:20261027T143000
 DTEND:20261027T160000
 SUMMARY:The Online Safety Act: implementation and impact · Communications
   and Digital Committee
-LOCATION:To be confirmed
+LOCATION:Room 1\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
  nWitnesses: Rocio Concha (Which?)\; Dr Rys Farthing (Reset.Tech Australia
  )\; Adam Hadley CBE (Tech Against Terrorism)\; Hannah Swirsky (Internet W
@@ -274,17 +361,69 @@ DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
 URL:https://api.parliament.uk/committees/events/28491
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28511@house.peter-guillam123.github.io
+DTSTAMP:20261027T161500Z
+DTSTART:20261027T161500
+DTEND:20261027T161500
+SUMMARY:Proposals for backbench debates · Backbench Business Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Backbench Business Committee.\nWitness
+ es: Members of Parliament (House of Commons).\nhttps://api.parliament.uk/
+ committees/events/28511
+URL:https://api.parliament.uk/committees/events/28511
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28370@house.peter-guillam123.github.io
 DTSTAMP:20261028T091500Z
 DTSTART:20261028T091500
 DTEND:20261028T111500
-SUMMARY:Oral evidence · Energy Security and Net Zero Committee
+SUMMARY:Work of NESO · Energy Security and Net Zero Committee
 LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
  .\nWitnesses: Fintan Slye (National Energy System Operator (NESO))\; Dr P
  aul Golby (National Energy System Operator (NESO)).\nhttps://api.parliame
  nt.uk/committees/events/28370
 URL:https://api.parliament.uk/committees/events/28370
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28082@house.peter-guillam123.github.io
+DTSTAMP:20261028T093000Z
+DTSTART:20261028T093000
+DTEND:20261028T113000
+SUMMARY:Connectivity in Scotland: Digital connectivity · Scottish Affairs
+  Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
+ : Garret Kavanagh (Openreach)\; Robert Thorburn (Openreach)\; Fiona Cayle
+ y (GoFibre).\nhttps://api.parliament.uk/committees/events/28082
+URL:https://api.parliament.uk/committees/events/28082
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28433@house.peter-guillam123.github.io
+DTSTAMP:20261028T093000Z
+DTSTART:20261028T093000
+DTEND:20261028T113000
+SUMMARY:Child Maintenance Service · Work and Pensions Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
+ s: Paula Sussex CBE\; Baroness Sherlock OBE (Department for Work and Pens
+ ions)\; Simon Hunter (Child Maintenance Service)\; Duncan Gilchrist (Chil
+ d Maintenance Service)\; Lucy Appleton (Child Maintenance Service).\nhttp
+ s://api.parliament.uk/committees/events/28433
+URL:https://api.parliament.uk/committees/events/28433
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28515@house.peter-guillam123.github.io
+DTSTAMP:20261028T093000Z
+DTSTART:20261028T093000
+DTEND:20261028T120000
+SUMMARY:Pensions Credit uptake  in Northern Ireland · Northern Ireland Af
+ fairs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Northern Ireland Affairs Committee.\nW
+ itnesses: Siobhan Casey (Older People for Northern Ireland)\; Kevin Higgi
+ ns (Advice NI).\nhttps://api.parliament.uk/committees/events/28515
+URL:https://api.parliament.uk/committees/events/28515
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28413@house.peter-guillam123.github.io
@@ -306,8 +445,9 @@ UID:house-committee-event-28438@house.peter-guillam123.github.io
 DTSTAMP:20261028T100000Z
 DTSTART:20261028T100000
 DTEND:20261028T110000
-SUMMARY:Oral evidence · Financial Services Regulation Committee
-LOCATION:To be confirmed
+SUMMARY:Regulatory sandboxes in financial services · Financial Services R
+ egulation Committee
+LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
  e.\nWitnesses: Anna Wallace (Centre for Finance\, Innovation and Technolo
  gy (CFIT)).\nhttps://api.parliament.uk/committees/events/28438
@@ -320,7 +460,7 @@ DTSTART:20261028T100000
 DTEND:20261028T113000
 SUMMARY:Dunkelflaute and the risks of electricity intermittency · Environ
  ment and Climate Change Committee
-LOCATION:To be confirmed
+LOCATION:Room 4A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
  ee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/eve
  nts/28503
@@ -332,7 +472,7 @@ DTSTAMP:20261028T103000Z
 DTSTART:20261028T103000
 DTEND:20261028T123000
 SUMMARY:Multilateralism · International Relations and Defence Committee
-LOCATION:To be confirmed
+LOCATION:Room 4\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
  mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
  s/events/28484
@@ -344,7 +484,7 @@ DTSTAMP:20261028T103000Z
 DTSTART:20261028T103000
 DTEND:20261028T123000
 SUMMARY:The UK’s constitutional safeguards · Constitution Committee
-LOCATION:To be confirmed
+LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Pr
  ofessor Anne Twomey (University of Sydney Law School)\; Professor Vanessa
   MacDonnell (University of Ottawa)\; Danny Kruger MP (Reform UK).\nhttps:
@@ -372,8 +512,21 @@ SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
  ights (Joint Committee)
 LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
- sses to be announced.\nhttps://api.parliament.uk/committees/events/28512
+ sses: Liz Webster (Save British Farming)\; Rahil Gupta (Southall Black Si
+ sters)\; Peter Leary (Palestine Solidarity Campaign).\nhttps://api.parlia
+ ment.uk/committees/events/28512
 URL:https://api.parliament.uk/committees/events/28512
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28493@house.peter-guillam123.github.io
+DTSTAMP:20261029T094500Z
+DTSTART:20261029T094500
+DTEND:20261029T114500
+SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
+LOCATION:Room 1\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28493
+URL:https://api.parliament.uk/committees/events/28493
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28486@house.peter-guillam123.github.io
@@ -399,6 +552,19 @@ LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28464
 URL:https://api.parliament.uk/committees/events/28464
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28523@house.peter-guillam123.github.io
+DTSTAMP:20261029T122000Z
+DTSTART:20261029T122000
+DTEND:20261029T142000
+SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
+  (Joint Committee)
+LOCATION:Room 2\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
+  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
+ ttees/events/28523
+URL:https://api.parliament.uk/committees/events/28523
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28465@house.peter-guillam123.github.io

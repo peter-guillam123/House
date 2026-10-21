@@ -1,7 +1,7 @@
 {
 "built": "2026-10-21",
 "windowDays": 56,
-"sessions": 40,
+"sessions": 52,
 "all": "committees.ics",
 "committees": [
 {
@@ -23,7 +23,7 @@
 "name": "Backbench Business Committee",
 "house": "Commons",
 "file": "committees/202-backbench-business-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 682,
@@ -44,7 +44,7 @@
 "name": "Business, Innovation, Science and Trade Committee",
 "house": "Commons",
 "file": "committees/365-business-innovation-science-and-trade-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 783,
@@ -177,7 +177,7 @@
 "name": "Digital, Culture, Media and Sport Committee",
 "house": "Commons",
 "file": "committees/378-digital-culture-media-and-sport-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 831,
@@ -191,7 +191,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 175,
@@ -233,7 +233,7 @@
 "name": "Environmental Audit Committee",
 "house": "Commons",
 "file": "committees/62-environmental-audit-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 516,
@@ -254,7 +254,7 @@
 "name": "Finance Bill Sub-Committee",
 "house": "Lords",
 "file": "committees/230-finance-bill-sub-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 325,
@@ -289,7 +289,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 2
 },
 {
 "id": 422,
@@ -527,7 +527,7 @@
 "name": "Northern Ireland Affairs Committee",
 "house": "Commons",
 "file": "committees/120-northern-ireland-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 769,
@@ -604,7 +604,7 @@
 "name": "Public Administration and Constitutional Affairs Committee",
 "house": "Commons",
 "file": "committees/327-public-administration-and-constitutional-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 430,
@@ -653,7 +653,7 @@
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 255,
@@ -793,7 +793,7 @@
 "name": "Work and Pensions Committee",
 "house": "Commons",
 "file": "committees/164-work-and-pensions-committee.ics",
-"upcoming": 0
+"upcoming": 1
 }
 ],
 "events": [
@@ -802,12 +802,15 @@
 28062,
 28063,
 28081,
+28082,
+28146,
 28151,
 28152,
 28153,
 28154,
 28162,
 28253,
+28256,
 28259,
 28301,
 28302,
@@ -822,19 +825,28 @@
 28411,
 28413,
 28423,
+28433,
 28434,
 28436,
 28438,
+28441,
 28464,
 28465,
 28484,
 28486,
 28491,
+28493,
 28503,
 28505,
+28507,
+28508,
 28510,
+28511,
 28512,
+28515,
 28516,
+28523,
+28525,
 28526,
 28527
 ]

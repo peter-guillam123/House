@@ -20,4 +20,17 @@ DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
  vents/28081
 URL:https://api.parliament.uk/committees/events/28081
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28082@house.peter-guillam123.github.io
+DTSTAMP:20261028T093000Z
+DTSTART:20261028T093000
+DTEND:20261028T113000
+SUMMARY:Connectivity in Scotland: Digital connectivity · Scottish Affairs
+  Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
+ : Garret Kavanagh (Openreach)\; Robert Thorburn (Openreach)\; Fiona Cayle
+ y (GoFibre).\nhttps://api.parliament.uk/committees/events/28082
+URL:https://api.parliament.uk/committees/events/28082
+END:VEVENT
 END:VCALENDAR

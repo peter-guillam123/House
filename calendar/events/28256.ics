@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Mission Government · Public Administration and Constitutiona
+ l Affairs Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28256@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T120000
+SUMMARY:Mission Government · Public Administration and Constitutional Aff
+ airs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Public Administration and Constitution
+ al Affairs Committee.\nWitnesses: Hannah Keenan (Institute for Government
+ ).\nhttps://api.parliament.uk/committees/events/28256
+URL:https://api.parliament.uk/committees/events/28256
+END:VEVENT
+END:VCALENDAR

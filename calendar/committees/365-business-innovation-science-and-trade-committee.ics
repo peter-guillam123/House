@@ -5,4 +5,17 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Business\, Innovation\, Science and Trade Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28441@house.peter-guillam123.github.io
+DTSTAMP:20261027T143000Z
+DTSTART:20261027T143000
+DTEND:20261027T163000
+SUMMARY:Entrepreneurship and business · Business\, Innovation\, Science a
+ nd Trade Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
+ ade Committee.\nWitnesses to be announced.\nhttps://api.parliament.uk/com
+ mittees/events/28441
+URL:https://api.parliament.uk/committees/events/28441
+END:VEVENT
 END:VCALENDAR
