@@ -119,7 +119,7 @@ DTSTART:20261027T100000
 DTEND:20261027T123000
 SUMMARY:The future of farming · Environment\, Food and Rural Affairs Comm
  ittee
-LOCATION:Room 6\, Palace of Westminster
+LOCATION:The Macmillan Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
  ommittee.\nWitnesses: Stephen Morgan MP (Department for Environment\, Foo
  d and Rural Affairs)\; Mike Rowe (Department for Environment\, Food and R
@@ -177,10 +177,11 @@ LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, International Development Committee.\n
  Witnesses: Jerop Limo (Ambassador for Youth and Adolescent Reproductive H
  ealth Program (AYARHEP)\, Kenya)\; Dr Natasha Kaoma (Copper Rose\, Zambia
- )\; Monica Ferro (UNFPA London representative office)\; Dr Kirrily de Pol
- nay (Médecins Sans Frontières)\; `Dr Jeanne Salje (University of Cambri
- dge)\; Dr Kennedy Uadiale (Liverpool School of Tropical Medicine\, Malawi
- ).\nhttps://api.parliament.uk/committees/events/28510
+ )\; Abadi Assefa (Family Guidance Association of Ethiopia (FGAE))\; Monic
+ a Ferro (UNFPA London representative office)\; Dr Kirrily de Polnay (Méd
+ ecins Sans Frontières)\; Dr Kennedy Uadiale (Liverpool School of Tropica
+ l Medicine\, Malawi)\; Dr Jeanne Salje (University of Cambridge).\nhttps:
+ //api.parliament.uk/committees/events/28510
 URL:https://api.parliament.uk/committees/events/28510
 END:VEVENT
 BEGIN:VEVENT
@@ -275,7 +276,7 @@ DTSTAMP:20261028T093000Z
 DTSTART:20261028T093000
 DTEND:20261028T113000
 SUMMARY:Child Maintenance Service · Work and Pensions Committee
-LOCATION:Room 6\, Palace of Westminster
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
  s: Paula Sussex CBE\; Baroness Sherlock OBE (Department for Work and Pens
  ions)\; Simon Hunter (Child Maintenance Service)\; Duncan Gilchrist (Chil
@@ -358,8 +359,8 @@ SUMMARY:The UK’s constitutional safeguards · Constitution Committee
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Pr
  ofessor Anne Twomey (University of Sydney Law School)\; Professor Vanessa
-  MacDonnell (University of Ottawa)\; Danny Kruger MP (Reform UK).\nhttps:
- //api.parliament.uk/committees/events/28516
+  MacDonnell (University of Ottawa)\; Danny Kruger MP.\nhttps://api.parlia
+ ment.uk/committees/events/28516
 URL:https://api.parliament.uk/committees/events/28516
 END:VEVENT
 BEGIN:VEVENT
@@ -385,9 +386,9 @@ SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
  ights (Joint Committee)
 LOCATION:Room 5\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
- sses: Liz Webster (Save British Farming)\; Rahil Gupta (Southall Black Si
- sters)\; Peter Leary (Palestine Solidarity Campaign).\nhttps://api.parlia
- ment.uk/committees/events/28512
+ sses: Liz Webster (Save British Farming)\; Peter Leary (Palestine Solidar
+ ity Campaign)\; Rahila Gupta (Southall Black Sisters).\nhttps://api.parli
+ ament.uk/committees/events/28512
 URL:https://api.parliament.uk/committees/events/28512
 END:VEVENT
 BEGIN:VEVENT
@@ -428,9 +429,9 @@ URL:https://api.parliament.uk/committees/events/28464
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28523@house.peter-guillam123.github.io
-DTSTAMP:20261029T122000Z
-DTSTART:20261029T122000
-DTEND:20261029T142000
+DTSTAMP:20261029T121500Z
+DTSTART:20261029T121500
+DTEND:20261029T140000
 SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
 LOCATION:Room 2\, Palace of Westminster
