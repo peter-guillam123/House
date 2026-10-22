@@ -29,8 +29,8 @@ SUMMARY:UK Envoy for Complex Consular Detentions · Foreign Affairs Commit
  tee
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
-  The Rt Hon Alistair Burt (Foreign Commonwealth and Development Office).\
- nhttps://api.parliament.uk/committees/events/28507
+  The Rt Hon Alistair Burt (Foreign\, Commonwealth and Development Office)
+ .\nhttps://api.parliament.uk/committees/events/28507
 URL:https://api.parliament.uk/committees/events/28507
 END:VEVENT
 BEGIN:VEVENT
@@ -75,7 +75,8 @@ SUMMARY:Mission Government · Public Administration and Constitutional Aff
 LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Public Administration and Constitution
  al Affairs Committee.\nWitnesses: Hannah Keenan (Institute for Government
- ).\nhttps://api.parliament.uk/committees/events/28256
+ )\; Alex Thomas (Institute for Government).\nhttps://api.parliament.uk/co
+ mmittees/events/28256
 URL:https://api.parliament.uk/committees/events/28256
 END:VEVENT
 BEGIN:VEVENT
@@ -94,6 +95,24 @@ DESCRIPTION:Oral evidence session\, Education Committee\, Health and Socia
 URL:https://api.parliament.uk/committees/events/28360
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28500@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T113000
+SUMMARY:State of the Fire and Rescue Services · Housing\, Communities and
+  Local Government Committee
+LOCATION:The Thatcher Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Housing\, Communities and Local Govern
+ ment Committee.\nWitnesses: Jonathan Smith (London Fire Brigade)\; Simon 
+ Tuhill (West Midlands Fire and Rescue Service)\; Jon Lacey (Suffolk Fire 
+ and Rescue Service)\; Kathryn Billing (Cornwall Fire and Rescue Service)\
+ ; Phil Garrigan (National Fire Chiefs Council)\; Roy Wilsher (His Majesty
+ ’s Inspectorate of Constabulary\, Fire and Rescue Services)\; Councillo
+ r Wendy Maples (Local Government Association)\; Steve Wright (Fire Brigad
+ es Union).\nhttps://api.parliament.uk/committees/events/28500
+URL:https://api.parliament.uk/committees/events/28500
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28527@house.peter-guillam123.github.io
 DTSTAMP:20261027T100000Z
 DTSTART:20261027T100000
@@ -103,9 +122,9 @@ SUMMARY:The future of farming · Environment\, Food and Rural Affairs Comm
 LOCATION:Room 6\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
  ommittee.\nWitnesses: Stephen Morgan MP (Department for Environment\, Foo
- d and Rural Affairs)\; Mike Rowe (Department for Environment Food and Rur
- al Affairs)\; Gareth Baynham-Hughes (Department for Environment Food and 
- Rural Affairs).\nhttps://api.parliament.uk/committees/events/28527
+ d and Rural Affairs)\; Mike Rowe (Department for Environment\, Food and R
+ ural Affairs)\; Gareth Baynham-Hughes (Department for Environment\, Food 
+ and Rural Affairs).\nhttps://api.parliament.uk/committees/events/28527
 URL:https://api.parliament.uk/committees/events/28527
 END:VEVENT
 BEGIN:VEVENT
@@ -142,8 +161,8 @@ DTEND:20261027T113000
 SUMMARY:One-off Session on Defence Medical Services · Defence Committee
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses: Dr Darr
- en Mann (King's College London)\; Ed Button (International SoS)\; Dr Kati
- e Geary (International SoS)\; Lt Gen (Rtd) Martin Bricknell CB\; Major Ge
+ en Mann (King's College London)\; Ed Button (International SOS)\; Dr Kati
+ e Geary (International SOS)\; Lt Gen (Rtd) Martin Bricknell CB\; Major Ge
  neral (Rtd) Timothy Hodgetts CB CBE.\nhttps://api.parliament.uk/committee
  s/events/28434
 URL:https://api.parliament.uk/committees/events/28434
@@ -158,12 +177,25 @@ LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, International Development Committee.\n
  Witnesses: Jerop Limo (Ambassador for Youth and Adolescent Reproductive H
  ealth Program (AYARHEP)\, Kenya)\; Dr Natasha Kaoma (Copper Rose\, Zambia
- )\; Itai Rusike (Community Working Group on Health\, Zimbabwe)\; Monica F
- erro (UNFPA London representative office)\; Dr Kirrily de Polnay (Médeci
- ns Sans Frontières)\; `Dr Jeanne Salje (University of Cambridge)\; Dr Ke
- nnedy Uadiale (Liverpool School of Tropical Medicine\, Malawi).\nhttps://
- api.parliament.uk/committees/events/28510
+ )\; Monica Ferro (UNFPA London representative office)\; Dr Kirrily de Pol
+ nay (Médecins Sans Frontières)\; `Dr Jeanne Salje (University of Cambri
+ dge)\; Dr Kennedy Uadiale (Liverpool School of Tropical Medicine\, Malawi
+ ).\nhttps://api.parliament.uk/committees/events/28510
 URL:https://api.parliament.uk/committees/events/28510
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-27653@house.peter-guillam123.github.io
+DTSTAMP:20261027T143000Z
+DTSTART:20261027T143000
+DTEND:20261027T163000
+SUMMARY:Violence Against Women and Girls strategy update · Home Affairs C
+ ommittee
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Home Affairs Committee.\nWitnesses: Da
+ me Nicole Jacobs (Office of the Domestic Abuse Commissioner)\; Eleanor Ly
+ ons (Office of the Independent Anti-Slavery Commissioner).\nhttps://api.p
+ arliament.uk/committees/events/27653
+URL:https://api.parliament.uk/committees/events/27653
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28441@house.peter-guillam123.github.io
@@ -219,7 +251,8 @@ SUMMARY:Work of NESO · Energy Security and Net Zero Committee
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
  .\nWitnesses: Fintan Slye (National Energy System Operator (NESO))\; Kayt
- e O’Neill (NESO).\nhttps://api.parliament.uk/committees/events/28370
+ e O’Neill (National Energy System Operator (NESO)).\nhttps://api.parlia
+ ment.uk/committees/events/28370
 URL:https://api.parliament.uk/committees/events/28370
 END:VEVENT
 BEGIN:VEVENT
@@ -285,7 +318,7 @@ DTSTART:20261028T100000
 DTEND:20261028T110000
 SUMMARY:Regulatory sandboxes in financial services · Financial Services R
  egulation Committee
-LOCATION:Room 2\, Palace of Westminster
+LOCATION:Room 2A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
  e.\nWitnesses: Anna Wallace (Centre for Finance\, Innovation and Technolo
  gy (CFIT)).\nhttps://api.parliament.uk/committees/events/28438
@@ -335,7 +368,7 @@ DTSTAMP:20261028T110000Z
 DTSTART:20261028T110000
 DTEND:20261028T123000
 SUMMARY:Children’s social care · Public Services Committee
-LOCATION:Room 2A\, Palace of Westminster
+LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
   Rachael Wardell OBE (Association of Directors of Children’s Services (
  ADCS))\; Lucy Butler (Home and Future (South East Regional Care Cooperati
@@ -378,7 +411,7 @@ SUMMARY:HMRC’s anti-fraud intervention on child benefit · Public Accoun
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   John-Paul Marks CB (HMRC)\; Cerys McDonald (HMRC)\; Myrtle Lloyd (HMRC)\
- ; Rob Malcomson (Public Sector Fraud Authority)\; Jonathan Athow (HMRC).\
+ ; Jonathan Athow (HMRC)\; Rob Malcomson (Public Sector Fraud Authority).\
  nhttps://api.parliament.uk/committees/events/28486
 URL:https://api.parliament.uk/committees/events/28486
 END:VEVENT

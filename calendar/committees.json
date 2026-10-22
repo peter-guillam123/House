@@ -1,7 +1,7 @@
 {
 "built": "2026-10-22",
 "windowDays": 56,
-"sessions": 40,
+"sessions": 42,
 "all": "committees.ics",
 "committees": [
 {
@@ -359,7 +359,7 @@
 "name": "Home Affairs Committee",
 "house": "Commons",
 "file": "committees/83-home-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 362,
@@ -373,7 +373,7 @@
 "name": "Housing, Communities and Local Government Committee",
 "house": "Commons",
 "file": "committees/17-housing-communities-and-local-government-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 93,
@@ -790,6 +790,7 @@
 }
 ],
 "events": [
+27653,
 27938,
 28063,
 28082,
@@ -817,6 +818,7 @@
 28486,
 28491,
 28493,
+28500,
 28503,
 28505,
 28507,

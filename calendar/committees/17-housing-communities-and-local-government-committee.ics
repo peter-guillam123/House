@@ -5,4 +5,22 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Housing\, Communities and Local Government Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28500@house.peter-guillam123.github.io
+DTSTAMP:20261027T100000Z
+DTSTART:20261027T100000
+DTEND:20261027T113000
+SUMMARY:State of the Fire and Rescue Services · Housing\, Communities and
+  Local Government Committee
+LOCATION:The Thatcher Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Housing\, Communities and Local Govern
+ ment Committee.\nWitnesses: Jonathan Smith (London Fire Brigade)\; Simon 
+ Tuhill (West Midlands Fire and Rescue Service)\; Jon Lacey (Suffolk Fire 
+ and Rescue Service)\; Kathryn Billing (Cornwall Fire and Rescue Service)\
+ ; Phil Garrigan (National Fire Chiefs Council)\; Roy Wilsher (His Majesty
+ ’s Inspectorate of Constabulary\, Fire and Rescue Services)\; Councillo
+ r Wendy Maples (Local Government Association)\; Steve Wright (Fire Brigad
+ es Union).\nhttps://api.parliament.uk/committees/events/28500
+URL:https://api.parliament.uk/committees/events/28500
+END:VEVENT
 END:VCALENDAR
