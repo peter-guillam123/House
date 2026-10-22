@@ -5,18 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Women and Equalities Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28162@house.peter-guillam123.github.io
-DTSTAMP:20261021T142000Z
-DTSTART:20261021T142000
-DTEND:20261021T163000
-SUMMARY:Equality at work: flexible working and disability · Women and Equ
- alities Committee
-LOCATION:Room 6\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
- sses: Angela Matthews (Business Disability Forum)\; Daisy Goodall (Trades
-  Union Congress (TUC)).\nhttps://api.parliament.uk/committees/events/2816
- 2
-URL:https://api.parliament.uk/committees/events/28162
-END:VEVENT
 END:VCALENDAR

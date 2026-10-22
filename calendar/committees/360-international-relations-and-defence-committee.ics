@@ -6,19 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · International Relations and Defence Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28253@house.peter-guillam123.github.io
-DTSTAMP:20261021T110000Z
-DTSTART:20261021T110000
-DTEND:20261021T123000
-SUMMARY:Multilateralism · International Relations and Defence Committee
-LOCATION:Room 2\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses: Matt Sheehan (Carnegie Endowment for International P
- eace)\; Kayla Blomquist (Oxford China Policy Lab).\nhttps://api.parliamen
- t.uk/committees/events/28253
-URL:https://api.parliament.uk/committees/events/28253
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28484@house.peter-guillam123.github.io
 DTSTAMP:20261028T103000Z
 DTSTART:20261028T103000
