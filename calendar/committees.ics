@@ -211,9 +211,9 @@ SUMMARY:The Online Safety Act: implementation and impact · Communications
   and Digital Committee
 LOCATION:Room 1\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
- nWitnesses: Rocio Concha (Which?)\; Dr Rys Farthing (Reset.Tech Australia
- )\; Adam Hadley CBE (Tech Against Terrorism)\; Hannah Swirsky (Internet W
- atch Foundation).\nhttps://api.parliament.uk/committees/events/28491
+ nWitnesses: Rocio Concha (Which?)\; Dr Rys Farthing (Reset Tech)\; Adam H
+ adley CBE (Tech Against Terrorism)\; Hannah Swirsky (Internet Watch Found
+ ation).\nhttps://api.parliament.uk/committees/events/28491
 URL:https://api.parliament.uk/committees/events/28491
 END:VEVENT
 BEGIN:VEVENT
@@ -464,6 +464,31 @@ DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
 URL:https://api.parliament.uk/committees/events/28526
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28578@house.peter-guillam123.github.io
+DTSTAMP:20261103T143000Z
+DTSTART:20261103T143000
+DTEND:20261103T160000
+SUMMARY:Oral evidence · Communications and Digital Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
+ nWitnesses to be announced.\nhttps://api.parliament.uk/committees/events/
+ 28578
+URL:https://api.parliament.uk/committees/events/28578
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28574@house.peter-guillam123.github.io
+DTSTAMP:20261104T103000Z
+DTSTART:20261104T103000
+DTEND:20261104T120000
+SUMMARY:Multilateralism · International Relations and Defence Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, International Relations and Defence Co
+ mmittee.\nWitnesses: Professor Robert Trager (Oxford Martin AI Governance
+  Initiative\, University of Oxford).\nhttps://api.parliament.uk/committee
+ s/events/28574
+URL:https://api.parliament.uk/committees/events/28574
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28310@house.peter-guillam123.github.io
 DTSTAMP:20261111T103000Z
 DTSTART:20261111T103000
@@ -499,19 +524,6 @@ DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses
 URL:https://api.parliament.uk/committees/events/28152
 END:VEVENT
 BEGIN:VEVENT
-UID:house-committee-event-28301@house.peter-guillam123.github.io
-DTSTAMP:20261119T100000Z
-DTSTART:20261119T100000
-DTEND:20261119T120000
-SUMMARY:Core Tasks of Select Committees · Liaison Sub-Committee on Core T
- asks of Select Committees
-LOCATION:PCH room requested (not Boothroyd)
-DESCRIPTION:Oral evidence session\, Liaison Sub-Committee on Core Tasks of
-  Select Committees.\nWitnesses to be announced.\nhttps://api.parliament.u
- k/committees/events/28301
-URL:https://api.parliament.uk/committees/events/28301
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28153@house.peter-guillam123.github.io
 DTSTAMP:20261125T110000Z
 DTSTART:20261125T110000
@@ -544,6 +556,19 @@ DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
   Yvette Stanley (Ofsted)\; Sally Robinson (Ofsted)\; Mathew Brazier (Ofst
  ed).\nhttps://api.parliament.uk/committees/events/28154
 URL:https://api.parliament.uk/committees/events/28154
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28573@house.peter-guillam123.github.io
+DTSTAMP:20261203T094500Z
+DTSTART:20261203T094500
+DTEND:20261203T120000
+SUMMARY:Core Tasks of Select Committees · Liaison Sub-Committee on Core T
+ asks of Select Committees
+LOCATION:PCH room requested (not Boothroyd)
+DESCRIPTION:Oral evidence session\, Liaison Sub-Committee on Core Tasks of
+  Select Committees.\nWitnesses to be announced.\nhttps://api.parliament.u
+ k/committees/events/28573
+URL:https://api.parliament.uk/committees/events/28573
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28302@house.peter-guillam123.github.io

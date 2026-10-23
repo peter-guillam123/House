@@ -1,7 +1,7 @@
 {
 "built": "2026-10-23",
 "windowDays": 56,
-"sessions": 41,
+"sessions": 43,
 "all": "committees.ics",
 "committees": [
 {
@@ -114,7 +114,7 @@
 "name": "Communications and Digital Committee",
 "house": "Lords",
 "file": "committees/170-communications-and-digital-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 402,
@@ -429,7 +429,7 @@
 "name": "International Relations and Defence Committee",
 "house": "Lords",
 "file": "committees/360-international-relations-and-defence-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 519,
@@ -800,7 +800,6 @@
 28153,
 28154,
 28256,
-28301,
 28302,
 28310,
 28360,
@@ -830,6 +829,9 @@
 28523,
 28525,
 28526,
-28527
+28527,
+28573,
+28574,
+28578
 ]
 }

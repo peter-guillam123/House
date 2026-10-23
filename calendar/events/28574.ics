@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Multilateralism · International Relations and Defence Commit
+ tee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28574@house.peter-guillam123.github.io
+DTSTAMP:20261104T103000Z
+DTSTART:20261104T103000
+DTEND:20261104T120000
+SUMMARY:Multilateralism · International Relations and Defence Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, International Relations and Defence Co
+ mmittee.\nWitnesses: Professor Robert Trager (Oxford Martin AI Governance
+  Initiative\, University of Oxford).\nhttps://api.parliament.uk/committee
+ s/events/28574
+URL:https://api.parliament.uk/committees/events/28574
+END:VEVENT
+END:VCALENDAR

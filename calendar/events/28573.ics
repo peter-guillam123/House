@@ -7,16 +7,16 @@ X-WR-CALNAME:Core Tasks of Select Committees · Liaison Sub-Committee on C
  ore Tasks of Select Committees
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28301@house.peter-guillam123.github.io
-DTSTAMP:20261119T100000Z
-DTSTART:20261119T100000
-DTEND:20261119T120000
+UID:house-committee-event-28573@house.peter-guillam123.github.io
+DTSTAMP:20261203T094500Z
+DTSTART:20261203T094500
+DTEND:20261203T120000
 SUMMARY:Core Tasks of Select Committees · Liaison Sub-Committee on Core T
  asks of Select Committees
 LOCATION:PCH room requested (not Boothroyd)
 DESCRIPTION:Oral evidence session\, Liaison Sub-Committee on Core Tasks of
   Select Committees.\nWitnesses to be announced.\nhttps://api.parliament.u
- k/committees/events/28301
-URL:https://api.parliament.uk/committees/events/28301
+ k/committees/events/28573
+URL:https://api.parliament.uk/committees/events/28573
 END:VEVENT
 END:VCALENDAR
