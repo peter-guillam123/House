@@ -1,7 +1,7 @@
 {
-"built": "2026-10-22",
+"built": "2026-10-23",
 "windowDays": 56,
-"sessions": 42,
+"sessions": 41,
 "all": "committees.ics",
 "committees": [
 {
@@ -590,7 +590,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 327,
@@ -806,7 +806,6 @@
 28360,
 28370,
 28413,
-28423,
 28433,
 28434,
 28436,
