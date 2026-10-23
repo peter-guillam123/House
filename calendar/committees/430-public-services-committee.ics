@@ -35,7 +35,7 @@ UID:house-committee-event-28152@house.peter-guillam123.github.io
 DTSTAMP:20261118T110000Z
 DTSTART:20261118T110000
 DTEND:20261118T123000
-SUMMARY:Oral evidence · Public Services Committee
+SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28152
@@ -46,7 +46,7 @@ UID:house-committee-event-28153@house.peter-guillam123.github.io
 DTSTAMP:20261125T110000Z
 DTSTART:20261125T110000
 DTEND:20261125T123000
-SUMMARY:Oral evidence · Public Services Committee
+SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28153
@@ -57,10 +57,11 @@ UID:house-committee-event-28154@house.peter-guillam123.github.io
 DTSTAMP:20261202T110000Z
 DTSTART:20261202T110000
 DTEND:20261202T123000
-SUMMARY:Oral evidence · Public Services Committee
+SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28154
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Yvette Stanley (Ofsted)\; Sally Robinson (Ofsted)\; Mathew Brazier (Ofst
+ ed).\nhttps://api.parliament.uk/committees/events/28154
 URL:https://api.parliament.uk/committees/events/28154
 END:VEVENT
 END:VCALENDAR

@@ -324,22 +324,10 @@ DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
 URL:https://api.parliament.uk/committees/events/28503
 END:VEVENT
 BEGIN:VEVENT
-UID:house-committee-event-28484@house.peter-guillam123.github.io
-DTSTAMP:20261028T103000Z
-DTSTART:20261028T103000
-DTEND:20261028T123000
-SUMMARY:Multilateralism · International Relations and Defence Committee
-LOCATION:Room 4A\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
- s/events/28484
-URL:https://api.parliament.uk/committees/events/28484
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28516@house.peter-guillam123.github.io
-DTSTAMP:20261028T103000Z
-DTSTART:20261028T103000
-DTEND:20261028T123000
+DTSTAMP:20261028T101000Z
+DTSTART:20261028T101000
+DTEND:20261028T115500
 SUMMARY:The UK’s constitutional safeguards · Constitution Committee
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Pr
@@ -347,6 +335,21 @@ DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Pr
   MacDonnell (University of Ottawa)\; Danny Kruger MP.\nhttps://api.parlia
  ment.uk/committees/events/28516
 URL:https://api.parliament.uk/committees/events/28516
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28484@house.peter-guillam123.github.io
+DTSTAMP:20261028T103000Z
+DTSTART:20261028T103000
+DTEND:20261028T123000
+SUMMARY:Multilateralism · International Relations and Defence Committee
+LOCATION:Room 4A\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, International Relations and Defence Co
+ mmittee.\nWitnesses: Daan Jujin (Arq Foundation)\; Nick Moës (The Future
+  Society)\; Dr Rachel Adams (Leverhulme Centre for the Future of Intellig
+ ence\, University of Cambridge)\; Professor Balaraman Ravindran (Indian I
+ nstitute of Technology).\nhttps://api.parliament.uk/committees/events/284
+ 84
+URL:https://api.parliament.uk/committees/events/28484
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28063@house.peter-guillam123.github.io
@@ -489,7 +492,7 @@ UID:house-committee-event-28152@house.peter-guillam123.github.io
 DTSTAMP:20261118T110000Z
 DTSTART:20261118T110000
 DTEND:20261118T123000
-SUMMARY:Oral evidence · Public Services Committee
+SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28152
@@ -513,7 +516,7 @@ UID:house-committee-event-28153@house.peter-guillam123.github.io
 DTSTAMP:20261125T110000Z
 DTSTART:20261125T110000
 DTEND:20261125T123000
-SUMMARY:Oral evidence · Public Services Committee
+SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28153
@@ -535,10 +538,11 @@ UID:house-committee-event-28154@house.peter-guillam123.github.io
 DTSTAMP:20261202T110000Z
 DTSTART:20261202T110000
 DTEND:20261202T123000
-SUMMARY:Oral evidence · Public Services Committee
+SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28154
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Yvette Stanley (Ofsted)\; Sally Robinson (Ofsted)\; Mathew Brazier (Ofst
+ ed).\nhttps://api.parliament.uk/committees/events/28154
 URL:https://api.parliament.uk/committees/events/28154
 END:VEVENT
 BEGIN:VEVENT
