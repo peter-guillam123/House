@@ -387,7 +387,12 @@ DTEND:20261029T114500
 SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
 LOCATION:Room 1\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
-  to be announced.\nhttps://api.parliament.uk/committees/events/28493
+ : Katie Close (ICAS)\; Adelle Greenwood (Institute of Chartered Accountan
+ ts England and Wales (ICAEW))\; Chris Campbell (Association of Taxation T
+ echnicians (ATT))\; Sarah Hewson (Chartered Institute of Taxation (CIOT))
+ \; Mathew Akrigg (The Chartered Institute of Payroll Professionals (CIPP)
+ )\; Kevin Hart (BASDA)\; Andrew Scott (Confederation of British Industry 
+ (CBI)).\nhttps://api.parliament.uk/committees/events/28493
 URL:https://api.parliament.uk/committees/events/28493
 END:VEVENT
 BEGIN:VEVENT
@@ -424,8 +429,10 @@ SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
 LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
- ttees/events/28523
+  Committee).\nWitnesses: Stephen Kiely (Stonewall)\; Kai O'Doherty (Galop
+ )\; Professor Ilias Trispiotis (Ban Conversion Practices Coalition)\; Den
+ nis Kavanagh (Gay Men's Network)\; Helen Joyce (Sex Matters)\; Dermot Keh
+ oe (LGB Alliance).\nhttps://api.parliament.uk/committees/events/28523
 URL:https://api.parliament.uk/committees/events/28523
 END:VEVENT
 BEGIN:VEVENT
@@ -438,6 +445,21 @@ LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses 
  to be announced.\nhttps://api.parliament.uk/committees/events/28465
 URL:https://api.parliament.uk/committees/events/28465
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28579@house.peter-guillam123.github.io
+DTSTAMP:20261102T153000Z
+DTSTART:20261102T153000
+DTEND:20261102T180000
+SUMMARY:NHS Accident and Emergency departments · Public Accounts Committe
+ e
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Samantha Jones OBE (Department of Health and Social Care)\; Sir Jim Mack
+ ey (NHS England)\; Dr Emma Rowland (Homerton Healthcare Foundation Trust)
+ \; Professor Tim Briggs (NHS England).\nhttps://api.parliament.uk/committ
+ ees/events/28579
+URL:https://api.parliament.uk/committees/events/28579
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28505@house.peter-guillam123.github.io
@@ -513,14 +535,26 @@ DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses
 URL:https://api.parliament.uk/committees/events/28151
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28585@house.peter-guillam123.github.io
+DTSTAMP:20261112T094500Z
+DTSTART:20261112T094500
+DTEND:20261112T114500
+SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28585
+URL:https://api.parliament.uk/committees/events/28585
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28152@house.peter-guillam123.github.io
 DTSTAMP:20261118T110000Z
 DTSTART:20261118T110000
 DTEND:20261118T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28152
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Andrew Isaac (Children's Services Development Group (CSDG)).\nhttps://ap
+ i.parliament.uk/committees/events/28152
 URL:https://api.parliament.uk/committees/events/28152
 END:VEVENT
 BEGIN:VEVENT

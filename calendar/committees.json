@@ -1,7 +1,7 @@
 {
-"built": "2026-10-25",
+"built": "2026-10-26",
 "windowDays": 56,
-"sessions": 43,
+"sessions": 45,
 "all": "committees.ics",
 "committees": [
 {
@@ -247,7 +247,7 @@
 "name": "Finance Bill Sub-Committee",
 "house": "Lords",
 "file": "committees/230-finance-bill-sub-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 325,
@@ -590,7 +590,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 327,
@@ -832,6 +832,8 @@
 28527,
 28573,
 28574,
-28578
+28578,
+28579,
+28585
 ]
 }

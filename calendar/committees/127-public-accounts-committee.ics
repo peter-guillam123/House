@@ -19,4 +19,19 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
  nhttps://api.parliament.uk/committees/events/28486
 URL:https://api.parliament.uk/committees/events/28486
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28579@house.peter-guillam123.github.io
+DTSTAMP:20261102T153000Z
+DTSTART:20261102T153000
+DTEND:20261102T180000
+SUMMARY:NHS Accident and Emergency departments · Public Accounts Committe
+ e
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Samantha Jones OBE (Department of Health and Social Care)\; Sir Jim Mack
+ ey (NHS England)\; Dr Emma Rowland (Homerton Healthcare Foundation Trust)
+ \; Professor Tim Briggs (NHS England).\nhttps://api.parliament.uk/committ
+ ees/events/28579
+URL:https://api.parliament.uk/committees/events/28579
+END:VEVENT
 END:VCALENDAR

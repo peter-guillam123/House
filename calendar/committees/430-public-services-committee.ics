@@ -37,8 +37,9 @@ DTSTART:20261118T110000
 DTEND:20261118T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28152
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Andrew Isaac (Children's Services Development Group (CSDG)).\nhttps://ap
+ i.parliament.uk/committees/events/28152
 URL:https://api.parliament.uk/committees/events/28152
 END:VEVENT
 BEGIN:VEVENT
