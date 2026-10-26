@@ -134,8 +134,9 @@ DTEND:20261027T120000
 SUMMARY:Support for Jurors · Justice and Home Affairs Committee
 LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
- itnesses: Sarah Sackman KC MP (Ministry of Justice).\nhttps://api.parliam
- ent.uk/committees/events/27938
+ itnesses: Sarah Sackman KC MP (Ministry of Justice)\; Daniel Flury (HM Co
+ urts and Tribunals Service).\nhttps://api.parliament.uk/committees/events
+ /27938
 URL:https://api.parliament.uk/committees/events/27938
 END:VEVENT
 BEGIN:VEVENT
@@ -470,19 +471,21 @@ SUMMARY:Dunkelflaute and the risks of electricity intermittency · Environ
  ment and Climate Change Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
- ee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/eve
- nts/28505
+ ee.\nWitnesses: Michael Shanks MP (Department for Energy Security and Net
+  Zero).\nhttps://api.parliament.uk/committees/events/28505
 URL:https://api.parliament.uk/committees/events/28505
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28526@house.peter-guillam123.github.io
-DTSTAMP:20261103T104500Z
-DTSTART:20261103T104500
-DTEND:20261103T124500
-SUMMARY:Oral evidence · Built Environment Committee
+DTSTAMP:20261103T103000Z
+DTSTART:20261103T103000
+DTEND:20261103T114500
+SUMMARY:Maintenance and enforcement in public spaces · Built Environment 
+ Committee
 LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
- s to be announced.\nhttps://api.parliament.uk/committees/events/28526
+ s: Patricia Brown MBE (Central)\; David Milner (Create Streets)\; Ed Lenn
+ ox (Clean Up Britain).\nhttps://api.parliament.uk/committees/events/28526
 URL:https://api.parliament.uk/committees/events/28526
 END:VEVENT
 BEGIN:VEVENT
