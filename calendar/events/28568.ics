@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Societal resilience: a national conversation · National Secu
+ rity Strategy (Joint Committee)
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28568@house.peter-guillam123.github.io
+DTSTAMP:20261102T163000Z
+DTSTART:20261102T163000
+DTEND:20261102T180000
+SUMMARY:Societal resilience: a national conversation · National Security 
+ Strategy (Joint Committee)
+LOCATION:Room 4A\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, National Security Strategy (Joint Comm
+ ittee).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees
+ /events/28568
+URL:https://api.parliament.uk/committees/events/28568
+END:VEVENT
+END:VCALENDAR

@@ -20,4 +20,17 @@ DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
  oe (LGB Alliance).\nhttps://api.parliament.uk/committees/events/28523
 URL:https://api.parliament.uk/committees/events/28523
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28607@house.peter-guillam123.github.io
+DTSTAMP:20261102T160000Z
+DTSTART:20261102T160000
+DTEND:20261102T180000
+SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
+  (Joint Committee)
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
+  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
+ ttees/events/28607
+URL:https://api.parliament.uk/committees/events/28607
+END:VEVENT
 END:VCALENDAR

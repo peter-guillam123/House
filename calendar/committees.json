@@ -1,7 +1,7 @@
 {
-"built": "2026-10-26",
+"built": "2026-10-27",
 "windowDays": 56,
-"sessions": 45,
+"sessions": 49,
 "all": "committees.ics",
 "committees": [
 {
@@ -135,7 +135,7 @@
 "name": "Constitution Committee",
 "house": "Lords",
 "file": "committees/172-constitution-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 438,
@@ -184,7 +184,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 175,
@@ -205,7 +205,7 @@
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 515,
@@ -219,14 +219,14 @@
 "name": "Environment, Food and Rural Affairs Committee",
 "house": "Commons",
 "file": "committees/52-environment-food-and-rural-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 62,
 "name": "Environmental Audit Committee",
 "house": "Commons",
 "file": "committees/62-environmental-audit-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 516,
@@ -282,7 +282,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 422,
@@ -332,13 +332,6 @@
 "house": "Commons",
 "file": "committees/854-highways-financing-bill.ics",
 "upcoming": 2
-},
-{
-"id": 855,
-"name": "Highways (Financing) Bill: Programming Sub Committee",
-"house": "Commons",
-"file": "committees/855-highways-financing-bill-programming-sub-committee.ics",
-"upcoming": 0
 },
 {
 "id": 679,
@@ -415,7 +408,7 @@
 "name": "International Development Committee",
 "house": "Commons",
 "file": "committees/98-international-development-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 347,
@@ -513,7 +506,7 @@
 "name": "National Security Strategy (Joint Committee)",
 "house": "Joint",
 "file": "committees/111-national-security-strategy-joint-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 120,
@@ -684,13 +677,6 @@
 "upcoming": 0
 },
 {
-"id": 850,
-"name": "Social Housing Bill: Programming Sub-Committee",
-"house": "Commons",
-"file": "committees/850-social-housing-bill-programming-sub-committee.ics",
-"upcoming": 0
-},
-{
 "id": 144,
 "name": "Speaker's Committee on the Electoral Commission",
 "house": "Commons",
@@ -819,7 +805,6 @@
 28500,
 28503,
 28505,
-28507,
 28508,
 28510,
 28511,
@@ -827,13 +812,18 @@
 28515,
 28516,
 28523,
-28525,
 28526,
 28527,
+28530,
+28538,
+28568,
 28573,
 28574,
 28578,
 28579,
-28585
+28585,
+28600,
+28606,
+28607
 ]
 }

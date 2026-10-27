@@ -6,35 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Committee oral evidence
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28507@house.peter-guillam123.github.io
-DTSTAMP:20261026T133000Z
-DTSTART:20261026T133000
-DTEND:20261026T153000
-SUMMARY:UK Envoy for Complex Consular Detentions · Foreign Affairs Commit
- tee
-LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
-  The Rt Hon Alistair Burt (Foreign\, Commonwealth and Development Office)
- .\nhttps://api.parliament.uk/committees/events/28507
-URL:https://api.parliament.uk/committees/events/28507
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28525@house.peter-guillam123.github.io
-DTSTAMP:20261026T144500Z
-DTSTART:20261026T144500
-DTEND:20261026T173000
-SUMMARY:Prospects for UNFCCC COP31 · Environmental Audit Committee
-LOCATION:Room 8\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
- ses: Osman Koray Ertas (Turkish Embassy)\; Jay Weatherill (Australian Hig
- h Commission)\; Tania Kumar (Confederation of British Industry (CBI))\; K
- im O'Dowd (Environmental Investigation Agency)\; Pelin Zorlu (Chatham Hou
- se)\; Rachel Kyte CMG (Foreign\, Commonwealth & Development Office\, Depa
- rtment for Energy Security and Net Zero).\nhttps://api.parliament.uk/comm
- ittees/events/28525
-URL:https://api.parliament.uk/committees/events/28525
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28146@house.peter-guillam123.github.io
 DTSTAMP:20261027T100000Z
 DTSTART:20261027T100000
@@ -414,11 +385,14 @@ BEGIN:VEVENT
 UID:house-committee-event-28464@house.peter-guillam123.github.io
 DTSTAMP:20261029T113000Z
 DTSTART:20261029T113000
-DTEND:20261029T133000
+DTEND:20261029T130000
 SUMMARY:To consider the Bill · Highways (Financing) Bill
 LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28464
+DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses:
+  Edmund King OBE (The AA)\; Mr Steve Gooding (RAC Foundation)\; Mr Ben Ga
+ rratt (Logistics UK)\; Declan Pang (Road Haulage Association)\; Michael W
+ helan (M6 Toll)\; Ralph Smyth (TAN\, Transport Action Network).\nhttps://
+ api.parliament.uk/committees/events/28464
 URL:https://api.parliament.uk/committees/events/28464
 END:VEVENT
 BEGIN:VEVENT
@@ -440,11 +414,16 @@ BEGIN:VEVENT
 UID:house-committee-event-28465@house.peter-guillam123.github.io
 DTSTAMP:20261029T140000Z
 DTSTART:20261029T140000
-DTEND:20261029T170000
+DTEND:20261029T163000
 SUMMARY:Further to consider the Bill · Highways (Financing) Bill
 LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28465
+DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses:
+  Ben Hopkinson (Centre for Policy Studies)\; Sam Dumitriu (Britain Remade
+ )\; Mr Thomas McLennan (British Vehicle Rental and Leasing Association (B
+ VRLA))\; Will Godfrey (Office of Rail and Road)\; Matt Palmer (National H
+ ighways)\; Andrew Truscott (John Laing)\; Roger Forsdyke (Wates Construct
+ ion)\; Justin Madders MP (Department for Transport).\nhttps://api.parliam
+ ent.uk/committees/events/28465
 URL:https://api.parliament.uk/committees/events/28465
 END:VEVENT
 BEGIN:VEVENT
@@ -454,13 +433,39 @@ DTSTART:20261102T153000
 DTEND:20261102T180000
 SUMMARY:NHS Accident and Emergency departments · Public Accounts Committe
  e
-LOCATION:The Grimond Room\, Portcullis House
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   Samantha Jones OBE (Department of Health and Social Care)\; Sir Jim Mack
  ey (NHS England)\; Dr Emma Rowland (Homerton Healthcare Foundation Trust)
  \; Professor Tim Briggs (NHS England).\nhttps://api.parliament.uk/committ
  ees/events/28579
 URL:https://api.parliament.uk/committees/events/28579
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28607@house.peter-guillam123.github.io
+DTSTAMP:20261102T160000Z
+DTSTART:20261102T160000
+DTEND:20261102T180000
+SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
+  (Joint Committee)
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
+  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
+ ttees/events/28607
+URL:https://api.parliament.uk/committees/events/28607
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28568@house.peter-guillam123.github.io
+DTSTAMP:20261102T163000Z
+DTSTART:20261102T163000
+DTEND:20261102T180000
+SUMMARY:Societal resilience: a national conversation · National Security 
+ Strategy (Joint Committee)
+LOCATION:Room 4A\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, National Security Strategy (Joint Comm
+ ittee).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees
+ /events/28568
+URL:https://api.parliament.uk/committees/events/28568
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28505@house.peter-guillam123.github.io
@@ -476,6 +481,19 @@ DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
 URL:https://api.parliament.uk/committees/events/28505
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28530@house.peter-guillam123.github.io
+DTSTAMP:20261103T100000Z
+DTSTART:20261103T100000
+DTEND:20261103T123000
+SUMMARY:Biosecurity and animal welfare · Environment\, Food and Rural Aff
+ airs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
+ ommittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committe
+ es/events/28530
+URL:https://api.parliament.uk/committees/events/28530
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28526@house.peter-guillam123.github.io
 DTSTAMP:20261103T103000Z
 DTSTART:20261103T103000
@@ -487,6 +505,19 @@ DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
  s: Patricia Brown MBE (Central)\; David Milner (Create Streets)\; Ed Lenn
  ox (Clean Up Britain).\nhttps://api.parliament.uk/committees/events/28526
 URL:https://api.parliament.uk/committees/events/28526
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28606@house.peter-guillam123.github.io
+DTSTAMP:20261103T140000Z
+DTSTART:20261103T140000
+DTEND:20261103T163000
+SUMMARY:Humanitarian situation in Ukraine · International Development Com
+ mittee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, International Development Committee.\n
+ Witnesses to be announced.\nhttps://api.parliament.uk/committees/events/2
+ 8606
+URL:https://api.parliament.uk/committees/events/28606
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28578@house.peter-guillam123.github.io
@@ -501,6 +532,21 @@ DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
 URL:https://api.parliament.uk/committees/events/28578
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28538@house.peter-guillam123.github.io
+DTSTAMP:20261104T091500Z
+DTSTART:20261104T091500
+DTEND:20261104T111500
+SUMMARY:Managing the future of UK oil and gas · Energy Security and Net Z
+ ero Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
+ .\nWitnesses: Dr Angela Needle (Cadent)\; Jenny Phillips (National Gas)\;
+  Charles McAllister (Green Gas Taskforce)\; Mike Foster (Energy and Utili
+ ties Alliance)\; Rhea Wolfson (GMB Scotland)\; Holly Wakelin (MCS Foundat
+ ion).\nhttps://api.parliament.uk/committees/events/28538
+URL:https://api.parliament.uk/committees/events/28538
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28574@house.peter-guillam123.github.io
 DTSTAMP:20261104T103000Z
 DTSTART:20261104T103000
@@ -512,6 +558,19 @@ DESCRIPTION:Oral evidence session\, International Relations and Defence Co
   Initiative\, University of Oxford).\nhttps://api.parliament.uk/committee
  s/events/28574
 URL:https://api.parliament.uk/committees/events/28574
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28600@house.peter-guillam123.github.io
+DTSTAMP:20261104T103000Z
+DTSTART:20261104T103000
+DTEND:20261104T123000
+SUMMARY:The UK’s constitutional safeguards · Constitution Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Si
+ r Brian Langstaff (Infected Blood Inquiry)\; Sir John Saunders (Mancheste
+ r Arena Inquiry)\; Daniel Greenberg (Standards).\nhttps://api.parliament.
+ uk/committees/events/28600
+URL:https://api.parliament.uk/committees/events/28600
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28310@house.peter-guillam123.github.io

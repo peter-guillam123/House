@@ -18,4 +18,19 @@ DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
  ment.uk/committees/events/28370
 URL:https://api.parliament.uk/committees/events/28370
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28538@house.peter-guillam123.github.io
+DTSTAMP:20261104T091500Z
+DTSTART:20261104T091500
+DTEND:20261104T111500
+SUMMARY:Managing the future of UK oil and gas · Energy Security and Net Z
+ ero Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
+ .\nWitnesses: Dr Angela Needle (Cadent)\; Jenny Phillips (National Gas)\;
+  Charles McAllister (Green Gas Taskforce)\; Mike Foster (Energy and Utili
+ ties Alliance)\; Rhea Wolfson (GMB Scotland)\; Holly Wakelin (MCS Foundat
+ ion).\nhttps://api.parliament.uk/committees/events/28538
+URL:https://api.parliament.uk/committees/events/28538
+END:VEVENT
 END:VCALENDAR

@@ -18,4 +18,17 @@ DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Pr
  ment.uk/committees/events/28516
 URL:https://api.parliament.uk/committees/events/28516
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28600@house.peter-guillam123.github.io
+DTSTAMP:20261104T103000Z
+DTSTART:20261104T103000
+DTEND:20261104T123000
+SUMMARY:The UK’s constitutional safeguards · Constitution Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Si
+ r Brian Langstaff (Infected Blood Inquiry)\; Sir John Saunders (Mancheste
+ r Arena Inquiry)\; Daniel Greenberg (Standards).\nhttps://api.parliament.
+ uk/committees/events/28600
+URL:https://api.parliament.uk/committees/events/28600
+END:VEVENT
 END:VCALENDAR

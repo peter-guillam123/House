@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Biosecurity and animal welfare · Environment\, Food and Rura
+ l Affairs Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28530@house.peter-guillam123.github.io
+DTSTAMP:20261103T100000Z
+DTSTART:20261103T100000
+DTEND:20261103T123000
+SUMMARY:Biosecurity and animal welfare · Environment\, Food and Rural Aff
+ airs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
+ ommittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committe
+ es/events/28530
+URL:https://api.parliament.uk/committees/events/28530
+END:VEVENT
+END:VCALENDAR
