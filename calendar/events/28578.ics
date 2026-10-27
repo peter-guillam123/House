@@ -3,18 +3,22 @@ VERSION:2.0
 PRODID:-//House//Committee calendars//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Oral evidence · Communications and Digital Committee
+X-WR-CALNAME:The Online Safety Act: implementation and impact · Communica
+ tions and Digital Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
 UID:house-committee-event-28578@house.peter-guillam123.github.io
-DTSTAMP:20261103T143000Z
-DTSTART:20261103T143000
-DTEND:20261103T160000
-SUMMARY:Oral evidence · Communications and Digital Committee
+DTSTAMP:20261103T140000Z
+DTSTART:20261103T140000
+DTEND:20261103T150000
+SUMMARY:The Online Safety Act: implementation and impact · Communications
+  and Digital Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
- nWitnesses to be announced.\nhttps://api.parliament.uk/committees/events/
- 28578
+ nWitnesses: Damian Collins (UK Parliament)\; The Baroness Kidron OBE (5Ri
+ ghts Foundation)\; Professor Lorna Woods OBE (Law School\, University of 
+ Essex)\; Rt Hon Sir Jeremy Wright KC MP (UK Parliament).\nhttps://api.par
+ liament.uk/committees/events/28578
 URL:https://api.parliament.uk/committees/events/28578
 END:VEVENT
 END:VCALENDAR

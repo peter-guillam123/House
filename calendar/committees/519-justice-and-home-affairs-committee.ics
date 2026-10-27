@@ -19,6 +19,19 @@ DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
 URL:https://api.parliament.uk/committees/events/27938
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-27939@house.peter-guillam123.github.io
+DTSTAMP:20261103T103000Z
+DTSTART:20261103T103000
+DTEND:20261103T113000
+SUMMARY:Prison culture: governance\, leadership and staffing · Justice an
+ d Home Affairs Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
+ itnesses to be announced.\nhttps://api.parliament.uk/committees/events/27
+ 939
+URL:https://api.parliament.uk/committees/events/27939
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28310@house.peter-guillam123.github.io
 DTSTAMP:20261111T103000Z
 DTSTART:20261111T103000
@@ -27,8 +40,8 @@ SUMMARY:Work of the Ministry of Justice · Justice and Home Affairs Commit
  tee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
- itnesses to be announced.\nhttps://api.parliament.uk/committees/events/28
- 310
+ itnesses: The Rt Hon Alex Norris MP (Ministry of Justice).\nhttps://api.p
+ arliament.uk/committees/events/28310
 URL:https://api.parliament.uk/committees/events/28310
 END:VEVENT
 END:VCALENDAR
