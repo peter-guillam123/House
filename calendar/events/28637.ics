@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Regulatory sandboxes in financial services · Financial Servi
+ ces Regulation Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28637@house.peter-guillam123.github.io
+DTSTAMP:20261104T100000Z
+DTSTART:20261104T100000
+DTEND:20261104T120000
+SUMMARY:Regulatory sandboxes in financial services · Financial Services R
+ egulation Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
+ e.\nWitnesses: Sebastian McDermott (Fintech Founders)\; Chris Bosworth (F
+ inclusion)\; Will Mason (Infact)\; Oliver Quie (Innerworks)\; Irene Graha
+ m OBE (ScaleUp Institute).\nhttps://api.parliament.uk/committees/events/2
+ 8637
+URL:https://api.parliament.uk/committees/events/28637
+END:VEVENT
+END:VCALENDAR

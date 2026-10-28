@@ -6,32 +6,18 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Communications and Digital Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28491@house.peter-guillam123.github.io
-DTSTAMP:20261027T143000Z
-DTSTART:20261027T143000
-DTEND:20261027T160000
-SUMMARY:The Online Safety Act: implementation and impact · Communications
-  and Digital Committee
-LOCATION:Room 1\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
- nWitnesses: Rocio Concha (Which?)\; Dr Rys Farthing (Reset Tech)\; Adam H
- adley CBE (Tech Against Terrorism)\; Hannah Swirsky (Internet Watch Found
- ation).\nhttps://api.parliament.uk/committees/events/28491
-URL:https://api.parliament.uk/committees/events/28491
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28578@house.peter-guillam123.github.io
 DTSTAMP:20261103T140000Z
 DTSTART:20261103T140000
 DTEND:20261103T150000
 SUMMARY:The Online Safety Act: implementation and impact · Communications
   and Digital Committee
-LOCATION:To be confirmed
+LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
- nWitnesses: Damian Collins (UK Parliament)\; The Baroness Kidron OBE (5Ri
- ghts Foundation)\; Professor Lorna Woods OBE (Law School\, University of 
- Essex)\; Rt Hon Sir Jeremy Wright KC MP (UK Parliament).\nhttps://api.par
- liament.uk/committees/events/28578
+ nWitnesses: The Baroness Kidron OBE (5Rights Foundation)\; Professor Lorn
+ a Woods OBE (Law School\, University of Essex)\; Rt Hon Sir Jeremy Wright
+  KC MP (UK Parliament)\; Damian Collins OBE (UK Parliament).\nhttps://api
+ .parliament.uk/committees/events/28578
 URL:https://api.parliament.uk/committees/events/28578
 END:VEVENT
 END:VCALENDAR

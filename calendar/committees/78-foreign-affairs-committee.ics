@@ -6,17 +6,18 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Foreign Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28508@house.peter-guillam123.github.io
-DTSTAMP:20261027T101500Z
-DTSTART:20261027T101500
-DTEND:20261027T123000
-SUMMARY:Climate diplomacy · Foreign Affairs Committee
-LOCATION:The Wilson Room\, Portcullis House
+UID:house-committee-event-28591@house.peter-guillam123.github.io
+DTSTAMP:20261103T103000Z
+DTSTART:20261103T103000
+DTEND:20261103T123000
+SUMMARY:A new Syria: assessing UK strategy in a transitional state · Fore
+ ign Affairs Committee
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
-  Dr Beatrice Mosello (Chatham House)\; Dr Timothy Clack (University of Ox
- ford)\; Laurie Laybourn (Strategic Climate Risks Initiative)\; Janani Viv
- ekananda (Adelphi Global).\nhttps://api.parliament.uk/committees/events/2
- 8508
-URL:https://api.parliament.uk/committees/events/28508
+  Cathrine Brun (University of Oxford)\; Dawn Chatty (Refugee Studies Cent
+ re)\; Harmonie Toros (University of Reading)\; H.E Manar Dabbas\; H.E Far
+ ah Berry\; H.E Haneen Sayed\; H.E Osman Koray Ertaş.\nhttps://api.parlia
+ ment.uk/committees/events/28591
+URL:https://api.parliament.uk/committees/events/28591
 END:VEVENT
 END:VCALENDAR

@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Integrated Care Boards: re-organisation · Public Accounts Co
+ mmittee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28633@house.peter-guillam123.github.io
+DTSTAMP:20261116T153000Z
+DTSTART:20261116T153000
+DTEND:20261116T173000
+SUMMARY:Integrated Care Boards: re-organisation · Public Accounts Committ
+ ee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Samantha Jones OBE (Department for Health and Social Care)\; Sir Jim Mac
+ key (NHS England)\; Jan Thomas (NHS England)\; Elizabeth O'Mahony (Depart
+ ment for Health and Social Care).\nhttps://api.parliament.uk/committees/e
+ vents/28633
+URL:https://api.parliament.uk/committees/events/28633
+END:VEVENT
+END:VCALENDAR

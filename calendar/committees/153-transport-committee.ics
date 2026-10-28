@@ -5,4 +5,19 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Transport Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28261@house.peter-guillam123.github.io
+DTSTAMP:20261104T091500Z
+DTSTART:20261104T091500
+DTEND:20261104T120000
+SUMMARY:Delivering East West Rail · Transport Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: Tony 
+ Baxter (Chiltern Railways)\; Eddie Dempsey (RMT Union)\; Mr Dave Calfe (A
+ SLEF)\; David Hughes (East West Rail Co.)\; Ben Rule (East West Rail Co.)
+ \; Christian Irwin (Network Rail)\; Rosemary Hopkins (Department for Tran
+ sport)\; Jodie Lofthouse (Department for Transport).\nhttps://api.parliam
+ ent.uk/committees/events/28261
+URL:https://api.parliament.uk/committees/events/28261
+END:VEVENT
 END:VCALENDAR

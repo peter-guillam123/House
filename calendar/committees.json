@@ -1,7 +1,7 @@
 {
-"built": "2026-10-27",
+"built": "2026-10-28",
 "windowDays": 56,
-"sessions": 50,
+"sessions": 54,
 "all": "committees.ics",
 "committees": [
 {
@@ -30,6 +30,20 @@
 "name": "Bishop's Stortford Cemetery Bill",
 "house": "Commons",
 "file": "committees/682-bishop-s-stortford-cemetery-bill.ics",
+"upcoming": 0
+},
+{
+"id": 856,
+"name": "Building Safety (Remediation of Unsafe Cladding etc) Bill",
+"house": "Commons",
+"file": "committees/856-building-safety-remediation-of-unsafe-cladding-etc-bill.ics",
+"upcoming": 2
+},
+{
+"id": 857,
+"name": "Building Safety (Remediation of Unsafe Cladding etc) Bill: Programming Sub-Committee",
+"house": "Commons",
+"file": "committees/857-building-safety-remediation-of-unsafe-cladding-etc-bill-prog.ics",
 "upcoming": 0
 },
 {
@@ -114,7 +128,7 @@
 "name": "Communications and Digital Committee",
 "house": "Lords",
 "file": "committees/170-communications-and-digital-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 402,
@@ -149,7 +163,7 @@
 "name": "Defence Committee",
 "house": "Commons",
 "file": "committees/24-defence-committee.ics",
-"upcoming": 2
+"upcoming": 3
 },
 {
 "id": 343,
@@ -170,7 +184,7 @@
 "name": "Digital, Culture, Media and Sport Committee",
 "house": "Commons",
 "file": "committees/378-digital-culture-media-and-sport-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 831,
@@ -219,14 +233,14 @@
 "name": "Environment, Food and Rural Affairs Committee",
 "house": "Commons",
 "file": "committees/52-environment-food-and-rural-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 62,
 "name": "Environmental Audit Committee",
 "house": "Commons",
 "file": "committees/62-environmental-audit-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 516,
@@ -268,7 +282,7 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 410,
@@ -310,7 +324,7 @@
 "name": "Health and Social Care Committee",
 "house": "Commons",
 "file": "committees/81-health-and-social-care-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 597,
@@ -352,7 +366,7 @@
 "name": "Home Affairs Committee",
 "house": "Commons",
 "file": "committees/83-home-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 362,
@@ -366,7 +380,7 @@
 "name": "Housing, Communities and Local Government Committee",
 "house": "Commons",
 "file": "committees/17-housing-communities-and-local-government-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 93,
@@ -408,7 +422,7 @@
 "name": "International Development Committee",
 "house": "Commons",
 "file": "committees/98-international-development-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 347,
@@ -429,14 +443,14 @@
 "name": "Justice and Home Affairs Committee",
 "house": "Lords",
 "file": "committees/519-justice-and-home-affairs-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 102,
 "name": "Justice Committee",
 "house": "Commons",
 "file": "committees/102-justice-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 103,
@@ -583,7 +597,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 2
+"upcoming": 3
 },
 {
 "id": 327,
@@ -639,7 +653,7 @@
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 411,
@@ -671,9 +685,9 @@
 },
 {
 "id": 849,
-"name": "Social Housing Bill",
+"name": "Social Housing Bill [Lords]",
 "house": "Commons",
-"file": "committees/849-social-housing-bill.ics",
+"file": "committees/849-social-housing-bill-lords.ics",
 "upcoming": 0
 },
 {
@@ -737,14 +751,14 @@
 "name": "Transport Committee",
 "house": "Commons",
 "file": "committees/153-transport-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 158,
 "name": "Treasury Committee",
 "house": "Commons",
 "file": "committees/158-treasury-committee.ics",
-"upcoming": 0
+"upcoming": 2
 },
 {
 "id": 600,
@@ -776,45 +790,36 @@
 }
 ],
 "events": [
-27653,
-27938,
 27939,
 28063,
 28082,
-28146,
 28151,
 28152,
 28153,
 28154,
-28256,
+28261,
 28302,
 28310,
-28360,
+28319,
 28370,
+28379,
 28413,
 28433,
-28434,
 28436,
 28438,
-28441,
+28445,
 28464,
 28465,
 28484,
 28486,
-28491,
 28493,
-28500,
 28503,
 28505,
-28508,
-28510,
-28511,
 28512,
 28515,
 28516,
 28523,
 28526,
-28527,
 28530,
 28538,
 28568,
@@ -822,9 +827,22 @@
 28574,
 28578,
 28579,
+28582,
 28585,
+28589,
+28591,
+28594,
+28595,
 28600,
+28603,
 28606,
-28607
+28607,
+28612,
+28613,
+28633,
+28634,
+28635,
+28636,
+28637
 ]
 }

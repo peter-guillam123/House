@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Budget 2026 · Treasury Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28595@house.peter-guillam123.github.io
+DTSTAMP:20261104T141500Z
+DTSTART:20261104T141500
+DTEND:20261104T163000
+SUMMARY:Budget 2026 · Treasury Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Profes
+ sor Jonathan Haskel CBE (Office for Budget Responsibility)\; Tom Josephs 
+ (Office for Budget Responsibility)\; Professor David Miles CBE (Office fo
+ r Budget Responsibility).\nhttps://api.parliament.uk/committees/events/28
+ 595
+URL:https://api.parliament.uk/committees/events/28595
+END:VEVENT
+END:VCALENDAR

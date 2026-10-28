@@ -6,21 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Environment\, Food and Rural Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28527@house.peter-guillam123.github.io
-DTSTAMP:20261027T100000Z
-DTSTART:20261027T100000
-DTEND:20261027T123000
-SUMMARY:The future of farming · Environment\, Food and Rural Affairs Comm
- ittee
-LOCATION:The Macmillan Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
- ommittee.\nWitnesses: Stephen Morgan MP (Department for Environment\, Foo
- d and Rural Affairs)\; Mike Rowe (Department for Environment\, Food and R
- ural Affairs)\; Gareth Baynham-Hughes (Department for Environment\, Food 
- and Rural Affairs).\nhttps://api.parliament.uk/committees/events/28527
-URL:https://api.parliament.uk/committees/events/28527
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28530@house.peter-guillam123.github.io
 DTSTAMP:20261103T100000Z
 DTSTART:20261103T100000
@@ -30,10 +15,10 @@ SUMMARY:Biosecurity and animal welfare · Environment\, Food and Rural Aff
 LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
  ommittee.\nWitnesses: Catherine McLaughlin (National Farmers Union (NFU))
- \; Dr Gwen Rees (British Veterinary Assocation)\; Abigail Seager (Veterin
- ary Medicines Directorate)\; Richard Lewis (Animal and Plant Health Agenc
- y)\; Professor Dan Horton (The Pirbright Institute).\nhttps://api.parliam
- ent.uk/committees/events/28530
+ \; Dr Gwen Rees (British Veterinary Association)\; Abigail Seager (Veteri
+ nary Medicines Directorate)\; Richard Lewis (Animal and Plant Health Agen
+ cy)\; Professor Dan Horton (The Pirbright Institute).\nhttps://api.parlia
+ ment.uk/committees/events/28530
 URL:https://api.parliament.uk/committees/events/28530
 END:VEVENT
 END:VCALENDAR

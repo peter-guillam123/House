@@ -6,15 +6,15 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Backbench Business Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28511@house.peter-guillam123.github.io
-DTSTAMP:20261027T161500Z
-DTSTART:20261027T161500
-DTEND:20261027T161500
+UID:house-committee-event-28582@house.peter-guillam123.github.io
+DTSTAMP:20261103T161500Z
+DTSTART:20261103T161500
+DTEND:20261103T180000
 SUMMARY:Proposals for backbench debates · Backbench Business Committee
-LOCATION:Room 16\, Palace of Westminster
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Backbench Business Committee.\nWitness
  es: Members of Parliament (House of Commons).\nhttps://api.parliament.uk/
- committees/events/28511
-URL:https://api.parliament.uk/committees/events/28511
+ committees/events/28582
+URL:https://api.parliament.uk/committees/events/28582
 END:VEVENT
 END:VCALENDAR

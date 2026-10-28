@@ -26,12 +26,27 @@ DTSTART:20261102T153000
 DTEND:20261102T180000
 SUMMARY:NHS Accident and Emergency departments · Public Accounts Committe
  e
-LOCATION:TBC
+LOCATION:Physical
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   Samantha Jones OBE (Department of Health and Social Care)\; Sir Jim Mack
  ey (NHS England)\; Dr Emma Rowland (Homerton Healthcare Foundation Trust)
  \; Professor Tim Briggs (NHS England).\nhttps://api.parliament.uk/committ
  ees/events/28579
 URL:https://api.parliament.uk/committees/events/28579
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28633@house.peter-guillam123.github.io
+DTSTAMP:20261116T153000Z
+DTSTART:20261116T153000
+DTEND:20261116T173000
+SUMMARY:Integrated Care Boards: re-organisation · Public Accounts Committ
+ ee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Samantha Jones OBE (Department for Health and Social Care)\; Sir Jim Mac
+ key (NHS England)\; Jan Thomas (NHS England)\; Elizabeth O'Mahony (Depart
+ ment for Health and Social Care).\nhttps://api.parliament.uk/committees/e
+ vents/28633
+URL:https://api.parliament.uk/committees/events/28633
 END:VEVENT
 END:VCALENDAR

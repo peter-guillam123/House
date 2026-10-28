@@ -5,18 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Home Affairs Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-27653@house.peter-guillam123.github.io
-DTSTAMP:20261027T143000Z
-DTSTART:20261027T143000
-DTEND:20261027T163000
-SUMMARY:Violence Against Women and Girls strategy update · Home Affairs C
- ommittee
-LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Home Affairs Committee.\nWitnesses: Da
- me Nicole Jacobs (Office of the Domestic Abuse Commissioner)\; Eleanor Ly
- ons (Office of the Independent Anti-Slavery Commissioner).\nhttps://api.p
- arliament.uk/committees/events/27653
-URL:https://api.parliament.uk/committees/events/27653
-END:VEVENT
 END:VCALENDAR

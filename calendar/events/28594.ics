@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Budget 2026 · Treasury Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28594@house.peter-guillam123.github.io
+DTSTAMP:20261103T094500Z
+DTSTART:20261103T094500
+DTEND:20261103T123000
+SUMMARY:Budget 2026 · Treasury Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Ruth C
+ urtice (Resolution Foundation)\; Helen Miller (Institute for Fiscal Studi
+ es)\; Professor Tony Travers CBE\; Sanjay Raja (Deutsche Bank).\nhttps://
+ api.parliament.uk/committees/events/28594
+URL:https://api.parliament.uk/committees/events/28594
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:To consider the Bill · Building Safety (Remediation of Unsaf
+ e Cladding etc) Bill
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28612@house.peter-guillam123.github.io
+DTSTAMP:20261112T113000Z
+DTSTART:20261112T113000
+DTEND:20261112T133000
+SUMMARY:To consider the Bill · Building Safety (Remediation of Unsafe Cla
+ dding etc) Bill
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Building Safety (Remediation of Unsafe
+  Cladding etc) Bill.\nWitnesses to be announced.\nhttps://api.parliament.
+ uk/committees/events/28612
+URL:https://api.parliament.uk/committees/events/28612
+END:VEVENT
+END:VCALENDAR

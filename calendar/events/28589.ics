@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:HM Treasury and the economics of climate and nature · Enviro
+ nmental Audit Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28589@house.peter-guillam123.github.io
+DTSTAMP:20261104T143000Z
+DTSTART:20261104T143000
+DTEND:20261104T163000
+SUMMARY:HM Treasury and the economics of climate and nature · Environment
+ al Audit Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
+ ses: Matthew Croucher (The Society of Motor Manufacturers & Traders Limit
+ ed)\; Andrew McDermott (Ceramics UK)\; Adam Berman (Energy UK)\; Jill Rut
+ ter (Institute for Government)\; Michael Jacobs (Department of Politics a
+ nd International Relations\, University of Sheffield\, The London School 
+ of Economics and Political Science).\nhttps://api.parliament.uk/committee
+ s/events/28589
+URL:https://api.parliament.uk/committees/events/28589
+END:VEVENT
+END:VCALENDAR

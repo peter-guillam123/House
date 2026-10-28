@@ -6,18 +6,15 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Education Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28360@house.peter-guillam123.github.io
-DTSTAMP:20261027T100000Z
-DTSTART:20261027T100000
-DTEND:20261027T123000
-SUMMARY:Children and Young People's Mental Health · Education Committee\,
-  Health and Social Care Committee
-LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Education Committee\, Health and Socia
- l Care Committee.\nWitnesses: Arjan Bains (Compass UK)\; Michelle Hill (T
- alk Listen Change)\; Jordan Letts (Northampton Saints Foundation)\; John 
- Poyton OBE (The Well Centre Charity).\nhttps://api.parliament.uk/committe
- es/events/28360
-URL:https://api.parliament.uk/committees/events/28360
+UID:house-committee-event-28634@house.peter-guillam123.github.io
+DTSTAMP:20261103T100000Z
+DTSTART:20261103T100000
+DTEND:20261103T120000
+SUMMARY:The Work of the Department for Education · Education Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Rt Ho
+ n Lucy Powell MP (Rt Hon Lucy Powell MP).\nhttps://api.parliament.uk/comm
+ ittees/events/28634
+URL:https://api.parliament.uk/committees/events/28634
 END:VEVENT
 END:VCALENDAR

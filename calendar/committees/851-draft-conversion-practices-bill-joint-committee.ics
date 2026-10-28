@@ -22,12 +22,12 @@ URL:https://api.parliament.uk/committees/events/28523
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28607@house.peter-guillam123.github.io
-DTSTAMP:20261102T161500Z
-DTSTART:20261102T161500
-DTEND:20261102T180000
+DTSTAMP:20261102T162000Z
+DTSTART:20261102T162000
+DTEND:20261102T171000
 SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
-LOCATION:To be confirmed
+LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
   Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
  ttees/events/28607

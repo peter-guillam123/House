@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Oral evidence · Defence Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28636@house.peter-guillam123.github.io
+DTSTAMP:20261215T103000Z
+DTSTART:20261215T103000
+DTEND:20261215T123000
+SUMMARY:Oral evidence · Defence Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
+ nounced.\nhttps://api.parliament.uk/committees/events/28636
+URL:https://api.parliament.uk/committees/events/28636
+END:VEVENT
+END:VCALENDAR

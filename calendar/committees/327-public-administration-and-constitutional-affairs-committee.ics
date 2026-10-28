@@ -7,17 +7,16 @@ X-WR-CALNAME:House · Public Administration and Constitutional Affairs Com
  mittee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28256@house.peter-guillam123.github.io
-DTSTAMP:20261027T100000Z
-DTSTART:20261027T100000
-DTEND:20261027T120000
-SUMMARY:Mission Government · Public Administration and Constitutional Aff
- airs Committee
-LOCATION:Room 15\, Palace of Westminster
+UID:house-committee-event-28379@house.peter-guillam123.github.io
+DTSTAMP:20261103T100000Z
+DTSTART:20261103T100000
+DTEND:20261103T120000
+SUMMARY:Inquiry into the recommendations of the Infected Blood Inquiry (St
+ age 1) · Public Administration and Constitutional Affairs Committee
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Public Administration and Constitution
- al Affairs Committee.\nWitnesses: Hannah Keenan (Institute for Government
- )\; Alex Thomas (Institute for Government).\nhttps://api.parliament.uk/co
- mmittees/events/28256
-URL:https://api.parliament.uk/committees/events/28256
+ al Affairs Committee.\nWitnesses: Dr Emma Ireton\; Dr Rebecca McKee\; Pro
+ f Richard Kirkham.\nhttps://api.parliament.uk/committees/events/28379
+URL:https://api.parliament.uk/committees/events/28379
 END:VEVENT
 END:VCALENDAR

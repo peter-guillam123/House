@@ -6,22 +6,16 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Business\, Innovation\, Science and Trade Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28441@house.peter-guillam123.github.io
-DTSTAMP:20261027T143000Z
-DTSTART:20261027T143000
-DTEND:20261027T163000
-SUMMARY:Entrepreneurship and business · Business\, Innovation\, Science a
- nd Trade Committee
-LOCATION:The Thatcher Room\, Portcullis House
+UID:house-committee-event-28603@house.peter-guillam123.github.io
+DTSTAMP:20261103T143000Z
+DTSTART:20261103T143000
+DTEND:20261103T163000
+SUMMARY:Consumer protection · Business\, Innovation\, Science and Trade C
+ ommittee
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
- ade Committee.\nWitnesses: Philip Salter (The Entrepreneurs Network)\; Pr
- ofessor Mark Hart (Global Entrepreneurship Monitor UK)\; Professor Monder
-  Ram (Centre for Research in Ethnic Minority Entrepreneurship\, Aston Uni
- versity)\; Jordan Dargue (Lifted Ventures)\; Matt Adey (British Business 
- Bank)\; Rt Hon Michael Moore (UK Private Capital)\; Chris Lewis (Venture 
- Capital Trust Association)\; Edward Woodall (Association of Convenience S
- tores)\; Joe Harrison (National Market Traders Federation)\; Lee Wilcox (
- On The Tools).\nhttps://api.parliament.uk/committees/events/28441
-URL:https://api.parliament.uk/committees/events/28441
+ ade Committee.\nWitnesses to be announced.\nhttps://api.parliament.uk/com
+ mittees/events/28603
+URL:https://api.parliament.uk/committees/events/28603
 END:VEVENT
 END:VCALENDAR

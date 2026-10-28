@@ -6,23 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · International Development Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28510@house.peter-guillam123.github.io
-DTSTAMP:20261027T140000Z
-DTSTART:20261027T140000
-DTEND:20261027T163000
-SUMMARY:Global Health · International Development Committee
-LOCATION:The Wilson Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, International Development Committee.\n
- Witnesses: Jerop Limo (Ambassador for Youth and Adolescent Reproductive H
- ealth Program (AYARHEP)\, Kenya)\; Dr Natasha Kaoma (Copper Rose\, Zambia
- )\; Abadi Assefa (Family Guidance Association of Ethiopia (FGAE))\; Monic
- a Ferro (UNFPA London representative office)\; Dr Kirrily de Polnay (Méd
- ecins Sans Frontières)\; Dr Kennedy Uadiale (Liverpool School of Tropica
- l Medicine\, Malawi)\; Dr Jeanne Salje (University of Cambridge).\nhttps:
- //api.parliament.uk/committees/events/28510
-URL:https://api.parliament.uk/committees/events/28510
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28606@house.peter-guillam123.github.io
 DTSTAMP:20261103T140000Z
 DTSTART:20261103T140000
@@ -31,11 +14,10 @@ SUMMARY:Humanitarian situation in Ukraine · International Development Com
  mittee
 LOCATION:TBC
 DESCRIPTION:Oral evidence session\, International Development Committee.\n
- Witnesses: Dr Olena Moshynets (National Academy of Sciences of Ukraine)\;
-  Dr Luke Moore (Chelsea and Westminster Hospital)\; Alina Belobra (Humani
- tarian NGO Platform in Ukraine)\; Mila Leonova (Alliance UA CSO)\; Illya 
- Kletskovskyy (Ukrainian Red Cross Society).\nhttps://api.parliament.uk/co
- mmittees/events/28606
+ Witnesses: Dr Luke Moore (Chelsea and Westminster Hospital)\; Alina Belob
+ ra (Humanitarian NGO Platform in Ukraine)\; Mila Leonova (Alliance UA CSO
+ )\; Illya Kletskovskyy (Ukrainian Red Cross Society).\nhttps://api.parlia
+ ment.uk/committees/events/28606
 URL:https://api.parliament.uk/committees/events/28606
 END:VEVENT
 END:VCALENDAR
