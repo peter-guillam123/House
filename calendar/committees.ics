@@ -66,7 +66,7 @@ DTSTART:20261028T093000
 DTEND:20261028T120000
 SUMMARY:Neuroscience and digital childhoods · Science and Technology Comm
  ittee (Commons)
-LOCATION:TBC
+LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  ons).\nWitnesses: Rt Hon Ian Murray MP (Department for Digital\, Culture\
  , Media and Sport (DCMS))\; Rt Hon Dame Diana Johnson MP (Department of H
@@ -239,7 +239,7 @@ DTSTART:20261102T153000
 DTEND:20261102T180000
 SUMMARY:NHS Accident and Emergency departments · Public Accounts Committe
  e
-LOCATION:Physical
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   Samantha Jones OBE (Department of Health and Social Care)\; Sir Jim Mack
  ey (NHS England)\; Dr Emma Rowland (Homerton Healthcare Foundation Trust)
@@ -249,9 +249,9 @@ URL:https://api.parliament.uk/committees/events/28579
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28607@house.peter-guillam123.github.io
-DTSTAMP:20261102T162000Z
-DTSTART:20261102T162000
-DTEND:20261102T171000
+DTSTAMP:20261102T161500Z
+DTSTART:20261102T161500
+DTEND:20261102T171500
 SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
 LOCATION:Room 3\, Palace of Westminster
@@ -280,7 +280,7 @@ DTSTAMP:20261103T094500Z
 DTSTART:20261103T094500
 DTEND:20261103T123000
 SUMMARY:Budget 2026 · Treasury Committee
-LOCATION:TBC
+LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Ruth C
  urtice (Resolution Foundation)\; Helen Miller (Institute for Fiscal Studi
  es)\; Professor Tony Travers CBE\; Sanjay Raja (Deutsche Bank).\nhttps://
@@ -294,7 +294,7 @@ DTSTART:20261103T100000
 DTEND:20261103T120000
 SUMMARY:Inquiry into the recommendations of the Infected Blood Inquiry (St
  age 1) · Public Administration and Constitutional Affairs Committee
-LOCATION:TBC
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Public Administration and Constitution
  al Affairs Committee.\nWitnesses: Dr Emma Ireton\; Dr Rebecca McKee\; Pro
  f Richard Kirkham.\nhttps://api.parliament.uk/committees/events/28379
@@ -310,7 +310,8 @@ SUMMARY:Dunkelflaute and the risks of electricity intermittency · Environ
 LOCATION:Room 4\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
  ee.\nWitnesses: Michael Shanks MP (Department for Energy Security and Net
-  Zero).\nhttps://api.parliament.uk/committees/events/28505
+  Zero)\; Bill Jones (Department for Energy Security and Net Zero).\nhttps
+ ://api.parliament.uk/committees/events/28505
 URL:https://api.parliament.uk/committees/events/28505
 END:VEVENT
 BEGIN:VEVENT
@@ -320,7 +321,7 @@ DTSTART:20261103T100000
 DTEND:20261103T123000
 SUMMARY:Biosecurity and animal welfare · Environment\, Food and Rural Aff
  airs Committee
-LOCATION:TBC
+LOCATION:Room 6\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
  ommittee.\nWitnesses: Catherine McLaughlin (National Farmers Union (NFU))
  \; Dr Gwen Rees (British Veterinary Association)\; Abigail Seager (Veteri
@@ -328,18 +329,6 @@ DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
  cy)\; Professor Dan Horton (The Pirbright Institute).\nhttps://api.parlia
  ment.uk/committees/events/28530
 URL:https://api.parliament.uk/committees/events/28530
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28634@house.peter-guillam123.github.io
-DTSTAMP:20261103T100000Z
-DTSTART:20261103T100000
-DTEND:20261103T120000
-SUMMARY:The Work of the Department for Education · Education Committee
-LOCATION:To be confirmed
-DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Rt Ho
- n Lucy Powell MP (Rt Hon Lucy Powell MP).\nhttps://api.parliament.uk/comm
- ittees/events/28634
-URL:https://api.parliament.uk/committees/events/28634
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-27939@house.peter-guillam123.github.io
@@ -374,7 +363,7 @@ DTSTART:20261103T103000
 DTEND:20261103T123000
 SUMMARY:A new Syria: assessing UK strategy in a transitional state · Fore
  ign Affairs Committee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
   Cathrine Brun (University of Oxford)\; Dawn Chatty (Refugee Studies Cent
  re)\; Harmonie Toros (University of Reading)\; H.E Manar Dabbas\; H.E Far
@@ -404,12 +393,13 @@ DTSTART:20261103T140000
 DTEND:20261103T163000
 SUMMARY:Humanitarian situation in Ukraine · International Development Com
  mittee
-LOCATION:TBC
+LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, International Development Committee.\n
- Witnesses: Dr Luke Moore (Chelsea and Westminster Hospital)\; Alina Belob
- ra (Humanitarian NGO Platform in Ukraine)\; Mila Leonova (Alliance UA CSO
- )\; Illya Kletskovskyy (Ukrainian Red Cross Society).\nhttps://api.parlia
- ment.uk/committees/events/28606
+ Witnesses: Dr Luke Moore (Chelsea and Westminster Hospital)\; Dr Elena Mo
+ shynets (National Academy of Sciences of Ukraine)\; Alina Belobra (Humani
+ tarian NGO Platform in Ukraine)\; Mila Leonova (Alliance UA CSO)\; Illya 
+ Kletskovskyy (Ukrainian Red Cross Society).\nhttps://api.parliament.uk/co
+ mmittees/events/28606
 URL:https://api.parliament.uk/committees/events/28606
 END:VEVENT
 BEGIN:VEVENT
@@ -417,8 +407,8 @@ UID:house-committee-event-28445@house.peter-guillam123.github.io
 DTSTAMP:20261103T143000Z
 DTSTART:20261103T143000
 DTEND:20261103T170000
-SUMMARY:Oral evidence · Justice Committee
-LOCATION:TBC
+SUMMARY:Learning from Inquests · Justice Committee
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Mr Rich
  ard Caseby\; Mr Jonny Santer\; Dr Kate Szymankiewicz\; Deborah Coles (INQ
  UEST)\; Dr Georgia Richards (Preventable Deaths Tracker\, King's College 
@@ -432,7 +422,7 @@ DTSTART:20261103T143000
 DTEND:20261103T163000
 SUMMARY:Consumer protection · Business\, Innovation\, Science and Trade C
  ommittee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
  ade Committee.\nWitnesses to be announced.\nhttps://api.parliament.uk/com
  mittees/events/28603
@@ -444,7 +434,7 @@ DTSTAMP:20261103T161500Z
 DTSTART:20261103T161500
 DTEND:20261103T180000
 SUMMARY:Proposals for backbench debates · Backbench Business Committee
-LOCATION:TBC
+LOCATION:Room 16\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Backbench Business Committee.\nWitness
  es: Members of Parliament (House of Commons).\nhttps://api.parliament.uk/
  committees/events/28582
@@ -456,7 +446,7 @@ DTSTAMP:20261104T091500Z
 DTSTART:20261104T091500
 DTEND:20261104T120000
 SUMMARY:Delivering East West Rail · Transport Committee
-LOCATION:TBC
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: Tony 
  Baxter (Chiltern Railways)\; Eddie Dempsey (RMT Union)\; Mr Dave Calfe (A
  SLEF)\; David Hughes (East West Rail Co.)\; Ben Rule (East West Rail Co.)
@@ -472,7 +462,7 @@ DTSTART:20261104T091500
 DTEND:20261104T111500
 SUMMARY:Managing the future of UK oil and gas · Energy Security and Net Z
  ero Committee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
  .\nWitnesses: Dr Angela Needle (Cadent)\; Jenny Phillips (National Gas)\;
   Charles McAllister (Green Gas Taskforce)\; Mike Foster (Energy and Utili
@@ -486,12 +476,39 @@ DTSTAMP:20261104T093000Z
 DTSTART:20261104T093000
 DTEND:20261104T103000
 SUMMARY:The dual role of the Lord Advocate · Scottish Affairs Committee
-LOCATION:TBC
+LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
  : Dr Andrew Tickell (Glasgow Caledonian University)\; Dr Conor McCormick 
  (Queen’s University Belfast).\nhttps://api.parliament.uk/committees/eve
  nts/28319
 URL:https://api.parliament.uk/committees/events/28319
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28414@house.peter-guillam123.github.io
+DTSTAMP:20261104T093000Z
+DTSTART:20261104T093000
+DTEND:20261104T113000
+SUMMARY:Low-energy computing · Science and Technology Committee (Commons)
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses: Professor Tony Kenyon (Neuroware\, the UK Innovation an
+ d Knowledge Centre for Neuromorphic Computing Hardware)\; Dr Tanya Mangom
+ a (Analogue Insight)\; Professor Callum Littlejohns (CORNERSTONE)\; Dr Jo
+ sh Silverstone (Hartley Ultrafast).\nhttps://api.parliament.uk/committees
+ /events/28414
+URL:https://api.parliament.uk/committees/events/28414
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28634@house.peter-guillam123.github.io
+DTSTAMP:20261104T100000Z
+DTSTART:20261104T100000
+DTEND:20261104T120000
+SUMMARY:The Work of the Department for Education · Education Committee
+LOCATION:The Macmillan Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Rt Ho
+ n Lucy Powell MP (Department for Education).\nhttps://api.parliament.uk/c
+ ommittees/events/28634
+URL:https://api.parliament.uk/committees/events/28634
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28637@house.peter-guillam123.github.io
@@ -500,7 +517,7 @@ DTSTART:20261104T100000
 DTEND:20261104T120000
 SUMMARY:Regulatory sandboxes in financial services · Financial Services R
  egulation Committee
-LOCATION:To be confirmed
+LOCATION:Room 4\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
  e.\nWitnesses: Sebastian McDermott (Fintech Founders)\; Chris Bosworth (F
  inclusion)\; Will Mason (Infact)\; Oliver Quie (Innerworks)\; Irene Graha
@@ -517,8 +534,8 @@ SUMMARY:Multilateralism · International Relations and Defence Committee
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
  mmittee.\nWitnesses: Professor Robert Trager (Oxford Martin AI Governance
-  Initiative\, University of Oxford).\nhttps://api.parliament.uk/committee
- s/events/28574
+  Initiative\, University of Oxford)\; Renata Dwan (Simon Institute for Lo
+ ngterm Governance).\nhttps://api.parliament.uk/committees/events/28574
 URL:https://api.parliament.uk/committees/events/28574
 END:VEVENT
 BEGIN:VEVENT
@@ -540,7 +557,7 @@ DTSTAMP:20261104T141500Z
 DTSTART:20261104T141500
 DTEND:20261104T163000
 SUMMARY:Budget 2026 · Treasury Committee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Profes
  sor Jonathan Haskel CBE (Office for Budget Responsibility)\; Tom Josephs 
  (Office for Budget Responsibility)\; Professor David Miles CBE (Office fo
@@ -555,7 +572,7 @@ DTSTART:20261104T143000
 DTEND:20261104T163000
 SUMMARY:HM Treasury and the economics of climate and nature · Environment
  al Audit Committee
-LOCATION:TBC
+LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
  ses: Matthew Croucher (The Society of Motor Manufacturers & Traders Limit
  ed)\; Andrew McDermott (Ceramics UK)\; Adam Berman (Energy UK)\; Jill Rut

@@ -8,14 +8,14 @@ X-WR-CALNAME:The Work of the Department for Education · Education Committ
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
 UID:house-committee-event-28634@house.peter-guillam123.github.io
-DTSTAMP:20261103T100000Z
-DTSTART:20261103T100000
-DTEND:20261103T120000
+DTSTAMP:20261104T100000Z
+DTSTART:20261104T100000
+DTEND:20261104T120000
 SUMMARY:The Work of the Department for Education · Education Committee
-LOCATION:To be confirmed
+LOCATION:The Macmillan Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Rt Ho
- n Lucy Powell MP (Rt Hon Lucy Powell MP).\nhttps://api.parliament.uk/comm
- ittees/events/28634
+ n Lucy Powell MP (Department for Education).\nhttps://api.parliament.uk/c
+ ommittees/events/28634
 URL:https://api.parliament.uk/committees/events/28634
 END:VEVENT
 END:VCALENDAR

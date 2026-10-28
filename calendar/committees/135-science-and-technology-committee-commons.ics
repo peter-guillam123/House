@@ -12,7 +12,7 @@ DTSTART:20261028T093000
 DTEND:20261028T120000
 SUMMARY:Neuroscience and digital childhoods · Science and Technology Comm
  ittee (Commons)
-LOCATION:TBC
+LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  ons).\nWitnesses: Rt Hon Ian Murray MP (Department for Digital\, Culture\
  , Media and Sport (DCMS))\; Rt Hon Dame Diana Johnson MP (Department of H
@@ -21,5 +21,20 @@ DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  epartment for Education)\; Daniel Okubo (Department for Digital\, Culture
  \, Media and Sport).\nhttps://api.parliament.uk/committees/events/28413
 URL:https://api.parliament.uk/committees/events/28413
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28414@house.peter-guillam123.github.io
+DTSTAMP:20261104T093000Z
+DTSTART:20261104T093000
+DTEND:20261104T113000
+SUMMARY:Low-energy computing · Science and Technology Committee (Commons)
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses: Professor Tony Kenyon (Neuroware\, the UK Innovation an
+ d Knowledge Centre for Neuromorphic Computing Hardware)\; Dr Tanya Mangom
+ a (Analogue Insight)\; Professor Callum Littlejohns (CORNERSTONE)\; Dr Jo
+ sh Silverstone (Hartley Ultrafast).\nhttps://api.parliament.uk/committees
+ /events/28414
+URL:https://api.parliament.uk/committees/events/28414
 END:VEVENT
 END:VCALENDAR

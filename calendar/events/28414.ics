@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Low-energy computing · Science and Technology Committee (Com
+ mons)
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28414@house.peter-guillam123.github.io
+DTSTAMP:20261104T093000Z
+DTSTART:20261104T093000
+DTEND:20261104T113000
+SUMMARY:Low-energy computing · Science and Technology Committee (Commons)
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses: Professor Tony Kenyon (Neuroware\, the UK Innovation an
+ d Knowledge Centre for Neuromorphic Computing Hardware)\; Dr Tanya Mangom
+ a (Analogue Insight)\; Professor Callum Littlejohns (CORNERSTONE)\; Dr Jo
+ sh Silverstone (Hartley Ultrafast).\nhttps://api.parliament.uk/committees
+ /events/28414
+URL:https://api.parliament.uk/committees/events/28414
+END:VEVENT
+END:VCALENDAR

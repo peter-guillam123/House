@@ -1,7 +1,7 @@
 {
 "built": "2026-10-28",
 "windowDays": 56,
-"sessions": 54,
+"sessions": 55,
 "all": "committees.ics",
 "committees": [
 {
@@ -646,7 +646,7 @@
 "name": "Science and Technology Committee (Commons)",
 "house": "Commons",
 "file": "committees/135-science-and-technology-committee-commons.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 136,
@@ -804,6 +804,7 @@
 28370,
 28379,
 28413,
+28414,
 28433,
 28436,
 28438,

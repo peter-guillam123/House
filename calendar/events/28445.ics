@@ -3,15 +3,15 @@ VERSION:2.0
 PRODID:-//House//Committee calendars//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Oral evidence · Justice Committee
+X-WR-CALNAME:Learning from Inquests · Justice Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
 UID:house-committee-event-28445@house.peter-guillam123.github.io
 DTSTAMP:20261103T143000Z
 DTSTART:20261103T143000
 DTEND:20261103T170000
-SUMMARY:Oral evidence · Justice Committee
-LOCATION:TBC
+SUMMARY:Learning from Inquests · Justice Committee
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Mr Rich
  ard Caseby\; Mr Jonny Santer\; Dr Kate Szymankiewicz\; Deborah Coles (INQ
  UEST)\; Dr Georgia Richards (Preventable Deaths Tracker\, King's College 
