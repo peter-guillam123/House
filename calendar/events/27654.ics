@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Former His Majesty’s Chief Inspector of Constabulary and Fi
+ re and Rescue Services · Home Affairs Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-27654@house.peter-guillam123.github.io
+DTSTAMP:20261103T143000Z
+DTSTART:20261103T143000
+DTEND:20261103T163000
+SUMMARY:Former His Majesty’s Chief Inspector of Constabulary and Fire an
+ d Rescue Services · Home Affairs Committee
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Home Affairs Committee.\nWitnesses: Si
+ r Andy Cooke QPM DL.\nhttps://api.parliament.uk/committees/events/27654
+URL:https://api.parliament.uk/committees/events/27654
+END:VEVENT
+END:VCALENDAR

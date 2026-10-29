@@ -1,7 +1,7 @@
 {
-"built": "2026-10-28",
+"built": "2026-10-29",
 "windowDays": 56,
-"sessions": 55,
+"sessions": 49,
 "all": "committees.ics",
 "committees": [
 {
@@ -149,7 +149,7 @@
 "name": "Constitution Committee",
 "house": "Lords",
 "file": "committees/172-constitution-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 438,
@@ -219,14 +219,14 @@
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 515,
 "name": "Environment and Climate Change Committee",
 "house": "Lords",
 "file": "committees/515-environment-and-climate-change-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 52,
@@ -247,13 +247,6 @@
 "name": "European Affairs Committee",
 "house": "Lords",
 "file": "committees/516-european-affairs-committee.ics",
-"upcoming": 0
-},
-{
-"id": 423,
-"name": "Fifth Delegated Legislation Committee",
-"house": "Commons",
-"file": "committees/423-fifth-delegated-legislation-committee.ics",
 "upcoming": 0
 },
 {
@@ -282,7 +275,7 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 410,
@@ -297,13 +290,6 @@
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
 "upcoming": 1
-},
-{
-"id": 422,
-"name": "Fourth Delegated Legislation Committee",
-"house": "Commons",
-"file": "committees/422-fourth-delegated-legislation-committee.ics",
-"upcoming": 0
 },
 {
 "id": 811,
@@ -324,7 +310,7 @@
 "name": "Health and Social Care Committee",
 "house": "Commons",
 "file": "committees/81-health-and-social-care-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 597,
@@ -366,7 +352,7 @@
 "name": "Home Affairs Committee",
 "house": "Commons",
 "file": "committees/83-home-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 362,
@@ -387,7 +373,7 @@
 "name": "Human Rights (Joint Committee)",
 "house": "Joint",
 "file": "committees/93-human-rights-joint-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 186,
@@ -436,7 +422,7 @@
 "name": "International Relations and Defence Committee",
 "house": "Lords",
 "file": "committees/360-international-relations-and-defence-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 519,
@@ -527,7 +513,7 @@
 "name": "Northern Ireland Affairs Committee",
 "house": "Commons",
 "file": "committees/120-northern-ireland-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 769,
@@ -611,7 +597,7 @@
 "name": "Public Services Committee",
 "house": "Lords",
 "file": "committees/430-public-services-committee.ics",
-"upcoming": 5
+"upcoming": 4
 },
 {
 "id": 652,
@@ -653,7 +639,7 @@
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 411,
@@ -779,7 +765,7 @@
 "name": "Women and Equalities Committee",
 "house": "Commons",
 "file": "committees/328-women-and-equalities-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 164,
@@ -790,40 +776,33 @@
 }
 ],
 "events": [
+27654,
 27939,
-28063,
-28082,
 28151,
 28152,
 28153,
 28154,
+28164,
 28261,
 28302,
 28310,
 28319,
-28370,
 28379,
 28413,
 28414,
-28433,
 28436,
-28438,
 28445,
 28464,
 28465,
-28484,
 28486,
 28493,
-28503,
 28505,
-28512,
-28515,
-28516,
 28523,
 28526,
 28530,
 28538,
 28568,
+28572,
 28573,
 28574,
 28578,
@@ -836,6 +815,7 @@
 28595,
 28600,
 28603,
+28604,
 28606,
 28607,
 28612,

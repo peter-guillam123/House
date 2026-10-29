@@ -6,60 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Committee oral evidence
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28370@house.peter-guillam123.github.io
-DTSTAMP:20261028T091500Z
-DTSTART:20261028T091500
-DTEND:20261028T111500
-SUMMARY:Work of NESO · Energy Security and Net Zero Committee
-LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
- .\nWitnesses: Fintan Slye (National Energy System Operator (NESO))\; Kayt
- e O’Neill (National Energy System Operator (NESO)).\nhttps://api.parlia
- ment.uk/committees/events/28370
-URL:https://api.parliament.uk/committees/events/28370
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28082@house.peter-guillam123.github.io
-DTSTAMP:20261028T093000Z
-DTSTART:20261028T093000
-DTEND:20261028T113000
-SUMMARY:Connectivity in Scotland: Digital connectivity · Scottish Affairs
-  Committee
-LOCATION:Room 15\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
- : Garret Kavanagh (Openreach)\; Robert Thorburn (Openreach)\; Fiona Cayle
- y (GoFibre)\; Ian Bolas (HebNet CIC).\nhttps://api.parliament.uk/committe
- es/events/28082
-URL:https://api.parliament.uk/committees/events/28082
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28433@house.peter-guillam123.github.io
-DTSTAMP:20261028T093000Z
-DTSTART:20261028T093000
-DTEND:20261028T113000
-SUMMARY:Child Maintenance Service · Work and Pensions Committee
-LOCATION:The Thatcher Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
- s: Paula Sussex CBE\; Baroness Sherlock OBE (Department for Work and Pens
- ions)\; Simon Hunter (Child Maintenance Service)\; Duncan Gilchrist (Chil
- d Maintenance Service)\; Lucy Appleton (Child Maintenance Service).\nhttp
- s://api.parliament.uk/committees/events/28433
-URL:https://api.parliament.uk/committees/events/28433
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28515@house.peter-guillam123.github.io
-DTSTAMP:20261028T093000Z
-DTSTART:20261028T093000
-DTEND:20261028T120000
-SUMMARY:Pensions Credit uptake  in Northern Ireland · Northern Ireland Af
- fairs Committee
-LOCATION:The Wilson Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Northern Ireland Affairs Committee.\nW
- itnesses: Siobhan Casey (Older People for Northern Ireland)\; Kevin Higgi
- ns (Advice NI).\nhttps://api.parliament.uk/committees/events/28515
-URL:https://api.parliament.uk/committees/events/28515
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28413@house.peter-guillam123.github.io
 DTSTAMP:20261028T093000Z
 DTSTART:20261028T093000
@@ -69,93 +15,12 @@ SUMMARY:Neuroscience and digital childhoods · Science and Technology Comm
 LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  ons).\nWitnesses: Rt Hon Ian Murray MP (Department for Digital\, Culture\
- , Media and Sport (DCMS))\; Rt Hon Dame Diana Johnson MP (Department of H
- ealth and Social Care (DHSC))\; Paul Waugh MP (Department for Education)\
- ; Tabitha Jay (Department for Health and Social Care)\; Michael Thomas (D
- epartment for Education)\; Daniel Okubo (Department for Digital\, Culture
- \, Media and Sport).\nhttps://api.parliament.uk/committees/events/28413
+ , Media and Sport)\; Daniel Okubo (Department for Digital\, Culture\, Med
+ ia and Sport)\; Rt Hon Dame Diana Johnson MP (Department of Health and So
+ cial Care)\; Tabitha Jay (Department of Health and Social Care)\; Paul Wa
+ ugh MP (Department for Education)\; Michael Thomas (Department for Educat
+ ion).\nhttps://api.parliament.uk/committees/events/28413
 URL:https://api.parliament.uk/committees/events/28413
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28438@house.peter-guillam123.github.io
-DTSTAMP:20261028T100000Z
-DTSTART:20261028T100000
-DTEND:20261028T110000
-SUMMARY:Regulatory sandboxes in financial services · Financial Services R
- egulation Committee
-LOCATION:Room 2A\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
- e.\nWitnesses: Anna Wallace (Centre for Finance\, Innovation and Technolo
- gy (CFIT)).\nhttps://api.parliament.uk/committees/events/28438
-URL:https://api.parliament.uk/committees/events/28438
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28503@house.peter-guillam123.github.io
-DTSTAMP:20261028T100000Z
-DTSTART:20261028T100000
-DTEND:20261028T113000
-SUMMARY:Dunkelflaute and the risks of electricity intermittency · Environ
- ment and Climate Change Committee
-LOCATION:Room 4\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
- ee.\nWitnesses: Julian Leslie (NESO)\; Peter Bingham (Ofgem).\nhttps://ap
- i.parliament.uk/committees/events/28503
-URL:https://api.parliament.uk/committees/events/28503
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28516@house.peter-guillam123.github.io
-DTSTAMP:20261028T101000Z
-DTSTART:20261028T101000
-DTEND:20261028T115500
-SUMMARY:The UK’s constitutional safeguards · Constitution Committee
-LOCATION:Room 3\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Pr
- ofessor Anne Twomey (University of Sydney Law School)\; Professor Vanessa
-  MacDonnell (University of Ottawa)\; Danny Kruger MP.\nhttps://api.parlia
- ment.uk/committees/events/28516
-URL:https://api.parliament.uk/committees/events/28516
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28484@house.peter-guillam123.github.io
-DTSTAMP:20261028T103000Z
-DTSTART:20261028T103000
-DTEND:20261028T123000
-SUMMARY:Multilateralism · International Relations and Defence Committee
-LOCATION:Room 4A\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses: Daan Jujin (Arq Foundation)\; Nick Moës (The Future
-  Society)\; Dr Rachel Adams (Leverhulme Centre for the Future of Intellig
- ence\, University of Cambridge).\nhttps://api.parliament.uk/committees/ev
- ents/28484
-URL:https://api.parliament.uk/committees/events/28484
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28063@house.peter-guillam123.github.io
-DTSTAMP:20261028T110000Z
-DTSTART:20261028T110000
-DTEND:20261028T123000
-SUMMARY:Children’s social care · Public Services Committee
-LOCATION:Room 2\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
-  Rachael Wardell OBE (Association of Directors of Children’s Services (
- ADCS))\; Lucy Butler (Home and Future (South East Regional Care Cooperati
- ve))\; Cllr Gerald Vernon-Jackson CBE (Local Government Association (LGA)
- ).\nhttps://api.parliament.uk/committees/events/28063
-URL:https://api.parliament.uk/committees/events/28063
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28512@house.peter-guillam123.github.io
-DTSTAMP:20261028T141500Z
-DTSTART:20261028T141500
-DTEND:20261028T161500
-SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
- ights (Joint Committee)
-LOCATION:Room 5\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
- sses: Liz Webster (Save British Farming)\; Peter Leary (Palestine Solidar
- ity Campaign)\; Rahila Gupta (Southall Black Sisters).\nhttps://api.parli
- ament.uk/committees/events/28512
-URL:https://api.parliament.uk/committees/events/28512
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28493@house.peter-guillam123.github.io
@@ -242,9 +107,9 @@ SUMMARY:NHS Accident and Emergency departments · Public Accounts Committe
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   Samantha Jones OBE (Department of Health and Social Care)\; Sir Jim Mack
- ey (NHS England)\; Dr Emma Rowland (Homerton Healthcare Foundation Trust)
- \; Professor Tim Briggs (NHS England).\nhttps://api.parliament.uk/committ
- ees/events/28579
+ ey (NHS England)\; Professor Tim Briggs (NHS England)\; Dr Emma Rowland (
+ NHS England\, Homerton Healthcare Foundation Trust).\nhttps://api.parliam
+ ent.uk/committees/events/28579
 URL:https://api.parliament.uk/committees/events/28579
 END:VEVENT
 BEGIN:VEVENT
@@ -262,8 +127,8 @@ URL:https://api.parliament.uk/committees/events/28607
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28568@house.peter-guillam123.github.io
-DTSTAMP:20261102T163000Z
-DTSTART:20261102T163000
+DTSTAMP:20261102T164500Z
+DTSTART:20261102T164500
 DTEND:20261102T180000
 SUMMARY:Societal resilience: a national conversation · National Security 
  Strategy (Joint Committee)
@@ -297,7 +162,8 @@ SUMMARY:Inquiry into the recommendations of the Infected Blood Inquiry (St
 LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Public Administration and Constitution
  al Affairs Committee.\nWitnesses: Dr Emma Ireton\; Dr Rebecca McKee\; Pro
- f Richard Kirkham.\nhttps://api.parliament.uk/committees/events/28379
+ fessor Richard Kirkham.\nhttps://api.parliament.uk/committees/events/2837
+ 9
 URL:https://api.parliament.uk/committees/events/28379
 END:VEVENT
 BEGIN:VEVENT
@@ -365,10 +231,10 @@ SUMMARY:A new Syria: assessing UK strategy in a transitional state · Fore
  ign Affairs Committee
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
-  Cathrine Brun (University of Oxford)\; Dawn Chatty (Refugee Studies Cent
- re)\; Harmonie Toros (University of Reading)\; H.E Manar Dabbas\; H.E Far
- ah Berry\; H.E Haneen Sayed\; H.E Osman Koray Ertaş.\nhttps://api.parlia
- ment.uk/committees/events/28591
+  Cathrine Brun (Centre for Lebanese Studies\, University of Cambridge)\; 
+ Dawn Chatty (Refugee Studies Centre)\; Harmonie Toros (University of Read
+ ing)\; H.E Manar Dabbas\; H.E Farah Berry\; H.E Haneen Sayed\; H.E Osman 
+ Koray Ertaş.\nhttps://api.parliament.uk/committees/events/28591
 URL:https://api.parliament.uk/committees/events/28591
 END:VEVENT
 BEGIN:VEVENT
@@ -403,6 +269,18 @@ DESCRIPTION:Oral evidence session\, International Development Committee.\n
 URL:https://api.parliament.uk/committees/events/28606
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-27654@house.peter-guillam123.github.io
+DTSTAMP:20261103T143000Z
+DTSTART:20261103T143000
+DTEND:20261103T163000
+SUMMARY:Former His Majesty’s Chief Inspector of Constabulary and Fire an
+ d Rescue Services · Home Affairs Committee
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Home Affairs Committee.\nWitnesses: Si
+ r Andy Cooke QPM DL.\nhttps://api.parliament.uk/committees/events/27654
+URL:https://api.parliament.uk/committees/events/27654
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28445@house.peter-guillam123.github.io
 DTSTAMP:20261103T143000Z
 DTSTART:20261103T143000
@@ -424,8 +302,11 @@ SUMMARY:Consumer protection · Business\, Innovation\, Science and Trade C
  ommittee
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
- ade Committee.\nWitnesses to be announced.\nhttps://api.parliament.uk/com
- mittees/events/28603
+ ade Committee.\nWitnesses: Kate Dearden MP (Department for Business\, Inn
+ ovation\, Science and Trade)\; Emma Cochrane (Competition and Markets Aut
+ hority)\; Sarah Adcock (Department for Business\, Innovation\, Science an
+ d Trade)\; Sophie George (Department for Business\, Innovation\, Science 
+ and Trade).\nhttps://api.parliament.uk/committees/events/28603
 URL:https://api.parliament.uk/committees/events/28603
 END:VEVENT
 BEGIN:VEVENT
@@ -499,6 +380,35 @@ DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
 URL:https://api.parliament.uk/committees/events/28414
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28572@house.peter-guillam123.github.io
+DTSTAMP:20261104T093000Z
+DTSTART:20261104T093000
+DTEND:20261104T113000
+SUMMARY:DWP’s Annual Report and Accounts 2025-26 · Work and Pensions Co
+ mmittee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
+ s: Dame Sarah Healey DCB CVO (Department for Work and Pensions)\; Catheri
+ ne Vaughan (Department for Work and Pensions)\; Neil Couling (Department 
+ for Work and Pensions)\; Katherine Green (Department for Work and Pension
+ s).\nhttps://api.parliament.uk/committees/events/28572
+URL:https://api.parliament.uk/committees/events/28572
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28604@house.peter-guillam123.github.io
+DTSTAMP:20261104T093000Z
+DTSTART:20261104T093000
+DTEND:20261104T114000
+SUMMARY:The Work of the Department for Health and Social Care · Health an
+ d Social Care Committee
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Health and Social Care Committee.\nWit
+ nesses: Rt Hon Yvette Cooper MP (Department of Health and Social Care)\; 
+ Samantha Jones (Department of Health and Social Care)\; Sir Jim Mackey (N
+ HS England).\nhttps://api.parliament.uk/committees/events/28604
+URL:https://api.parliament.uk/committees/events/28604
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28634@house.peter-guillam123.github.io
 DTSTAMP:20261104T100000Z
 DTSTART:20261104T100000
@@ -566,6 +476,21 @@ DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Profes
 URL:https://api.parliament.uk/committees/events/28595
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28164@house.peter-guillam123.github.io
+DTSTAMP:20261104T142000Z
+DTSTART:20261104T142000
+DTEND:20261104T163000
+SUMMARY:Equalities impacts of proposed reforms to routes to settlement · 
+ Women and Equalities Committee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
+ sses: Dr Hannana Siddiqui (Southall Black Sisters)\; Anita Hurrell (Coram
+  Children’s Legal Centre)\; Sabrina Galella (Immigration Law Practition
+ ers' Association)\; Andrea Als (Immigration Lawyers Practitioners Associa
+ tion (ILPA)).\nhttps://api.parliament.uk/committees/events/28164
+URL:https://api.parliament.uk/committees/events/28164
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28589@house.peter-guillam123.github.io
 DTSTAMP:20261104T143000Z
 DTSTART:20261104T143000
@@ -602,8 +527,10 @@ DTSTART:20261111T110000
 DTEND:20261111T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28151
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Dame Rachel de Souza\, Children’s Commissioner for England (Children's
+  Commissioner for England).\nhttps://api.parliament.uk/committees/events/
+ 28151
 URL:https://api.parliament.uk/committees/events/28151
 END:VEVENT
 BEGIN:VEVENT

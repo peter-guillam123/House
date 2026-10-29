@@ -6,28 +6,16 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Public Services Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28063@house.peter-guillam123.github.io
-DTSTAMP:20261028T110000Z
-DTSTART:20261028T110000
-DTEND:20261028T123000
-SUMMARY:Children’s social care · Public Services Committee
-LOCATION:Room 2\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
-  Rachael Wardell OBE (Association of Directors of Children’s Services (
- ADCS))\; Lucy Butler (Home and Future (South East Regional Care Cooperati
- ve))\; Cllr Gerald Vernon-Jackson CBE (Local Government Association (LGA)
- ).\nhttps://api.parliament.uk/committees/events/28063
-URL:https://api.parliament.uk/committees/events/28063
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28151@house.peter-guillam123.github.io
 DTSTAMP:20261111T110000Z
 DTSTART:20261111T110000
 DTEND:20261111T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28151
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Dame Rachel de Souza\, Children’s Commissioner for England (Children's
+  Commissioner for England).\nhttps://api.parliament.uk/committees/events/
+ 28151
 URL:https://api.parliament.uk/committees/events/28151
 END:VEVENT
 BEGIN:VEVENT

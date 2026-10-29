@@ -12,8 +12,10 @@ DTSTART:20261111T110000
 DTEND:20261111T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28151
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Dame Rachel de Souza\, Children’s Commissioner for England (Children's
+  Commissioner for England).\nhttps://api.parliament.uk/committees/events/
+ 28151
 URL:https://api.parliament.uk/committees/events/28151
 END:VEVENT
 END:VCALENDAR

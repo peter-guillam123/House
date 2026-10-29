@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:DWP’s Annual Report and Accounts 2025-26 · Work and Pensio
+ ns Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28572@house.peter-guillam123.github.io
+DTSTAMP:20261104T093000Z
+DTSTART:20261104T093000
+DTEND:20261104T113000
+SUMMARY:DWP’s Annual Report and Accounts 2025-26 · Work and Pensions Co
+ mmittee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
+ s: Dame Sarah Healey DCB CVO (Department for Work and Pensions)\; Catheri
+ ne Vaughan (Department for Work and Pensions)\; Neil Couling (Department 
+ for Work and Pensions)\; Katherine Green (Department for Work and Pension
+ s).\nhttps://api.parliament.uk/committees/events/28572
+URL:https://api.parliament.uk/committees/events/28572
+END:VEVENT
+END:VCALENDAR

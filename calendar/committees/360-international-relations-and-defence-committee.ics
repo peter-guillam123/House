@@ -6,20 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · International Relations and Defence Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28484@house.peter-guillam123.github.io
-DTSTAMP:20261028T103000Z
-DTSTART:20261028T103000
-DTEND:20261028T123000
-SUMMARY:Multilateralism · International Relations and Defence Committee
-LOCATION:Room 4A\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses: Daan Jujin (Arq Foundation)\; Nick Moës (The Future
-  Society)\; Dr Rachel Adams (Leverhulme Centre for the Future of Intellig
- ence\, University of Cambridge).\nhttps://api.parliament.uk/committees/ev
- ents/28484
-URL:https://api.parliament.uk/committees/events/28484
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28574@house.peter-guillam123.github.io
 DTSTAMP:20261104T103000Z
 DTSTART:20261104T103000

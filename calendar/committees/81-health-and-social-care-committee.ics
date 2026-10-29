@@ -5,4 +5,18 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Health and Social Care Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28604@house.peter-guillam123.github.io
+DTSTAMP:20261104T093000Z
+DTSTART:20261104T093000
+DTEND:20261104T114000
+SUMMARY:The Work of the Department for Health and Social Care · Health an
+ d Social Care Committee
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Health and Social Care Committee.\nWit
+ nesses: Rt Hon Yvette Cooper MP (Department of Health and Social Care)\; 
+ Samantha Jones (Department of Health and Social Care)\; Sir Jim Mackey (N
+ HS England).\nhttps://api.parliament.uk/committees/events/28604
+URL:https://api.parliament.uk/committees/events/28604
+END:VEVENT
 END:VCALENDAR
