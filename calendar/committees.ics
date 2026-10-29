@@ -6,23 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Committee oral evidence
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28413@house.peter-guillam123.github.io
-DTSTAMP:20261028T093000Z
-DTSTART:20261028T093000
-DTEND:20261028T120000
-SUMMARY:Neuroscience and digital childhoods · Science and Technology Comm
- ittee (Commons)
-LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
- ons).\nWitnesses: Rt Hon Ian Murray MP (Department for Digital\, Culture\
- , Media and Sport)\; Daniel Okubo (Department for Digital\, Culture\, Med
- ia and Sport)\; Rt Hon Dame Diana Johnson MP (Department of Health and So
- cial Care)\; Tabitha Jay (Department of Health and Social Care)\; Paul Wa
- ugh MP (Department for Education)\; Michael Thomas (Department for Educat
- ion).\nhttps://api.parliament.uk/committees/events/28413
-URL:https://api.parliament.uk/committees/events/28413
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28493@house.peter-guillam123.github.io
 DTSTAMP:20261029T094500Z
 DTSTART:20261029T094500
@@ -140,6 +123,23 @@ DESCRIPTION:Oral evidence session\, National Security Strategy (Joint Comm
 URL:https://api.parliament.uk/committees/events/28568
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28413@house.peter-guillam123.github.io
+DTSTAMP:20261103T093000Z
+DTSTART:20261103T093000
+DTEND:20261103T120000
+SUMMARY:Neuroscience and digital childhoods · Science and Technology Comm
+ ittee (Commons)
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses: Rt Hon Ian Murray MP (Department for Digital\, Culture\
+ , Media and Sport)\; Daniel Okubo (Department for Digital\, Culture\, Med
+ ia and Sport)\; Rt Hon Dame Diana Johnson MP (Department of Health and So
+ cial Care)\; Tabitha Jay (Department of Health and Social Care)\; Paul Wa
+ ugh MP (Department for Education)\; Michael Thomas (Department for Educat
+ ion).\nhttps://api.parliament.uk/committees/events/28413
+URL:https://api.parliament.uk/committees/events/28413
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28594@house.peter-guillam123.github.io
 DTSTAMP:20261103T094500Z
 DTSTART:20261103T094500
@@ -187,7 +187,7 @@ DTSTART:20261103T100000
 DTEND:20261103T123000
 SUMMARY:Biosecurity and animal welfare · Environment\, Food and Rural Aff
  airs Committee
-LOCATION:Room 6\, Palace of Westminster
+LOCATION:The Macmillan Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
  ommittee.\nWitnesses: Catherine McLaughlin (National Farmers Union (NFU))
  \; Dr Gwen Rees (British Veterinary Association)\; Abigail Seager (Veteri
@@ -288,9 +288,9 @@ DTEND:20261103T170000
 SUMMARY:Learning from Inquests · Justice Committee
 LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Mr Rich
- ard Caseby\; Mr Jonny Santer\; Dr Kate Szymankiewicz\; Deborah Coles (INQ
- UEST)\; Dr Georgia Richards (Preventable Deaths Tracker\, King's College 
- London).\nhttps://api.parliament.uk/committees/events/28445
+ ard Caseby\; Mr Johnny Santer\; Dr Kate Szymankiewicz\; Deborah Coles (IN
+ QUEST)\; Dr Georgia Richards (Preventable Deaths Tracker\, King's College
+  London).\nhttps://api.parliament.uk/committees/events/28445
 URL:https://api.parliament.uk/committees/events/28445
 END:VEVENT
 BEGIN:VEVENT
@@ -302,11 +302,14 @@ SUMMARY:Consumer protection · Business\, Innovation\, Science and Trade C
  ommittee
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
- ade Committee.\nWitnesses: Kate Dearden MP (Department for Business\, Inn
- ovation\, Science and Trade)\; Emma Cochrane (Competition and Markets Aut
- hority)\; Sarah Adcock (Department for Business\, Innovation\, Science an
- d Trade)\; Sophie George (Department for Business\, Innovation\, Science 
- and Trade).\nhttps://api.parliament.uk/committees/events/28603
+ ade Committee.\nWitnesses: David Bowles (Royal Society for the Prevention
+  of Cruelty to Animals)\; TBC (Combat Stress)\; Steve Raper (British Fire
+ works Association)\; Sue Davies MBE (Which?)\; David MacKenzie (Chartered
+  Trading Standards Institute)\; Kate Dearden MP (Department for Business\
+ , Innovation\, Science and Trade)\; Emma Cochrane (Competition and Market
+ s Authority)\; Sophie George (Department for Business\, Innovation\, Scie
+ nce and Trade)\; Graham Russell MBE (Department for Business\, Innovation
+ \, Science and Trade).\nhttps://api.parliament.uk/committees/events/28603
 URL:https://api.parliament.uk/committees/events/28603
 END:VEVENT
 BEGIN:VEVENT
@@ -330,10 +333,11 @@ SUMMARY:Delivering East West Rail · Transport Committee
 LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: Tony 
  Baxter (Chiltern Railways)\; Eddie Dempsey (RMT Union)\; Mr Dave Calfe (A
- SLEF)\; David Hughes (East West Rail Co.)\; Ben Rule (East West Rail Co.)
- \; Christian Irwin (Network Rail)\; Rosemary Hopkins (Department for Tran
- sport)\; Jodie Lofthouse (Department for Transport).\nhttps://api.parliam
- ent.uk/committees/events/28261
+ SLEF)\; Jodie Lofthouse (Department for Transport)\; David Hughes (East W
+ est Rail Co.)\; Ben Rule (East West Rail Co.)\; Christian Irwin (Network 
+ Rail)\; Rosemary Hopkins (Department for Transport)\; Jodie Lofthouse (De
+ partment for Transport).\nhttps://api.parliament.uk/committees/events/282
+ 61
 URL:https://api.parliament.uk/committees/events/28261
 END:VEVENT
 BEGIN:VEVENT
@@ -355,13 +359,14 @@ BEGIN:VEVENT
 UID:house-committee-event-28319@house.peter-guillam123.github.io
 DTSTAMP:20261104T093000Z
 DTSTART:20261104T093000
-DTEND:20261104T103000
+DTEND:20261104T113000
 SUMMARY:The dual role of the Lord Advocate · Scottish Affairs Committee
 LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
  : Dr Andrew Tickell (Glasgow Caledonian University)\; Dr Conor McCormick 
- (Queen’s University Belfast).\nhttps://api.parliament.uk/committees/eve
- nts/28319
+ (Queen’s University Belfast)\; Michael Clancy (Law Society of Scotland)
+ \; Malcolm McMillan (Scottish Law Commission).\nhttps://api.parliament.uk
+ /committees/events/28319
 URL:https://api.parliament.uk/committees/events/28319
 END:VEVENT
 BEGIN:VEVENT
@@ -482,7 +487,7 @@ DTSTART:20261104T142000
 DTEND:20261104T163000
 SUMMARY:Equalities impacts of proposed reforms to routes to settlement · 
  Women and Equalities Committee
-LOCATION:Room 6\, Palace of Westminster
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
  sses: Dr Hannana Siddiqui (Southall Black Sisters)\; Anita Hurrell (Coram
   Children’s Legal Centre)\; Sabrina Galella (Immigration Law Practition
@@ -497,7 +502,7 @@ DTSTART:20261104T143000
 DTEND:20261104T163000
 SUMMARY:HM Treasury and the economics of climate and nature · Environment
  al Audit Committee
-LOCATION:Room 8\, Palace of Westminster
+LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
  ses: Matthew Croucher (The Society of Motor Manufacturers & Traders Limit
  ed)\; Andrew McDermott (Ceramics UK)\; Adam Berman (Energy UK)\; Jill Rut
@@ -506,6 +511,18 @@ DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
  of Economics and Political Science).\nhttps://api.parliament.uk/committee
  s/events/28589
 URL:https://api.parliament.uk/committees/events/28589
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28661@house.peter-guillam123.github.io
+DTSTAMP:20261110T143000Z
+DTSTART:20261110T143000
+DTEND:20261110T163000
+SUMMARY:Oral evidence · Communications and Digital Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
+ nWitnesses to be announced.\nhttps://api.parliament.uk/committees/events/
+ 28661
+URL:https://api.parliament.uk/committees/events/28661
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28310@house.peter-guillam123.github.io

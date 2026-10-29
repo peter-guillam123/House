@@ -1,7 +1,7 @@
 {
 "built": "2026-10-29",
 "windowDays": 56,
-"sessions": 49,
+"sessions": 50,
 "all": "committees.ics",
 "committees": [
 {
@@ -128,7 +128,7 @@
 "name": "Communications and Digital Committee",
 "house": "Lords",
 "file": "committees/170-communications-and-digital-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 402,
@@ -824,6 +824,7 @@
 28634,
 28635,
 28636,
-28637
+28637,
+28661
 ]
 }

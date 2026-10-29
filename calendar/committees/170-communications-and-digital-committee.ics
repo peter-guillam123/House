@@ -20,4 +20,16 @@ DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
  .parliament.uk/committees/events/28578
 URL:https://api.parliament.uk/committees/events/28578
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28661@house.peter-guillam123.github.io
+DTSTAMP:20261110T143000Z
+DTSTART:20261110T143000
+DTEND:20261110T163000
+SUMMARY:Oral evidence · Communications and Digital Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
+ nWitnesses to be announced.\nhttps://api.parliament.uk/committees/events/
+ 28661
+URL:https://api.parliament.uk/committees/events/28661
+END:VEVENT
 END:VCALENDAR
