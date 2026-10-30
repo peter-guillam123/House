@@ -1,7 +1,7 @@
 {
-"built": "2026-10-29",
+"built": "2026-10-30",
 "windowDays": 56,
-"sessions": 50,
+"sessions": 45,
 "all": "committees.ics",
 "committees": [
 {
@@ -198,7 +198,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 175,
@@ -254,7 +254,7 @@
 "name": "Finance Bill Sub-Committee",
 "house": "Lords",
 "file": "committees/230-finance-bill-sub-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 325,
@@ -331,7 +331,7 @@
 "name": "Highways (Financing) Bill",
 "house": "Commons",
 "file": "committees/854-highways-financing-bill.ics",
-"upcoming": 2
+"upcoming": 0
 },
 {
 "id": 679,
@@ -583,7 +583,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 327,
@@ -792,12 +792,7 @@
 28414,
 28436,
 28445,
-28464,
-28465,
-28486,
-28493,
 28505,
-28523,
 28526,
 28530,
 28538,

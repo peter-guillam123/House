@@ -5,34 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Highways (Financing) Bill
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28464@house.peter-guillam123.github.io
-DTSTAMP:20261029T113000Z
-DTSTART:20261029T113000
-DTEND:20261029T130000
-SUMMARY:To consider the Bill · Highways (Financing) Bill
-LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses:
-  Edmund King OBE (The AA)\; Mr Steve Gooding (RAC Foundation)\; Mr Ben Ga
- rratt (Logistics UK)\; Declan Pang (Road Haulage Association)\; Michael W
- helan (M6 Toll)\; Ralph Smyth (TAN\, Transport Action Network).\nhttps://
- api.parliament.uk/committees/events/28464
-URL:https://api.parliament.uk/committees/events/28464
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28465@house.peter-guillam123.github.io
-DTSTAMP:20261029T140000Z
-DTSTART:20261029T140000
-DTEND:20261029T163000
-SUMMARY:Further to consider the Bill · Highways (Financing) Bill
-LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Highways (Financing) Bill.\nWitnesses:
-  Ben Hopkinson (Centre for Policy Studies)\; Sam Dumitriu (Britain Remade
- )\; Mr Thomas McLennan (British Vehicle Rental and Leasing Association (B
- VRLA))\; Will Godfrey (Office of Rail and Road)\; Matt Palmer (National H
- ighways)\; Andrew Truscott (John Laing)\; Roger Forsdyke (Wates Construct
- ion)\; Justin Madders MP (Department for Transport).\nhttps://api.parliam
- ent.uk/committees/events/28465
-URL:https://api.parliament.uk/committees/events/28465
-END:VEVENT
 END:VCALENDAR
