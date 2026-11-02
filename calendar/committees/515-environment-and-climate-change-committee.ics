@@ -19,4 +19,16 @@ DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
  ://api.parliament.uk/committees/events/28505
 URL:https://api.parliament.uk/committees/events/28505
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28692@house.peter-guillam123.github.io
+DTSTAMP:20261111T100000Z
+DTSTART:20261111T100000
+DTEND:20261111T113000
+SUMMARY:Waste Crime · Environment and Climate Change Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
+ ee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/eve
+ nts/28692
+URL:https://api.parliament.uk/committees/events/28692
+END:VEVENT
 END:VCALENDAR

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Children’s social care · Public Services Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28707@house.peter-guillam123.github.io
+DTSTAMP:20261209T110000Z
+DTSTART:20261209T110000
+DTEND:20261209T123000
+SUMMARY:Children’s social care · Public Services Committee
+LOCATION:To be Confirmed
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Emmanuel Akpan-Inwang (The Lighthouse Pedagogy Trust).\nhttps://api.parl
+ iament.uk/committees/events/28707
+URL:https://api.parliament.uk/committees/events/28707
+END:VEVENT
+END:VCALENDAR

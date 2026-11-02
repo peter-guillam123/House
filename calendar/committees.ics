@@ -29,8 +29,8 @@ SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
- ttees/events/28607
+  Committee).\nWitnesses: Deputy Jayne Ozanne OBE\; Ian Smith.\nhttps://ap
+ i.parliament.uk/committees/events/28607
 URL:https://api.parliament.uk/committees/events/28607
 END:VEVENT
 BEGIN:VEVENT
@@ -158,8 +158,8 @@ LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
   Cathrine Brun (Centre for Lebanese Studies\, University of Cambridge)\; 
  Dawn Chatty (Refugee Studies Centre)\; Harmonie Toros (University of Read
- ing)\; H.E Manar Dabbas\; H.E Farah Berry\; H.E Haneen Sayed\; H.E Osman 
- Koray Ertaş.\nhttps://api.parliament.uk/committees/events/28591
+ ing)\; H.E Farah Berry\; H.E Haneen Sayed\; H.E Osman Koray Ertaş.\nhttp
+ s://api.parliament.uk/committees/events/28591
 URL:https://api.parliament.uk/committees/events/28591
 END:VEVENT
 BEGIN:VEVENT
@@ -228,14 +228,14 @@ SUMMARY:Consumer protection · Business\, Innovation\, Science and Trade C
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
  ade Committee.\nWitnesses: David Bowles (Royal Society for the Prevention
-  of Cruelty to Animals)\; Lucyanne Clarke (Combat Stress)\; Steve Raper (
- British Fireworks Association)\; Sue Davies MBE (Which?)\; David MacKenzi
- e (Chartered Trading Standards Institute)\; Kate Dearden MP (Department f
- or Business\, Innovation\, Science and Trade)\; Emma Cochrane (Competitio
- n and Markets Authority)\; Sophie George (Department for Business\, Innov
- ation\, Science and Trade)\; Graham Russell MBE (Department for Business\
- , Innovation\, Science and Trade).\nhttps://api.parliament.uk/committees/
- events/28603
+  of Cruelty to Animals)\; Steve Raper (British Fireworks Association)\; A
+ lan Friggieri (Combat Stress)\; Sue Davies MBE (Which?)\; David MacKenzie
+  (Chartered Trading Standards Institute)\; Kate Dearden MP (Department fo
+ r Business\, Innovation\, Science and Trade)\; Emma Cochrane (Competition
+  and Markets Authority)\; Sophie George (Department for Business\, Innova
+ tion\, Science and Trade)\; Graham Russell MBE (Department for Business\,
+  Innovation\, Science and Trade).\nhttps://api.parliament.uk/committees/e
+ vents/28603
 URL:https://api.parliament.uk/committees/events/28603
 END:VEVENT
 BEGIN:VEVENT
@@ -451,6 +451,18 @@ DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
 URL:https://api.parliament.uk/committees/events/28661
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28692@house.peter-guillam123.github.io
+DTSTAMP:20261111T100000Z
+DTSTART:20261111T100000
+DTEND:20261111T113000
+SUMMARY:Waste Crime · Environment and Climate Change Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
+ ee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/eve
+ nts/28692
+URL:https://api.parliament.uk/committees/events/28692
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28310@house.peter-guillam123.github.io
 DTSTAMP:20261111T103000Z
 DTSTART:20261111T103000
@@ -475,6 +487,36 @@ DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
   Commissioner for England).\nhttps://api.parliament.uk/committees/events/
  28151
 URL:https://api.parliament.uk/committees/events/28151
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28597@house.peter-guillam123.github.io
+DTSTAMP:20261111T142000Z
+DTSTART:20261111T142000
+DTEND:20261111T163000
+SUMMARY:Equality at work: flexible working and disability · Women and Equ
+ alities Committee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
+ sses: Julie Dennis (ACAS)\; John Kirkpatrick (Equality and Human Rights C
+ ommission)\; Clare McCartney (Chartered Institute for Personnel and Devel
+ opment)\; Ruth Wilkinson (Institute of Occupational Safety and Health).\n
+ https://api.parliament.uk/committees/events/28597
+URL:https://api.parliament.uk/committees/events/28597
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28382@house.peter-guillam123.github.io
+DTSTAMP:20261111T143000Z
+DTSTART:20261111T143000
+DTEND:20261111T170000
+SUMMARY:Cross-border healthcare arrangements between England and Wales · 
+ Welsh Affairs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Welsh Affairs Committee.\nWitnesses: R
+ oz Lindridge (NHS England)\; Simon Evans (NHS England)\; Ian Townend (NHS
+  England)\; Caroline Smith (NHS Gloucestershire and NHS Bristol\, North S
+ omerset and South Gloucestershire ICBs).\nhttps://api.parliament.uk/commi
+ ttees/events/28382
+URL:https://api.parliament.uk/committees/events/28382
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28585@house.peter-guillam123.github.io
@@ -536,8 +578,9 @@ DTEND:20261118T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
-  Andrew Isaac (Children's Services Development Group (CSDG)).\nhttps://ap
- i.parliament.uk/committees/events/28152
+  Andrew Isaac (Children's Services Development Group (CSDG))\; Dr Mark Ke
+ rr (The Children's Homes Association).\nhttps://api.parliament.uk/committ
+ ees/events/28152
 URL:https://api.parliament.uk/committees/events/28152
 END:VEVENT
 BEGIN:VEVENT
@@ -612,6 +655,18 @@ DESCRIPTION:Oral evidence session\, Liaison Sub-Committee on Core Tasks of
 URL:https://api.parliament.uk/committees/events/28302
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28707@house.peter-guillam123.github.io
+DTSTAMP:20261209T110000Z
+DTSTART:20261209T110000
+DTEND:20261209T123000
+SUMMARY:Children’s social care · Public Services Committee
+LOCATION:To be Confirmed
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Emmanuel Akpan-Inwang (The Lighthouse Pedagogy Trust).\nhttps://api.parl
+ iament.uk/committees/events/28707
+URL:https://api.parliament.uk/committees/events/28707
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28636@house.peter-guillam123.github.io
 DTSTAMP:20261215T103000Z
 DTSTART:20261215T103000
@@ -621,5 +676,16 @@ LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
  nounced.\nhttps://api.parliament.uk/committees/events/28636
 URL:https://api.parliament.uk/committees/events/28636
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28708@house.peter-guillam123.github.io
+DTSTAMP:20261216T110000Z
+DTSTART:20261216T110000
+DTEND:20261216T123000
+SUMMARY:Children’s social care · Public Services Committee
+LOCATION:To be Confirmed
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
+ to be announced.\nhttps://api.parliament.uk/committees/events/28708
+URL:https://api.parliament.uk/committees/events/28708
 END:VEVENT
 END:VCALENDAR

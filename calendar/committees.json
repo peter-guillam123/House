@@ -1,7 +1,7 @@
 {
-"built": "2026-11-01",
+"built": "2026-11-02",
 "windowDays": 56,
-"sessions": 45,
+"sessions": 50,
 "all": "committees.ics",
 "committees": [
 {
@@ -226,7 +226,7 @@
 "name": "Environment and Climate Change Committee",
 "house": "Lords",
 "file": "committees/515-environment-and-climate-change-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 52,
@@ -247,6 +247,13 @@
 "name": "European Affairs Committee",
 "house": "Lords",
 "file": "committees/516-european-affairs-committee.ics",
+"upcoming": 0
+},
+{
+"id": 423,
+"name": "Fifth Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/423-fifth-delegated-legislation-committee.ics",
 "upcoming": 0
 },
 {
@@ -290,6 +297,13 @@
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
 "upcoming": 1
+},
+{
+"id": 422,
+"name": "Fourth Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/422-fourth-delegated-legislation-committee.ics",
+"upcoming": 0
 },
 {
 "id": 811,
@@ -597,7 +611,7 @@
 "name": "Public Services Committee",
 "house": "Lords",
 "file": "committees/430-public-services-committee.ics",
-"upcoming": 4
+"upcoming": 6
 },
 {
 "id": 652,
@@ -758,14 +772,14 @@
 "name": "Welsh Affairs Committee",
 "house": "Commons",
 "file": "committees/162-welsh-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 328,
 "name": "Women and Equalities Committee",
 "house": "Commons",
 "file": "committees/328-women-and-equalities-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 164,
@@ -788,6 +802,7 @@
 28310,
 28319,
 28379,
+28382,
 28413,
 28414,
 28436,
@@ -808,6 +823,7 @@
 28591,
 28594,
 28595,
+28597,
 28600,
 28603,
 28604,
@@ -820,6 +836,9 @@
 28635,
 28636,
 28637,
-28661
+28661,
+28692,
+28707,
+28708
 ]
 }

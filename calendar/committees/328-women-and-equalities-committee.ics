@@ -20,4 +20,19 @@ DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
  tion (ILPA)).\nhttps://api.parliament.uk/committees/events/28164
 URL:https://api.parliament.uk/committees/events/28164
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28597@house.peter-guillam123.github.io
+DTSTAMP:20261111T142000Z
+DTSTART:20261111T142000
+DTEND:20261111T163000
+SUMMARY:Equality at work: flexible working and disability · Women and Equ
+ alities Committee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
+ sses: Julie Dennis (ACAS)\; John Kirkpatrick (Equality and Human Rights C
+ ommission)\; Clare McCartney (Chartered Institute for Personnel and Devel
+ opment)\; Ruth Wilkinson (Institute of Occupational Safety and Health).\n
+ https://api.parliament.uk/committees/events/28597
+URL:https://api.parliament.uk/committees/events/28597
+END:VEVENT
 END:VCALENDAR
