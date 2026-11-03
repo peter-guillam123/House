@@ -416,6 +416,31 @@ DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Chris
 URL:https://api.parliament.uk/committees/events/28716
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-27940@house.peter-guillam123.github.io
+DTSTAMP:20261110T103000Z
+DTSTART:20261110T103000
+DTEND:20261110T121500
+SUMMARY:Investigation into electronic monitoring · Justice and Home Affai
+ rs Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
+ itnesses to be announced.\nhttps://api.parliament.uk/committees/events/27
+ 940
+URL:https://api.parliament.uk/committees/events/27940
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28723@house.peter-guillam123.github.io
+DTSTAMP:20261110T104500Z
+DTSTART:20261110T104500
+DTEND:20261110T124500
+SUMMARY:Maintenance and enforcement in public spaces · Built Environment 
+ Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28723
+URL:https://api.parliament.uk/committees/events/28723
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28715@house.peter-guillam123.github.io
 DTSTAMP:20261110T140000Z
 DTSTART:20261110T140000
@@ -487,9 +512,10 @@ SUMMARY:The UK’s constitutional safeguards · Constitution Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Do
  ug Chalmers CB DSO OBE (Ethics and Integrity Commission)\; Vijay Rangaraj
- an (Electoral Commission)\; John Pullinger (Electoral Commission)\; Morga
- n McSweeney (10 Downing Street).\nhttps://api.parliament.uk/committees/ev
- ents/28711
+ an (Electoral Commission)\; John Pullinger (Electoral Commission)\; The R
+ t Hon. the Baroness Stuart of Edgbaston (Civil Service Commission)\; Morg
+ an McSweeney (10 Downing Street).\nhttps://api.parliament.uk/committees/e
+ vents/28711
 URL:https://api.parliament.uk/committees/events/28711
 END:VEVENT
 BEGIN:VEVENT
@@ -514,9 +540,10 @@ SUMMARY:Legislative Scrutiny: Immigration and Asylum Bill · Human Rights
  (Joint Committee)
 LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
- sses: Christa Rottensteiner (International Organization for Migration (IO
- M))\; Vicky Tennant\, UNHCR Representative to the United Kingdom (UN Refu
- gee Agency (UNHCR)).\nhttps://api.parliament.uk/committees/events/28683
+ sses: Parosha Chandran (One Pump Court)\; Christa Rottensteiner (Internat
+ ional Organization for Migration (IOM))\; Vicky Tennant\, UNHCR Represent
+ ative to the United Kingdom (UN Refugee Agency (UNHCR)).\nhttps://api.par
+ liament.uk/committees/events/28683
 URL:https://api.parliament.uk/committees/events/28683
 END:VEVENT
 BEGIN:VEVENT
@@ -559,6 +586,19 @@ LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
   to be announced.\nhttps://api.parliament.uk/committees/events/28585
 URL:https://api.parliament.uk/committees/events/28585
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28720@house.peter-guillam123.github.io
+DTSTAMP:20261112T111500Z
+DTSTART:20261112T111500
+DTEND:20261112T130000
+SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
+  (Joint Committee)
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
+  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
+ ttees/events/28720
+URL:https://api.parliament.uk/committees/events/28720
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28612@house.peter-guillam123.github.io
