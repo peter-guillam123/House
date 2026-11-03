@@ -14,8 +14,20 @@ SUMMARY:Multilateralism · International Relations and Defence Committee
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
  mmittee.\nWitnesses: Professor Robert Trager (Oxford Martin AI Governance
-  Initiative\, University of Oxford)\; Renata Dwan (Simon Institute for Lo
- ngterm Governance).\nhttps://api.parliament.uk/committees/events/28574
+  Initiative\, University of Oxford)\; Dr Claire Melamed (UN Foundation).\
+ nhttps://api.parliament.uk/committees/events/28574
 URL:https://api.parliament.uk/committees/events/28574
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28712@house.peter-guillam123.github.io
+DTSTAMP:20261118T103000Z
+DTSTART:20261118T103000
+DTEND:20261118T120000
+SUMMARY:Multilateralism · International Relations and Defence Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, International Relations and Defence Co
+ mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
+ s/events/28712
+URL:https://api.parliament.uk/committees/events/28712
 END:VEVENT
 END:VCALENDAR

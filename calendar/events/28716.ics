@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The use of Artificial Intelligence and EdTech in Education ·
+  Education Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28716@house.peter-guillam123.github.io
+DTSTAMP:20261110T100000Z
+DTSTART:20261110T100000
+DTEND:20261110T123000
+SUMMARY:The use of Artificial Intelligence and EdTech in Education · Educ
+ ation Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Chris
+  Loveday (City of Portsmouth College)\; Mary Meekings (University and Col
+ lege Union (UCU))\; Ben Rowland (Association of Employment and Learning P
+ roviders (AELP))\; Cath Sezen (Association of Colleges (AoC))\; Charlotte
+  Armstrong (The Higher Education Policy Institute (HEPI))\; Michael Webb 
+ (JISC)\; Lewis Wilson (National Union of Students (NUS)).\nhttps://api.pa
+ rliament.uk/committees/events/28716
+URL:https://api.parliament.uk/committees/events/28716
+END:VEVENT
+END:VCALENDAR

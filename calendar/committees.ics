@@ -6,48 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Committee oral evidence
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28579@house.peter-guillam123.github.io
-DTSTAMP:20261102T153000Z
-DTSTART:20261102T153000
-DTEND:20261102T180000
-SUMMARY:NHS Accident and Emergency departments · Public Accounts Committe
- e
-LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
-  Samantha Jones OBE (Department of Health and Social Care)\; Sir Jim Mack
- ey (NHS England)\; Professor Tim Briggs (NHS England)\; Dr Emma Rowland (
- NHS England\, Homerton Healthcare Foundation Trust).\nhttps://api.parliam
- ent.uk/committees/events/28579
-URL:https://api.parliament.uk/committees/events/28579
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28607@house.peter-guillam123.github.io
-DTSTAMP:20261102T161500Z
-DTSTART:20261102T161500
-DTEND:20261102T171500
-SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
-  (Joint Committee)
-LOCATION:Room 3\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses: Deputy Jayne Ozanne OBE\; Ian Smith.\nhttps://ap
- i.parliament.uk/committees/events/28607
-URL:https://api.parliament.uk/committees/events/28607
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28568@house.peter-guillam123.github.io
-DTSTAMP:20261102T164500Z
-DTSTART:20261102T164500
-DTEND:20261102T180000
-SUMMARY:Societal resilience: a national conversation · National Security 
- Strategy (Joint Committee)
-LOCATION:Room 4A\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, National Security Strategy (Joint Comm
- ittee).\nWitnesses: Becky Heginbotham-Blount (Suffolk Resilience Forum)\;
-  Professor Lee Miles (Bournemouth University Disaster Management Centre).
- \nhttps://api.parliament.uk/committees/events/28568
-URL:https://api.parliament.uk/committees/events/28568
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28413@house.peter-guillam123.github.io
 DTSTAMP:20261103T093000Z
 DTSTART:20261103T093000
@@ -235,6 +193,7 @@ DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
  r Business\, Innovation\, Science and Trade)\; Emma Cochrane (Competition
   and Markets Authority)\; Sophie George (Department for Business\, Innova
  tion\, Science and Trade)\; Graham Russell MBE (Department for Business\,
+  Innovation\, Science and Trade)\; Tony Thomas (Department for Business\,
   Innovation\, Science and Trade).\nhttps://api.parliament.uk/committees/e
  vents/28603
 URL:https://api.parliament.uk/committees/events/28603
@@ -291,9 +250,9 @@ SUMMARY:The dual role of the Lord Advocate · Scottish Affairs Committee
 LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
  : Dr Andrew Tickell (Glasgow Caledonian University)\; Dr Conor McCormick 
- (Queen’s University Belfast)\; Michael Clancy (Law Society of Scotland)
- \; Malcolm McMillan (Scottish Law Commission).\nhttps://api.parliament.uk
- /committees/events/28319
+ (Queen's University Belfast)\; Michael Clancy (Law Society of Scotland)\;
+  Malcolm McMillan (Scottish Law Commission).\nhttps://api.parliament.uk/c
+ ommittees/events/28319
 URL:https://api.parliament.uk/committees/events/28319
 END:VEVENT
 BEGIN:VEVENT
@@ -376,8 +335,8 @@ SUMMARY:Multilateralism · International Relations and Defence Committee
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
  mmittee.\nWitnesses: Professor Robert Trager (Oxford Martin AI Governance
-  Initiative\, University of Oxford)\; Renata Dwan (Simon Institute for Lo
- ngterm Governance).\nhttps://api.parliament.uk/committees/events/28574
+  Initiative\, University of Oxford)\; Dr Claire Melamed (UN Foundation).\
+ nhttps://api.parliament.uk/committees/events/28574
 URL:https://api.parliament.uk/committees/events/28574
 END:VEVENT
 BEGIN:VEVENT
@@ -440,6 +399,36 @@ DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
 URL:https://api.parliament.uk/committees/events/28589
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28716@house.peter-guillam123.github.io
+DTSTAMP:20261110T100000Z
+DTSTART:20261110T100000
+DTEND:20261110T123000
+SUMMARY:The use of Artificial Intelligence and EdTech in Education · Educ
+ ation Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Chris
+  Loveday (City of Portsmouth College)\; Mary Meekings (University and Col
+ lege Union (UCU))\; Ben Rowland (Association of Employment and Learning P
+ roviders (AELP))\; Cath Sezen (Association of Colleges (AoC))\; Charlotte
+  Armstrong (The Higher Education Policy Institute (HEPI))\; Michael Webb 
+ (JISC)\; Lewis Wilson (National Union of Students (NUS)).\nhttps://api.pa
+ rliament.uk/committees/events/28716
+URL:https://api.parliament.uk/committees/events/28716
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28715@house.peter-guillam123.github.io
+DTSTAMP:20261110T140000Z
+DTSTART:20261110T140000
+DTEND:20261110T150000
+SUMMARY:Trade in a turbulent world: how should the UK deploy its trade ins
+ truments? · International Agreements Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, International Agreements Committee.\nW
+ itnesses: Sebastian Wood (China-British Business Council).\nhttps://api.p
+ arliament.uk/committees/events/28715
+URL:https://api.parliament.uk/committees/events/28715
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28661@house.peter-guillam123.github.io
 DTSTAMP:20261110T143000Z
 DTSTART:20261110T143000
@@ -452,15 +441,28 @@ DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
 URL:https://api.parliament.uk/committees/events/28661
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28599@house.peter-guillam123.github.io
+DTSTAMP:20261111T100000Z
+DTSTART:20261111T100000
+DTEND:20261111T123000
+SUMMARY:Work of the Department and its arm’s-length bodies · Environmen
+ t\, Food and Rural Affairs Committee\, Environmental Audit Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
+ ommittee\, Environmental Audit Committee.\nWitnesses to be announced.\nht
+ tps://api.parliament.uk/committees/events/28599
+URL:https://api.parliament.uk/committees/events/28599
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28692@house.peter-guillam123.github.io
 DTSTAMP:20261111T100000Z
 DTSTART:20261111T100000
 DTEND:20261111T113000
 SUMMARY:Waste Crime · Environment and Climate Change Committee
-LOCATION:To be confirmed
+LOCATION:Room 4\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Environment and Climate Change Committ
- ee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/eve
- nts/28692
+ ee.\nWitnesses: Philip Duffy (Environment Agency)\; Malcolm Lythgo (Envir
+ onment Agency).\nhttps://api.parliament.uk/committees/events/28692
 URL:https://api.parliament.uk/committees/events/28692
 END:VEVENT
 BEGIN:VEVENT
@@ -477,17 +479,45 @@ DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
 URL:https://api.parliament.uk/committees/events/28310
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28711@house.peter-guillam123.github.io
+DTSTAMP:20261111T103000Z
+DTSTART:20261111T103000
+DTEND:20261111T123000
+SUMMARY:The UK’s constitutional safeguards · Constitution Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Do
+ ug Chalmers CB DSO OBE (Ethics and Integrity Commission)\; Vijay Rangaraj
+ an (Electoral Commission)\; John Pullinger (Electoral Commission)\; Morga
+ n McSweeney (10 Downing Street).\nhttps://api.parliament.uk/committees/ev
+ ents/28711
+URL:https://api.parliament.uk/committees/events/28711
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28151@house.peter-guillam123.github.io
 DTSTAMP:20261111T110000Z
 DTSTART:20261111T110000
 DTEND:20261111T123000
 SUMMARY:Children’s social care · Public Services Committee
-LOCATION:To be Confirmed
+LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
   Dame Rachel de Souza\, Children’s Commissioner for England (Children's
   Commissioner for England).\nhttps://api.parliament.uk/committees/events/
  28151
 URL:https://api.parliament.uk/committees/events/28151
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28683@house.peter-guillam123.github.io
+DTSTAMP:20261111T141500Z
+DTSTART:20261111T141500
+DTEND:20261111T161500
+SUMMARY:Legislative Scrutiny: Immigration and Asylum Bill · Human Rights 
+ (Joint Committee)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
+ sses: Christa Rottensteiner (International Organization for Migration (IO
+ M))\; Vicky Tennant\, UNHCR Representative to the United Kingdom (UN Refu
+ gee Agency (UNHCR)).\nhttps://api.parliament.uk/committees/events/28683
+URL:https://api.parliament.uk/committees/events/28683
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28597@house.peter-guillam123.github.io
@@ -496,12 +526,12 @@ DTSTART:20261111T142000
 DTEND:20261111T163000
 SUMMARY:Equality at work: flexible working and disability · Women and Equ
  alities Committee
-LOCATION:Room 6\, Palace of Westminster
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
  sses: Julie Dennis (ACAS)\; John Kirkpatrick (Equality and Human Rights C
- ommission)\; Clare McCartney (Chartered Institute for Personnel and Devel
- opment)\; Ruth Wilkinson (Institute of Occupational Safety and Health).\n
- https://api.parliament.uk/committees/events/28597
+ ommission)\; Ruth Wilkinson (Institute of Occupational Safety and Health)
+ \; Claire McCartney (Chartered Institute of Personnel and Development (CI
+ PD)).\nhttps://api.parliament.uk/committees/events/28597
 URL:https://api.parliament.uk/committees/events/28597
 END:VEVENT
 BEGIN:VEVENT
@@ -572,6 +602,18 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28633
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28712@house.peter-guillam123.github.io
+DTSTAMP:20261118T103000Z
+DTSTART:20261118T103000
+DTEND:20261118T120000
+SUMMARY:Multilateralism · International Relations and Defence Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, International Relations and Defence Co
+ mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
+ s/events/28712
+URL:https://api.parliament.uk/committees/events/28712
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28152@house.peter-guillam123.github.io
 DTSTAMP:20261118T110000Z
 DTSTART:20261118T110000
@@ -602,8 +644,9 @@ DTSTART:20261125T110000
 DTEND:20261125T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28153
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Mr Sam Turner (Kinship).\nhttps://api.parliament.uk/committees/events/28
+ 153
 URL:https://api.parliament.uk/committees/events/28153
 END:VEVENT
 BEGIN:VEVENT
