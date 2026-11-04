@@ -233,14 +233,15 @@ SUMMARY:Maintenance and enforcement in public spaces · Built Environment
 LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
  s: Councillor Carl Cashman (Local Government Association (LGA))\; John Du
- nne (WISE Services Group).\nhttps://api.parliament.uk/committees/events/2
- 8723
+ nne (WISE Services Group)\; Mr Alexander Jan (Central District Alliance\,
+  Hatton Gardens BIDs)\; Simon Mantle (Grosvenor).\nhttps://api.parliament
+ .uk/committees/events/28723
 URL:https://api.parliament.uk/committees/events/28723
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28697@house.peter-guillam123.github.io
-DTSTAMP:20261110T133000Z
-DTSTART:20261110T133000
+DTSTAMP:20261110T140000Z
+DTSTART:20261110T140000
 DTEND:20261110T153000
 SUMMARY:Russia · Foreign Affairs Committee
 LOCATION:The Grimond Room\, Portcullis House
@@ -272,9 +273,9 @@ LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
  nWitnesses: Professor Clare McGlynn (Durham Law School\,  Durham Universi
  ty)\; Sophie Mortimer (SWGfL)\; Janaya Walker (End Violence Against Women
-  Coalition)\; Alexandra Whiston-Dew (Mischon de Reya)\; Ricki-Lee Gerbran
- dt (University of Bristol Law School)\; Maya Thomas (Big Brother Watch).\
- nhttps://api.parliament.uk/committees/events/28661
+  Coalition)\; Alexandra Whiston-Dew (Mishcon de Reya LLP)\; Ricki-Lee Ger
+ brandt (University of Bristol Law School)\; Maya Thomas (Big Brother Watc
+ h).\nhttps://api.parliament.uk/committees/events/28661
 URL:https://api.parliament.uk/committees/events/28661
 END:VEVENT
 BEGIN:VEVENT
@@ -286,8 +287,10 @@ SUMMARY:UK export support services · Business\, Innovation\, Science and
  Trade Committee
 LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
- ade Committee.\nWitnesses to be announced.\nhttps://api.parliament.uk/com
- mittees/events/28729
+ ade Committee.\nWitnesses: Lucy Monks (Federation of Small Businesses)\; 
+ Balwinder Dhoot (The Food and Drink Federation)\; Nick Cockayne (Rappa Fe
+ ncing Ltd)\; Nick Smith (Avon Specialty Metals).\nhttps://api.parliament.
+ uk/committees/events/28729
 URL:https://api.parliament.uk/committees/events/28729
 END:VEVENT
 BEGIN:VEVENT
@@ -425,7 +428,7 @@ BEGIN:VEVENT
 UID:house-committee-event-28711@house.peter-guillam123.github.io
 DTSTAMP:20261111T103000Z
 DTSTART:20261111T103000
-DTEND:20261111T123000
+DTEND:20261111T130000
 SUMMARY:The UK’s constitutional safeguards · Constitution Committee
 LOCATION:Room 2A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Do
