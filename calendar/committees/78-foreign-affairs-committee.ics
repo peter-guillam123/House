@@ -5,19 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Foreign Affairs Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28591@house.peter-guillam123.github.io
-DTSTAMP:20261103T103000Z
-DTSTART:20261103T103000
-DTEND:20261103T123000
-SUMMARY:A new Syria: assessing UK strategy in a transitional state · Fore
- ign Affairs Committee
-LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
-  Cathrine Brun (Centre for Lebanese Studies\, University of Cambridge)\; 
- Dawn Chatty (Refugee Studies Centre)\; Harmonie Toros (University of Read
- ing)\; H.E Farah Berry\; H.E Haneen Sayed\; H.E Osman Koray Ertaş.\nhttp
- s://api.parliament.uk/committees/events/28591
-URL:https://api.parliament.uk/committees/events/28591
-END:VEVENT
 END:VCALENDAR

@@ -6,22 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Environment\, Food and Rural Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28530@house.peter-guillam123.github.io
-DTSTAMP:20261103T100000Z
-DTSTART:20261103T100000
-DTEND:20261103T123000
-SUMMARY:Biosecurity and animal welfare · Environment\, Food and Rural Aff
- airs Committee
-LOCATION:The Macmillan Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
- ommittee.\nWitnesses: Catherine McLaughlin (National Farmers Union (NFU))
- \; Dr Gwen Rees (British Veterinary Association)\; Abigail Seager (Veteri
- nary Medicines Directorate)\; Richard Lewis (Animal and Plant Health Agen
- cy)\; Professor Dan Horton (The Pirbright Institute).\nhttps://api.parlia
- ment.uk/committees/events/28530
-URL:https://api.parliament.uk/committees/events/28530
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28599@house.peter-guillam123.github.io
 DTSTAMP:20261111T100000Z
 DTSTART:20261111T100000

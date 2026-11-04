@@ -1,7 +1,7 @@
 {
-"built": "2026-11-03",
+"built": "2026-11-04",
 "windowDays": 56,
-"sessions": 56,
+"sessions": 42,
 "all": "committees.ics",
 "committees": [
 {
@@ -23,7 +23,7 @@
 "name": "Backbench Business Committee",
 "house": "Commons",
 "file": "committees/202-backbench-business-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 682,
@@ -51,14 +51,14 @@
 "name": "Built Environment Committee",
 "house": "Lords",
 "file": "committees/518-built-environment-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 365,
 "name": "Business, Innovation, Science and Trade Committee",
 "house": "Commons",
 "file": "committees/365-business-innovation-science-and-trade-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 783,
@@ -128,7 +128,7 @@
 "name": "Communications and Digital Committee",
 "house": "Lords",
 "file": "committees/170-communications-and-digital-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 402,
@@ -226,14 +226,14 @@
 "name": "Environment and Climate Change Committee",
 "house": "Lords",
 "file": "committees/515-environment-and-climate-change-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 52,
 "name": "Environment, Food and Rural Affairs Committee",
 "house": "Commons",
 "file": "committees/52-environment-food-and-rural-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 62,
@@ -289,7 +289,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 422,
@@ -359,7 +359,7 @@
 "name": "Home Affairs Committee",
 "house": "Commons",
 "file": "committees/83-home-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 362,
@@ -390,13 +390,6 @@
 "upcoming": 0
 },
 {
-"id": 843,
-"name": "Immigration and Asylum Bill",
-"house": "Commons",
-"file": "committees/843-immigration-and-asylum-bill.ics",
-"upcoming": 0
-},
-{
 "id": 517,
 "name": "Industry and Regulators Committee",
 "house": "Lords",
@@ -415,7 +408,7 @@
 "name": "International Development Committee",
 "house": "Commons",
 "file": "committees/98-international-development-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 347,
@@ -436,14 +429,14 @@
 "name": "Justice and Home Affairs Committee",
 "house": "Lords",
 "file": "committees/519-justice-and-home-affairs-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 102,
 "name": "Justice Committee",
 "house": "Commons",
 "file": "committees/102-justice-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 103,
@@ -597,7 +590,7 @@
 "name": "Public Administration and Constitutional Affairs Committee",
 "house": "Commons",
 "file": "committees/327-public-administration-and-constitutional-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 430,
@@ -639,7 +632,7 @@
 "name": "Science and Technology Committee (Commons)",
 "house": "Commons",
 "file": "committees/135-science-and-technology-committee-commons.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 136,
@@ -674,20 +667,6 @@
 "name": "Services Committee",
 "house": "Lords",
 "file": "committees/363-services-committee.ics",
-"upcoming": 0
-},
-{
-"id": 849,
-"name": "Social Housing Bill [Lords]",
-"house": "Commons",
-"file": "committees/849-social-housing-bill-lords.ics",
-"upcoming": 0
-},
-{
-"id": 144,
-"name": "Speaker's Committee on the Electoral Commission",
-"house": "Commons",
-"file": "committees/144-speaker-s-committee-on-the-electoral-commission.ics",
 "upcoming": 0
 },
 {
@@ -751,7 +730,7 @@
 "name": "Treasury Committee",
 "house": "Commons",
 "file": "committees/158-treasury-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 600,
@@ -783,8 +762,6 @@
 }
 ],
 "events": [
-27654,
-27939,
 27940,
 28151,
 28152,
@@ -795,32 +772,20 @@
 28302,
 28310,
 28319,
-28379,
 28382,
-28413,
 28414,
 28436,
-28445,
-28505,
-28526,
-28530,
 28538,
 28572,
 28573,
 28574,
-28578,
-28582,
 28585,
 28589,
-28591,
-28594,
 28595,
 28597,
 28599,
 28600,
-28603,
 28604,
-28606,
 28612,
 28613,
 28633,
