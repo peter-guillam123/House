@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:BBC efficiency and transformation programme · Public Account
+ s Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28730@house.peter-guillam123.github.io
+DTSTAMP:20261130T153000Z
+DTSTART:20261130T153000
+DTEND:20261130T173000
+SUMMARY:BBC efficiency and transformation programme · Public Accounts Com
+ mittee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Matt Brittin (BBC)\; Bérangère Michel (BBC)\; John Curbishley (BBC).\n
+ https://api.parliament.uk/committees/events/28730
+URL:https://api.parliament.uk/committees/events/28730
+END:VEVENT
+END:VCALENDAR

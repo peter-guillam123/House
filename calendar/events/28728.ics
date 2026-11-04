@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Electronic Monitoring: follow-up · Public Accounts Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28728@house.peter-guillam123.github.io
+DTSTAMP:20261126T100000Z
+DTSTART:20261126T100000
+DTEND:20261126T120000
+SUMMARY:Electronic Monitoring: follow-up · Public Accounts Committee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Jo Farrar (Ministry of Justice)\; Nick Donlevy (Ministry of Justice)\; J
+ ames McEwen (HMPPS)\; Jim Barton (HMPPS).\nhttps://api.parliament.uk/comm
+ ittees/events/28728
+URL:https://api.parliament.uk/committees/events/28728
+END:VEVENT
+END:VCALENDAR

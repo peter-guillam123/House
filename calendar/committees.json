@@ -1,7 +1,7 @@
 {
 "built": "2026-11-04",
 "windowDays": 56,
-"sessions": 42,
+"sessions": 57,
 "all": "committees.ics",
 "committees": [
 {
@@ -23,7 +23,7 @@
 "name": "Backbench Business Committee",
 "house": "Commons",
 "file": "committees/202-backbench-business-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 682,
@@ -58,7 +58,7 @@
 "name": "Business, Innovation, Science and Trade Committee",
 "house": "Commons",
 "file": "committees/365-business-innovation-science-and-trade-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 783,
@@ -184,7 +184,7 @@
 "name": "Digital, Culture, Media and Sport Committee",
 "house": "Commons",
 "file": "committees/378-digital-culture-media-and-sport-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 831,
@@ -275,7 +275,7 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 410,
@@ -289,7 +289,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 422,
@@ -422,7 +422,7 @@
 "name": "International Relations and Defence Committee",
 "house": "Lords",
 "file": "committees/360-international-relations-and-defence-committee.ics",
-"upcoming": 2
+"upcoming": 3
 },
 {
 "id": 519,
@@ -513,7 +513,7 @@
 "name": "Northern Ireland Affairs Committee",
 "house": "Commons",
 "file": "committees/120-northern-ireland-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 769,
@@ -583,7 +583,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 1
+"upcoming": 4
 },
 {
 "id": 327,
@@ -639,7 +639,7 @@
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 3
 },
 {
 "id": 411,
@@ -723,14 +723,14 @@
 "name": "Transport Committee",
 "house": "Commons",
 "file": "committees/153-transport-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 158,
 "name": "Treasury Committee",
 "house": "Commons",
 "file": "committees/158-treasury-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 600,
@@ -758,17 +758,20 @@
 "name": "Work and Pensions Committee",
 "house": "Commons",
 "file": "committees/164-work-and-pensions-committee.ics",
-"upcoming": 1
+"upcoming": 2
 }
 ],
 "events": [
 27940,
+28084,
 28151,
 28152,
 28153,
 28154,
 28164,
+28188,
 28261,
+28271,
 28302,
 28310,
 28319,
@@ -776,6 +779,7 @@
 28414,
 28436,
 28538,
+28540,
 28572,
 28573,
 28574,
@@ -793,9 +797,16 @@
 28635,
 28636,
 28637,
+28638,
+28653,
+28658,
 28661,
+28681,
 28683,
+28691,
 28692,
+28694,
+28697,
 28707,
 28708,
 28711,
@@ -803,6 +814,10 @@
 28715,
 28716,
 28720,
-28723
+28723,
+28727,
+28728,
+28729,
+28730
 ]
 }

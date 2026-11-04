@@ -20,4 +20,44 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
  vents/28633
 URL:https://api.parliament.uk/committees/events/28633
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28727@house.peter-guillam123.github.io
+DTSTAMP:20261123T153000Z
+DTSTART:20261123T153000
+DTEND:20261123T173000
+SUMMARY:Boosting construction skills · Public Accounts Committee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Sinead O'Sullivan (Department for Education)\; Dame Sarah Healey DCB CVO
+  (Department of Work and Pensions)\; Alex Fitzpatrick (Department of Work
+  and Pensions)\; Sarah Maclean CBE (Skills England)\; Tessa Griffiths CBE
+  (Skills England).\nhttps://api.parliament.uk/committees/events/28727
+URL:https://api.parliament.uk/committees/events/28727
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28728@house.peter-guillam123.github.io
+DTSTAMP:20261126T100000Z
+DTSTART:20261126T100000
+DTEND:20261126T120000
+SUMMARY:Electronic Monitoring: follow-up · Public Accounts Committee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Jo Farrar (Ministry of Justice)\; Nick Donlevy (Ministry of Justice)\; J
+ ames McEwen (HMPPS)\; Jim Barton (HMPPS).\nhttps://api.parliament.uk/comm
+ ittees/events/28728
+URL:https://api.parliament.uk/committees/events/28728
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28730@house.peter-guillam123.github.io
+DTSTAMP:20261130T153000Z
+DTSTART:20261130T153000
+DTEND:20261130T173000
+SUMMARY:BBC efficiency and transformation programme · Public Accounts Com
+ mittee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Matt Brittin (BBC)\; Bérangère Michel (BBC)\; John Curbishley (BBC).\n
+ https://api.parliament.uk/committees/events/28730
+URL:https://api.parliament.uk/committees/events/28730
+END:VEVENT
 END:VCALENDAR
