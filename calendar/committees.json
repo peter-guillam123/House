@@ -1,7 +1,7 @@
 {
-"built": "2026-11-04",
+"built": "2026-11-05",
 "windowDays": 56,
-"sessions": 57,
+"sessions": 44,
 "all": "committees.ics",
 "committees": [
 {
@@ -149,7 +149,7 @@
 "name": "Constitution Committee",
 "house": "Lords",
 "file": "committees/172-constitution-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 438,
@@ -212,14 +212,14 @@
 "name": "Education Committee",
 "house": "Commons",
 "file": "committees/203-education-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 664,
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 515,
@@ -240,7 +240,7 @@
 "name": "Environmental Audit Committee",
 "house": "Commons",
 "file": "committees/62-environmental-audit-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 516,
@@ -275,7 +275,7 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 410,
@@ -317,7 +317,7 @@
 "name": "Health and Social Care Committee",
 "house": "Commons",
 "file": "committees/81-health-and-social-care-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 597,
@@ -422,7 +422,7 @@
 "name": "International Relations and Defence Committee",
 "house": "Lords",
 "file": "committees/360-international-relations-and-defence-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 519,
@@ -632,14 +632,14 @@
 "name": "Science and Technology Committee (Commons)",
 "house": "Commons",
 "file": "committees/135-science-and-technology-committee-commons.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 136,
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 411,
@@ -723,14 +723,14 @@
 "name": "Transport Committee",
 "house": "Commons",
 "file": "committees/153-transport-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 158,
 "name": "Treasury Committee",
 "house": "Commons",
 "file": "committees/158-treasury-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 600,
@@ -751,14 +751,14 @@
 "name": "Women and Equalities Committee",
 "house": "Commons",
 "file": "committees/328-women-and-equalities-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 164,
 "name": "Work and Pensions Committee",
 "house": "Commons",
 "file": "committees/164-work-and-pensions-committee.ics",
-"upcoming": 2
+"upcoming": 1
 }
 ],
 "events": [
@@ -768,35 +768,22 @@
 28152,
 28153,
 28154,
-28164,
 28188,
-28261,
 28271,
 28302,
 28310,
-28319,
 28382,
-28414,
 28436,
-28538,
 28540,
-28572,
 28573,
-28574,
 28585,
-28589,
-28595,
 28597,
 28599,
-28600,
-28604,
 28612,
 28613,
 28633,
-28634,
 28635,
 28636,
-28637,
 28638,
 28653,
 28658,
