@@ -12,8 +12,9 @@ DTSTART:20261110T140000
 DTEND:20261110T153000
 SUMMARY:Russia · Foreign Affairs Committee
 LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28697
+DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
+  Gabrielius Landsbergis\; Marija Golubeva\; Grégoire Roos (Chatham House
+ ).\nhttps://api.parliament.uk/committees/events/28697
 URL:https://api.parliament.uk/committees/events/28697
 END:VEVENT
 END:VCALENDAR

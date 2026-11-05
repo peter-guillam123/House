@@ -39,7 +39,7 @@ BEGIN:VEVENT
 UID:house-committee-event-28723@house.peter-guillam123.github.io
 DTSTAMP:20261110T104500Z
 DTSTART:20261110T104500
-DTEND:20261110T124500
+DTEND:20261110T123000
 SUMMARY:Maintenance and enforcement in public spaces · Built Environment 
  Committee
 LOCATION:Room 2\, Palace of Westminster
@@ -57,8 +57,9 @@ DTSTART:20261110T140000
 DTEND:20261110T153000
 SUMMARY:Russia · Foreign Affairs Committee
 LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28697
+DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
+  Gabrielius Landsbergis\; Marija Golubeva\; Grégoire Roos (Chatham House
+ ).\nhttps://api.parliament.uk/committees/events/28697
 URL:https://api.parliament.uk/committees/events/28697
 END:VEVENT
 BEGIN:VEVENT
@@ -70,8 +71,9 @@ SUMMARY:Trade in a turbulent world: how should the UK deploy its trade ins
  truments? · International Agreements Committee
 LOCATION:Room 1\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Agreements Committee.\nW
- itnesses: Sebastian Wood (China-British Business Council).\nhttps://api.p
- arliament.uk/committees/events/28715
+ itnesses: Sebastian Wood (China-British Business Council)\; Professor Ker
+ ry Brown (King’s College London).\nhttps://api.parliament.uk/committees
+ /events/28715
 URL:https://api.parliament.uk/committees/events/28715
 END:VEVENT
 BEGIN:VEVENT
@@ -123,7 +125,7 @@ DTSTAMP:20261111T091500Z
 DTSTART:20261111T091500
 DTEND:20261111T120000
 SUMMARY:Road Safety Strategy · Transport Committee
-LOCATION:Room 8\, Palace of Westminster
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: Jo Sh
  iner KPM (Sussex Police)\; Ean Lewin (D.tech International)\; Dr Thomas D
  olphin (British Medical Association)\; Professor Kim Wolff (Kings College
@@ -166,6 +168,19 @@ DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
 URL:https://api.parliament.uk/committees/events/28658
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28696@house.peter-guillam123.github.io
+DTSTAMP:20261111T093000Z
+DTSTART:20261111T093000
+DTEND:20261111T113000
+SUMMARY:Winter Pressures · Health and Social Care Committee
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Health and Social Care Committee.\nWit
+ nesses: Dr Ian Higginson (Royal College of Emergency Medicine)\; Matthew 
+ Hopkinson (NHS Alliance)\; Karin Smyth MP (Department of Health and Socia
+ l Care).\nhttps://api.parliament.uk/committees/events/28696
+URL:https://api.parliament.uk/committees/events/28696
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28188@house.peter-guillam123.github.io
 DTSTAMP:20261111T095000Z
 DTSTART:20261111T095000
@@ -180,6 +195,21 @@ DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
  rgia Hutchinson (Department for Digital\, Culture\, Media and Sport).\nht
  tps://api.parliament.uk/committees/events/28188
 URL:https://api.parliament.uk/committees/events/28188
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28316@house.peter-guillam123.github.io
+DTSTAMP:20261111T100000Z
+DTSTART:20261111T100000
+DTEND:20261111T113000
+SUMMARY:The Work of the Ministry of Housing\, Communities and Local Govern
+ ment · Housing\, Communities and Local Government Committee
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Housing\, Communities and Local Govern
+ ment Committee.\nWitnesses: Rt Hon Angela Rayner MP (Ministry of Housing\
+ , Communities and Local Government)\; Tom Riordan (Ministry of Housing\, 
+ Communities and Local Government).\nhttps://api.parliament.uk/committees/
+ events/28316
+URL:https://api.parliament.uk/committees/events/28316
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28599@house.peter-guillam123.github.io
@@ -242,7 +272,7 @@ DTSTAMP:20261111T103000Z
 DTSTART:20261111T103000
 DTEND:20261111T130000
 SUMMARY:The UK’s constitutional safeguards · Constitution Committee
-LOCATION:Room 2A\, Palace of Westminster
+LOCATION:Room 4A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Constitution Committee.\nWitnesses: Do
  ug Chalmers CB DSO OBE (Ethics and Integrity Commission)\; Vijay Rangaraj
  an (Electoral Commission)\; John Pullinger (Electoral Commission)\; The R
@@ -270,7 +300,7 @@ DTSTAMP:20261111T110000Z
 DTSTART:20261111T110000
 DTEND:20261111T123000
 SUMMARY:Multilateralism · International Relations and Defence Committee
-LOCATION:Room 4A\, Palace of Westminster
+LOCATION:Room 2A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
  mmittee.\nWitnesses: Dr Florian Ostmann (LSE Data Science Institute).\nht
  tps://api.parliament.uk/committees/events/28681
@@ -302,8 +332,8 @@ DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
  sses: Parosha Chandran (One Pump Court)\; Eleanor Lyons (Independent Anti
  -slavery Commissioner)\; Eleonora Fais (Anti-slavery International)\; Chr
  ista Rottensteiner (International Organization for Migration (IOM))\; Vic
- ky Tennant\, UNHCR Representative to the United Kingdom (UN Refugee Agenc
- y (UNHCR)).\nhttps://api.parliament.uk/committees/events/28683
+ ky Tennant (UN Refugee Agency (UNHCR)).\nhttps://api.parliament.uk/commit
+ tees/events/28683
 URL:https://api.parliament.uk/committees/events/28683
 END:VEVENT
 BEGIN:VEVENT
@@ -368,7 +398,9 @@ DTEND:20261112T114500
 SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
 LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
-  to be announced.\nhttps://api.parliament.uk/committees/events/28585
+ : Richard Allen (Retailers against VAT Abuse Schemes)\; Anna Doherty (Cha
+ rtered Institute of Export & International Trade).\nhttps://api.parliamen
+ t.uk/committees/events/28585
 URL:https://api.parliament.uk/committees/events/28585
 END:VEVENT
 BEGIN:VEVENT

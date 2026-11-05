@@ -1,7 +1,7 @@
 {
 "built": "2026-11-05",
 "windowDays": 56,
-"sessions": 44,
+"sessions": 46,
 "all": "committees.ics",
 "committees": [
 {
@@ -317,7 +317,7 @@
 "name": "Health and Social Care Committee",
 "house": "Commons",
 "file": "committees/81-health-and-social-care-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 597,
@@ -373,7 +373,7 @@
 "name": "Housing, Communities and Local Government Committee",
 "house": "Commons",
 "file": "committees/17-housing-communities-and-local-government-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 93,
@@ -772,6 +772,7 @@
 28271,
 28302,
 28310,
+28316,
 28382,
 28436,
 28540,
@@ -793,6 +794,7 @@
 28691,
 28692,
 28694,
+28696,
 28697,
 28707,
 28708,
