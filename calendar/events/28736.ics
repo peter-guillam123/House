@@ -3,14 +3,18 @@ VERSION:2.0
 PRODID:-//House//Committee calendars//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Oral evidence · European Affairs Committee
+X-WR-CALNAME:Oral evidence - The Rt Hon Hamish Falconer MP\, Minister of S
+ tate (Minister for Intergovernmental Relations and European Relations) ·
+  European Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
 UID:house-committee-event-28736@house.peter-guillam123.github.io
 DTSTAMP:20261124T140000Z
 DTSTART:20261124T140000
 DTEND:20261124T153000
-SUMMARY:Oral evidence · European Affairs Committee
+SUMMARY:Oral evidence - The Rt Hon Hamish Falconer MP\, Minister of State 
+ (Minister for Intergovernmental Relations and European Relations) · Euro
+ pean Affairs Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
  : Rt Hon Hamish Falconer MP (Foreign\, Commonwealth & Development Office)

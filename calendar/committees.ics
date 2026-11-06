@@ -31,8 +31,11 @@ SUMMARY:Investigation into electronic monitoring · Justice and Home Affai
  rs Committee
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
- itnesses to be announced.\nhttps://api.parliament.uk/committees/events/27
- 940
+ itnesses: Ian Lawrence (Napo: Trade Union and Professional Association fo
+ r Probation and Family Court Staff)\; Ben Cockburn (Napo: Trade Union and
+  Professional Association for Probation and Family Court Staff)\; Martin 
+ Jones CBE (His Majesty's Inspectorate of Probation).\nhttps://api.parliam
+ ent.uk/committees/events/27940
 URL:https://api.parliament.uk/committees/events/27940
 END:VEVENT
 BEGIN:VEVENT
@@ -102,10 +105,12 @@ SUMMARY:UK export support services · Business\, Innovation\, Science and
 LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
  ade Committee.\nWitnesses: Nathan Mathiot (ADS Group Ltd)\; Gareth Hedick
- er (Babcock International)\; Simon Tucker (SRT Marine Systems)\; Lucy Mon
- ks (Federation of Small Businesses)\; Balwinder Dhoot (The Food and Drink
-  Federation)\; Nick Cockayne (Rappa Fencing Ltd)\; Nick Smith (Avon Speci
- alty Metals).\nhttps://api.parliament.uk/committees/events/28729
+ er (Babcock International)\; Simon Tucker (SRT Marine Systems)\; Maxwell 
+ Green (Make UK)\; Steven Lynch (British Chambers of Commerce)\; Jamie Arr
+ owsmith (Universities UK)\; Lucy Monks (Federation of Small Businesses)\;
+  Balwinder Dhoot (The Food and Drink Federation)\; Nick Cockayne (Rappa F
+ encing Ltd)\; Nick Smith (Avon Specialty Metals).\nhttps://api.parliament
+ .uk/committees/events/28729
 URL:https://api.parliament.uk/committees/events/28729
 END:VEVENT
 BEGIN:VEVENT
@@ -332,12 +337,12 @@ SUMMARY:Legislative Scrutiny: Immigration and Asylum Bill · Human Rights
  (Joint Committee)
 LOCATION:Room 5\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
- sses: Parosha Chandran (One Pump Court)\; Eleanor Lyons (Independent Anti
- -slavery Commissioner)\; Eleonora Fais (Anti-slavery International)\; Chr
- ista Rottensteiner (International Organization for Migration (IOM))\; Vic
- ky Tennant (UN Refugee Agency (UNHCR))\; Dr Patrick Burland (Internationa
- l Organization for Migration (IOM)).\nhttps://api.parliament.uk/committee
- s/events/28683
+ sses: Eleanor Lyons (Independent Anti-slavery Commissioner)\; Eleonora Fa
+ is (Anti-slavery International)\; Professor Parosha Chandran (One Pump Co
+ urt)\; Christa Rottensteiner (International Organization for Migration (I
+ OM))\; Vicky Tennant (UN Refugee Agency (UNHCR))\; Dr Patrick Burland (In
+ ternational Organization for Migration (IOM)).\nhttps://api.parliament.uk
+ /committees/events/28683
 URL:https://api.parliament.uk/committees/events/28683
 END:VEVENT
 BEGIN:VEVENT
@@ -516,7 +521,9 @@ UID:house-committee-event-28736@house.peter-guillam123.github.io
 DTSTAMP:20261124T140000Z
 DTSTART:20261124T140000
 DTEND:20261124T153000
-SUMMARY:Oral evidence · European Affairs Committee
+SUMMARY:Oral evidence - The Rt Hon Hamish Falconer MP\, Minister of State 
+ (Minister for Intergovernmental Relations and European Relations) · Euro
+ pean Affairs Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
  : Rt Hon Hamish Falconer MP (Foreign\, Commonwealth & Development Office)
