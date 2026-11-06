@@ -178,7 +178,9 @@ LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Health and Social Care Committee.\nWit
  nesses: Dr Ian Higginson (Royal College of Emergency Medicine)\; Matthew 
  Hopkinson (NHS Alliance)\; Karin Smyth MP (Department of Health and Socia
- l Care).\nhttps://api.parliament.uk/committees/events/28696
+ l Care)\; Dr Emma Rowland (NHS England)\; Dr. Catherine Frances (Departme
+ nt of Health and Social Care).\nhttps://api.parliament.uk/committees/even
+ ts/28696
 URL:https://api.parliament.uk/committees/events/28696
 END:VEVENT
 BEGIN:VEVENT
@@ -333,8 +335,9 @@ DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
  sses: Parosha Chandran (One Pump Court)\; Eleanor Lyons (Independent Anti
  -slavery Commissioner)\; Eleonora Fais (Anti-slavery International)\; Chr
  ista Rottensteiner (International Organization for Migration (IOM))\; Vic
- ky Tennant (UN Refugee Agency (UNHCR)).\nhttps://api.parliament.uk/commit
- tees/events/28683
+ ky Tennant (UN Refugee Agency (UNHCR))\; Dr Patrick Burland (Internationa
+ l Organization for Migration (IOM)).\nhttps://api.parliament.uk/committee
+ s/events/28683
 URL:https://api.parliament.uk/committees/events/28683
 END:VEVENT
 BEGIN:VEVENT
@@ -507,6 +510,18 @@ LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
  nounced.\nhttps://api.parliament.uk/committees/events/28635
 URL:https://api.parliament.uk/committees/events/28635
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28736@house.peter-guillam123.github.io
+DTSTAMP:20261124T140000Z
+DTSTART:20261124T140000
+DTEND:20261124T153000
+SUMMARY:Oral evidence · European Affairs Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
+ : Rt Hon Hamish Falconer MP (Foreign\, Commonwealth & Development Office)
+ .\nhttps://api.parliament.uk/committees/events/28736
+URL:https://api.parliament.uk/committees/events/28736
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28153@house.peter-guillam123.github.io

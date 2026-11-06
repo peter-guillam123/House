@@ -1,7 +1,7 @@
 {
 "built": "2026-11-06",
 "windowDays": 56,
-"sessions": 46,
+"sessions": 47,
 "all": "committees.ics",
 "committees": [
 {
@@ -247,7 +247,7 @@
 "name": "European Affairs Committee",
 "house": "Lords",
 "file": "committees/516-european-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 230,
@@ -807,6 +807,7 @@
 28727,
 28728,
 28729,
-28730
+28730,
+28736
 ]
 }
