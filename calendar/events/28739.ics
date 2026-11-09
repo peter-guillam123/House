@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Draft Conversion Practices Bill · Draft Conversion Practices
+  Bill (Joint Committee)
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28739@house.peter-guillam123.github.io
+DTSTAMP:20261119T112000Z
+DTSTART:20261119T112000
+DTEND:20261119T130000
+SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
+  (Joint Committee)
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
+  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
+ ttees/events/28739
+URL:https://api.parliament.uk/committees/events/28739
+END:VEVENT
+END:VCALENDAR

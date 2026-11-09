@@ -1,7 +1,7 @@
 {
-"built": "2026-11-08",
+"built": "2026-11-09",
 "windowDays": 56,
-"sessions": 47,
+"sessions": 54,
 "all": "committees.ics",
 "committees": [
 {
@@ -51,7 +51,7 @@
 "name": "Built Environment Committee",
 "house": "Lords",
 "file": "committees/518-built-environment-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 365,
@@ -128,7 +128,7 @@
 "name": "Communications and Digital Committee",
 "house": "Lords",
 "file": "committees/170-communications-and-digital-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 402,
@@ -198,7 +198,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 1
+"upcoming": 3
 },
 {
 "id": 175,
@@ -254,7 +254,7 @@
 "name": "Finance Bill Sub-Committee",
 "house": "Lords",
 "file": "committees/230-finance-bill-sub-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 325,
@@ -275,7 +275,7 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 410,
@@ -408,7 +408,7 @@
 "name": "International Development Committee",
 "house": "Commons",
 "file": "committees/98-international-development-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 347,
@@ -576,6 +576,13 @@
 "name": "Procedure Committee",
 "house": "Commons",
 "file": "committees/126-procedure-committee.ics",
+"upcoming": 0
+},
+{
+"id": 207,
+"name": "Public Accounts Commission",
+"house": "Commons",
+"file": "committees/207-public-accounts-commission.ics",
 "upcoming": 0
 },
 {
@@ -775,6 +782,7 @@
 28316,
 28382,
 28436,
+28514,
 28540,
 28573,
 28585,
@@ -808,6 +816,12 @@
 28728,
 28729,
 28730,
-28736
+28736,
+28737,
+28738,
+28739,
+28746,
+28747,
+28757
 ]
 }

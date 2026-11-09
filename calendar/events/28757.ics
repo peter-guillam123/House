@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Regulatory sandboxes in financial services · Financial Servi
+ ces Regulation Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28757@house.peter-guillam123.github.io
+DTSTAMP:20261118T100000Z
+DTSTART:20261118T100000
+DTEND:20261118T120000
+SUMMARY:Regulatory sandboxes in financial services · Financial Services R
+ egulation Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
+ e.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/even
+ ts/28757
+URL:https://api.parliament.uk/committees/events/28757
+END:VEVENT
+END:VCALENDAR
