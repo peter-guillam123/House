@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Beyond participation: Routes into sport for girls and women 
+ · Women and Equalities Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28619@house.peter-guillam123.github.io
+DTSTAMP:20261118T142000Z
+DTSTART:20261118T142000
+DTEND:20261118T163000
+SUMMARY:Beyond participation: Routes into sport for girls and women · Wom
+ en and Equalities Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
+ sses: Kate Hannon (Women's Sport Collective)\; Jatin Patel (Rugby Footbal
+ l Union (RFU))\; Zoe Webber (Norwich City Football Club)\; Phil Smith (Sp
+ ort England).\nhttps://api.parliament.uk/committees/events/28619
+URL:https://api.parliament.uk/committees/events/28619
+END:VEVENT
+END:VCALENDAR

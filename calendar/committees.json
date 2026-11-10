@@ -1,7 +1,7 @@
 {
 "built": "2026-11-10",
 "windowDays": 56,
-"sessions": 54,
+"sessions": 62,
 "all": "committees.ics",
 "committees": [
 {
@@ -205,7 +205,7 @@
 "name": "Economic Affairs Committee",
 "house": "Lords",
 "file": "committees/175-economic-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 203,
@@ -219,7 +219,7 @@
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 515,
@@ -233,7 +233,7 @@
 "name": "Environment, Food and Rural Affairs Committee",
 "house": "Commons",
 "file": "committees/52-environment-food-and-rural-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 62,
@@ -506,7 +506,7 @@
 "name": "National Security Strategy (Joint Committee)",
 "house": "Joint",
 "file": "committees/111-national-security-strategy-joint-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 120,
@@ -639,7 +639,7 @@
 "name": "Science and Technology Committee (Commons)",
 "house": "Commons",
 "file": "committees/135-science-and-technology-committee-commons.ics",
-"upcoming": 0
+"upcoming": 2
 },
 {
 "id": 136,
@@ -751,14 +751,14 @@
 "name": "Welsh Affairs Committee",
 "house": "Commons",
 "file": "committees/162-welsh-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 328,
 "name": "Women and Equalities Committee",
 "house": "Commons",
 "file": "committees/328-women-and-equalities-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 164,
@@ -781,15 +781,20 @@
 28310,
 28316,
 28382,
+28385,
+28415,
+28416,
 28436,
 28514,
 28540,
+28569,
 28573,
 28585,
 28597,
 28599,
 28612,
 28613,
+28619,
 28633,
 28635,
 28636,
@@ -804,6 +809,7 @@
 28694,
 28696,
 28697,
+28701,
 28707,
 28708,
 28711,
@@ -822,6 +828,8 @@
 28739,
 28746,
 28747,
-28757
+28757,
+28761,
+28765
 ]
 }

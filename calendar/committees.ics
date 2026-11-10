@@ -312,8 +312,9 @@ DTEND:20261111T123000
 SUMMARY:Multilateralism · International Relations and Defence Committee
 LOCATION:Room 2A\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses: Dr Florian Ostmann (LSE Data Science Institute).\nht
- tps://api.parliament.uk/committees/events/28681
+ mmittee.\nWitnesses: Dr Florian Ostmann (LSE Data Science Institute)\; Mi
+ chael Birtwistle (The Ada Lovelace Institute).\nhttps://api.parliament.uk
+ /committees/events/28681
 URL:https://api.parliament.uk/committees/events/28681
 END:VEVENT
 BEGIN:VEVENT
@@ -424,8 +425,12 @@ SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
- ttees/events/28720
+  Committee).\nWitnesses: Dr Igi Moon (Memorandum of Understanding on Conv
+ ersion Therapies)\; Dr Anna Hutchinson (Integrated Psychology Clinic)\; D
+ r Alison Berner (British Association of Gender Identity Specialists)\; Cl
+ aire Hopkins (Association of Child Psychotherapists)\; Dr Lisa Morrison (
+ British Association for Counselling and Psychotherapy (BACP)).\nhttps://a
+ pi.parliament.uk/committees/events/28720
 URL:https://api.parliament.uk/committees/events/28720
 END:VEVENT
 BEGIN:VEVENT
@@ -461,7 +466,7 @@ DTSTART:20261116T153000
 DTEND:20261116T173000
 SUMMARY:Integrated Care Boards: re-organisation · Public Accounts Committ
  ee
-LOCATION:Physical
+LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
   Samantha Jones OBE (Department for Health and Social Care)\; Sir Jim Mac
  key (NHS England)\; Jan Thomas (NHS England)\; Elizabeth O'Mahony (Depart
@@ -481,6 +486,47 @@ DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
   Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
  ttees/events/28738
 URL:https://api.parliament.uk/committees/events/28738
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28569@house.peter-guillam123.github.io
+DTSTAMP:20261116T163000Z
+DTSTART:20261116T163000
+DTEND:20261116T180000
+SUMMARY:Space resilience · National Security Strategy (Joint Committee)
+LOCATION:Room 4A\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, National Security Strategy (Joint Comm
+ ittee).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees
+ /events/28569
+URL:https://api.parliament.uk/committees/events/28569
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28415@house.peter-guillam123.github.io
+DTSTAMP:20261117T093000Z
+DTSTART:20261117T093000
+DTEND:20261117T120000
+SUMMARY:Scientific research funding · Science and Technology Committee (C
+ ommons)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
+ vents/28415
+URL:https://api.parliament.uk/committees/events/28415
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28765@house.peter-guillam123.github.io
+DTSTAMP:20261117T100000Z
+DTSTART:20261117T100000
+DTEND:20261117T123000
+SUMMARY:Climate adaptation and emergency response · Environment\, Food an
+ d Rural Affairs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
+ ommittee.\nWitnesses: Paul Tompkins (National Farmers Union)\; Tracey Gar
+ rett (Flood Forum UK)\; Katia Sanhueza-Pino (Flooded People UK)\; Phil Ga
+ rrigan (National Fire Chiefs Council)\; Councillor Matt Boughton (Local G
+ overnment Association)\; Andrew McGill (Water Management Consortium).\nht
+ tps://api.parliament.uk/committees/events/28765
+URL:https://api.parliament.uk/committees/events/28765
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28737@house.peter-guillam123.github.io
@@ -523,6 +569,33 @@ DESCRIPTION:Oral evidence session\, International Development Committee.\n
 URL:https://api.parliament.uk/committees/events/28514
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28701@house.peter-guillam123.github.io
+DTSTAMP:20261118T090000Z
+DTSTART:20261118T090000
+DTEND:20261118T111500
+SUMMARY:Preparing for winter · Energy Security and Net Zero Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
+ .\nWitnesses: Nye Jones (Generation Rent)\; Alex Belsham-Harris (Citizens
+  Advice)\; Dr Katie Barratt (Fuel Poverty Action)\; Neil Kenward (Ofgem)\
+ ; Ed Dodman (Energy Ombudsman)\; Martin McCluskey OBE MP (Department for 
+ Energy Security and Net Zero).\nhttps://api.parliament.uk/committees/even
+ ts/28701
+URL:https://api.parliament.uk/committees/events/28701
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28416@house.peter-guillam123.github.io
+DTSTAMP:20261118T093000Z
+DTSTART:20261118T093000
+DTEND:20261118T120000
+SUMMARY:Oral evidence · Science and Technology Committee (Commons)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
+ vents/28416
+URL:https://api.parliament.uk/committees/events/28416
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28757@house.peter-guillam123.github.io
 DTSTAMP:20261118T100000Z
 DTSTART:20261118T100000
@@ -531,8 +604,10 @@ SUMMARY:Regulatory sandboxes in financial services · Financial Services R
  egulation Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
- e.\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/even
- ts/28757
+ e.\nWitnesses: Kevin Sefton (Untied)\; Vinay Anupindi (Monee Financial Te
+ chnologies)\; Lyubomira Dimitrova (Relace)\; Nick Tracey (Bourn)\; Joseph
+  Twigg (Aveni)\; Desmond McNamara (Zilch Technology Limited).\nhttps://ap
+ i.parliament.uk/committees/events/28757
 URL:https://api.parliament.uk/committees/events/28757
 END:VEVENT
 BEGIN:VEVENT
@@ -561,6 +636,33 @@ DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28152
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28619@house.peter-guillam123.github.io
+DTSTAMP:20261118T142000Z
+DTSTART:20261118T142000
+DTEND:20261118T163000
+SUMMARY:Beyond participation: Routes into sport for girls and women · Wom
+ en and Equalities Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
+ sses: Kate Hannon (Women's Sport Collective)\; Jatin Patel (Rugby Footbal
+ l Union (RFU))\; Zoe Webber (Norwich City Football Club)\; Phil Smith (Sp
+ ort England).\nhttps://api.parliament.uk/committees/events/28619
+URL:https://api.parliament.uk/committees/events/28619
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28385@house.peter-guillam123.github.io
+DTSTAMP:20261118T144500Z
+DTSTART:20261118T144500
+DTEND:20261118T170000
+SUMMARY:The future of Policing in Wales · Welsh Affairs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Welsh Affairs Committee.\nWitnesses: J
+ eremy Vaughan KPM (South Wales Police)\; Amanda Blakeman KPM (North Wales
+  Police)\; Ifan Charles (Dyfed-Powys Police)\; Mark Hobrough (Gwent Polic
+ e).\nhttps://api.parliament.uk/committees/events/28385
+URL:https://api.parliament.uk/committees/events/28385
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28746@house.peter-guillam123.github.io
 DTSTAMP:20261119T094500Z
 DTSTART:20261119T094500
@@ -568,7 +670,8 @@ DTEND:20261119T111500
 SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
-  to be announced.\nhttps://api.parliament.uk/committees/events/28746
+ : Rt Hon James Murray MP (The Treasury).\nhttps://api.parliament.uk/commi
+ ttees/events/28746
 URL:https://api.parliament.uk/committees/events/28746
 END:VEVENT
 BEGIN:VEVENT
@@ -622,6 +725,17 @@ DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
  : Rt Hon Hamish Falconer MP (Foreign\, Commonwealth & Development Office)
  .\nhttps://api.parliament.uk/committees/events/28736
 URL:https://api.parliament.uk/committees/events/28736
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28761@house.peter-guillam123.github.io
+DTSTAMP:20261124T150000Z
+DTSTART:20261124T150000
+DTEND:20261124T170000
+SUMMARY:Fiscal devolution in England · Economic Affairs Committee
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Economic Affairs Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28761
+URL:https://api.parliament.uk/committees/events/28761
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28153@house.peter-guillam123.github.io
