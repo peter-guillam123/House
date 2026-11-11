@@ -20,14 +20,15 @@ URL:https://api.parliament.uk/committees/events/28681
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28712@house.peter-guillam123.github.io
-DTSTAMP:20261118T103000Z
-DTSTART:20261118T103000
-DTEND:20261118T120000
+DTSTAMP:20261118T110000Z
+DTSTART:20261118T110000
+DTEND:20261118T123000
 SUMMARY:Multilateralism · International Relations and Defence Committee
 LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
- s/events/28712
+ mmittee.\nWitnesses: Dr Nora von Ingersleben-Seip (University of Leiden)\
+ ; Adam Leon Smith (The AIQI Consortium).\nhttps://api.parliament.uk/commi
+ ttees/events/28712
 URL:https://api.parliament.uk/committees/events/28712
 END:VEVENT
 END:VCALENDAR

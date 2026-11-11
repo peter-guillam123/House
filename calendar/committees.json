@@ -1,7 +1,7 @@
 {
 "built": "2026-11-11",
 "windowDays": 56,
-"sessions": 65,
+"sessions": 66,
 "all": "committees.ics",
 "committees": [
 {
@@ -422,7 +422,7 @@
 "name": "Justice Committee",
 "house": "Commons",
 "file": "committees/102-justice-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 103,
@@ -817,6 +817,7 @@
 28739,
 28746,
 28747,
+28750,
 28757,
 28761,
 28765

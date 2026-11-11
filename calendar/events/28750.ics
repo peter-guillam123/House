@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Is the law being used to silence victims and survivors? · Ju
+ stice Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28750@house.peter-guillam123.github.io
+DTSTAMP:20261117T143000Z
+DTSTART:20261117T143000
+DTEND:20261117T170000
+SUMMARY:Is the law being used to silence victims and survivors? · Justice
+  Committee
+LOCATION:The Thatcher Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Harriet
+  Wistrich (Centre for Women's Justice)\; Rupert Cowper-Coles (RPC)\; Veri
+ ty Nevitt (The Gemini Project).\nhttps://api.parliament.uk/committees/eve
+ nts/28750
+URL:https://api.parliament.uk/committees/events/28750
+END:VEVENT
+END:VCALENDAR

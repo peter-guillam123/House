@@ -399,8 +399,11 @@ SUMMARY:Scientific research funding · Science and Technology Committee (C
  ommons)
 LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
- ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
- vents/28415
+ ons).\nWitnesses: Professor Jon Butterworth (University College London)\;
+  Professor Catherine Heymans (University of Edinburgh)\; Dr Simon William
+ s (Institute for Particle Physics Phenomenology\, University of Durham)\;
+  Professor George Efstathio (University of Cambridge).\nhttps://api.parli
+ ament.uk/committees/events/28415
 URL:https://api.parliament.uk/committees/events/28415
 END:VEVENT
 BEGIN:VEVENT
@@ -474,13 +477,27 @@ DESCRIPTION:Oral evidence session\, Communications and Digital Committee.\
 URL:https://api.parliament.uk/committees/events/28747
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28750@house.peter-guillam123.github.io
+DTSTAMP:20261117T143000Z
+DTSTART:20261117T143000
+DTEND:20261117T170000
+SUMMARY:Is the law being used to silence victims and survivors? · Justice
+  Committee
+LOCATION:The Thatcher Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Harriet
+  Wistrich (Centre for Women's Justice)\; Rupert Cowper-Coles (RPC)\; Veri
+ ty Nevitt (The Gemini Project).\nhttps://api.parliament.uk/committees/eve
+ nts/28750
+URL:https://api.parliament.uk/committees/events/28750
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28514@house.peter-guillam123.github.io
 DTSTAMP:20261117T150000Z
 DTSTART:20261117T150000
 DTEND:20261117T170000
 SUMMARY:FCDO Annual Report and Accounts 2025-26 · International Developme
  nt Committee
-LOCATION:TBC
+LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, International Development Committee.\n
  Witnesses: Lindy Cameron (Foreign\, Commonwealth & Development Office)\; 
  Nick Dyer (Foreign\, Commonwealth & Development Office)\; Tim Jones (Fore
@@ -494,7 +511,7 @@ DTSTAMP:20261118T090000Z
 DTSTART:20261118T090000
 DTEND:20261118T111500
 SUMMARY:Preparing for winter · Energy Security and Net Zero Committee
-LOCATION:TBC
+LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
  .\nWitnesses: Nye Jones (Generation Rent)\; Alex Belsham-Harris (Citizens
   Advice)\; Dr Katie Barrett (Fuel Poverty Action)\; Neil Kenward (Ofgem)\
@@ -509,7 +526,7 @@ DTSTAMP:20261118T091500Z
 DTSTART:20261118T091500
 DTEND:20261118T120000
 SUMMARY:Road Safety Strategy · Transport Committee
-LOCATION:TBC
+LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: Ashle
  y Patton (HORIBA MIRA)\; Professor Siddartha Khastgir (Warwick Manufactur
  ing Group\, University of Warwick)\; Stuart Lovett (Continental Tyres)\; 
@@ -524,7 +541,7 @@ DTSTAMP:20261118T093000Z
 DTSTART:20261118T093000
 DTEND:20261118T113000
 SUMMARY:The dual role of the Lord Advocate · Scottish Affairs Committee
-LOCATION:TBC
+LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
  : Lord Mulholland (Scottish Government)\; Lady Elish Angiolini (Scottish 
  Government).\nhttps://api.parliament.uk/committees/events/28085
@@ -539,8 +556,13 @@ SUMMARY:Early onset cancer: What does the science tell us? · Science and
  Technology Committee (Commons)
 LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
- ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
- vents/28416
+ ons).\nWitnesses: Sarah Stevens (National Disease Registration Service\, 
+ NHS Digital)\; Dr Laura Woods (Newcastle University)\; Professor Elio Rib
+ oli (Imperial College London\, Cancer Epidemiology and Prevention Researc
+ h Unit\, Imperial College London and Institute for Cancer Research)\; Pro
+ fessor Helen Coleman (Centre for Public Health\, Queen’s University Bel
+ fast)\; Karl Smith-Byrne (Cancer Epidemiology Unit\, University of Oxford
+ ).\nhttps://api.parliament.uk/committees/events/28416
 URL:https://api.parliament.uk/committees/events/28416
 END:VEVENT
 BEGIN:VEVENT
@@ -550,7 +572,7 @@ DTSTART:20261118T093000
 DTEND:20261118T120000
 SUMMARY:Work of the Secretary of State for Northern Ireland · Northern Ir
  eland Affairs Committee
-LOCATION:TBC
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Northern Ireland Affairs Committee.\nW
  itnesses: Rt Hon Chris Bryant MP (Northern Ireland Office)\; Sarah Owen M
  P (Northern Ireland Office)\; The Baroness Anderson of Stoke-on-Trent (No
@@ -565,7 +587,7 @@ DTSTART:20261118T093000
 DTEND:20261118T113000
 SUMMARY:Local delivery of employment support · Work and Pensions Committe
  e
-LOCATION:TBC
+LOCATION:Room 6\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
  s: Professor Dan Finn (University of Portsmouth)\; Ben Paxton (Institute 
  for Government).\nhttps://api.parliament.uk/committees/events/28735
@@ -587,18 +609,6 @@ DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
 URL:https://api.parliament.uk/committees/events/28757
 END:VEVENT
 BEGIN:VEVENT
-UID:house-committee-event-28712@house.peter-guillam123.github.io
-DTSTAMP:20261118T103000Z
-DTSTART:20261118T103000
-DTEND:20261118T120000
-SUMMARY:Multilateralism · International Relations and Defence Committee
-LOCATION:Room 2\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
- s/events/28712
-URL:https://api.parliament.uk/committees/events/28712
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28152@house.peter-guillam123.github.io
 DTSTAMP:20261118T110000Z
 DTSTART:20261118T110000
@@ -612,13 +622,26 @@ DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28152
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28712@house.peter-guillam123.github.io
+DTSTAMP:20261118T110000Z
+DTSTART:20261118T110000
+DTEND:20261118T123000
+SUMMARY:Multilateralism · International Relations and Defence Committee
+LOCATION:Room 2\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, International Relations and Defence Co
+ mmittee.\nWitnesses: Dr Nora von Ingersleben-Seip (University of Leiden)\
+ ; Adam Leon Smith (The AIQI Consortium).\nhttps://api.parliament.uk/commi
+ ttees/events/28712
+URL:https://api.parliament.uk/committees/events/28712
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28619@house.peter-guillam123.github.io
 DTSTAMP:20261118T142000Z
 DTSTART:20261118T142000
 DTEND:20261118T163000
 SUMMARY:Beyond participation: Routes into sport for girls and women · Wom
  en and Equalities Committee
-LOCATION:TBC
+LOCATION:Room 6\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
  sses: Kate Hannon (Women's Sport Collective)\; Jatin Patel (Rugby Footbal
  l Union (RFU))\; Zoe Webber (Norwich City Football Club)\; Phil Smith (Sp
@@ -631,7 +654,7 @@ DTSTAMP:20261118T143000Z
 DTSTART:20261118T143000
 DTEND:20261118T163000
 SUMMARY:Climate adaptation · Environmental Audit Committee
-LOCATION:TBC
+LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
  ses: The Baroness Brown of Cambridge DBE FREng FRS (Climate Change Commit
  tee)\; Dr James Richardson (Climate Change Committee)\; Florence Bates (C
@@ -647,7 +670,7 @@ DTSTAMP:20261118T144500Z
 DTSTART:20261118T144500
 DTEND:20261118T170000
 SUMMARY:The future of Policing in Wales · Welsh Affairs Committee
-LOCATION:TBC
+LOCATION:Room 16\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Welsh Affairs Committee.\nWitnesses: J
  eremy Vaughan KPM (South Wales Police)\; Amanda Blakeman KPM (North Wales
   Police)\; Ifan Charles (Dyfed-Powys Police)\; Mark Hobrough (Gwent Polic
