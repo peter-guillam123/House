@@ -21,4 +21,19 @@ DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: Jo Sh
  ommittees/events/28271
 URL:https://api.parliament.uk/committees/events/28271
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28272@house.peter-guillam123.github.io
+DTSTAMP:20261118T091500Z
+DTSTART:20261118T091500
+DTEND:20261118T120000
+SUMMARY:Road Safety Strategy · Transport Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: Ashle
+ y Patton (HORIBA MIRA)\; Professor Siddartha Khastgir (Warwick Manufactur
+ ing Group\, University of Warwick)\; Stuart Lovett (Continental Tyres)\; 
+ Professor Richard Cuerden (Transport Research Library)\; Mrs Sharron Hudd
+ leston\; Mrs Nicole Taylor\; Mr Chris Taylor\; Dr Ian Greenwood.\nhttps:/
+ /api.parliament.uk/committees/events/28272
+URL:https://api.parliament.uk/committees/events/28272
+END:VEVENT
 END:VCALENDAR

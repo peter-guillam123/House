@@ -18,4 +18,17 @@ DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
  arliament.uk/committees/events/28310
 URL:https://api.parliament.uk/committees/events/28310
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-27944@house.peter-guillam123.github.io
+DTSTAMP:20261208T103000Z
+DTSTART:20261208T103000
+DTEND:20261208T120000
+SUMMARY:Electronic border management systems · Justice and Home Affairs C
+ ommittee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
+ itnesses to be announced.\nhttps://api.parliament.uk/committees/events/27
+ 944
+URL:https://api.parliament.uk/committees/events/27944
+END:VEVENT
 END:VCALENDAR

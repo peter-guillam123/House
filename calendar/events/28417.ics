@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Pre-appointment hearing for Research England Executive Chair 
+ · Science and Technology Committee (Commons)
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28417@house.peter-guillam123.github.io
+DTSTAMP:20261125T093000Z
+DTSTART:20261125T093000
+DTEND:20261125T120000
+SUMMARY:Pre-appointment hearing for Research England Executive Chair · Sc
+ ience and Technology Committee (Commons)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
+ vents/28417
+URL:https://api.parliament.uk/committees/events/28417
+END:VEVENT
+END:VCALENDAR

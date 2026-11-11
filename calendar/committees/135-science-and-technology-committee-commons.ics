@@ -12,7 +12,7 @@ DTSTART:20261117T093000
 DTEND:20261117T120000
 SUMMARY:Scientific research funding · Science and Technology Committee (C
  ommons)
-LOCATION:TBC
+LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
  vents/28415
@@ -23,11 +23,25 @@ UID:house-committee-event-28416@house.peter-guillam123.github.io
 DTSTAMP:20261118T093000Z
 DTSTART:20261118T093000
 DTEND:20261118T120000
-SUMMARY:Oral evidence · Science and Technology Committee (Commons)
-LOCATION:TBC
+SUMMARY:Early onset cancer: What does the science tell us? · Science and 
+ Technology Committee (Commons)
+LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
  vents/28416
 URL:https://api.parliament.uk/committees/events/28416
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28417@house.peter-guillam123.github.io
+DTSTAMP:20261125T093000Z
+DTSTART:20261125T093000
+DTEND:20261125T120000
+SUMMARY:Pre-appointment hearing for Research England Executive Chair · Sc
+ ience and Technology Committee (Commons)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
+ vents/28417
+URL:https://api.parliament.uk/committees/events/28417
 END:VEVENT
 END:VCALENDAR

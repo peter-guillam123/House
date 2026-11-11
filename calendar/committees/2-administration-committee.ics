@@ -5,4 +5,19 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Administration Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28340@house.peter-guillam123.github.io
+DTSTAMP:20261124T101000Z
+DTSTART:20261124T101000
+DTEND:20261124T110000
+SUMMARY:General Election Planning · Administration Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Administration Committee.\nWitnesses: 
+ John Owen OBE (House of Commons Administration)\; Marianne Cwynarski CBE 
+ (House of Commons Administration)\; Margaret McKinnon (House of Commons A
+ dministration)\; Zoe Backhouse (House of Commons Administration)\; Joseph
+ ine Willows (House of Commons Administration)\; Andy Smith (House of Comm
+ ons Administration).\nhttps://api.parliament.uk/committees/events/28340
+URL:https://api.parliament.uk/committees/events/28340
+END:VEVENT
 END:VCALENDAR

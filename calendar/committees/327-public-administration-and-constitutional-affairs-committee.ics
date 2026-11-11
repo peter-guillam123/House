@@ -6,4 +6,18 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Public Administration and Constitutional Affairs Com
  mittee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28490@house.peter-guillam123.github.io
+DTSTAMP:20261117T143000Z
+DTSTART:20261117T143000
+DTEND:20261117T163000
+SUMMARY:The work of the Cabinet Office · Public Administration and Consti
+ tutional Affairs Committee
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Public Administration and Constitution
+ al Affairs Committee.\nWitnesses: Rt Hon Louise Haigh MP\; Sally Jameson 
+ MP (Cabinet Office)\; Catherine Little CB (Cabinet Office).\nhttps://api.
+ parliament.uk/committees/events/28490
+URL:https://api.parliament.uk/committees/events/28490
+END:VEVENT
 END:VCALENDAR

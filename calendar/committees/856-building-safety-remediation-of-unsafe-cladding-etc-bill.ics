@@ -10,26 +10,37 @@ BEGIN:VEVENT
 UID:house-committee-event-28612@house.peter-guillam123.github.io
 DTSTAMP:20261112T113000Z
 DTSTART:20261112T113000
-DTEND:20261112T133000
+DTEND:20261112T130000
 SUMMARY:To consider the Bill · Building Safety (Remediation of Unsafe Cla
  dding etc) Bill
 LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Building Safety (Remediation of Unsafe
-  Cladding etc) Bill.\nWitnesses to be announced.\nhttps://api.parliament.
- uk/committees/events/28612
+  Cladding etc) Bill.\nWitnesses: The Lord Roe of West Wickham KFSM (Build
+ ing Safety Regulator)\; Charlie Pugsley (Building Safety Regulator)\; Hel
+ en Fisher (Homes England)\; Mark Norris (Local Government Association (LG
+ A))\; Mr Dan Daly (National Fire Chiefs Council (NFCC))\; Penny Pender (N
+ ational Fire Chiefs Council (NFCC))\; Spencer Sutcliff (London Fire Briga
+ de)\; Kate Green MP (Greater Manchester Combined Authority (GMCA)).\nhttp
+ s://api.parliament.uk/committees/events/28612
 URL:https://api.parliament.uk/committees/events/28612
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28613@house.peter-guillam123.github.io
 DTSTAMP:20261112T140000Z
 DTSTART:20261112T140000
-DTEND:20261112T170000
+DTEND:20261112T172000
 SUMMARY:Further to consider the Bill · Building Safety (Remediation of Un
  safe Cladding etc) Bill
 LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Building Safety (Remediation of Unsafe
-  Cladding etc) Bill.\nWitnesses to be announced.\nhttps://api.parliament.
- uk/committees/events/28613
+  Cladding etc) Bill.\nWitnesses: Mrs Jaclyn Mangaroo (The Property Instit
+ ute)\; Kate Henderson (National Housing Federation)\; Giles Grover (End O
+ ur Cladding Scandal)\; Miss Sophie Bichener (End Our Cladding Scandal)\; 
+ Sam Dumitriu (Britain Remade)\; Ben Hopkinson (Centre for Policy Studies)
+ \; Alexander Cook (Vistry Group)\; Mr Ian Abley\; Steve Day\; Dame Judith
+  Hackitt\; Dr David Crowder\; Florence Eshalomi MP (Ministry of Housing\,
+  Communities and Local Government).\nhttps://api.parliament.uk/committees
+ /events/28613
 URL:https://api.parliament.uk/committees/events/28613
 END:VEVENT
 END:VCALENDAR

@@ -21,4 +21,17 @@ DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
  tps://api.parliament.uk/committees/events/28188
 URL:https://api.parliament.uk/committees/events/28188
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28365@house.peter-guillam123.github.io
+DTSTAMP:20261117T100000Z
+DTSTART:20261117T100000
+DTEND:20261117T120000
+SUMMARY:The work of Channel 4 · Digital\, Culture\, Media and Sport Commi
+ ttee
+LOCATION:Room 16\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
+ mmittee.\nWitnesses: Priya Dogra (Channel 4)\; Geoff Cooper (Channel 4).\
+ nhttps://api.parliament.uk/committees/events/28365
+URL:https://api.parliament.uk/committees/events/28365
+END:VEVENT
 END:VCALENDAR
