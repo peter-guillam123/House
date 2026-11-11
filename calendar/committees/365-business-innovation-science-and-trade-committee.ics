@@ -5,22 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Business\, Innovation\, Science and Trade Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28729@house.peter-guillam123.github.io
-DTSTAMP:20261110T143000Z
-DTSTART:20261110T143000
-DTEND:20261110T163000
-SUMMARY:UK export support services · Business\, Innovation\, Science and 
- Trade Committee
-LOCATION:The Thatcher Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
- ade Committee.\nWitnesses: Nathan Mathiot (ADS Group Ltd)\; Gareth Hedick
- er (Babcock International)\; Simon Tucker (SRT Marine Systems)\; Maxwell 
- Green (Make UK)\; Steven Lynch (British Chambers of Commerce)\; Jamie Arr
- owsmith (Universities UK)\; Lucy Monks (Federation of Small Businesses)\;
-  Balwinder Dhoot (The Food and Drink Federation)\; Nick Cockayne (Rappa F
- encing Ltd)\; Nick Smith (Avon Specialty Metals).\nhttps://api.parliament
- .uk/committees/events/28729
-URL:https://api.parliament.uk/committees/events/28729
-END:VEVENT
 END:VCALENDAR
