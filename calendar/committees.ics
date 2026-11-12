@@ -126,9 +126,9 @@ LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  ons).\nWitnesses: Professor Jon Butterworth (University College London)\;
   Professor Catherine Heymans (University of Edinburgh)\; Dr Simon William
- s (Institute for Particle Physics Phenomenology\, University of Durham)\;
-  Professor George Efstathio (University of Cambridge).\nhttps://api.parli
- ament.uk/committees/events/28415
+ s (Institute for Particle Physics Phenomenology\, University of Durham\, 
+ Karlsruhe Institute of Technology)\; Professor George Efstathio (Universi
+ ty of Cambridge).\nhttps://api.parliament.uk/committees/events/28415
 URL:https://api.parliament.uk/committees/events/28415
 END:VEVENT
 BEGIN:VEVENT
@@ -284,9 +284,9 @@ LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: Ashle
  y Patton (HORIBA MIRA)\; Professor Siddartha Khastgir (Warwick Manufactur
  ing Group\, University of Warwick)\; Stuart Lovett (Continental Tyres)\; 
- Professor Richard Cuerden (Transport Research Library)\; Mrs Sharron Hudd
- leston\; Mrs Nicole Taylor\; Mr Chris Taylor\; Dr Ian Greenwood.\nhttps:/
- /api.parliament.uk/committees/events/28272
+ Professor Richard Cuerden (Transport Research Laboratory)\; Mrs Sharron H
+ uddleston\; Mrs Nicole Taylor\; Mr Chris Taylor\; Dr Ian Greenwood.\nhttp
+ s://api.parliament.uk/committees/events/28272
 URL:https://api.parliament.uk/committees/events/28272
 END:VEVENT
 BEGIN:VEVENT
@@ -297,8 +297,8 @@ DTEND:20261118T113000
 SUMMARY:The dual role of the Lord Advocate · Scottish Affairs Committee
 LOCATION:Room 15\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
- : Lord Mulholland (Scottish Government)\; Lady Elish Angiolini (Scottish 
- Government).\nhttps://api.parliament.uk/committees/events/28085
+ : Lord Mulholland (Scottish Government).\nhttps://api.parliament.uk/commi
+ ttees/events/28085
 URL:https://api.parliament.uk/committees/events/28085
 END:VEVENT
 BEGIN:VEVENT
@@ -310,14 +310,13 @@ SUMMARY:Early onset cancer: What does the science tell us? · Science and
  Technology Committee (Commons)
 LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
- ons).\nWitnesses: Sarah Stevens (National Disease Registration Service\, 
- NHS Digital)\; Dr Laura Woods (Newcastle University)\; Professor Elio Rib
- oli (Imperial College London\, Cancer Epidemiology and Prevention Researc
- h Unit\, Imperial College London and Institute for Cancer Research)\; Pro
- fessor Helen Coleman (Centre for Public Health\, Queen’s University Bel
- fast)\; Karl Smith-Byrne (Cancer Epidemiology Unit\, University of Oxford
- )\; Professor Montse García-Closas (Institute for Cancer Research).\nhtt
- ps://api.parliament.uk/committees/events/28416
+ ons).\nWitnesses: Dr Laura Woods (Newcastle University)\; Sarah Stevens (
+ National Disease Registration Service\, NHS England)\; Dr Brian Rous (Nat
+ ional Disease Registration Service\, NHS England)\; Professor Elio Riboli
+  (Imperial College London)\; Professor Helen Coleman (Queen’s Universit
+ y Belfast)\; Professor Montse García-Closas (Institute for Cancer Resear
+ ch)\; Dr Karl Smith-Byrne (Cancer Epidemiology Unit\, University of Oxfor
+ d).\nhttps://api.parliament.uk/committees/events/28416
 URL:https://api.parliament.uk/committees/events/28416
 END:VEVENT
 BEGIN:VEVENT
