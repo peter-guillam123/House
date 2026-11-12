@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Revitalising High Streets · Housing\, Communities and Local 
+ Government Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28743@house.peter-guillam123.github.io
+DTSTAMP:20261117T100000Z
+DTSTART:20261117T100000
+DTEND:20261117T113000
+SUMMARY:Revitalising High Streets · Housing\, Communities and Local Gover
+ nment Committee
+LOCATION:The Thatcher Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Housing\, Communities and Local Govern
+ ment Committee.\nWitnesses: Helen Dickinson OBE (British Retail Consortiu
+ m)\; Sacha Lord (Night Time Industries Association)\; Caireen Wackett (Po
+ rtas Agency)\; Liam Kelly (Make CIC)\; Dan Neidle (Tax Policy Associates)
+ \; Aditi Sriram (Institute for Public Policy Research)\; Professor Tony T
+ ravers (The LSE School of Public Policy).\nhttps://api.parliament.uk/comm
+ ittees/events/28743
+URL:https://api.parliament.uk/committees/events/28743
+END:VEVENT
+END:VCALENDAR

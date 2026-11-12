@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Health and Homelessness · Health and Social Care Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28759@house.peter-guillam123.github.io
+DTSTAMP:20261118T093000Z
+DTSTART:20261118T093000
+DTEND:20261118T114000
+SUMMARY:Health and Homelessness · Health and Social Care Committee
+LOCATION:Room 16\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Health and Social Care Committee.\nWit
+ nesses: Alex Bax (Pathway)\; Peter Morre (Oxford City Council)\; Edward R
+ edshaw (Imperial hospital NHS trust)\; Alison McGovern MP (Department of 
+ Health and Social Care)\; Catherine Bennion (Homelessness and Rough Sleep
+ ing)\; Lesley Watts (NHS England)\; Natasha Burgon (Department of Health 
+ and Social Care).\nhttps://api.parliament.uk/committees/events/28759
+URL:https://api.parliament.uk/committees/events/28759
+END:VEVENT
+END:VCALENDAR

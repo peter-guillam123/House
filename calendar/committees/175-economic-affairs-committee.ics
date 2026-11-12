@@ -16,4 +16,26 @@ DESCRIPTION:Oral evidence session\, Economic Affairs Committee.\nWitnesses
   to be announced.\nhttps://api.parliament.uk/committees/events/28761
 URL:https://api.parliament.uk/committees/events/28761
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28795@house.peter-guillam123.github.io
+DTSTAMP:20261201T150000Z
+DTSTART:20261201T150000
+DTEND:20261201T170000
+SUMMARY:Oral evidence · Economic Affairs Committee
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Economic Affairs Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28795
+URL:https://api.parliament.uk/committees/events/28795
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28796@house.peter-guillam123.github.io
+DTSTAMP:20261208T150000Z
+DTSTART:20261208T150000
+DTEND:20261208T170000
+SUMMARY:Oral evidence · Economic Affairs Committee
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Economic Affairs Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28796
+URL:https://api.parliament.uk/committees/events/28796
+END:VEVENT
 END:VCALENDAR
