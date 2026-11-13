@@ -1,7 +1,7 @@
 {
-"built": "2026-11-12",
+"built": "2026-11-13",
 "windowDays": 56,
-"sessions": 52,
+"sessions": 48,
 "all": "committees.ics",
 "committees": [
 {
@@ -30,7 +30,7 @@
 "name": "Building Safety (Remediation of Unsafe Cladding etc) Bill",
 "house": "Commons",
 "file": "committees/856-building-safety-remediation-of-unsafe-cladding-etc-bill.ics",
-"upcoming": 2
+"upcoming": 0
 },
 {
 "id": 518,
@@ -184,7 +184,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 175,
@@ -240,7 +240,7 @@
 "name": "Finance Bill Sub-Committee",
 "house": "Lords",
 "file": "committees/230-finance-bill-sub-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 325,
@@ -773,9 +773,6 @@
 28514,
 28569,
 28573,
-28585,
-28612,
-28613,
 28619,
 28633,
 28635,
@@ -786,7 +783,6 @@
 28708,
 28712,
 28717,
-28720,
 28724,
 28727,
 28728,

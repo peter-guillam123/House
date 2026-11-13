@@ -6,73 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Committee oral evidence
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28585@house.peter-guillam123.github.io
-DTSTAMP:20261112T094500Z
-DTSTART:20261112T094500
-DTEND:20261112T114500
-SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
-LOCATION:Room 2\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
- : Richard Allen (Retailers against VAT Abuse Schemes)\; Anna Doherty (Cha
- rtered Institute of Export & International Trade)\; Rebecca Benneyworth (
- Administrative Burdens Advisory Board).\nhttps://api.parliament.uk/commit
- tees/events/28585
-URL:https://api.parliament.uk/committees/events/28585
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28720@house.peter-guillam123.github.io
-DTSTAMP:20261112T111500Z
-DTSTART:20261112T111500
-DTEND:20261112T130000
-SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
-  (Joint Committee)
-LOCATION:Room 3\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses: Dr Igi Moon (Memorandum of Understanding on Conv
- ersion Therapies)\; Dr Alison Berner (British Association of Gender Ident
- ity Specialists)\; Dr Lisa Morrison (British Association for Counselling 
- and Psychotherapy (BACP))\; Dr Anna Hutchinson (Integrated Psychology Cli
- nic).\nhttps://api.parliament.uk/committees/events/28720
-URL:https://api.parliament.uk/committees/events/28720
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28612@house.peter-guillam123.github.io
-DTSTAMP:20261112T113000Z
-DTSTART:20261112T113000
-DTEND:20261112T130000
-SUMMARY:To consider the Bill · Building Safety (Remediation of Unsafe Cla
- dding etc) Bill
-LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Building Safety (Remediation of Unsafe
-  Cladding etc) Bill.\nWitnesses: The Lord Roe of West Wickham KFSM (Build
- ing Safety Regulator)\; Charlie Pugsley (Building Safety Regulator)\; Hel
- en Fisher (Homes England)\; Mark Norris (Local Government Association (LG
- A))\; Mr Dan Daly (National Fire Chiefs Council (NFCC))\; Penny Pender (N
- ational Fire Chiefs Council (NFCC))\; Spencer Sutcliff (London Fire Briga
- de)\; Kate Green MP (Greater Manchester Combined Authority (GMCA)).\nhttp
- s://api.parliament.uk/committees/events/28612
-URL:https://api.parliament.uk/committees/events/28612
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28613@house.peter-guillam123.github.io
-DTSTAMP:20261112T140000Z
-DTSTART:20261112T140000
-DTEND:20261112T172000
-SUMMARY:Further to consider the Bill · Building Safety (Remediation of Un
- safe Cladding etc) Bill
-LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Building Safety (Remediation of Unsafe
-  Cladding etc) Bill.\nWitnesses: Mrs Jaclyn Mangaroo (The Property Instit
- ute)\; Kate Henderson (National Housing Federation)\; Giles Grover (End O
- ur Cladding Scandal)\; Miss Sophie Bichener (End Our Cladding Scandal)\; 
- Sam Dumitriu (Britain Remade)\; Ben Hopkinson (Centre for Policy Studies)
- \; Alexander Cook (Vistry Group)\; Mr Ian Abley\; Steve Day\; Dame Judith
-  Hackitt\; Dr David Crowder\; Florence Eshalomi MP (Ministry of Housing\,
-  Communities and Local Government).\nhttps://api.parliament.uk/committees
- /events/28613
-URL:https://api.parliament.uk/committees/events/28613
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28633@house.peter-guillam123.github.io
 DTSTAMP:20261116T153000Z
 DTSTART:20261116T153000
@@ -312,11 +245,13 @@ LOCATION:Room 8\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  ons).\nWitnesses: Dr Laura Woods (Newcastle University)\; Sarah Stevens (
  National Disease Registration Service\, NHS England)\; Dr Brian Rous (Nat
- ional Disease Registration Service\, NHS England)\; Professor Elio Riboli
-  (Imperial College London)\; Professor Helen Coleman (Queen’s Universit
- y Belfast)\; Professor Montse García-Closas (Institute for Cancer Resear
- ch)\; Dr Karl Smith-Byrne (Cancer Epidemiology Unit\, University of Oxfor
- d).\nhttps://api.parliament.uk/committees/events/28416
+ ional Disease Registration Service\, NHS England)\; Professor Georgios Ly
+ ratzopoulos (Epidemiology of Cancer Healthcare & Outcomes (ECHO)\, Univer
+ sity College London)\; Professor Elio Riboli (Imperial College London)\; 
+ Professor Helen Coleman (Queen’s University Belfast)\; Professor Montse
+  García-Closas (Institute for Cancer Research)\; Dr Karl Smith-Byrne (Ca
+ ncer Epidemiology Unit\, University of Oxford).\nhttps://api.parliament.u
+ k/committees/events/28416
 URL:https://api.parliament.uk/committees/events/28416
 END:VEVENT
 BEGIN:VEVENT
