@@ -19,4 +19,18 @@ DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
  ort England).\nhttps://api.parliament.uk/committees/events/28619
 URL:https://api.parliament.uk/committees/events/28619
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28621@house.peter-guillam123.github.io
+DTSTAMP:20261125T151500Z
+DTSTART:20261125T151500
+DTEND:20261125T170000
+SUMMARY:Safety of women in hotels · Women and Equalities Committee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
+ sses: Paul Greaney KC\; Emma Lingley-Clark\; Dawn Brennan\; Carolyn Pears
+ on\; Alan Simpson (UKHospitality)\; Ray Reidy (Travelodge)\; Bev King (Z 
+ Hotels)\; Simon Ewins (Whitbread PLC).\nhttps://api.parliament.uk/committ
+ ees/events/28621
+URL:https://api.parliament.uk/committees/events/28621
+END:VEVENT
 END:VCALENDAR

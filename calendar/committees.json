@@ -1,7 +1,7 @@
 {
 "built": "2026-11-16",
 "windowDays": 56,
-"sessions": 48,
+"sessions": 50,
 "all": "committees.ics",
 "committees": [
 {
@@ -408,7 +408,7 @@
 "name": "International Relations and Defence Committee",
 "house": "Lords",
 "file": "committees/360-international-relations-and-defence-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 519,
@@ -429,7 +429,7 @@
 "name": "Liaison Committee (Commons)",
 "house": "Commons",
 "file": "committees/103-liaison-committee-commons.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 187,
@@ -583,7 +583,7 @@
 "name": "Public Administration and Constitutional Affairs Committee",
 "house": "Commons",
 "file": "committees/327-public-administration-and-constitutional-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 430,
@@ -744,7 +744,7 @@
 "name": "Women and Equalities Committee",
 "house": "Commons",
 "file": "committees/328-women-and-equalities-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 164,
@@ -769,14 +769,15 @@
 28416,
 28417,
 28436,
-28490,
 28514,
 28569,
 28573,
 28619,
+28621,
 28633,
 28635,
 28636,
+28672,
 28698,
 28701,
 28707,
@@ -802,6 +803,7 @@
 28761,
 28765,
 28795,
-28796
+28796,
+28807
 ]
 }

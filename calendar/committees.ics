@@ -29,8 +29,11 @@ SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
- ttees/events/28738
+  Committee).\nWitnesses: Baroness Hilary Cass\; Professor Gillian Leng (R
+ oyal Society of Medicine\, Medical Protection Society)\; Dr Arun Chopra (
+ Care Quality Commission (CQC))\; Andrew Smith (Health and Care Profession
+ s Council)\; Mark Swindells (General Medical Council (GMC)).\nhttps://api
+ .parliament.uk/committees/events/28738
 URL:https://api.parliament.uk/committees/events/28738
 END:VEVENT
 BEGIN:VEVENT
@@ -123,20 +126,6 @@ DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
  y of Southampton)\; Mark Webb (The Business Hive).\nhttps://api.parliamen
  t.uk/committees/events/28737
 URL:https://api.parliament.uk/committees/events/28737
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28490@house.peter-guillam123.github.io
-DTSTAMP:20261117T143000Z
-DTSTART:20261117T143000
-DTEND:20261117T163000
-SUMMARY:The work of the Cabinet Office · Public Administration and Consti
- tutional Affairs Committee
-LOCATION:The Wilson Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Public Administration and Constitution
- al Affairs Committee.\nWitnesses: Rt Hon Louise Haigh MP\; Sally Jameson 
- MP (Cabinet Office)\; Catherine Little CB (Cabinet Office).\nhttps://api.
- parliament.uk/committees/events/28490
-URL:https://api.parliament.uk/committees/events/28490
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28747@house.peter-guillam123.github.io
@@ -291,10 +280,11 @@ SUMMARY:Health and Homelessness · Health and Social Care Committee
 LOCATION:Room 16\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Health and Social Care Committee.\nWit
  nesses: Alex Bax (Pathway)\; Peter Morre (Oxford City Council)\; Edward R
- edshaw (Imperial hospital NHS trust)\; Alison McGovern MP (Department of 
- Health and Social Care)\; Catherine Bennion (Homelessness and Rough Sleep
- ing)\; Lesley Watts (NHS England)\; Natasha Burgon (Department of Health 
- and Social Care).\nhttps://api.parliament.uk/committees/events/28759
+ edshaw (Imperial College Healthcare NHS Trust)\; Alison McGovern MP (Depa
+ rtment of Health and Social Care)\; Catherine Bennion (Homelessness and R
+ ough Sleeping)\; Lesley Watts (NHS England)\; Natasha Burgon (Department 
+ of Health and Social Care).\nhttps://api.parliament.uk/committees/events/
+ 28759
 URL:https://api.parliament.uk/committees/events/28759
 END:VEVENT
 BEGIN:VEVENT
@@ -375,10 +365,10 @@ LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
  ses: The Baroness Brown of Cambridge DBE FREng FRS (Climate Change Commit
  tee)\; Dr James Richardson (Climate Change Committee)\; Florence Bates (C
- limate Change Committee)\; Phil Garrigan (International Fire Consultants)
- \; Councillor Martin Fodor (Local Government Association Neighbourhoods C
- ommittee)\; Dr Amit Kochhar (British Medical Association (BMA)).\nhttps:/
- /api.parliament.uk/committees/events/28698
+ limate Change Committee)\; Councillor Martin Fodor (Local Government Asso
+ ciation Neighbourhoods Committee)\; Dr Amit Kochhar (British Medical Asso
+ ciation (BMA))\; Phil Garrigan OBE KFSM (National Fire Chiefs Council).\n
+ https://api.parliament.uk/committees/events/28698
 URL:https://api.parliament.uk/committees/events/28698
 END:VEVENT
 BEGIN:VEVENT
@@ -495,9 +485,21 @@ SUMMARY:Pre-appointment hearing for Research England Executive Chair · Sc
  ience and Technology Committee (Commons)
 LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
- ons).\nWitnesses to be announced.\nhttps://api.parliament.uk/committees/e
- vents/28417
+ ons).\nWitnesses: Professor Christopher Smith (Research England).\nhttps:
+ //api.parliament.uk/committees/events/28417
 URL:https://api.parliament.uk/committees/events/28417
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28807@house.peter-guillam123.github.io
+DTSTAMP:20261125T103000Z
+DTSTART:20261125T103000
+DTEND:20261125T120000
+SUMMARY:Multilateralism · International Relations and Defence Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, International Relations and Defence Co
+ mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
+ s/events/28807
+URL:https://api.parliament.uk/committees/events/28807
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28153@house.peter-guillam123.github.io
@@ -512,6 +514,20 @@ DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28153
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28621@house.peter-guillam123.github.io
+DTSTAMP:20261125T151500Z
+DTSTART:20261125T151500
+DTEND:20261125T170000
+SUMMARY:Safety of women in hotels · Women and Equalities Committee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
+ sses: Paul Greaney KC\; Emma Lingley-Clark\; Dawn Brennan\; Carolyn Pears
+ on\; Alan Simpson (UKHospitality)\; Ray Reidy (Travelodge)\; Bev King (Z 
+ Hotels)\; Simon Ewins (Whitbread PLC).\nhttps://api.parliament.uk/committ
+ ees/events/28621
+URL:https://api.parliament.uk/committees/events/28621
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28728@house.peter-guillam123.github.io
 DTSTAMP:20261126T100000Z
 DTSTART:20261126T100000
@@ -523,6 +539,19 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
  ames McEwen (HMPPS)\; Jim Barton (HMPPS).\nhttps://api.parliament.uk/comm
  ittees/events/28728
 URL:https://api.parliament.uk/committees/events/28728
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28672@house.peter-guillam123.github.io
+DTSTAMP:20261130T143000Z
+DTSTART:20261130T143000
+DTEND:20261130T160000
+SUMMARY:The Work of the Prime Minister (Rt Hon Andy Burnham MP) · Liaison
+  Committee (Commons)
+LOCATION:Boothroyd Room requested.
+DESCRIPTION:Oral evidence session\, Liaison Committee (Commons).\nWitnesse
+ s: Rt Hon Andy Burnham MP\, Prime Minister.\nhttps://api.parliament.uk/co
+ mmittees/events/28672
+URL:https://api.parliament.uk/committees/events/28672
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28730@house.peter-guillam123.github.io
