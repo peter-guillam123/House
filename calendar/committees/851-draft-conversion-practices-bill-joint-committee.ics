@@ -6,22 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Draft Conversion Practices Bill (Joint Committee)
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28738@house.peter-guillam123.github.io
-DTSTAMP:20261116T162000Z
-DTSTART:20261116T162000
-DTEND:20261116T180000
-SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
-  (Joint Committee)
-LOCATION:Room 3\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses: Baroness Hilary Cass\; Professor Gillian Leng (R
- oyal Society of Medicine\, Medical Protection Society)\; Dr Arun Chopra (
- Care Quality Commission (CQC))\; Andrew Smith (Health and Care Profession
- s Council)\; Mark Swindells (General Medical Council (GMC)).\nhttps://api
- .parliament.uk/committees/events/28738
-URL:https://api.parliament.uk/committees/events/28738
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28739@house.peter-guillam123.github.io
 DTSTAMP:20261119T112000Z
 DTSTART:20261119T112000
@@ -33,5 +17,31 @@ DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
   Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
  ttees/events/28739
 URL:https://api.parliament.uk/committees/events/28739
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28815@house.peter-guillam123.github.io
+DTSTAMP:20261123T162000Z
+DTSTART:20261123T162000
+DTEND:20261123T180000
+SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
+  (Joint Committee)
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
+  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
+ ttees/events/28815
+URL:https://api.parliament.uk/committees/events/28815
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28816@house.peter-guillam123.github.io
+DTSTAMP:20261126T112000Z
+DTSTART:20261126T112000
+DTEND:20261126T135000
+SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
+  (Joint Committee)
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
+  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
+ ttees/events/28816
+URL:https://api.parliament.uk/committees/events/28816
 END:VEVENT
 END:VCALENDAR

@@ -5,4 +5,16 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Human Rights (Joint Committee)
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28817@house.peter-guillam123.github.io
+DTSTAMP:20261125T141500Z
+DTSTART:20261125T141500
+DTEND:20261125T160000
+SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
+ ights (Joint Committee)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
+ sses to be announced.\nhttps://api.parliament.uk/committees/events/28817
+URL:https://api.parliament.uk/committees/events/28817
+END:VEVENT
 END:VCALENDAR

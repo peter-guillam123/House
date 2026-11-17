@@ -1,5 +1,5 @@
 {
-"built": "2026-11-16",
+"built": "2026-11-17",
 "windowDays": 56,
 "sessions": 50,
 "all": "committees.ics",
@@ -184,7 +184,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 2
+"upcoming": 3
 },
 {
 "id": 175,
@@ -262,13 +262,6 @@
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
 "upcoming": 1
-},
-{
-"id": 410,
-"name": "First Delegated Legislation Committee",
-"house": "Commons",
-"file": "committees/410-first-delegated-legislation-committee.ics",
-"upcoming": 0
 },
 {
 "id": 78,
@@ -366,7 +359,7 @@
 "name": "Human Rights (Joint Committee)",
 "house": "Joint",
 "file": "committees/93-human-rights-joint-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 186,
@@ -492,7 +485,7 @@
 "name": "National Security Strategy (Joint Committee)",
 "house": "Joint",
 "file": "committees/111-national-security-strategy-joint-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 120,
@@ -576,7 +569,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 4
+"upcoming": 3
 },
 {
 "id": 327,
@@ -633,13 +626,6 @@
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
 "upcoming": 1
-},
-{
-"id": 411,
-"name": "Second Delegated Legislation Committee",
-"house": "Commons",
-"file": "committees/411-second-delegated-legislation-committee.ics",
-"upcoming": 0
 },
 {
 "id": 255,
@@ -705,13 +691,6 @@
 "upcoming": 0
 },
 {
-"id": 421,
-"name": "Third Delegated Legislation Committee",
-"house": "Commons",
-"file": "committees/421-third-delegated-legislation-committee.ics",
-"upcoming": 0
-},
-{
 "id": 153,
 "name": "Transport Committee",
 "house": "Commons",
@@ -770,11 +749,9 @@
 28417,
 28436,
 28514,
-28569,
 28573,
 28619,
 28621,
-28633,
 28635,
 28636,
 28672,
@@ -791,7 +768,6 @@
 28735,
 28736,
 28737,
-28738,
 28739,
 28743,
 28746,
@@ -804,6 +780,9 @@
 28765,
 28795,
 28796,
-28807
+28807,
+28815,
+28816,
+28817
 ]
 }
