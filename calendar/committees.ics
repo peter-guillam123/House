@@ -349,7 +349,8 @@ SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
 LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
  : Rt Hon James Murray MP (The Treasury)\; Gareth Cooper (HMRC)\; Reshma P
- rajapat (HMRC).\nhttps://api.parliament.uk/committees/events/28746
+ rajapat (HMRC)\; Sara Albores Nodar (HMRC).\nhttps://api.parliament.uk/co
+ mmittees/events/28746
 URL:https://api.parliament.uk/committees/events/28746
 END:VEVENT
 BEGIN:VEVENT
@@ -668,6 +669,17 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28730
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28854@house.peter-guillam123.github.io
+DTSTAMP:20261201T092500Z
+DTSTART:20261201T092500
+DTEND:20261201T112500
+SUMMARY:To consider the Bill · Visitor Levy (England) Bill
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Visitor Levy (England) Bill.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28854
+URL:https://api.parliament.uk/committees/events/28854
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28436@house.peter-guillam123.github.io
 DTSTAMP:20261201T103000Z
 DTSTART:20261201T103000
@@ -677,6 +689,17 @@ LOCATION:TBC
 DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
  nounced.\nhttps://api.parliament.uk/committees/events/28436
 URL:https://api.parliament.uk/committees/events/28436
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28855@house.peter-guillam123.github.io
+DTSTAMP:20261201T140000Z
+DTSTART:20261201T140000
+DTEND:20261201T170000
+SUMMARY:Further to consider the Bill · Visitor Levy (England) Bill
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Visitor Levy (England) Bill.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28855
+URL:https://api.parliament.uk/committees/events/28855
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28795@house.peter-guillam123.github.io

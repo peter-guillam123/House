@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Further to consider the Bill · Visitor Levy (England) Bill
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28855@house.peter-guillam123.github.io
+DTSTAMP:20261201T140000Z
+DTSTART:20261201T140000
+DTEND:20261201T170000
+SUMMARY:Further to consider the Bill · Visitor Levy (England) Bill
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Visitor Levy (England) Bill.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28855
+URL:https://api.parliament.uk/committees/events/28855
+END:VEVENT
+END:VCALENDAR
