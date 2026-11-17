@@ -20,4 +20,18 @@ DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
  i.parliament.uk/committees/events/28757
 URL:https://api.parliament.uk/committees/events/28757
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28819@house.peter-guillam123.github.io
+DTSTAMP:20261125T100000Z
+DTSTART:20261125T100000
+DTEND:20261125T120000
+SUMMARY:Regulatory sandboxes in financial services · Financial Services R
+ egulation Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Financial Services Regulation Committe
+ e.\nWitnesses: Kathrin Hamilton (Baillie Gifford)\; Chris Elms (Euroclear
+  UK & International)\; Janine Hirt (Innovate Finance).\nhttps://api.parli
+ ament.uk/committees/events/28819
+URL:https://api.parliament.uk/committees/events/28819
+END:VEVENT
 END:VCALENDAR

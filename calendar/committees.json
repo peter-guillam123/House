@@ -1,7 +1,7 @@
 {
 "built": "2026-11-17",
 "windowDays": 56,
-"sessions": 50,
+"sessions": 57,
 "all": "committees.ics",
 "committees": [
 {
@@ -37,7 +37,7 @@
 "name": "Built Environment Committee",
 "house": "Lords",
 "file": "committees/518-built-environment-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 365,
@@ -198,14 +198,14 @@
 "name": "Education Committee",
 "house": "Commons",
 "file": "committees/203-education-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 664,
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 515,
@@ -261,7 +261,7 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 78,
@@ -380,7 +380,7 @@
 "name": "International Agreements Committee",
 "house": "Lords",
 "file": "committees/448-international-agreements-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 98,
@@ -625,7 +625,7 @@
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 255,
@@ -716,7 +716,7 @@
 "name": "Welsh Affairs Committee",
 "house": "Commons",
 "file": "committees/162-welsh-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 328,
@@ -744,11 +744,13 @@
 28340,
 28365,
 28385,
+28386,
 28415,
 28416,
 28417,
 28436,
 28514,
+28541,
 28573,
 28619,
 28621,
@@ -773,6 +775,7 @@
 28746,
 28747,
 28750,
+28753,
 28757,
 28759,
 28760,
@@ -783,6 +786,10 @@
 28807,
 28815,
 28816,
-28817
+28817,
+28819,
+28821,
+28823,
+28845
 ]
 }

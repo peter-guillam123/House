@@ -5,4 +5,20 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Education Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28753@house.peter-guillam123.github.io
+DTSTAMP:20261124T100000Z
+DTSTART:20261124T100000
+DTEND:20261124T120000
+SUMMARY:Preparing for Votes at 16: The Role of the Education System · Edu
+ cation Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Dr Ja
+ mes Weinberg (University of Sheffield)\; Tom Middlehurst (The Association
+  of School and College Leaders (ASCL))\; Elizabeth Moorse (Association of
+  Citizenship Teaching)\; Ryan Mason (Addey and Stanhope School)\; Helen B
+ lachford (Priory South Sea School\, part of Bohunt Education Trust).\nhtt
+ ps://api.parliament.uk/committees/events/28753
+URL:https://api.parliament.uk/committees/events/28753
+END:VEVENT
 END:VCALENDAR

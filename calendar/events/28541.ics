@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The dual role of the Lord Advocate · Scottish Affairs Commit
+ tee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28541@house.peter-guillam123.github.io
+DTSTAMP:20261124T093000Z
+DTSTART:20261124T093000
+DTEND:20261124T113000
+SUMMARY:The dual role of the Lord Advocate · Scottish Affairs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
+ : Gerry Moynihan KC.\nhttps://api.parliament.uk/committees/events/28541
+URL:https://api.parliament.uk/committees/events/28541
+END:VEVENT
+END:VCALENDAR
