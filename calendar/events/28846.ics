@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Entrepreneurship and business · Business\, Innovation\, Scie
+ nce and Trade Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28846@house.peter-guillam123.github.io
+DTSTAMP:20261124T144500Z
+DTSTART:20261124T144500
+DTEND:20261124T171500
+SUMMARY:Entrepreneurship and business · Business\, Innovation\, Science a
+ nd Trade Committee
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
+ ade Committee.\nWitnesses: Alexandra Depledge MBE\; Fran McIntyre (UK Res
+ earch and Innovation)\; Stephanie Smith (The Russell Group)\; Simon Thorp
+ e (Cambridge Angels)\; The Lord Leong CBE (Department for Business\, Inno
+ vation\, Science and Trade)\; Chris McDonald MP (Department for Business\
+ , Innovation\, Science and Trade).\nhttps://api.parliament.uk/committees/
+ events/28846
+URL:https://api.parliament.uk/committees/events/28846
+END:VEVENT
+END:VCALENDAR

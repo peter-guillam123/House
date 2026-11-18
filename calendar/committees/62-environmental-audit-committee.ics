@@ -21,4 +21,18 @@ DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
  https://api.parliament.uk/committees/events/28698
 URL:https://api.parliament.uk/committees/events/28698
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28699@house.peter-guillam123.github.io
+DTSTAMP:20261125T143000Z
+DTSTART:20261125T143000
+DTEND:20261125T163000
+SUMMARY:HM Treasury and the economics of climate and nature · Environment
+ al Audit Committee
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
+ ses: Rt Hon Darren Jones MP (HM Treasury)\; Dan Tomlinson MP (HM Treasury
+ \, HM Treasury and the Cabinet Office).\nhttps://api.parliament.uk/commit
+ tees/events/28699
+URL:https://api.parliament.uk/committees/events/28699
+END:VEVENT
 END:VCALENDAR

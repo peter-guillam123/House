@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Children's tv and video content · Digital\, Culture\, Media 
+ and Sport Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28501@house.peter-guillam123.github.io
+DTSTAMP:20261124T100000Z
+DTSTART:20261124T100000
+DTEND:20261124T120000
+SUMMARY:Children's tv and video content · Digital\, Culture\, Media and S
+ port Committee
+LOCATION:Room 16\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
+ mmittee.\nWitnesses: Rt Hon Ian Murray MP (Department for Digital\, Cultu
+ re\, Media and Sport)\; Robert Specterman-Green (Department for Digital\,
+  Culture\, Media and Sport)\; Daniel Okubo (Department for Digital\, Cult
+ ure\, Media and Sport).\nhttps://api.parliament.uk/committees/events/2850
+ 1
+URL:https://api.parliament.uk/committees/events/28501
+END:VEVENT
+END:VCALENDAR

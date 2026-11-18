@@ -7,15 +7,15 @@ X-WR-CALNAME:Proposals for backbench debates · Backbench Business Committ
  ee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28760@house.peter-guillam123.github.io
-DTSTAMP:20261117T161500Z
-DTSTART:20261117T161500
-DTEND:20261117T170000
+UID:house-committee-event-28804@house.peter-guillam123.github.io
+DTSTAMP:20261124T161500Z
+DTSTART:20261124T161500
+DTEND:20261124T170000
 SUMMARY:Proposals for backbench debates · Backbench Business Committee
 LOCATION:Room 16\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Backbench Business Committee.\nWitness
- es: Members of Parliament.\nhttps://api.parliament.uk/committees/events/2
- 8760
-URL:https://api.parliament.uk/committees/events/28760
+ es: Members of Parliament (House of Commons).\nhttps://api.parliament.uk/
+ committees/events/28804
+URL:https://api.parliament.uk/committees/events/28804
 END:VEVENT
 END:VCALENDAR

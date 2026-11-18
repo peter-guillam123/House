@@ -1,7 +1,7 @@
 {
-"built": "2026-11-17",
+"built": "2026-11-18",
 "windowDays": 56,
-"sessions": 59,
+"sessions": 65,
 "all": "committees.ics",
 "committees": [
 {
@@ -37,14 +37,14 @@
 "name": "Built Environment Committee",
 "house": "Lords",
 "file": "committees/518-built-environment-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 365,
 "name": "Business, Innovation, Science and Trade Committee",
 "house": "Commons",
 "file": "committees/365-business-innovation-science-and-trade-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 783,
@@ -114,7 +114,7 @@
 "name": "Communications and Digital Committee",
 "house": "Lords",
 "file": "committees/170-communications-and-digital-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 402,
@@ -170,7 +170,7 @@
 "name": "Digital, Culture, Media and Sport Committee",
 "house": "Commons",
 "file": "committees/378-digital-culture-media-and-sport-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 831,
@@ -219,14 +219,14 @@
 "name": "Environment, Food and Rural Affairs Committee",
 "house": "Commons",
 "file": "committees/52-environment-food-and-rural-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 62,
 "name": "Environmental Audit Committee",
 "house": "Commons",
 "file": "committees/62-environmental-audit-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 516,
@@ -264,6 +264,20 @@
 "upcoming": 0
 },
 {
+"id": 858,
+"name": "Financial Services and Markets Bill [Lords]",
+"house": "Commons",
+"file": "committees/858-financial-services-and-markets-bill-lords.ics",
+"upcoming": 0
+},
+{
+"id": 859,
+"name": "Financial Services and Markets Bill [Lords]: Programming Sub Committee",
+"house": "Commons",
+"file": "committees/859-financial-services-and-markets-bill-lords-programming-sub-co.ics",
+"upcoming": 0
+},
+{
 "id": 697,
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
@@ -282,7 +296,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 422,
@@ -327,13 +341,6 @@
 "upcoming": 0
 },
 {
-"id": 854,
-"name": "Highways (Financing) Bill",
-"house": "Commons",
-"file": "committees/854-highways-financing-bill.ics",
-"upcoming": 0
-},
-{
 "id": 679,
 "name": "Holocaust Memorial Bill Select Committee",
 "house": "Commons",
@@ -366,7 +373,7 @@
 "name": "Housing, Communities and Local Government Committee",
 "house": "Commons",
 "file": "committees/17-housing-communities-and-local-government-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 93,
@@ -401,7 +408,7 @@
 "name": "International Development Committee",
 "house": "Commons",
 "file": "committees/98-international-development-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 347,
@@ -422,7 +429,7 @@
 "name": "Justice and Home Affairs Committee",
 "house": "Lords",
 "file": "committees/519-justice-and-home-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 102,
@@ -485,7 +492,7 @@
 "name": "Modernisation Committee",
 "house": "Commons",
 "file": "committees/736-modernisation-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 832,
@@ -506,7 +513,7 @@
 "name": "Northern Ireland Affairs Committee",
 "house": "Commons",
 "file": "committees/120-northern-ireland-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 769,
@@ -590,7 +597,7 @@
 "name": "Public Administration and Constitutional Affairs Committee",
 "house": "Commons",
 "file": "committees/327-public-administration-and-constitutional-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 430,
@@ -625,14 +632,14 @@
 "name": "Science and Technology Committee",
 "house": "Lords",
 "file": "committees/193-science-and-technology-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 135,
 "name": "Science and Technology Committee (Commons)",
 "house": "Commons",
 "file": "committees/135-science-and-technology-committee-commons.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 136,
@@ -730,14 +737,14 @@
 "name": "Transport Committee",
 "house": "Commons",
 "file": "committees/153-transport-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 158,
 "name": "Treasury Committee",
 "house": "Commons",
 "file": "committees/158-treasury-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 600,
@@ -779,26 +786,27 @@
 "name": "Work and Pensions Committee",
 "house": "Commons",
 "file": "committees/164-work-and-pensions-committee.ics",
-"upcoming": 1
+"upcoming": 2
 }
 ],
 "events": [
 27666,
+27942,
 27944,
 28085,
 28152,
 28153,
 28154,
 28272,
+28273,
 28340,
-28365,
 28385,
 28386,
-28415,
 28416,
 28417,
 28436,
-28514,
+28501,
+28502,
 28541,
 28573,
 28619,
@@ -807,6 +815,7 @@
 28636,
 28672,
 28698,
+28699,
 28701,
 28707,
 28708,
@@ -818,29 +827,33 @@
 28730,
 28735,
 28736,
-28737,
 28739,
-28743,
 28746,
-28747,
-28750,
+28751,
 28753,
 28757,
 28759,
-28760,
 28761,
-28765,
+28764,
+28778,
+28779,
 28795,
 28796,
+28802,
+28804,
 28807,
+28810,
 28815,
 28816,
 28817,
+28818,
 28819,
 28821,
 28823,
 28845,
+28846,
 28854,
-28855
+28855,
+28863
 ]
 }

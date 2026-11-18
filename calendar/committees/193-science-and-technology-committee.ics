@@ -5,4 +5,19 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Science and Technology Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28863@house.peter-guillam123.github.io
+DTSTAMP:20261124T101500Z
+DTSTART:20261124T101500
+DTEND:20261124T121500
+SUMMARY:Future of UK compute in the age of AI · Science and Technology Co
+ mmittee
+LOCATION:Room 3\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Science and Technology Committee.\nWit
+ nesses: Professor Michael Wooldridge (University of Oxford)\; Professor A
+ nne Trefethen (University of Oxford)\; Professor Maria Savona (Centre for
+  Inclusive Trade Policy\, University of Sussex)\; Emma Fryer (CyrusOne).\
+ nhttps://api.parliament.uk/committees/events/28863
+URL:https://api.parliament.uk/committees/events/28863
+END:VEVENT
 END:VCALENDAR

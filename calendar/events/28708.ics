@@ -12,8 +12,9 @@ DTSTART:20261216T110000
 DTEND:20261216T123000
 SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
-DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28708
+DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
+  Josh MacAlister MP (Department for Education).\nhttps://api.parliament.u
+ k/committees/events/28708
 URL:https://api.parliament.uk/committees/events/28708
 END:VEVENT
 END:VCALENDAR

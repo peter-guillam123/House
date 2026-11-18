@@ -18,4 +18,20 @@ DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
  for Government).\nhttps://api.parliament.uk/committees/events/28735
 URL:https://api.parliament.uk/committees/events/28735
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28818@house.peter-guillam123.github.io
+DTSTAMP:20261125T093000Z
+DTSTART:20261125T093000
+DTEND:20261125T113000
+SUMMARY:Pensions adequacy – auto-enrolment contributions for low earners
+  and their employers · Work and Pensions Committee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
+ s: David Hale (Federation of Small Businesses)\; Laurence Raeburn-Smith (
+ Confederation of British Industry)\; Joshua Toovey (IPSE (The Self-Employ
+ ed Association))\; David Sheen (UK Hospitality)\; Baroness Jeannie Drake\
+ ; Professor Nick Pearce\; Sir Ian Cheshire.\nhttps://api.parliament.uk/co
+ mmittees/events/28818
+URL:https://api.parliament.uk/committees/events/28818
+END:VEVENT
 END:VCALENDAR

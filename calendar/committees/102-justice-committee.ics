@@ -6,17 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Justice Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28750@house.peter-guillam123.github.io
-DTSTAMP:20261117T143000Z
-DTSTART:20261117T143000
-DTEND:20261117T170000
-SUMMARY:Is the law being used to silence victims and survivors? · Justice
-  Committee
-LOCATION:The Thatcher Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Harriet
-  Wistrich (Centre for Women's Justice)\; Rupert Cowper-Coles (RPC)\; Veri
- ty Nevitt (The Gemini Project)\; Jennifer Robinson (Doughty Street Chambe
- rs).\nhttps://api.parliament.uk/committees/events/28750
-URL:https://api.parliament.uk/committees/events/28750
+UID:house-committee-event-28751@house.peter-guillam123.github.io
+DTSTAMP:20261124T143000Z
+DTSTART:20261124T143000
+DTEND:20261124T170000
+SUMMARY:Children and Young Adults in the Secure Estate · Justice Committe
+ e
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Miss An
+ nmarie Lewis (Barrow Cadbury Trust)\; Jess Mullen (Alliance for Youth Jus
+ tice)\; Jake Richards MP (Ministry of Justice)\; Alison Clarke (Ministry 
+ of Justice).\nhttps://api.parliament.uk/committees/events/28751
+URL:https://api.parliament.uk/committees/events/28751
 END:VEVENT
 END:VCALENDAR

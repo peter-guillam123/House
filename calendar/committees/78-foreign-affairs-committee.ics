@@ -5,4 +5,19 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Foreign Affairs Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28802@house.peter-guillam123.github.io
+DTSTAMP:20261124T131500Z
+DTSTART:20261124T131500
+DTEND:20261124T150000
+SUMMARY:Work of the Foreign\, Commonwealth and Development Office · Forei
+ gn Affairs Committee
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
+  The Rt Hon Hamish Falconer MP (Foreign Commonwealth & Development Office
+ )\; The Rt Hon Ed Miliband MP (Foreign Commonwealth & Development Office)
+ \; Lindy Cameron (Foreign Commonwealth & Development Office).\nhttps://ap
+ i.parliament.uk/committees/events/28802
+URL:https://api.parliament.uk/committees/events/28802
+END:VEVENT
 END:VCALENDAR

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Children and Young Adults in the Secure Estate · Justice Com
+ mittee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28751@house.peter-guillam123.github.io
+DTSTAMP:20261124T143000Z
+DTSTART:20261124T143000
+DTEND:20261124T170000
+SUMMARY:Children and Young Adults in the Secure Estate · Justice Committe
+ e
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Justice Committee.\nWitnesses: Miss An
+ nmarie Lewis (Barrow Cadbury Trust)\; Jess Mullen (Alliance for Youth Jus
+ tice)\; Jake Richards MP (Ministry of Justice)\; Alison Clarke (Ministry 
+ of Justice).\nhttps://api.parliament.uk/committees/events/28751
+URL:https://api.parliament.uk/committees/events/28751
+END:VEVENT
+END:VCALENDAR

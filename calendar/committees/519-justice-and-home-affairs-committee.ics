@@ -6,6 +6,20 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Justice and Home Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
+UID:house-committee-event-27942@house.peter-guillam123.github.io
+DTSTAMP:20261124T103000Z
+DTSTART:20261124T103000
+DTEND:20261124T120000
+SUMMARY:Settlement\, Citizenship and Integration · Justice and Home Affai
+ rs Committee
+LOCATION:Room 2\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
+ itnesses: Dr Madeleine Sumption (Migration Advisory Committee\, Migration
+  Observatory\, University of Oxford).\nhttps://api.parliament.uk/committe
+ es/events/27942
+URL:https://api.parliament.uk/committees/events/27942
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-27944@house.peter-guillam123.github.io
 DTSTAMP:20261208T103000Z
 DTSTART:20261208T103000
