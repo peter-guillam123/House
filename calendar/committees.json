@@ -1,7 +1,7 @@
 {
 "built": "2026-11-18",
 "windowDays": 56,
-"sessions": 65,
+"sessions": 64,
 "all": "committees.ics",
 "committees": [
 {
@@ -16,7 +16,7 @@
 "name": "Backbench Business Committee",
 "house": "Commons",
 "file": "committees/202-backbench-business-committee.ics",
-"upcoming": 2
+"upcoming": 3
 },
 {
 "id": 682,
@@ -247,7 +247,7 @@
 "name": "Finance Bill Sub-Committee",
 "house": "Lords",
 "file": "committees/230-finance-bill-sub-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 325,
@@ -758,7 +758,7 @@
 "name": "Visitor Levy (England) Bill",
 "house": "Commons",
 "file": "committees/860-visitor-levy-england-bill.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 861,
@@ -821,6 +821,7 @@
 28708,
 28712,
 28717,
+28717,
 28724,
 28727,
 28728,
@@ -828,7 +829,6 @@
 28735,
 28736,
 28739,
-28746,
 28751,
 28753,
 28757,
@@ -852,7 +852,6 @@
 28823,
 28845,
 28846,
-28854,
 28855,
 28863
 ]

@@ -211,19 +211,6 @@ DESCRIPTION:Oral evidence session\, Welsh Affairs Committee.\nWitnesses: J
 URL:https://api.parliament.uk/committees/events/28385
 END:VEVENT
 BEGIN:VEVENT
-UID:house-committee-event-28746@house.peter-guillam123.github.io
-DTSTAMP:20261119T094500Z
-DTSTART:20261119T094500
-DTEND:20261119T111500
-SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
-LOCATION:Room 2\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
- : Rt Hon James Murray MP (The Treasury)\; Gareth Cooper (HMRC)\; Reshma P
- rajapat (HMRC)\; Sara Albores Nodar (HMRC).\nhttps://api.parliament.uk/co
- mmittees/events/28746
-URL:https://api.parliament.uk/committees/events/28746
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28739@house.peter-guillam123.github.io
 DTSTAMP:20261119T112000Z
 DTSTART:20261119T112000
@@ -584,8 +571,8 @@ DTEND:20261125T120000
 SUMMARY:Multilateralism · International Relations and Defence Committee
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses to be announced.\nhttps://api.parliament.uk/committee
- s/events/28807
+ mmittee.\nWitnesses: Edward Foley (GovAI).\nhttps://api.parliament.uk/com
+ mittees/events/28807
 URL:https://api.parliament.uk/committees/events/28807
 END:VEVENT
 BEGIN:VEVENT
@@ -742,17 +729,6 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28730
 END:VEVENT
 BEGIN:VEVENT
-UID:house-committee-event-28854@house.peter-guillam123.github.io
-DTSTAMP:20261201T092500Z
-DTSTART:20261201T092500
-DTEND:20261201T112500
-SUMMARY:To consider the Bill · Visitor Levy (England) Bill
-LOCATION:The Boothroyd Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Visitor Levy (England) Bill.\nWitnesse
- s to be announced.\nhttps://api.parliament.uk/committees/events/28854
-URL:https://api.parliament.uk/committees/events/28854
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28436@house.peter-guillam123.github.io
 DTSTAMP:20261201T103000Z
 DTSTART:20261201T103000
@@ -784,6 +760,18 @@ LOCATION:To Be Confirmed
 DESCRIPTION:Oral evidence session\, Economic Affairs Committee.\nWitnesses
   to be announced.\nhttps://api.parliament.uk/committees/events/28795
 URL:https://api.parliament.uk/committees/events/28795
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28717@house.peter-guillam123.github.io
+DTSTAMP:20261201T161500Z
+DTSTART:20261201T161500
+DTEND:20261201T170000
+SUMMARY:Proposals for backbench debates · Backbench Business Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Backbench Business Committee.\nWitness
+ es: Members of Parliament (House of Commons).\nhttps://api.parliament.uk/
+ committees/events/28717
+URL:https://api.parliament.uk/committees/events/28717
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28717@house.peter-guillam123.github.io
