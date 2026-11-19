@@ -6,22 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Northern Ireland Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28724@house.peter-guillam123.github.io
-DTSTAMP:20261118T093000Z
-DTSTART:20261118T093000
-DTEND:20261118T120000
-SUMMARY:Work of the Secretary of State for Northern Ireland · Northern Ir
- eland Affairs Committee
-LOCATION:The Thatcher Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Northern Ireland Affairs Committee.\nW
- itnesses: Rt Hon Chris Bryant MP (Northern Ireland Office)\; Sarah Owen M
- P (Northern Ireland Office)\; The Baroness Anderson of Stoke-on-Trent (No
- rthern Ireland Office)\; Fleur Johnson (Cabinet Office)\; Julie Harrison 
- (Northern Ireland Office).\nhttps://api.parliament.uk/committees/events/2
- 8724
-URL:https://api.parliament.uk/committees/events/28724
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28778@house.peter-guillam123.github.io
 DTSTAMP:20261125T093000Z
 DTSTART:20261125T093000

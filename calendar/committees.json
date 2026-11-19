@@ -1,7 +1,7 @@
 {
-"built": "2026-11-18",
+"built": "2026-11-19",
 "windowDays": 56,
-"sessions": 64,
+"sessions": 54,
 "all": "committees.ics",
 "committees": [
 {
@@ -16,7 +16,7 @@
 "name": "Backbench Business Committee",
 "house": "Commons",
 "file": "committees/202-backbench-business-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 682,
@@ -205,7 +205,7 @@
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 515,
@@ -226,7 +226,7 @@
 "name": "Environmental Audit Committee",
 "house": "Commons",
 "file": "committees/62-environmental-audit-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 516,
@@ -247,7 +247,7 @@
 "name": "Finance Bill Sub-Committee",
 "house": "Lords",
 "file": "committees/230-finance-bill-sub-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 325,
@@ -282,7 +282,7 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 410,
@@ -373,7 +373,7 @@
 "name": "Housing, Communities and Local Government Committee",
 "house": "Commons",
 "file": "committees/17-housing-communities-and-local-government-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 93,
@@ -422,7 +422,7 @@
 "name": "International Relations and Defence Committee",
 "house": "Lords",
 "file": "committees/360-international-relations-and-defence-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 519,
@@ -513,7 +513,7 @@
 "name": "Northern Ireland Affairs Committee",
 "house": "Commons",
 "file": "committees/120-northern-ireland-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 769,
@@ -604,7 +604,7 @@
 "name": "Public Services Committee",
 "house": "Lords",
 "file": "committees/430-public-services-committee.ics",
-"upcoming": 5
+"upcoming": 4
 },
 {
 "id": 652,
@@ -639,14 +639,14 @@
 "name": "Science and Technology Committee (Commons)",
 "house": "Commons",
 "file": "committees/135-science-and-technology-committee-commons.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 136,
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 411,
@@ -737,7 +737,7 @@
 "name": "Transport Committee",
 "house": "Commons",
 "file": "committees/153-transport-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 158,
@@ -758,7 +758,7 @@
 "name": "Visitor Levy (England) Bill",
 "house": "Commons",
 "file": "committees/860-visitor-levy-england-bill.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 861,
@@ -772,77 +772,65 @@
 "name": "Welsh Affairs Committee",
 "house": "Commons",
 "file": "committees/162-welsh-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 328,
 "name": "Women and Equalities Committee",
 "house": "Commons",
 "file": "committees/328-women-and-equalities-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 164,
 "name": "Work and Pensions Committee",
 "house": "Commons",
 "file": "committees/164-work-and-pensions-committee.ics",
-"upcoming": 2
+"upcoming": 1
 }
 ],
 "events": [
-27666,
+27667,
 27942,
 27944,
-28085,
-28152,
 28153,
 28154,
-28272,
 28273,
 28340,
-28385,
 28386,
-28416,
 28417,
 28436,
 28501,
 28502,
 28541,
 28573,
-28619,
 28621,
 28635,
 28636,
 28672,
-28698,
 28699,
-28701,
 28707,
 28708,
-28712,
 28717,
-28717,
-28724,
 28727,
 28728,
 28730,
-28735,
 28736,
 28739,
 28751,
 28753,
-28757,
-28759,
 28761,
 28764,
 28778,
 28779,
 28795,
 28796,
+28799,
 28802,
 28804,
 28807,
 28810,
+28811,
 28815,
 28816,
 28817,
@@ -852,7 +840,9 @@
 28823,
 28845,
 28846,
+28854,
 28855,
-28863
+28863,
+28884
 ]
 }

@@ -9,17 +9,15 @@ BEGIN:VEVENT
 UID:house-committee-event-28817@house.peter-guillam123.github.io
 DTSTAMP:20261125T141500Z
 DTSTART:20261125T141500
-DTEND:20261125T161500
+DTEND:20261125T151500
 SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
  ights (Joint Committee)
 LOCATION:Room 5\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
  sses: Rabbi David Mason (Hebrew Immigrant Aid Society and UK Jewish Organ
  ization for Refugee and Racial Equality)\; Kerry Gilroy (Epping for Every
- one)\; Claudia Mendoza (Jewish Leadership Council)\; Chris Barnes (Nation
- al Physical Laboratory)\; Professor William Webster (Office of the Biomet
- rics and Surveillance Camera Commissioner)\; Silkie Carlo (Big Brother Wa
- tch).\nhttps://api.parliament.uk/committees/events/28817
+ one)\; Claudia Mendoza (Jewish Leadership Council).\nhttps://api.parliame
+ nt.uk/committees/events/28817
 URL:https://api.parliament.uk/committees/events/28817
 END:VEVENT
 END:VCALENDAR

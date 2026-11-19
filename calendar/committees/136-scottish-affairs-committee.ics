@@ -6,18 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Scottish Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28085@house.peter-guillam123.github.io
-DTSTAMP:20261118T093000Z
-DTSTART:20261118T093000
-DTEND:20261118T113000
-SUMMARY:The dual role of the Lord Advocate · Scottish Affairs Committee
-LOCATION:Room 15\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Scottish Affairs Committee.\nWitnesses
- : Lord Mulholland (Scottish Government).\nhttps://api.parliament.uk/commi
- ttees/events/28085
-URL:https://api.parliament.uk/committees/events/28085
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28541@house.peter-guillam123.github.io
 DTSTAMP:20261124T093000Z
 DTSTART:20261124T093000

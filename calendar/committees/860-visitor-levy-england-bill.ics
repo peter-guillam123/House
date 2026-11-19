@@ -6,6 +6,17 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Visitor Levy (England) Bill
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
+UID:house-committee-event-28854@house.peter-guillam123.github.io
+DTSTAMP:20261201T092500Z
+DTSTART:20261201T092500
+DTEND:20261201T112500
+SUMMARY:To consider the Bill · Visitor Levy (England) Bill
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Visitor Levy (England) Bill.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28854
+URL:https://api.parliament.uk/committees/events/28854
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28855@house.peter-guillam123.github.io
 DTSTAMP:20261201T140000Z
 DTSTART:20261201T140000

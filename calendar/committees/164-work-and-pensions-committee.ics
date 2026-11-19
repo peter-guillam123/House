@@ -6,19 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Work and Pensions Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28735@house.peter-guillam123.github.io
-DTSTAMP:20261118T093000Z
-DTSTART:20261118T093000
-DTEND:20261118T113000
-SUMMARY:Local delivery of employment support · Work and Pensions Committe
- e
-LOCATION:Room 6\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
- s: Professor Dan Finn (University of Portsmouth)\; Ben Paxton (Institute 
- for Government).\nhttps://api.parliament.uk/committees/events/28735
-URL:https://api.parliament.uk/committees/events/28735
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28818@house.peter-guillam123.github.io
 DTSTAMP:20261125T093000Z
 DTSTART:20261125T093000
@@ -29,9 +16,10 @@ LOCATION:Room 6\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
  s: David Hale (Federation of Small Businesses)\; Laurence Raeburn-Smith (
  Confederation of British Industry)\; Joshua Toovey (IPSE (The Self-Employ
- ed Association))\; David Sheen (UK Hospitality)\; Baroness Jeannie Drake\
- ; Professor Nick Pearce\; Sir Ian Cheshire.\nhttps://api.parliament.uk/co
- mmittees/events/28818
+ ed Association))\; David Sheen (UK Hospitality)\; The Baroness Drake CBE 
+ (Pensions Commission)\; Sir Ian Cheshire (Pensions Commission)\; Professo
+ r Nick Pearce (Pensions Commission).\nhttps://api.parliament.uk/committee
+ s/events/28818
 URL:https://api.parliament.uk/committees/events/28818
 END:VEVENT
 END:VCALENDAR

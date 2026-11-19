@@ -6,26 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Science and Technology Committee (Commons)
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28416@house.peter-guillam123.github.io
-DTSTAMP:20261118T093000Z
-DTSTART:20261118T093000
-DTEND:20261118T120000
-SUMMARY:Early onset cancer: What does the science tell us? · Science and 
- Technology Committee (Commons)
-LOCATION:Room 8\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
- ons).\nWitnesses: Dr Laura Woods (Newcastle University)\; Sarah Stevens (
- National Disease Registration Service\, NHS England)\; Dr Brian Rous (Nat
- ional Disease Registration Service\, NHS England)\; Professor Georgios Ly
- ratzopoulos (Epidemiology of Cancer Healthcare & Outcomes (ECHO)\, Univer
- sity College London)\; Professor Elio Riboli (Imperial College London)\; 
- Professor Helen Coleman (Queen’s University Belfast)\; Professor Montse
-  García-Closas (The Institute of Cancer Research\, London)\; Dr Karl Smi
- th-Byrne (Cancer Epidemiology Unit\, University of Oxford).\nhttps://api.
- parliament.uk/committees/events/28416
-URL:https://api.parliament.uk/committees/events/28416
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28417@house.peter-guillam123.github.io
 DTSTAMP:20261125T093000Z
 DTSTART:20261125T093000
