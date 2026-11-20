@@ -6,20 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Committee oral evidence
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28739@house.peter-guillam123.github.io
-DTSTAMP:20261119T112000Z
-DTSTART:20261119T112000
-DTEND:20261119T121000
-SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
-  (Joint Committee)
-LOCATION:Room 3\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses: Mr Des Johnson (FFLAG)\; Shabana Jaffar (CAFCASS
- )\; Matilda Gosling\; Sarah Branson (Family Law Bar Association).\nhttps:
- //api.parliament.uk/committees/events/28739
-URL:https://api.parliament.uk/committees/events/28739
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28727@house.peter-guillam123.github.io
 DTSTAMP:20261123T153000Z
 DTSTART:20261123T153000
@@ -84,12 +70,12 @@ SUMMARY:Preparing for Votes at 16: The Role of the Education System · Edu
  cation Committee
 LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Dr Ja
- mes Weinberg (University of Sheffield)\; Tom Middlehurst (The Association
-  of School and College Leaders (ASCL))\; Elizabeth Moorse (Association of
-  Citizenship Teaching)\; Ryan Mason (Addey and Stanhope School)\; Helen B
- lachford (Priory South Sea School\, part of Bohunt Education Trust)\; Bry
- den Joy (Ormiston Academies Trust)\; Louisa Anderson (Altrincham Grammar 
- School for Girls).\nhttps://api.parliament.uk/committees/events/28753
+ mes Weinberg (University of Sheffield)\; Elizabeth Moorse (Association of
+  Citizenship Teaching)\; Richard Atterton (Association of School and Coll
+ ege Leaders (ASCL))\; Ryan Mason (Addey and Stanhope School)\; Helen Blac
+ hford (Priory South Sea School\, part of Bohunt Education Trust)\; Bryden
+  Joy (Ormiston Academies Trust)\; Louisa Anderson (Altrincham Grammar Sch
+ ool for Girls).\nhttps://api.parliament.uk/committees/events/28753
 URL:https://api.parliament.uk/committees/events/28753
 END:VEVENT
 BEGIN:VEVENT
@@ -189,9 +175,9 @@ SUMMARY:Maintenance and enforcement in public spaces · Built Environment
  Committee
 LOCATION:Room 1\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
- s: Shelagh McNerne (Manchester City Council)\; Michael Brook (Police Crim
- e Prevention Initiatives (Police CPI))\; Liza Fior (muf architecture).\nh
- ttps://api.parliament.uk/committees/events/28845
+ s: Liza Fior (muf architecture)\; Michael Brooke (Police Crime Prevention
+  Initiatives (Police CPI))\; Shelagh McNerney (Manchester City Council).\
+ nhttps://api.parliament.uk/committees/events/28845
 URL:https://api.parliament.uk/committees/events/28845
 END:VEVENT
 BEGIN:VEVENT
@@ -204,9 +190,10 @@ SUMMARY:Work of the Foreign\, Commonwealth and Development Office · Forei
 LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
   The Rt Hon Hamish Falconer MP (Foreign Commonwealth & Development Office
- )\; The Rt Hon Ed Miliband MP (Foreign Commonwealth & Development Office)
- \; Lindy Cameron (Foreign Commonwealth & Development Office).\nhttps://ap
- i.parliament.uk/committees/events/28802
+ )\; The Rt Hon Ed Miliband MP (Foreign\, Commonwealth & Development Offic
+ e)\; Lindy Cameron (Foreign\, Commonwealth & Development Office)\; Nick D
+ yer (Foreign\, Commonwealth & Development Office).\nhttps://api.parliamen
+ t.uk/committees/events/28802
 URL:https://api.parliament.uk/committees/events/28802
 END:VEVENT
 BEGIN:VEVENT
@@ -276,14 +263,14 @@ SUMMARY:Entrepreneurship and business · Business\, Innovation\, Science a
 LOCATION:The Grimond Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
  ade Committee.\nWitnesses: Alexandra Depledge MBE\; Tulasi Parmar (The Ki
- ng's Trust)\; Stephen Davis (United Colleges Group)\; Fran McIntyre (UK R
- esearch and Innovation)\; Stephanie Smith (The Russell Group)\; Simon Tho
- rpe (Cambridge Angels)\; The Lord Leong CBE (Department for Business\, In
- novation\, Science and Trade)\; Chris McDonald MP (Department for Busines
- s\, Innovation\, Science and Trade)\; Ros Wall (Department for Business\,
-  Innovation\, Science and Trade)\; Oliver St John (Department for Busines
- s\, Innovation\, Science and Trade).\nhttps://api.parliament.uk/committee
- s/events/28846
+ ng's Trust)\; Stephen Davis (United Colleges Group)\; Sarah Porretta (You
+ ng Enterprise)\; Fran McIntyre (UK Research and Innovation)\; Stephanie S
+ mith (The Russell Group)\; Simon Thorpe (Cambridge Angels)\; The Lord Leo
+ ng CBE (Department for Business\, Innovation\, Science and Trade)\; Chris
+  McDonald MP (Department for Business\, Innovation\, Science and Trade)\;
+  Ros Wall (Department for Business\, Innovation\, Science and Trade)\; Ol
+ iver St John (Department for Business\, Innovation\, Science and Trade).\
+ nhttps://api.parliament.uk/committees/events/28846
 URL:https://api.parliament.uk/committees/events/28846
 END:VEVENT
 BEGIN:VEVENT
@@ -418,8 +405,9 @@ DTEND:20261125T120000
 SUMMARY:Multilateralism · International Relations and Defence Committee
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, International Relations and Defence Co
- mmittee.\nWitnesses: Edward Foley (GovAI).\nhttps://api.parliament.uk/com
- mittees/events/28807
+ mmittee.\nWitnesses: Edward Foley (GovAI)\; Dr Seán Ó hÉigeartaigh (Ce
+ ntre for the Study of Existential Risk\, University of Cambridge).\nhttps
+ ://api.parliament.uk/committees/events/28807
 URL:https://api.parliament.uk/committees/events/28807
 END:VEVENT
 BEGIN:VEVENT
@@ -458,10 +446,8 @@ SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
  ights (Joint Committee)
 LOCATION:Room 5\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
- sses: Rabbi David Mason (Hebrew Immigrant Aid Society and UK Jewish Organ
- ization for Refugee and Racial Equality)\; Kerry Gilroy (Epping for Every
- one)\; Claudia Mendoza (Jewish Leadership Council).\nhttps://api.parliame
- nt.uk/committees/events/28817
+ sses: Kerry Gilroy (Epping for Everyone)\; Claudia Mendoza (Jewish Leader
+ ship Council).\nhttps://api.parliament.uk/committees/events/28817
 URL:https://api.parliament.uk/committees/events/28817
 END:VEVENT
 BEGIN:VEVENT
@@ -672,7 +658,7 @@ BEGIN:VEVENT
 UID:house-committee-event-27944@house.peter-guillam123.github.io
 DTSTAMP:20261208T103000Z
 DTSTART:20261208T103000
-DTEND:20261208T120000
+DTEND:20261208T123000
 SUMMARY:Electronic border management systems · Justice and Home Affairs C
  ommittee
 LOCATION:To be confirmed

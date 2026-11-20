@@ -1,7 +1,7 @@
 {
-"built": "2026-11-19",
+"built": "2026-11-20",
 "windowDays": 56,
-"sessions": 54,
+"sessions": 53,
 "all": "committees.ics",
 "committees": [
 {
@@ -184,7 +184,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 175,
@@ -816,7 +816,6 @@
 28728,
 28730,
 28736,
-28739,
 28751,
 28753,
 28761,
