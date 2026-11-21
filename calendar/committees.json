@@ -1,7 +1,7 @@
 {
-"built": "2026-11-20",
+"built": "2026-11-21",
 "windowDays": 56,
-"sessions": 54,
+"sessions": 53,
 "all": "committees.ics",
 "committees": [
 {
@@ -429,7 +429,7 @@
 "name": "Justice and Home Affairs Committee",
 "house": "Lords",
 "file": "committees/519-justice-and-home-affairs-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 102,
@@ -792,7 +792,6 @@
 "events": [
 27667,
 27942,
-27944,
 27944,
 28153,
 28154,
