@@ -16,7 +16,30 @@ SUMMARY:Oral evidence - The Rt Hon Hamish Falconer MP\, Minister of State
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
  : Rt Hon Hamish Falconer MP (Foreign\, Commonwealth & Development Office)
- .\nhttps://api.parliament.uk/committees/events/28736
+ \; Hermione Gough (EU Relations Secretariat).\nhttps://api.parliament.uk/
+ committees/events/28736
 URL:https://api.parliament.uk/committees/events/28736
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28901@house.peter-guillam123.github.io
+DTSTAMP:20261201T110000Z
+DTSTART:20261201T110000
+DTEND:20261201T124000
+SUMMARY:UK touring artists in the EU · European Affairs Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28901
+URL:https://api.parliament.uk/committees/events/28901
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28902@house.peter-guillam123.github.io
+DTSTAMP:20261208T110000Z
+DTSTART:20261208T110000
+DTEND:20261208T124000
+SUMMARY:UK touring artists in the EU · European Affairs Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28902
+URL:https://api.parliament.uk/committees/events/28902
 END:VEVENT
 END:VCALENDAR

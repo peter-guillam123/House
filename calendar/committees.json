@@ -1,7 +1,7 @@
 {
 "built": "2026-11-23",
 "windowDays": 56,
-"sessions": 53,
+"sessions": 57,
 "all": "committees.ics",
 "committees": [
 {
@@ -184,7 +184,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 2
+"upcoming": 3
 },
 {
 "id": 175,
@@ -233,7 +233,7 @@
 "name": "European Affairs Committee",
 "house": "Lords",
 "file": "committees/516-european-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 3
 },
 {
 "id": 423,
@@ -779,7 +779,7 @@
 "name": "Women and Equalities Committee",
 "house": "Commons",
 "file": "committees/328-women-and-equalities-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 164,
@@ -805,6 +805,7 @@
 28541,
 28573,
 28621,
+28623,
 28635,
 28636,
 28672,
@@ -842,6 +843,9 @@
 28854,
 28855,
 28863,
-28884
+28884,
+28901,
+28902,
+28903
 ]
 }

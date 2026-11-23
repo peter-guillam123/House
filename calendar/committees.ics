@@ -31,7 +31,8 @@ DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
   Committee).\nWitnesses: Tom Guest (Crown Prosecution Service)\; Andrew T
  homas KC (Criminal Bar Association)\; Simita Kumar MSP (Scottish Governme
  nt)\; Sioned Williams MS (Welsh Government)\; Gordon Lyons MLA (Northern 
- Irish Government).\nhttps://api.parliament.uk/committees/events/28815
+ Irish Government)\; Kevin McGowan (Scottish Government).\nhttps://api.par
+ liament.uk/committees/events/28815
 URL:https://api.parliament.uk/committees/events/28815
 END:VEVENT
 BEGIN:VEVENT
@@ -70,12 +71,12 @@ SUMMARY:Preparing for Votes at 16: The Role of the Education System · Edu
  cation Committee
 LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Dr Ja
- mes Weinberg (University of Sheffield)\; Elizabeth Moorse (Association of
-  Citizenship Teaching)\; Richard Atterton (Association of School and Coll
- ege Leaders (ASCL))\; Ryan Mason (Addey and Stanhope School)\; Helen Blac
- hford (Priory South Sea School\, part of Bohunt Education Trust)\; Bryden
-  Joy (Ormiston Academies Trust)\; Louisa Anderson (Altrincham Grammar Sch
- ool for Girls).\nhttps://api.parliament.uk/committees/events/28753
+ mes Weinberg (University of Sheffield)\; Elizabeth Moorse (Association fo
+ r Citizenship Teaching (ACT))\; Richard Atterton (Association of School a
+ nd College Leaders (ASCL))\; Ryan Mason (Addey and Stanhope School)\; Hel
+ en Blachford (Priory South Sea School\, part of Bohunt Education Trust)\;
+  Bryden Joy (Ormiston Academies Trust)\; Louisa Anderson (Altrincham Gram
+ mar School for Girls).\nhttps://api.parliament.uk/committees/events/28753
 URL:https://api.parliament.uk/committees/events/28753
 END:VEVENT
 BEGIN:VEVENT
@@ -128,7 +129,7 @@ BEGIN:VEVENT
 UID:house-committee-event-28863@house.peter-guillam123.github.io
 DTSTAMP:20261124T101500Z
 DTSTART:20261124T101500
-DTEND:20261124T121500
+DTEND:20261124T123000
 SUMMARY:Future of UK compute in the age of AI · Science and Technology Co
  mmittee
 LOCATION:Room 3\, Palace of Westminster
@@ -189,11 +190,12 @@ SUMMARY:Work of the Foreign\, Commonwealth and Development Office · Forei
  gn Affairs Committee
 LOCATION:The Boothroyd Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
-  The Rt Hon Hamish Falconer MP (Foreign Commonwealth & Development Office
- )\; The Rt Hon Ed Miliband MP (Foreign\, Commonwealth & Development Offic
- e)\; Lindy Cameron (Foreign\, Commonwealth & Development Office)\; Nick D
- yer (Foreign\, Commonwealth & Development Office).\nhttps://api.parliamen
- t.uk/committees/events/28802
+  Rt Hon Hamish Falconer MP (Foreign Commonwealth & Development Office)\; 
+ Hermione Gough (Cabinet Office)\; James Kariuki CMG (Foreign Commonwealth
+  & Development Office)\; Rt Hon Ed Miliband MP (Foreign\, Commonwealth & 
+ Development Office)\; Lindy Cameron (Foreign\, Commonwealth & Development
+  Office)\; Nick Dyer (Foreign\, Commonwealth & Development Office).\nhttp
+ s://api.parliament.uk/committees/events/28802
 URL:https://api.parliament.uk/committees/events/28802
 END:VEVENT
 BEGIN:VEVENT
@@ -207,7 +209,8 @@ SUMMARY:Oral evidence - The Rt Hon Hamish Falconer MP\, Minister of State
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
  : Rt Hon Hamish Falconer MP (Foreign\, Commonwealth & Development Office)
- .\nhttps://api.parliament.uk/committees/events/28736
+ \; Hermione Gough (EU Relations Secretariat).\nhttps://api.parliament.uk/
+ committees/events/28736
 URL:https://api.parliament.uk/committees/events/28736
 END:VEVENT
 BEGIN:VEVENT
@@ -281,8 +284,8 @@ DTEND:20261124T170000
 SUMMARY:Fiscal devolution in England · Economic Affairs Committee
 LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Economic Affairs Committee.\nWitnesses
- : Rt Hon James Murray MP (HM Treasury).\nhttps://api.parliament.uk/commit
- tees/events/28761
+ : Rt Hon James Murray MP (HM Treasury)\; Henry Elks (HM Treasury).\nhttps
+ ://api.parliament.uk/committees/events/28761
 URL:https://api.parliament.uk/committees/events/28761
 END:VEVENT
 BEGIN:VEVENT
@@ -447,7 +450,8 @@ SUMMARY:Security\, safety and protest: the role of Human Rights · Human R
 LOCATION:Room 5\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
  sses: Kerry Gilroy (Epping for Everyone)\; Claudia Mendoza (Jewish Leader
- ship Council).\nhttps://api.parliament.uk/committees/events/28817
+ ship Council)\; Dr Dave Rich (Community Security Trust).\nhttps://api.par
+ liament.uk/committees/events/28817
 URL:https://api.parliament.uk/committees/events/28817
 END:VEVENT
 BEGIN:VEVENT
@@ -475,8 +479,8 @@ SUMMARY:HM Treasury and the economics of climate and nature · Environment
 LOCATION:The Wilson Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
  ses: Rt Hon Darren Jones MP (HM Treasury)\; Dan Tomlinson MP (HM Treasury
- \, HM Treasury and the Cabinet Office).\nhttps://api.parliament.uk/commit
- tees/events/28699
+ \, HM Treasury and the Cabinet Office)\; Joe Taylor (HM Treasury)\; Sean 
+ Jones (HM Treasury).\nhttps://api.parliament.uk/committees/events/28699
 URL:https://api.parliament.uk/committees/events/28699
 END:VEVENT
 BEGIN:VEVENT
@@ -543,8 +547,13 @@ SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
- ttees/events/28816
+  Committee).\nWitnesses: The Bishop of Bath and Wells\; The Bishop of Man
+ chester\; Baroness Gohir OBE\; Hamza Zahid (The British Board of Scholars
+  & Imams)\; Matt Mahmood-Ogston (Matt and Naz Foundation)\; Reverend Dr H
+ elen Hall\; Kate Osborne MP (Parliamentary Assembly of the Council of Eur
+ ope)\; Danny Webster (Evangelical Alliance)\; Mark Hill KC\; Simon Calver
+ t (Christian Institute).\nhttps://api.parliament.uk/committees/events/288
+ 16
 URL:https://api.parliament.uk/committees/events/28816
 END:VEVENT
 BEGIN:VEVENT
@@ -574,6 +583,19 @@ DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28730
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28903@house.peter-guillam123.github.io
+DTSTAMP:20261130T162000Z
+DTSTART:20261130T162000
+DTEND:20261130T180000
+SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
+  (Joint Committee)
+LOCATION:To Be Confirmed
+DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
+  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
+ ttees/events/28903
+URL:https://api.parliament.uk/committees/events/28903
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28854@house.peter-guillam123.github.io
 DTSTAMP:20261201T092500Z
 DTSTART:20261201T092500
@@ -596,6 +618,17 @@ DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
 URL:https://api.parliament.uk/committees/events/28436
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28901@house.peter-guillam123.github.io
+DTSTAMP:20261201T110000Z
+DTSTART:20261201T110000
+DTEND:20261201T124000
+SUMMARY:UK touring artists in the EU · European Affairs Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28901
+URL:https://api.parliament.uk/committees/events/28901
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28855@house.peter-guillam123.github.io
 DTSTAMP:20261201T140000Z
 DTSTART:20261201T140000
@@ -611,10 +644,11 @@ UID:house-committee-event-28795@house.peter-guillam123.github.io
 DTSTAMP:20261201T150000Z
 DTSTART:20261201T150000
 DTEND:20261201T170000
-SUMMARY:Oral evidence · Economic Affairs Committee
+SUMMARY:Tax reform · Economic Affairs Committee
 LOCATION:To Be Confirmed
 DESCRIPTION:Oral evidence session\, Economic Affairs Committee.\nWitnesses
-  to be announced.\nhttps://api.parliament.uk/committees/events/28795
+ : Dan Neidle (Tax Policy Associates).\nhttps://api.parliament.uk/committe
+ es/events/28795
 URL:https://api.parliament.uk/committees/events/28795
 END:VEVENT
 BEGIN:VEVENT
@@ -642,6 +676,22 @@ DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
 URL:https://api.parliament.uk/committees/events/28154
 END:VEVENT
 BEGIN:VEVENT
+UID:house-committee-event-28623@house.peter-guillam123.github.io
+DTSTAMP:20261202T142000Z
+DTSTART:20261202T142000
+DTEND:20261202T163000
+SUMMARY:Equality at work: flexible working and disability · Women and Equ
+ alities Committee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Women and Equalities Committee.\nWitne
+ sses: Kate Dearden MP (Department for Business\, Innovation\, Science & T
+ rade)\; Connor O'Shea (Department for Business\, Innovation\, Science and
+  Trade)\; Matthew Davies (Cabinet Office)\; The Rt Hon Stephen Timms MP (
+ Office for Equality and Opportunity (DWP)).\nhttps://api.parliament.uk/co
+ mmittees/events/28623
+URL:https://api.parliament.uk/committees/events/28623
+END:VEVENT
+BEGIN:VEVENT
 UID:house-committee-event-28573@house.peter-guillam123.github.io
 DTSTAMP:20261203T094500Z
 DTSTART:20261203T094500
@@ -666,6 +716,17 @@ DESCRIPTION:Oral evidence session\, Justice and Home Affairs Committee.\nW
  itnesses to be announced.\nhttps://api.parliament.uk/committees/events/27
  944
 URL:https://api.parliament.uk/committees/events/27944
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28902@house.peter-guillam123.github.io
+DTSTAMP:20261208T110000Z
+DTSTART:20261208T110000
+DTEND:20261208T124000
+SUMMARY:UK touring artists in the EU · European Affairs Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
+  to be announced.\nhttps://api.parliament.uk/committees/events/28902
+URL:https://api.parliament.uk/committees/events/28902
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28796@house.peter-guillam123.github.io
