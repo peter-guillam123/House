@@ -19,4 +19,16 @@ DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
  nhttps://api.parliament.uk/committees/events/28845
 URL:https://api.parliament.uk/committees/events/28845
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28898@house.peter-guillam123.github.io
+DTSTAMP:20261201T104500Z
+DTSTART:20261201T104500
+DTEND:20261201T121500
+SUMMARY:Maintenance and enforcement in public spaces · Built Environment 
+ Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28898
+URL:https://api.parliament.uk/committees/events/28898
+END:VEVENT
 END:VCALENDAR

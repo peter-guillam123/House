@@ -23,11 +23,25 @@ UID:house-committee-event-28436@house.peter-guillam123.github.io
 DTSTAMP:20261201T103000Z
 DTSTART:20261201T103000
 DTEND:20261201T123000
-SUMMARY:Oral evidence · Defence Committee
+SUMMARY:UK Defence in the Gulf · Defence Committee
 LOCATION:TBC
-DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
- nounced.\nhttps://api.parliament.uk/committees/events/28436
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses: Nick Ch
+ ilds (The International Institute for Strategic Studies (IISS))\; Matthew
+  Savill (Royal United Services Institute (RUSI))\; Dr Sanam Vakil (Chatha
+ m House).\nhttps://api.parliament.uk/committees/events/28436
 URL:https://api.parliament.uk/committees/events/28436
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28437@house.peter-guillam123.github.io
+DTSTAMP:20261208T103000Z
+DTSTART:20261208T103000
+DTEND:20261208T123000
+SUMMARY:The UK's Article 3 obligations and the Defence Readiness Bill · D
+ efence Committee
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Defence Committee.\nWitnesses to be an
+ nounced.\nhttps://api.parliament.uk/committees/events/28437
+URL:https://api.parliament.uk/committees/events/28437
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28636@house.peter-guillam123.github.io

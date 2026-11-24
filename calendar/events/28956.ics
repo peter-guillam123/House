@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Whole of Government Accounts 2024-25 · Public Accounts Commi
+ ttee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28956@house.peter-guillam123.github.io
+DTSTAMP:20261210T100000Z
+DTSTART:20261210T100000
+DTEND:20261210T123000
+SUMMARY:Whole of Government Accounts 2024-25 · Public Accounts Committee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  Iain Murray (Chartered Institute of Public Finance and Accountancy)\; Cl
+ lr Daniel Cowan (Local Government Association\, Southend on Sea)\; Conrad
+  Smewing (HM Treasury)\; James Bowler CB (HM Treasury)\; Andrew Cartner (
+ HM Treasury)\; Will Garton (Ministry for Housing\, Communities and Local 
+ Government)\; Rosie Seymour (Ministry of Housing\, Communities and Local 
+ Government)\; Bill Butler (Local Audit Office).\nhttps://api.parliament.u
+ k/committees/events/28956
+URL:https://api.parliament.uk/committees/events/28956
+END:VEVENT
+END:VCALENDAR

@@ -18,4 +18,17 @@ DESCRIPTION:Oral evidence session\, International Relations and Defence Co
  ://api.parliament.uk/committees/events/28807
 URL:https://api.parliament.uk/committees/events/28807
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28915@house.peter-guillam123.github.io
+DTSTAMP:20261202T103000Z
+DTSTART:20261202T103000
+DTEND:20261202T120000
+SUMMARY:Multilateralism · International Relations and Defence Committee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, International Relations and Defence Co
+ mmittee.\nWitnesses: Sam Cannicott (Alan Turing Institute)\; Stephanie If
+ ayemi (Partnership on AI).\nhttps://api.parliament.uk/committees/events/2
+ 8915
+URL:https://api.parliament.uk/committees/events/28915
+END:VEVENT
 END:VCALENDAR

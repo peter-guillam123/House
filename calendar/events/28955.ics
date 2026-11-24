@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:HMRC's tax debt reduction efforts · Public Accounts Committe
+ e
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28955@house.peter-guillam123.github.io
+DTSTAMP:20261207T153000Z
+DTSTART:20261207T153000
+DTEND:20261207T173000
+SUMMARY:HMRC's tax debt reduction efforts · Public Accounts Committee
+LOCATION:Physical
+DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
+  John-Paul Marks (HMRC)\; Justin Holliday (HMRC)\; Jamie Miller (HMRC)\; 
+ Myrtle Lloyd (HMRC)\; Jonathan Athow (HMRC).\nhttps://api.parliament.uk/c
+ ommittees/events/28955
+URL:https://api.parliament.uk/committees/events/28955
+END:VEVENT
+END:VCALENDAR

@@ -18,4 +18,23 @@ DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
  //api.parliament.uk/committees/events/28417
 URL:https://api.parliament.uk/committees/events/28417
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28418@house.peter-guillam123.github.io
+DTSTAMP:20261202T093000Z
+DTSTART:20261202T093000
+DTEND:20261202T120000
+SUMMARY:The science and risks of AI · Science and Technology Committee (C
+ ommons)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Science and Technology Committee (Comm
+ ons).\nWitnesses: Professor Nick Jennings (Loughborough University)\; Mar
+ kus Anderljung (GovAI (Centre for the Governance of AI))\; Dylan Baker (D
+ istributed Artificial Intelligence Research (DAIR) Institute)\; Dr Shahar
+  Edgerton Avin (Centre for the Study of Existential Risk\, University of 
+ Cambridge)\; Professor Jason McEwen (Alan Turing Institute)\; Oliver Ilot
+ t (Cabinet Office\, and head of the Prime Minister’s AI Taskforce)\; Na
+ te Burnikell (AI Security Institute)\; Professor Gina Neff (Queen Mary Un
+ iversity of London).\nhttps://api.parliament.uk/committees/events/28418
+URL:https://api.parliament.uk/committees/events/28418
+END:VEVENT
 END:VCALENDAR

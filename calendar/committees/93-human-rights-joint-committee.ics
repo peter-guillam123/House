@@ -19,4 +19,17 @@ DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
  liament.uk/committees/events/28817
 URL:https://api.parliament.uk/committees/events/28817
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28925@house.peter-guillam123.github.io
+DTSTAMP:20261202T141500Z
+DTSTART:20261202T141500
+DTEND:20261202T160000
+SUMMARY:Legislative Scrutiny: Immigration and Asylum Bill · Human Rights 
+ (Joint Committee)
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
+ sses: Anna Turley MP (Home Office).\nhttps://api.parliament.uk/committees
+ /events/28925
+URL:https://api.parliament.uk/committees/events/28925
+END:VEVENT
 END:VCALENDAR

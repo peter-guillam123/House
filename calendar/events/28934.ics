@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FCDO's approach to higher education and research partnerships
+  · International Development Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28934@house.peter-guillam123.github.io
+DTSTAMP:20261201T140000Z
+DTSTART:20261201T140000
+DTEND:20261201T160000
+SUMMARY:FCDO's approach to higher education and research partnerships · I
+ nternational Development Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, International Development Committee.\n
+ Witnesses: Kirsty McNeill MP (Foreign\, Commonwealth & Development Office
+ ).\nhttps://api.parliament.uk/committees/events/28934
+URL:https://api.parliament.uk/committees/events/28934
+END:VEVENT
+END:VCALENDAR

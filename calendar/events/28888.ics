@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Work of the Department and its arm’s-length bodies · Envir
+ onment\, Food and Rural Affairs Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28888@house.peter-guillam123.github.io
+DTSTAMP:20261201T143000Z
+DTSTART:20261201T143000
+DTEND:20261201T160000
+SUMMARY:Work of the Department and its arm’s-length bodies · Environmen
+ t\, Food and Rural Affairs Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Environment\, Food and Rural Affairs C
+ ommittee.\nWitnesses: Rt Hon Dame Angela Eagle MP (Department for Environ
+ ment\, Food and Rural Affairs).\nhttps://api.parliament.uk/committees/eve
+ nts/28888
+URL:https://api.parliament.uk/committees/events/28888
+END:VEVENT
+END:VCALENDAR

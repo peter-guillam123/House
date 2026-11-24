@@ -1,7 +1,7 @@
 {
 "built": "2026-11-24",
 "windowDays": 56,
-"sessions": 55,
+"sessions": 69,
 "all": "committees.ics",
 "committees": [
 {
@@ -37,7 +37,7 @@
 "name": "Built Environment Committee",
 "house": "Lords",
 "file": "committees/518-built-environment-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 365,
@@ -135,7 +135,7 @@
 "name": "Constitution Committee",
 "house": "Lords",
 "file": "committees/172-constitution-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 438,
@@ -149,7 +149,7 @@
 "name": "Defence Committee",
 "house": "Commons",
 "file": "committees/24-defence-committee.ics",
-"upcoming": 3
+"upcoming": 4
 },
 {
 "id": 343,
@@ -198,14 +198,21 @@
 "name": "Education Committee",
 "house": "Commons",
 "file": "committees/203-education-committee.ics",
-"upcoming": 1
+"upcoming": 2
+},
+{
+"id": 466,
+"name": "Eighth Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/466-eighth-delegated-legislation-committee.ics",
+"upcoming": 0
 },
 {
 "id": 664,
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 515,
@@ -219,7 +226,7 @@
 "name": "Environment, Food and Rural Affairs Committee",
 "house": "Commons",
 "file": "committees/52-environment-food-and-rural-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 62,
@@ -275,7 +282,14 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 1
+"upcoming": 2
+},
+{
+"id": 410,
+"name": "First Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/410-first-delegated-legislation-committee.ics",
+"upcoming": 0
 },
 {
 "id": 78,
@@ -366,7 +380,7 @@
 "name": "Human Rights (Joint Committee)",
 "house": "Joint",
 "file": "committees/93-human-rights-joint-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 186,
@@ -394,7 +408,7 @@
 "name": "International Development Committee",
 "house": "Commons",
 "file": "committees/98-international-development-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 347,
@@ -408,7 +422,7 @@
 "name": "International Relations and Defence Committee",
 "house": "Lords",
 "file": "committees/360-international-relations-and-defence-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 519,
@@ -495,6 +509,13 @@
 "upcoming": 0
 },
 {
+"id": 467,
+"name": "Ninth Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/467-ninth-delegated-legislation-committee.ics",
+"upcoming": 0
+},
+{
 "id": 120,
 "name": "Northern Ireland Affairs Committee",
 "house": "Commons",
@@ -576,7 +597,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 2
+"upcoming": 4
 },
 {
 "id": 327,
@@ -625,7 +646,7 @@
 "name": "Science and Technology Committee (Commons)",
 "house": "Commons",
 "file": "committees/135-science-and-technology-committee-commons.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 136,
@@ -633,6 +654,13 @@
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
 "upcoming": 1
+},
+{
+"id": 411,
+"name": "Second Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/411-second-delegated-legislation-committee.ics",
+"upcoming": 0
 },
 {
 "id": 255,
@@ -653,6 +681,13 @@
 "name": "Services Committee",
 "house": "Lords",
 "file": "committees/363-services-committee.ics",
+"upcoming": 0
+},
+{
+"id": 425,
+"name": "Seventh Delegated Legislation Committee",
+"house": "Commons",
+"file": "committees/425-seventh-delegated-legislation-committee.ics",
 "upcoming": 0
 },
 {
@@ -751,7 +786,7 @@
 "name": "Welsh Affairs Committee",
 "house": "Commons",
 "file": "committees/162-welsh-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 328,
@@ -777,8 +812,11 @@
 28273,
 28340,
 28386,
+28387,
 28417,
+28418,
 28436,
+28437,
 28501,
 28502,
 28541,
@@ -820,9 +858,20 @@
 28854,
 28855,
 28863,
+28881,
 28884,
+28888,
+28898,
 28901,
 28902,
-28903
+28903,
+28915,
+28916,
+28919,
+28925,
+28934,
+28945,
+28955,
+28956
 ]
 }

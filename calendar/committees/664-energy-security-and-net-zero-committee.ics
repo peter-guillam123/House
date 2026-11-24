@@ -16,8 +16,23 @@ LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
  .\nWitnesses: Stuart Payne CBE (North Sea Transition Authority)\; Hedvig 
  Ljungerud (North Sea Transition Authority)\; Jack Presley Abbott (Ofgem)\
- ; Michael Shanks MP (Department for Energy Security and Net Zero).\nhttps
- ://api.parliament.uk/committees/events/28823
+ ; Michael Shanks MP (Department for Energy Security and Net Zero)\; Jonat
+ han Mills CB (Department for Energy Security and Net Zero).\nhttps://api.
+ parliament.uk/committees/events/28823
 URL:https://api.parliament.uk/committees/events/28823
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28945@house.peter-guillam123.github.io
+DTSTAMP:20261202T093000Z
+DTSTART:20261202T093000
+DTEND:20261202T113000
+SUMMARY:Reform of the regulatory landscape · Energy Security and Net Zero
+  Committee
+LOCATION:TBC
+DESCRIPTION:Oral evidence session\, Energy Security and Net Zero Committee
+ .\nWitnesses: Adam Bell (PF Global)\; Merlin Hyman (Regen)\; Sarah Keay-B
+ right\; Professor Rebecca Mills (University of Manchester)\; Charles Wood
+  (Energy UK).\nhttps://api.parliament.uk/committees/events/28945
+URL:https://api.parliament.uk/committees/events/28945
 END:VEVENT
 END:VCALENDAR
