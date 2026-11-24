@@ -1,7 +1,7 @@
 {
-"built": "2026-11-23",
+"built": "2026-11-24",
 "windowDays": 56,
-"sessions": 57,
+"sessions": 55,
 "all": "committees.ics",
 "committees": [
 {
@@ -184,7 +184,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 175,
@@ -271,25 +271,11 @@
 "upcoming": 0
 },
 {
-"id": 859,
-"name": "Financial Services and Markets Bill [Lords]: Programming Sub Committee",
-"house": "Commons",
-"file": "committees/859-financial-services-and-markets-bill-lords-programming-sub-co.ics",
-"upcoming": 0
-},
-{
 "id": 697,
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
 "upcoming": 1
-},
-{
-"id": 410,
-"name": "First Delegated Legislation Committee",
-"house": "Commons",
-"file": "committees/410-first-delegated-legislation-committee.ics",
-"upcoming": 0
 },
 {
 "id": 78,
@@ -590,7 +576,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 327,
@@ -647,13 +633,6 @@
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
 "upcoming": 1
-},
-{
-"id": 411,
-"name": "Second Delegated Legislation Committee",
-"house": "Commons",
-"file": "committees/411-second-delegated-legislation-committee.ics",
-"upcoming": 0
 },
 {
 "id": 255,
@@ -813,7 +792,6 @@
 28707,
 28708,
 28717,
-28727,
 28728,
 28730,
 28736,
@@ -831,7 +809,6 @@
 28807,
 28810,
 28811,
-28815,
 28816,
 28817,
 28818,
