@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Future of UK compute in the age of AI · Science and Technolo
+ gy Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28891@house.peter-guillam123.github.io
+DTSTAMP:20261201T101500Z
+DTSTART:20261201T101500
+DTEND:20261201T123000
+SUMMARY:Future of UK compute in the age of AI · Science and Technology Co
+ mmittee
+LOCATION:To be confirmed
+DESCRIPTION:Oral evidence session\, Science and Technology Committee.\nWit
+ nesses: Professor Robert Trager (Oxford Martin AI Governance Initiative\,
+  University of Oxford)\; Professor Zoubin Gharmani\; Tom Westgarth (Fract
+ ile).\nhttps://api.parliament.uk/committees/events/28891
+URL:https://api.parliament.uk/committees/events/28891
+END:VEVENT
+END:VCALENDAR

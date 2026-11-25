@@ -6,18 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Economic Affairs Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28761@house.peter-guillam123.github.io
-DTSTAMP:20261124T150000Z
-DTSTART:20261124T150000
-DTEND:20261124T170000
-SUMMARY:Fiscal devolution in England · Economic Affairs Committee
-LOCATION:Room 2\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Economic Affairs Committee.\nWitnesses
- : Rt Hon James Murray MP (HM Treasury)\; Henry Elks (HM Treasury).\nhttps
- ://api.parliament.uk/committees/events/28761
-URL:https://api.parliament.uk/committees/events/28761
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28795@house.peter-guillam123.github.io
 DTSTAMP:20261201T150000Z
 DTSTART:20261201T150000

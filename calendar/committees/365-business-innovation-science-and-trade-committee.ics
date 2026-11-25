@@ -5,24 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Business\, Innovation\, Science and Trade Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28846@house.peter-guillam123.github.io
-DTSTAMP:20261124T144500Z
-DTSTART:20261124T144500
-DTEND:20261124T171500
-SUMMARY:Entrepreneurship and business · Business\, Innovation\, Science a
- nd Trade Committee
-LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
- ade Committee.\nWitnesses: Alexandra Depledge MBE\; Tulasi Parmar (The Ki
- ng's Trust)\; Stephen Davis (United Colleges Group)\; Sarah Porretta (You
- ng Enterprise)\; Fran McIntyre (UK Research and Innovation)\; Stephanie S
- mith (The Russell Group)\; Simon Thorpe (Cambridge Angels)\; The Lord Leo
- ng CBE (Department for Business\, Innovation\, Science and Trade)\; Chris
-  McDonald MP (Department for Business\, Innovation\, Science and Trade)\;
-  Ros Wall (Department for Business\, Innovation\, Science and Trade)\; Ol
- iver St John (Department for Business\, Innovation\, Science and Trade).\
- nhttps://api.parliament.uk/committees/events/28846
-URL:https://api.parliament.uk/committees/events/28846
-END:VEVENT
 END:VCALENDAR

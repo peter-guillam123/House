@@ -1,7 +1,7 @@
 {
-"built": "2026-11-24",
+"built": "2026-11-25",
 "windowDays": 56,
-"sessions": 69,
+"sessions": 52,
 "all": "committees.ics",
 "committees": [
 {
@@ -9,14 +9,14 @@
 "name": "Administration Committee",
 "house": "Commons",
 "file": "committees/2-administration-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 202,
 "name": "Backbench Business Committee",
 "house": "Commons",
 "file": "committees/202-backbench-business-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 682,
@@ -26,25 +26,18 @@
 "upcoming": 0
 },
 {
-"id": 856,
-"name": "Building Safety (Remediation of Unsafe Cladding etc) Bill",
-"house": "Commons",
-"file": "committees/856-building-safety-remediation-of-unsafe-cladding-etc-bill.ics",
-"upcoming": 0
-},
-{
 "id": 518,
 "name": "Built Environment Committee",
 "house": "Lords",
 "file": "committees/518-built-environment-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 365,
 "name": "Business, Innovation, Science and Trade Committee",
 "house": "Commons",
 "file": "committees/365-business-innovation-science-and-trade-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 783,
@@ -149,7 +142,7 @@
 "name": "Defence Committee",
 "house": "Commons",
 "file": "committees/24-defence-committee.ics",
-"upcoming": 4
+"upcoming": 3
 },
 {
 "id": 343,
@@ -170,7 +163,7 @@
 "name": "Digital, Culture, Media and Sport Committee",
 "house": "Commons",
 "file": "committees/378-digital-culture-media-and-sport-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 831,
@@ -191,14 +184,14 @@
 "name": "Economic Affairs Committee",
 "house": "Lords",
 "file": "committees/175-economic-affairs-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 203,
 "name": "Education Committee",
 "house": "Commons",
 "file": "committees/203-education-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 466,
@@ -240,7 +233,7 @@
 "name": "European Affairs Committee",
 "house": "Lords",
 "file": "committees/516-european-affairs-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 423,
@@ -296,7 +289,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 422,
@@ -359,7 +352,7 @@
 "name": "Home Affairs Committee",
 "house": "Commons",
 "file": "committees/83-home-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 362,
@@ -373,7 +366,7 @@
 "name": "Housing, Communities and Local Government Committee",
 "house": "Commons",
 "file": "committees/17-housing-communities-and-local-government-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 93,
@@ -401,7 +394,7 @@
 "name": "International Agreements Committee",
 "house": "Lords",
 "file": "committees/448-international-agreements-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 98,
@@ -429,14 +422,14 @@
 "name": "Justice and Home Affairs Committee",
 "house": "Lords",
 "file": "committees/519-justice-and-home-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 102,
 "name": "Justice Committee",
 "house": "Commons",
 "file": "committees/102-justice-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 103,
@@ -586,13 +579,6 @@
 "upcoming": 0
 },
 {
-"id": 207,
-"name": "Public Accounts Commission",
-"house": "Commons",
-"file": "committees/207-public-accounts-commission.ics",
-"upcoming": 0
-},
-{
 "id": 127,
 "name": "Public Accounts Committee",
 "house": "Commons",
@@ -604,7 +590,7 @@
 "name": "Public Administration and Constitutional Affairs Committee",
 "house": "Commons",
 "file": "committees/327-public-administration-and-constitutional-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 430,
@@ -653,7 +639,7 @@
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 411,
@@ -804,26 +790,20 @@
 }
 ],
 "events": [
-27667,
-27942,
 27944,
 28153,
 28154,
 28273,
-28340,
 28386,
 28387,
 28417,
 28418,
 28436,
 28437,
-28501,
 28502,
-28541,
 28573,
 28621,
 28623,
-28635,
 28636,
 28672,
 28699,
@@ -832,18 +812,10 @@
 28717,
 28728,
 28730,
-28736,
-28751,
-28753,
-28761,
 28764,
 28778,
-28779,
 28795,
 28796,
-28799,
-28802,
-28804,
 28807,
 28810,
 28811,
@@ -851,16 +823,13 @@
 28817,
 28818,
 28819,
-28821,
 28823,
-28845,
-28846,
 28854,
 28855,
-28863,
 28881,
 28884,
 28888,
+28891,
 28898,
 28901,
 28902,

@@ -6,23 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Education Committee
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28753@house.peter-guillam123.github.io
-DTSTAMP:20261124T100000Z
-DTSTART:20261124T100000
-DTEND:20261124T120000
-SUMMARY:Preparing for Votes at 16: The Role of the Education System · Edu
- cation Committee
-LOCATION:The Wilson Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Education Committee.\nWitnesses: Dr Ja
- mes Weinberg (University of Sheffield)\; Elizabeth Moorse (Association fo
- r Citizenship Teaching (ACT))\; Richard Atterton (Association of School a
- nd College Leaders (ASCL))\; Ryan Mason (Addey and Stanhope School)\; Hel
- en Blachford (Priory South Sea School\, part of Bohunt Education Trust)\;
-  Bryden Joy (Ormiston Academies Trust)\; Louisa Anderson (Altrincham Gram
- mar School for Girls).\nhttps://api.parliament.uk/committees/events/28753
-URL:https://api.parliament.uk/committees/events/28753
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28881@house.peter-guillam123.github.io
 DTSTAMP:20261201T100000Z
 DTSTART:20261201T100000
