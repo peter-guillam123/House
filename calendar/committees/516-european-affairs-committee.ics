@@ -9,18 +9,26 @@ BEGIN:VEVENT
 UID:house-committee-event-28901@house.peter-guillam123.github.io
 DTSTAMP:20261201T110000Z
 DTSTART:20261201T110000
-DTEND:20261201T124000
+DTEND:20261201T130000
 SUMMARY:UK touring artists in the EU · European Affairs Committee
-LOCATION:To be confirmed
+LOCATION:Room 2\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses
-  to be announced.\nhttps://api.parliament.uk/committees/events/28901
+ : Dave Webster\, Co-Chair\, Cultural Exchange Coalition\; and Head of Int
+ ernational\, Musicians' Union (Musicians' Union)\; Anita Debaere\, Co-Cha
+ ir and Co-Convenor\, Cultural Exchange Coalition\; and Director\, PEARLE 
+ (Live Performance Europe) (PEARLE (Live Performance Europe))\; Olga FitzR
+ oy\, Co-Convenor\, Cultural Exchange Coalition\; and Director of Campaign
+ s and Engagement\, UK Music (UK Music)\; Daniel Csergo\, Academic Fellow\
+ , European Policy Centre (European Policy Centre (EPC))\; Sarah Lee KC\, 
+ Brick Court Chambers (Brick Court Chambers).\nhttps://api.parliament.uk/c
+ ommittees/events/28901
 URL:https://api.parliament.uk/committees/events/28901
 END:VEVENT
 BEGIN:VEVENT
 UID:house-committee-event-28902@house.peter-guillam123.github.io
 DTSTAMP:20261208T110000Z
 DTSTART:20261208T110000
-DTEND:20261208T124000
+DTEND:20261208T130000
 SUMMARY:UK touring artists in the EU · European Affairs Committee
 LOCATION:To be confirmed
 DESCRIPTION:Oral evidence session\, European Affairs Committee.\nWitnesses

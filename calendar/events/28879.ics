@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Greening Government Commitments · Environmental Audit Commit
+ tee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28879@house.peter-guillam123.github.io
+DTSTAMP:20261202T143000Z
+DTSTART:20261202T143000
+DTEND:20261202T163000
+SUMMARY:Greening Government Commitments · Environmental Audit Committee
+LOCATION:The Wilson Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Environmental Audit Committee.\nWitnes
+ ses: Catherine Barber (National Audit Office)\; Ruth Chambers (Green Alli
+ ance)\; Professor Rokia Raslan (University College London Institute for E
+ nvironmental Design and Engineering)\; Christine St John Cox (Energy Syst
+ ems Catapult).\nhttps://api.parliament.uk/committees/events/28879
+URL:https://api.parliament.uk/committees/events/28879
+END:VEVENT
+END:VCALENDAR

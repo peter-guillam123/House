@@ -19,4 +19,19 @@ DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
  /committees/events/28502
 URL:https://api.parliament.uk/committees/events/28502
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28673@house.peter-guillam123.github.io
+DTSTAMP:20261130T131500Z
+DTSTART:20261130T131500
+DTEND:20261130T150000
+SUMMARY:Tourism · Digital\, Culture\, Media and Sport Committee
+LOCATION:Portrait Gallery\, Edinburgh
+DESCRIPTION:Oral evidence session\, Digital\, Culture\, Media and Sport Co
+ mmittee.\nWitnesses: Neil Ellis (Edinburgh Hotels Association)\; Francesc
+ a Hegyi OBE (Edinburgh International Festival)\; Tony Lankester (Edinburg
+ h Festival Fringe Society)\; Marc Crothall MBE (The Scottish Tourism Alli
+ ance)\; Kirsten Laing (Best Of Scotland Holidays)\; Vicki Miller (VisitSc
+ otland).\nhttps://api.parliament.uk/committees/events/28673
+URL:https://api.parliament.uk/committees/events/28673
+END:VEVENT
 END:VCALENDAR

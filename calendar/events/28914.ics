@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Young people and work: the Milburn Review · Work and Pension
+ s Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28914@house.peter-guillam123.github.io
+DTSTAMP:20261202T093000Z
+DTSTART:20261202T093000
+DTEND:20261202T113000
+SUMMARY:Young people and work: the Milburn Review · Work and Pensions Com
+ mittee
+LOCATION:Room 6\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Work and Pensions Committee.\nWitnesse
+ s to be announced.\nhttps://api.parliament.uk/committees/events/28914
+URL:https://api.parliament.uk/committees/events/28914
+END:VEVENT
+END:VCALENDAR

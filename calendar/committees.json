@@ -1,7 +1,7 @@
 {
 "built": "2026-11-25",
 "windowDays": 56,
-"sessions": 52,
+"sessions": 66,
 "all": "committees.ics",
 "committees": [
 {
@@ -37,7 +37,7 @@
 "name": "Business, Innovation, Science and Trade Committee",
 "house": "Commons",
 "file": "committees/365-business-innovation-science-and-trade-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 783,
@@ -107,7 +107,7 @@
 "name": "Communications and Digital Committee",
 "house": "Lords",
 "file": "committees/170-communications-and-digital-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 402,
@@ -163,7 +163,7 @@
 "name": "Digital, Culture, Media and Sport Committee",
 "house": "Commons",
 "file": "committees/378-digital-culture-media-and-sport-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 831,
@@ -226,7 +226,7 @@
 "name": "Environmental Audit Committee",
 "house": "Commons",
 "file": "committees/62-environmental-audit-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 516,
@@ -289,7 +289,7 @@
 "name": "Foreign Affairs Committee",
 "house": "Commons",
 "file": "committees/78-foreign-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 422,
@@ -394,7 +394,7 @@
 "name": "International Agreements Committee",
 "house": "Lords",
 "file": "committees/448-international-agreements-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 98,
@@ -488,6 +488,13 @@
 "upcoming": 1
 },
 {
+"id": 862,
+"name": "National Policy Statement for Data Centres Committee",
+"house": "Commons",
+"file": "committees/862-national-policy-statement-for-data-centres-committee.ics",
+"upcoming": 0
+},
+{
 "id": 832,
 "name": "National Resilience Committee",
 "house": "Lords",
@@ -513,7 +520,7 @@
 "name": "Northern Ireland Affairs Committee",
 "house": "Commons",
 "file": "committees/120-northern-ireland-affairs-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 769,
@@ -579,6 +586,13 @@
 "upcoming": 0
 },
 {
+"id": 207,
+"name": "Public Accounts Commission",
+"house": "Commons",
+"file": "committees/207-public-accounts-commission.ics",
+"upcoming": 2
+},
+{
 "id": 127,
 "name": "Public Accounts Committee",
 "house": "Commons",
@@ -639,7 +653,7 @@
 "name": "Scottish Affairs Committee",
 "house": "Commons",
 "file": "committees/136-scottish-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 411,
@@ -737,14 +751,14 @@
 "name": "Transport Committee",
 "house": "Commons",
 "file": "committees/153-transport-committee.ics",
-"upcoming": 1
+"upcoming": 2
 },
 {
 "id": 158,
 "name": "Treasury Committee",
 "house": "Commons",
 "file": "committees/158-treasury-committee.ics",
-"upcoming": 1
+"upcoming": 3
 },
 {
 "id": 600,
@@ -786,14 +800,16 @@
 "name": "Work and Pensions Committee",
 "house": "Commons",
 "file": "committees/164-work-and-pensions-committee.ics",
-"upcoming": 1
+"upcoming": 2
 }
 ],
 "events": [
 27944,
+28087,
 28153,
 28154,
 28273,
+28274,
 28386,
 28387,
 28417,
@@ -806,6 +822,7 @@
 28623,
 28636,
 28672,
+28673,
 28699,
 28707,
 28708,
@@ -814,6 +831,7 @@
 28730,
 28764,
 28778,
+28787,
 28795,
 28796,
 28807,
@@ -826,21 +844,31 @@
 28823,
 28854,
 28855,
+28879,
 28881,
 28884,
 28888,
 28891,
+28894,
 28898,
+28900,
 28901,
 28902,
 28903,
+28909,
+28911,
+28913,
+28914,
 28915,
 28916,
 28919,
 28925,
 28934,
+28943,
 28945,
 28955,
-28956
+28956,
+28961,
+28964
 ]
 }

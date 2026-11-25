@@ -19,4 +19,31 @@ DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Andrew
  nt.uk/committees/events/28810
 URL:https://api.parliament.uk/committees/events/28810
 END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28894@house.peter-guillam123.github.io
+DTSTAMP:20261201T094500Z
+DTSTART:20261201T094500
+DTEND:20261201T123000
+SUMMARY:Work of the Prudential Regulation Authority · Treasury Committee
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Kather
+ ine Braddick (Prudential Regulation Authority)\; Charlotte Gerken (Pruden
+ tial Regulation Authority)\; John Taylor (Prudential Regulation Committee
+ )\; Professor Niamh Moloney (Prudential Regulation Committee).\nhttps://a
+ pi.parliament.uk/committees/events/28894
+URL:https://api.parliament.uk/committees/events/28894
+END:VEVENT
+BEGIN:VEVENT
+UID:house-committee-event-28913@house.peter-guillam123.github.io
+DTSTAMP:20261202T141500Z
+DTSTART:20261202T141500
+DTEND:20261202T163000
+SUMMARY:Reappointment of Professor David Miles CBE to the OBR's Budget Res
+ ponsibility Committee · Treasury Committee
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Profes
+ sor David Miles CBE (Budget Responsibility Committee).\nhttps://api.parli
+ ament.uk/committees/events/28913
+URL:https://api.parliament.uk/committees/events/28913
+END:VEVENT
 END:VCALENDAR

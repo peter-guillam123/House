@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Work of the Prudential Regulation Authority · Treasury Commi
+ ttee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28894@house.peter-guillam123.github.io
+DTSTAMP:20261201T094500Z
+DTSTART:20261201T094500
+DTEND:20261201T123000
+SUMMARY:Work of the Prudential Regulation Authority · Treasury Committee
+LOCATION:Room 8\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Kather
+ ine Braddick (Prudential Regulation Authority)\; Charlotte Gerken (Pruden
+ tial Regulation Authority)\; John Taylor (Prudential Regulation Committee
+ )\; Professor Niamh Moloney (Prudential Regulation Committee).\nhttps://a
+ pi.parliament.uk/committees/events/28894
+URL:https://api.parliament.uk/committees/events/28894
+END:VEVENT
+END:VCALENDAR

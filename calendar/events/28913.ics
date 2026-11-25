@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Reappointment of Professor David Miles CBE to the OBR's Budge
+ t Responsibility Committee · Treasury Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28913@house.peter-guillam123.github.io
+DTSTAMP:20261202T141500Z
+DTSTART:20261202T141500
+DTEND:20261202T163000
+SUMMARY:Reappointment of Professor David Miles CBE to the OBR's Budget Res
+ ponsibility Committee · Treasury Committee
+LOCATION:The Grimond Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Treasury Committee.\nWitnesses: Profes
+ sor David Miles CBE (Budget Responsibility Committee).\nhttps://api.parli
+ ament.uk/committees/events/28913
+URL:https://api.parliament.uk/committees/events/28913
+END:VEVENT
+END:VCALENDAR

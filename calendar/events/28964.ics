@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//House//Committee calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UK-US pharmaceuticals arrangement · International Agreements
+  Committee
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28964@house.peter-guillam123.github.io
+DTSTAMP:20261201T140000Z
+DTSTART:20261201T140000
+DTEND:20261201T150000
+SUMMARY:UK-US pharmaceuticals arrangement · International Agreements Comm
+ ittee
+LOCATION:Room 3\, Palace of Westminster
+DESCRIPTION:Oral evidence session\, International Agreements Committee.\nW
+ itnesses: Mr James Frith MP (Department for Health and Social Care)\; Fio
+ na Bride (Department for Health and Social Care).\nhttps://api.parliament
+ .uk/committees/events/28964
+URL:https://api.parliament.uk/committees/events/28964
+END:VEVENT
+END:VCALENDAR
