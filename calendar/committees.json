@@ -1,7 +1,7 @@
 {
-"built": "2026-11-25",
+"built": "2026-11-26",
 "windowDays": 56,
-"sessions": 66,
+"sessions": 50,
 "all": "committees.ics",
 "committees": [
 {
@@ -163,7 +163,7 @@
 "name": "Digital, Culture, Media and Sport Committee",
 "house": "Commons",
 "file": "committees/378-digital-culture-media-and-sport-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 831,
@@ -205,7 +205,7 @@
 "name": "Energy Security and Net Zero Committee",
 "house": "Commons",
 "file": "committees/664-energy-security-and-net-zero-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 515,
@@ -226,7 +226,7 @@
 "name": "Environmental Audit Committee",
 "house": "Commons",
 "file": "committees/62-environmental-audit-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 516,
@@ -275,7 +275,7 @@
 "name": "Financial Services Regulation Committee",
 "house": "Lords",
 "file": "committees/697-financial-services-regulation-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 410,
@@ -317,7 +317,7 @@
 "name": "Health and Social Care Committee",
 "house": "Commons",
 "file": "committees/81-health-and-social-care-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 597,
@@ -373,7 +373,7 @@
 "name": "Human Rights (Joint Committee)",
 "house": "Joint",
 "file": "committees/93-human-rights-joint-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 186,
@@ -415,7 +415,7 @@
 "name": "International Relations and Defence Committee",
 "house": "Lords",
 "file": "committees/360-international-relations-and-defence-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 519,
@@ -485,7 +485,7 @@
 "name": "Modernisation Committee",
 "house": "Commons",
 "file": "committees/736-modernisation-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 862,
@@ -520,7 +520,7 @@
 "name": "Northern Ireland Affairs Committee",
 "house": "Commons",
 "file": "committees/120-northern-ireland-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 769,
@@ -611,7 +611,7 @@
 "name": "Public Services Committee",
 "house": "Lords",
 "file": "committees/430-public-services-committee.ics",
-"upcoming": 4
+"upcoming": 3
 },
 {
 "id": 652,
@@ -646,7 +646,7 @@
 "name": "Science and Technology Committee (Commons)",
 "house": "Commons",
 "file": "committees/135-science-and-technology-committee-commons.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 136,
@@ -751,14 +751,14 @@
 "name": "Transport Committee",
 "house": "Commons",
 "file": "committees/153-transport-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 158,
 "name": "Treasury Committee",
 "house": "Commons",
 "file": "committees/158-treasury-committee.ics",
-"upcoming": 3
+"upcoming": 2
 },
 {
 "id": 600,
@@ -786,62 +786,46 @@
 "name": "Welsh Affairs Committee",
 "house": "Commons",
 "file": "committees/162-welsh-affairs-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 328,
 "name": "Women and Equalities Committee",
 "house": "Commons",
 "file": "committees/328-women-and-equalities-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 164,
 "name": "Work and Pensions Committee",
 "house": "Commons",
 "file": "committees/164-work-and-pensions-committee.ics",
-"upcoming": 2
+"upcoming": 1
 }
 ],
 "events": [
 27944,
 28087,
-28153,
 28154,
-28273,
 28274,
-28386,
 28387,
-28417,
 28418,
 28436,
 28437,
-28502,
 28573,
-28621,
 28623,
 28636,
 28672,
 28673,
-28699,
 28707,
 28708,
 28717,
 28728,
 28730,
-28764,
-28778,
 28787,
 28795,
 28796,
-28807,
-28810,
-28811,
 28816,
-28817,
-28818,
-28819,
-28823,
 28854,
 28855,
 28879,
