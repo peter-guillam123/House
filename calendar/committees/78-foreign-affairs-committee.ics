@@ -9,11 +9,14 @@ BEGIN:VEVENT
 UID:house-committee-event-28900@house.peter-guillam123.github.io
 DTSTAMP:20261201T101500Z
 DTSTART:20261201T101500
-DTEND:20261201T104500
+DTEND:20261201T113000
 SUMMARY:Russia · Foreign Affairs Committee
 LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses 
- to be announced.\nhttps://api.parliament.uk/committees/events/28900
+DESCRIPTION:Oral evidence session\, Foreign Affairs Committee.\nWitnesses:
+  Dr Chietigj Bajpaee (Chatham House)\; Dr Manu Lekunze (University of Abe
+ rdeen)\; Dr Michelle Grisé (RAND Corporation)\; Dr Edward Howell (Univer
+ sity of Oxford)\; Dr Marcin Kaczmarski (University of Glasgow).\nhttps://
+ api.parliament.uk/committees/events/28900
 URL:https://api.parliament.uk/committees/events/28900
 END:VEVENT
 END:VCALENDAR

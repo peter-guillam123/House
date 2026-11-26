@@ -5,4 +5,19 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Health and Social Care Committee
 X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:house-committee-event-28897@house.peter-guillam123.github.io
+DTSTAMP:20261202T093000Z
+DTSTART:20261202T093000
+DTEND:20261202T114000
+SUMMARY:The transition from child to adult health and social care services
+  · Health and Social Care Committee
+LOCATION:The Boothroyd Room\, Portcullis House
+DESCRIPTION:Oral evidence session\, Health and Social Care Committee.\nWit
+ nesses: Ellen Duke (NHS England)\; Dr Simon Kenny (NHS England)\; Sarah M
+ cClinton (Department of Health and Social Care)\; Alison McGovern MP (Dep
+ artment of Health and Social Care).\nhttps://api.parliament.uk/committees
+ /events/28897
+URL:https://api.parliament.uk/committees/events/28897
+END:VEVENT
 END:VCALENDAR

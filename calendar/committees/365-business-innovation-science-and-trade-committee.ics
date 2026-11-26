@@ -9,14 +9,15 @@ BEGIN:VEVENT
 UID:house-committee-event-28943@house.peter-guillam123.github.io
 DTSTAMP:20261201T143000Z
 DTSTART:20261201T143000
-DTEND:20261201T151500
+DTEND:20261201T160000
 SUMMARY:UK trade with the EU · Business\, Innovation\, Science and Trade 
  Committee
 LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
  ade Committee.\nWitnesses: Sean McGuire (Confederation of British Industr
  y)\; Lucy Monks (Federation of Small Businesses)\; Paul Nowak (Trades Uni
- on Congress).\nhttps://api.parliament.uk/committees/events/28943
+ on Congress)\; Toby Ovens (Broughton Transport)\; Balwinder Dhoot (Food a
+ nd Drink Federation).\nhttps://api.parliament.uk/committees/events/28943
 URL:https://api.parliament.uk/committees/events/28943
 END:VEVENT
 END:VCALENDAR

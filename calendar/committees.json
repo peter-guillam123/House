@@ -1,7 +1,7 @@
 {
 "built": "2026-11-26",
 "windowDays": 56,
-"sessions": 50,
+"sessions": 54,
 "all": "committees.ics",
 "committees": [
 {
@@ -317,7 +317,7 @@
 "name": "Health and Social Care Committee",
 "house": "Commons",
 "file": "committees/81-health-and-social-care-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 597,
@@ -352,7 +352,7 @@
 "name": "Home Affairs Committee",
 "house": "Commons",
 "file": "committees/83-home-affairs-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 362,
@@ -366,7 +366,7 @@
 "name": "Housing, Communities and Local Government Committee",
 "house": "Commons",
 "file": "committees/17-housing-communities-and-local-government-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 93,
@@ -485,7 +485,7 @@
 "name": "Modernisation Committee",
 "house": "Commons",
 "file": "committees/736-modernisation-committee.ics",
-"upcoming": 0
+"upcoming": 1
 },
 {
 "id": 862,
@@ -804,6 +804,7 @@
 }
 ],
 "events": [
+27668,
 27944,
 28087,
 28154,
@@ -822,6 +823,7 @@
 28717,
 28728,
 28730,
+28764,
 28787,
 28795,
 28796,
@@ -833,7 +835,9 @@
 28884,
 28888,
 28891,
+28893,
 28894,
+28897,
 28898,
 28900,
 28901,
