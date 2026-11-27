@@ -55,8 +55,9 @@ SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
   (Joint Committee)
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses to be announced.\nhttps://api.parliament.uk/commi
- ttees/events/28903
+  Committee).\nWitnesses: Aidan O'Neill KC\; Sarah Vine KC\; Robin Allen K
+ C\; Professor Jonathan Herring (The University of Oxford).\nhttps://api.p
+ arliament.uk/committees/events/28903
 URL:https://api.parliament.uk/committees/events/28903
 END:VEVENT
 BEGIN:VEVENT
@@ -126,9 +127,9 @@ SUMMARY:Future of UK compute in the age of AI · Science and Technology Co
 LOCATION:Room 3\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Science and Technology Committee.\nWit
  nesses: Professor Sir Nigel Shadbolt (University of Oxford)\; Professor Z
- oubin Ghahramani\; Tom Westgarth (Fractile)\; Professor Robert Trager (Ox
- ford Martin AI Governance Initiative\, University of Oxford).\nhttps://ap
- i.parliament.uk/committees/events/28891
+ oubin Ghahramani FRS\; Tom Westgarth (Fractile)\; Professor Robert Trager
+  (Oxford Martin AI Governance Initiative\, University of Oxford).\nhttps:
+ //api.parliament.uk/committees/events/28891
 URL:https://api.parliament.uk/committees/events/28891
 END:VEVENT
 BEGIN:VEVENT
@@ -167,7 +168,8 @@ SUMMARY:Maintenance and enforcement in public spaces · Built Environment
  Committee
 LOCATION:Room 1\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Built Environment Committee.\nWitnesse
- s to be announced.\nhttps://api.parliament.uk/committees/events/28898
+ s: Tom McBride (Behavioural Insights Team).\nhttps://api.parliament.uk/co
+ mmittees/events/28898
 URL:https://api.parliament.uk/committees/events/28898
 END:VEVENT
 BEGIN:VEVENT
@@ -308,8 +310,8 @@ SUMMARY:Rail services and infrastructure · Transport Committee
 LOCATION:Room 16\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Transport Committee.\nWitnesses: The L
  ord Hendy of Richmond Hill CBE (Department for Transport)\; Richard Goodm
- an (Department for Transport).\nhttps://api.parliament.uk/committees/even
- ts/28274
+ an (Department for Transport)\; Alex Hynes (Department for Transport Oper
+ ator Ltd).\nhttps://api.parliament.uk/committees/events/28274
 URL:https://api.parliament.uk/committees/events/28274
 END:VEVENT
 BEGIN:VEVENT
@@ -350,13 +352,14 @@ BEGIN:VEVENT
 UID:house-committee-event-28787@house.peter-guillam123.github.io
 DTSTAMP:20261202T093000Z
 DTSTART:20261202T093000
-DTEND:20261202T103000
+DTEND:20261202T120000
 SUMMARY:The Northern Ireland Troubles Bill: Follow-up · Northern Ireland 
  Affairs Committee
 LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Northern Ireland Affairs Committee.\nW
  itnesses: General Sir Peter Wall (British Army)\; General Sir Nick Parker
-  (British Army).\nhttps://api.parliament.uk/committees/events/28787
+  (British Army)\; David Johnstone (Office of the Northern Ireland Veteran
+ s Commissioner).\nhttps://api.parliament.uk/committees/events/28787
 URL:https://api.parliament.uk/committees/events/28787
 END:VEVENT
 BEGIN:VEVENT
@@ -476,8 +479,8 @@ SUMMARY:Legislative Scrutiny: Immigration and Asylum Bill · Human Rights
  (Joint Committee)
 LOCATION:Room 5\, Palace of Westminster
 DESCRIPTION:Oral evidence session\, Human Rights (Joint Committee).\nWitne
- sses: Anna Turley MP (Home Office).\nhttps://api.parliament.uk/committees
- /events/28925
+ sses: Anna Turley MP (Home Office)\; Dan Hobbs (Home Office).\nhttps://ap
+ i.parliament.uk/committees/events/28925
 URL:https://api.parliament.uk/committees/events/28925
 END:VEVENT
 BEGIN:VEVENT
@@ -638,8 +641,8 @@ SUMMARY:Children’s social care · Public Services Committee
 LOCATION:To be Confirmed
 DESCRIPTION:Oral evidence session\, Public Services Committee.\nWitnesses:
   Emmanuel Akpan-Inwang (The Lighthouse Pedagogy Trust)\; Shantel Thomas (
- British Association of Social Workers England).\nhttps://api.parliament.u
- k/committees/events/28707
+ British Association of Social Workers England)\; Susannah Bowyer (Nationa
+ l Children's Bureau).\nhttps://api.parliament.uk/committees/events/28707
 URL:https://api.parliament.uk/committees/events/28707
 END:VEVENT
 BEGIN:VEVENT

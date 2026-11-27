@@ -9,13 +9,14 @@ BEGIN:VEVENT
 UID:house-committee-event-28787@house.peter-guillam123.github.io
 DTSTAMP:20261202T093000Z
 DTSTART:20261202T093000
-DTEND:20261202T103000
+DTEND:20261202T120000
 SUMMARY:The Northern Ireland Troubles Bill: Follow-up · Northern Ireland 
  Affairs Committee
 LOCATION:The Thatcher Room\, Portcullis House
 DESCRIPTION:Oral evidence session\, Northern Ireland Affairs Committee.\nW
  itnesses: General Sir Peter Wall (British Army)\; General Sir Nick Parker
-  (British Army).\nhttps://api.parliament.uk/committees/events/28787
+  (British Army)\; David Johnstone (Office of the Northern Ireland Veteran
+ s Commissioner).\nhttps://api.parliament.uk/committees/events/28787
 URL:https://api.parliament.uk/committees/events/28787
 END:VEVENT
 END:VCALENDAR
