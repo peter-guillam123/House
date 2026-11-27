@@ -1,7 +1,7 @@
 {
-"built": "2026-11-26",
+"built": "2026-11-27",
 "windowDays": 56,
-"sessions": 54,
+"sessions": 51,
 "all": "committees.ics",
 "committees": [
 {
@@ -177,7 +177,7 @@
 "name": "Draft Conversion Practices Bill (Joint Committee)",
 "house": "Joint",
 "file": "committees/851-draft-conversion-practices-bill-joint-committee.ics",
-"upcoming": 2
+"upcoming": 1
 },
 {
 "id": 175,
@@ -247,7 +247,7 @@
 "name": "Finance Bill Sub-Committee",
 "house": "Lords",
 "file": "committees/230-finance-bill-sub-committee.ics",
-"upcoming": 1
+"upcoming": 0
 },
 {
 "id": 325,
@@ -597,7 +597,7 @@
 "name": "Public Accounts Committee",
 "house": "Commons",
 "file": "committees/127-public-accounts-committee.ics",
-"upcoming": 4
+"upcoming": 3
 },
 {
 "id": 327,
@@ -821,18 +821,15 @@
 28707,
 28708,
 28717,
-28728,
 28730,
 28764,
 28787,
 28795,
 28796,
-28816,
 28854,
 28855,
 28879,
 28881,
-28884,
 28888,
 28891,
 28893,

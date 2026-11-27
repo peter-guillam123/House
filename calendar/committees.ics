@@ -6,51 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Committee oral evidence
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28728@house.peter-guillam123.github.io
-DTSTAMP:20261126T100000Z
-DTSTART:20261126T100000
-DTEND:20261126T120000
-SUMMARY:Electronic Monitoring: follow-up · Public Accounts Committee
-LOCATION:The Grimond Room\, Portcullis House
-DESCRIPTION:Oral evidence session\, Public Accounts Committee.\nWitnesses:
-  Jo Farrar (Ministry of Justice)\; Nick Donlevy (Ministry of Justice)\; J
- ames McEwen (HMPPS)\; Jim Barton (HMPPS).\nhttps://api.parliament.uk/comm
- ittees/events/28728
-URL:https://api.parliament.uk/committees/events/28728
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28884@house.peter-guillam123.github.io
-DTSTAMP:20261126T100000Z
-DTSTART:20261126T100000
-DTEND:20261126T113000
-SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
-LOCATION:Room 4\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
- : Rt Hon James Murray MP (The Treasury)\; Sara Albores Nodar (HMRC)\; Gar
- eth Cooper (HMRC)\; Reshma Prajapat (HMRC).\nhttps://api.parliament.uk/co
- mmittees/events/28884
-URL:https://api.parliament.uk/committees/events/28884
-END:VEVENT
-BEGIN:VEVENT
-UID:house-committee-event-28816@house.peter-guillam123.github.io
-DTSTAMP:20261126T111500Z
-DTSTART:20261126T111500
-DTEND:20261126T133000
-SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
-  (Joint Committee)
-LOCATION:Room 3\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses: The Bishop of Bath and Wells (Church of England)
- \; Baroness Gohir OBE\; The Bishop of Manchester\, Convenor of the Lords 
- Spiritual\; Hamzah Zahid (The British Board of Scholars & Imams)\; Matt M
- ahmood-Ogston (Matt and Naz Foundation)\; Reverend Dr Helen Hall\; Kate O
- sborne MP (Parliamentary Assembly of the Council of Europe)\; Danny Webst
- er (Evangelical Alliance)\; Simon Calvert (Christian Institute)\; Profess
- or Mark Hill KC (University of Notre Dame and London Law Programme).\nhtt
- ps://api.parliament.uk/committees/events/28816
-URL:https://api.parliament.uk/committees/events/28816
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28673@house.peter-guillam123.github.io
 DTSTAMP:20261130T131500Z
 DTSTART:20261130T131500
@@ -307,7 +262,7 @@ BEGIN:VEVENT
 UID:house-committee-event-28943@house.peter-guillam123.github.io
 DTSTAMP:20261201T143000Z
 DTSTART:20261201T143000
-DTEND:20261201T160000
+DTEND:20261201T161500
 SUMMARY:UK trade with the EU · Business\, Innovation\, Science and Trade 
  Committee
 LOCATION:The Thatcher Room\, Portcullis House
@@ -315,7 +270,9 @@ DESCRIPTION:Oral evidence session\, Business\, Innovation\, Science and Tr
  ade Committee.\nWitnesses: Sean McGuire (Confederation of British Industr
  y)\; Lucy Monks (Federation of Small Businesses)\; Paul Nowak (Trades Uni
  on Congress)\; Toby Ovens (Broughton Transport)\; Balwinder Dhoot (Food a
- nd Drink Federation).\nhttps://api.parliament.uk/committees/events/28943
+ nd Drink Federation)\; Gail Soutar (National Farmers' Union)\; Matthew Og
+ g (Society of Motor Manufacturers and Traders)\; Peter Brennan (UK Steel)
+ .\nhttps://api.parliament.uk/committees/events/28943
 URL:https://api.parliament.uk/committees/events/28943
 END:VEVENT
 BEGIN:VEVENT

@@ -6,25 +6,6 @@ METHOD:PUBLISH
 X-WR-CALNAME:House · Draft Conversion Practices Bill (Joint Committee)
 X-WR-TIMEZONE:Europe/London
 BEGIN:VEVENT
-UID:house-committee-event-28816@house.peter-guillam123.github.io
-DTSTAMP:20261126T111500Z
-DTSTART:20261126T111500
-DTEND:20261126T133000
-SUMMARY:Draft Conversion Practices Bill · Draft Conversion Practices Bill
-  (Joint Committee)
-LOCATION:Room 3\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Draft Conversion Practices Bill (Joint
-  Committee).\nWitnesses: The Bishop of Bath and Wells (Church of England)
- \; Baroness Gohir OBE\; The Bishop of Manchester\, Convenor of the Lords 
- Spiritual\; Hamzah Zahid (The British Board of Scholars & Imams)\; Matt M
- ahmood-Ogston (Matt and Naz Foundation)\; Reverend Dr Helen Hall\; Kate O
- sborne MP (Parliamentary Assembly of the Council of Europe)\; Danny Webst
- er (Evangelical Alliance)\; Simon Calvert (Christian Institute)\; Profess
- or Mark Hill KC (University of Notre Dame and London Law Programme).\nhtt
- ps://api.parliament.uk/committees/events/28816
-URL:https://api.parliament.uk/committees/events/28816
-END:VEVENT
-BEGIN:VEVENT
 UID:house-committee-event-28903@house.peter-guillam123.github.io
 DTSTAMP:20261130T162000Z
 DTSTART:20261130T162000

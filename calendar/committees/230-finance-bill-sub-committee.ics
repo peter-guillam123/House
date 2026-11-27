@@ -5,17 +5,4 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:House · Finance Bill Sub-Committee
 X-WR-TIMEZONE:Europe/London
-BEGIN:VEVENT
-UID:house-committee-event-28884@house.peter-guillam123.github.io
-DTSTAMP:20261126T100000Z
-DTSTART:20261126T100000
-DTEND:20261126T113000
-SUMMARY:Draft Finance Bill 2026–27 · Finance Bill Sub-Committee
-LOCATION:Room 4\, Palace of Westminster
-DESCRIPTION:Oral evidence session\, Finance Bill Sub-Committee.\nWitnesses
- : Rt Hon James Murray MP (The Treasury)\; Sara Albores Nodar (HMRC)\; Gar
- eth Cooper (HMRC)\; Reshma Prajapat (HMRC).\nhttps://api.parliament.uk/co
- mmittees/events/28884
-URL:https://api.parliament.uk/committees/events/28884
-END:VEVENT
 END:VCALENDAR
